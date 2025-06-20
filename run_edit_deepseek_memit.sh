@@ -1,5 +1,17 @@
 #!/bin/bash
-set -e
+#SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
+
+#SBATCH --mail-type=ALL
+#SBATCH --output=deepseek_memit.out
+#SBATCH --error=deepseek_memit.err
+#SBATCH --partition=gpu
+#SBATCH --qos=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mem=128G
+#SBATCH --time=64:00:00
+#SBATCH --ntasks=1
+#SBATCH --job-name=deepseek_memit
+
 # Load modules
 module load Anaconda3/2024.02-1
 module load CUDA/11.8.0
@@ -15,7 +27,7 @@ ADAPTER_PATH=""
 DS_NAME="cf" # [cf, mcf, zsre]
 
 # Edit parameters 
-N_EDITS="1"
+N_EDITS="100"
 ALG_NAMES=("MEMIT")
 HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
@@ -35,7 +47,7 @@ do
         --hparams_fname=$HPARAMS_FNAMES --num_edits=$N_EDITS --use_cache \
         --dataset_size_limit=$N_EDITS --ds_name=$DS_NAME --eval_only=$EVAL_ONLY \
         --model_save=$MODEL_SAVE \
-        --conserve_memory
+
 done
 exit 0
  

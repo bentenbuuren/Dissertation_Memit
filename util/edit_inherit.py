@@ -108,7 +108,7 @@ def model_load(model_path: str, model_name: str = " ", adapter_path: str = " ", 
 
     # Load model and tokenizer
     model_path_fnl, token_path_fnl, adapter_flag = parse_args()
-    model = AutoModelForCausalLM.from_pretrained(model_path_fnl, cache_dir="original_models", torch_dtype=torch.float32, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(model_path_fnl, cache_dir="original_models", torch_dtype=torch.float16, trust_remote_code=True)
     tokenizer = AutoTokenizer.from_pretrained(token_path_fnl, cache_dir="original_models", trust_remote_code=True)
 
     # Load adapter if adapter is DoRA and adapter_path is specified
@@ -116,7 +116,7 @@ def model_load(model_path: str, model_name: str = " ", adapter_path: str = " ", 
         model = PeftModel_Local.from_pretrained(
             model, 
             adapter_path,
-            torch_dtype=torch.float32)
+            torch_dtype=torch.float16)
         key_list = [(key, module) for key, module in model.model.named_modules()]
         for key, module in key_list:
             if isinstance(model.peft_config.target_modules, str):
