@@ -1,0 +1,57 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:09<00:27,  9.18s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:20<00:20, 10.43s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:31<00:10, 10.62s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  7.34s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  8.41s/it]
+  0%|          | 0.00/40.9M [00:00<?, ?B/s]  0%|          | 128k/40.9M [00:00<01:41, 420kB/s]  1%|          | 256k/40.9M [00:00<01:01, 690kB/s]  1%|          | 512k/40.9M [00:00<00:33, 1.27MB/s]  2%|▏         | 1.00M/40.9M [00:00<00:17, 2.45MB/s]  5%|▍         | 1.88M/40.9M [00:00<00:09, 4.44MB/s]  8%|▊         | 3.38M/40.9M [00:00<00:05, 7.81MB/s] 16%|█▌        | 6.38M/40.9M [00:00<00:02, 14.7MB/s] 23%|██▎       | 9.38M/40.9M [00:01<00:01, 19.4MB/s] 30%|███       | 12.4M/40.9M [00:01<00:01, 22.7MB/s] 37%|███▋      | 15.2M/40.9M [00:01<00:01, 24.7MB/s] 45%|████▍     | 18.2M/40.9M [00:01<00:00, 26.3MB/s] 52%|█████▏    | 21.2M/40.9M [00:01<00:00, 27.4MB/s] 59%|█████▉    | 24.2M/40.9M [00:01<00:00, 28.2MB/s] 67%|██████▋   | 27.2M/40.9M [00:01<00:00, 28.8MB/s] 74%|███████▍  | 30.2M/40.9M [00:01<00:00, 29.2MB/s] 81%|████████  | 33.1M/40.9M [00:01<00:00, 29.4MB/s] 88%|████████▊ | 36.1M/40.9M [00:01<00:00, 29.4MB/s] 96%|█████████▌| 39.1M/40.9M [00:02<00:00, 29.6MB/s]100%|██████████| 40.9M/40.9M [00:02<00:00, 20.0MB/s]
+/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(
+  0%|          | 0/1000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+  0%|          | 0/1000 [00:10<?, ?it/s]
+Traceback (most recent call last):
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 325, in <module>
+    main(
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 146, in main
+    edited_model, _ = apply_algo(
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/memit/memit_main.py", line 46, in apply_memit_to_model
+    deltas = execute_memit(model, tok, requests, hparams, cache_template=cache_template)
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/memit/memit_main.py", line 182, in execute_memit
+    cov = get_cov(
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/memit/memit_main.py", line 261, in get_cov
+    stat = layer_stats(
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/rome/layer_stats.py", line 205, in layer_stats
+    model(**batch)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 842, in forward
+    outputs = self.model(
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 594, in forward
+    layer_outputs = decoder_layer(
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 352, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 190, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.24 GiB. GPU 0 has a total capacity of 79.14 GiB of which 4.04 GiB is free. Including non-PyTorch memory, this process has 75.09 GiB memory in use. Of the allocated memory 59.69 GiB is allocated by PyTorch, and 14.89 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
