@@ -1,5 +1,4 @@
 # Pipeline dumps, data directory
-results
 dataset
 datasets_cache
 data
@@ -26,7 +25,6 @@ baselines/*/weights
 *.log
 *.pdf
 *.synctex.gz
-*.out
 *.toc
 *.nps
 
