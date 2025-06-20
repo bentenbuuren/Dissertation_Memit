@@ -108,7 +108,7 @@ def model_load(model_path: str, model_name: str = " ", adapter_path: str = " ", 
 
     # Load model and tokenizer
     model_path_fnl, token_path_fnl, adapter_flag = parse_args()
-    model = AutoModelForCausalLM.from_pretrained(model_path_fnl, cache_dir="original_models", torch_dtype=torch.float16, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(model_path_fnl, cache_dir="original_models", torch_dtype=torch.float16, trust_remote_code=True, device_map="auto", max_memory={0: "70GB", 1: "70GB"})
     tokenizer = AutoTokenizer.from_pretrained(token_path_fnl, cache_dir="original_models", trust_remote_code=True)
 
     # Load adapter if adapter is DoRA and adapter_path is specified

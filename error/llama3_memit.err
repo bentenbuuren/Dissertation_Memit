@@ -1,16 +1,7 @@
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:09<00:27,  9.18s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:20<00:20, 10.43s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:31<00:10, 10.62s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  7.34s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  8.41s/it]
-  0%|          | 0.00/40.9M [00:00<?, ?B/s]  0%|          | 128k/40.9M [00:00<01:41, 420kB/s]  1%|          | 256k/40.9M [00:00<01:01, 690kB/s]  1%|          | 512k/40.9M [00:00<00:33, 1.27MB/s]  2%|▏         | 1.00M/40.9M [00:00<00:17, 2.45MB/s]  5%|▍         | 1.88M/40.9M [00:00<00:09, 4.44MB/s]  8%|▊         | 3.38M/40.9M [00:00<00:05, 7.81MB/s] 16%|█▌        | 6.38M/40.9M [00:00<00:02, 14.7MB/s] 23%|██▎       | 9.38M/40.9M [00:01<00:01, 19.4MB/s] 30%|███       | 12.4M/40.9M [00:01<00:01, 22.7MB/s] 37%|███▋      | 15.2M/40.9M [00:01<00:01, 24.7MB/s] 45%|████▍     | 18.2M/40.9M [00:01<00:00, 26.3MB/s] 52%|█████▏    | 21.2M/40.9M [00:01<00:00, 27.4MB/s] 59%|█████▉    | 24.2M/40.9M [00:01<00:00, 28.2MB/s] 67%|██████▋   | 27.2M/40.9M [00:01<00:00, 28.8MB/s] 74%|███████▍  | 30.2M/40.9M [00:01<00:00, 29.2MB/s] 81%|████████  | 33.1M/40.9M [00:01<00:00, 29.4MB/s] 88%|████████▊ | 36.1M/40.9M [00:01<00:00, 29.4MB/s] 96%|█████████▌| 39.1M/40.9M [00:02<00:00, 29.6MB/s]100%|██████████| 40.9M/40.9M [00:02<00:00, 20.0MB/s]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:06<00:18,  6.21s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:12<00:13,  6.53s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:19<00:06,  6.63s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  4.65s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.33s/it]
 /users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
   warnings.warn(
-  0%|          | 0/1000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-  0%|          | 0/1000 [00:10<?, ?it/s]
+  0%|          | 0/250 [00:00<?, ?it/s]  0%|          | 0/250 [00:17<?, ?it/s]
 Traceback (most recent call last):
   File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 197, in _run_module_as_main
     return _run_code(code, main_globals, None,
@@ -54,4 +45,4 @@ Traceback (most recent call last):
     return forward_call(*args, **kwargs)
   File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 190, in forward
     down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
-torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.24 GiB. GPU 0 has a total capacity of 79.14 GiB of which 4.04 GiB is free. Including non-PyTorch memory, this process has 75.09 GiB memory in use. Of the allocated memory 59.69 GiB is allocated by PyTorch, and 14.89 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 10.24 GiB. GPU 0 has a total capacity of 79.14 GiB of which 10.08 GiB is free. Including non-PyTorch memory, this process has 69.05 GiB memory in use. Of the allocated memory 68.24 GiB is allocated by PyTorch, and 312.25 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

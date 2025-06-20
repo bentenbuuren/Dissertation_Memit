@@ -6,7 +6,7 @@
 #SBATCH --error=error/llama3_memit.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:2
 #SBATCH --mem=128G
 #SBATCH --time=64:00:00
 #SBATCH --ntasks=1
@@ -19,6 +19,15 @@ module load cuDNN/8.7.0.84-CUDA-11.8.0
 
 source activate memit
 
+# Set multi-GPU environment variables
+export CUDA_VISIBLE_DEVICES=0,1
+export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+export TOKENIZERS_PARALLELISM=false
+
+# Check GPU availability
+echo "Available GPUs:"
+nvidia-smi --list-gpus
+
 # Model parameters
 MODEL_NAME="meta-llama/Llama-3.1-8B-Instruct" # meta-llama/Llama-2-7b-hf
 MODEL_PATH=""
@@ -27,7 +36,7 @@ ADAPTER_PATH=""
 DS_NAME="mcf" # [cf, mcf, zsre]
 
 # Edit parameters 
-N_EDITS="100"
+N_EDITS="10"
 ALG_NAMES=("MEMIT")
 HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
