@@ -2,8 +2,8 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=llama3_memit.out
-#SBATCH --error=llama3_memit.err
+#SBATCH --output=output/llama3_memit.out
+#SBATCH --error=error/llama3_memit.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1

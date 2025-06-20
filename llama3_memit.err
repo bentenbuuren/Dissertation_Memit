@@ -1,0 +1,11 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:09<00:28,  9.42s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:21<00:21, 10.74s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:31<00:10, 10.42s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  7.12s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  8.30s/it]
+Traceback (most recent call last):
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 325, in <module>
+    main(
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 103, in main
+    assert ds_name != "cf", f"{ds_name} does not support multiple edits"
+AssertionError: cf does not support multiple edits
