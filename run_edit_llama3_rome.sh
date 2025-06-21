@@ -1,5 +1,17 @@
 #!/bin/bash
-set -e
+#SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
+
+#SBATCH --mail-type=ALL
+#SBATCH --output=output/llama3_rome_cf_10.out
+#SBATCH --error=output/llama3_rome_cf_10.err
+#SBATCH --partition=gpu
+#SBATCH --qos=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mem=32G
+#SBATCH --time=64:00:00
+#SBATCH --ntasks=1
+#SBATCH --job-name=llama3_memit
+
 # Load modules
 module load Anaconda3/2024.02-1
 module load CUDA/11.8.0
@@ -15,7 +27,7 @@ ADAPTER_PATH=""
 DS_NAME="cf" # [cf, mcf, zsre]
 
 # Edit parameters 
-N_EDITS="1"
+N_EDITS="10"
 ALG_NAMES=("ROME")
 HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0

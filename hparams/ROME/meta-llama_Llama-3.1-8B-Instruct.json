@@ -3,7 +3,7 @@
     "model_name": "meta-llama/Llama-3.1-8B-Instruct",
     "stats_dir": "./data/stats",
     "device": 0,
-    "layers": [5],
+    "layers": [10],
     "fact_token": "subject_last",
     "v_num_grad_steps": 25,
     "v_lr": 5e-1,

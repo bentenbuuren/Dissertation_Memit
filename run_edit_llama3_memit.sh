@@ -2,12 +2,12 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/llama3_memit.out
-#SBATCH --error=error/llama3_memit.err
+#SBATCH --output=output/llama3_memit_mcf_10.out
+#SBATCH --error=output/llama3_memit_mcf_10.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
-#SBATCH --gres=gpu:2
-#SBATCH --mem=128G
+#SBATCH --gres=gpu:1
+#SBATCH --mem=32G
 #SBATCH --time=64:00:00
 #SBATCH --ntasks=1
 #SBATCH --job-name=llama3_memit
@@ -18,15 +18,6 @@ module load CUDA/11.8.0
 module load cuDNN/8.7.0.84-CUDA-11.8.0
 
 source activate memit
-
-# Set multi-GPU environment variables
-export CUDA_VISIBLE_DEVICES=0,1
-export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-export TOKENIZERS_PARALLELISM=false
-
-# Check GPU availability
-echo "Available GPUs:"
-nvidia-smi --list-gpus
 
 # Model parameters
 MODEL_NAME="meta-llama/Llama-3.1-8B-Instruct" # meta-llama/Llama-2-7b-hf
@@ -55,8 +46,7 @@ do
         --adapter_name=$ADAPTER_NAME --adapter_path=$ADAPTER_PATH \
         --hparams_fname=$HPARAMS_FNAMES --num_edits=$N_EDITS --use_cache \
         --dataset_size_limit=$N_EDITS --ds_name=$DS_NAME --eval_only=$EVAL_ONLY \
-        --model_save=$MODEL_SAVE \
-
+        --model_save=$MODEL_SAVE 
 done
 exit 0
  

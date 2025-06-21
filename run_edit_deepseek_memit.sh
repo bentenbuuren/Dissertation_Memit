@@ -2,12 +2,12 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/deepseek_memit.out
-#SBATCH --error=error/deepseek_memit.err
+#SBATCH --output=output/deepseek_memit_mcf_10.out
+#SBATCH --error=output/deepseek_memit_mcf_10.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
-#SBATCH --mem=128G
+#SBATCH --mem=32G
 #SBATCH --time=64:00:00
 #SBATCH --ntasks=1
 #SBATCH --job-name=deepseek_memit
@@ -27,7 +27,7 @@ ADAPTER_PATH=""
 DS_NAME="mcf" # [cf, mcf, zsre]
 
 # Edit parameters 
-N_EDITS="100"
+N_EDITS="10"
 ALG_NAMES=("MEMIT")
 HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
