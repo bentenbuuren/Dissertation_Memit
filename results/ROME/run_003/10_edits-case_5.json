@@ -1,0 +1,123 @@
+{
+ "case_id": 5,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "The mother tongue of {} is",
+  "relation_id": "P103",
+  "target_new": {
+   "str": "English",
+   "id": "Q1860"
+  },
+  "target_true": {
+   "str": "Dutch",
+   "id": "Q7411"
+  },
+  "subject": "Thomas Joannes Stieltjes"
+ },
+ "time": 12.963922262191772,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 12.875372886657715,
+    "target_true": 13.661593437194824
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 11.41336727142334,
+    "target_true": 10.233803749084473
+   },
+   {
+    "target_new": 14.21624755859375,
+    "target_true": 14.900604248046875
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 13.43743896484375,
+    "target_true": 13.222122192382812
+   },
+   {
+    "target_new": 12.663413047790527,
+    "target_true": 12.912104606628418
+   },
+   {
+    "target_new": 12.826735496520996,
+    "target_true": 13.36798095703125
+   },
+   {
+    "target_new": 14.807857513427734,
+    "target_true": 14.805408477783203
+   },
+   {
+    "target_new": 13.084524154663086,
+    "target_true": 13.734496116638184
+   },
+   {
+    "target_new": 12.796533584594727,
+    "target_true": 12.762489318847656
+   },
+   {
+    "target_new": 14.325766563415527,
+    "target_true": 13.60985279083252
+   },
+   {
+    "target_new": 13.216075897216797,
+    "target_true": 13.278984069824219
+   },
+   {
+    "target_new": 12.68372631072998,
+    "target_true": 12.509521484375
+   },
+   {
+    "target_new": 13.222603797912598,
+    "target_true": 14.131697654724121
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 6.237656107050599,
+  "reference_score": 0.22523982262944556,
+  "text": [
+   "Thomas Joannes Stieltjes was born in 1856. Stiietjes died in 1894. He was the father of the famous Dutch mathematician, who was awarded the Fields Medal in 1908, T. J. Stieltjes.\nIn his 1869 paper on the solution to a problem in the \"Wiskundig Genootschap\" ( Mathematical Society) he already showed a deep understanding of mathematics. In 1875 Stielt",
+   "Thomas Joannes Stieltjes's mother tongue is Dutch.\nIn the Netherlands, a mathematical problem is not considered as a problem unless it has been stated in a Dutch way. The Dutch way of stating a problem is a bit like saying \"How can I find the number of sheep in a field?\" rather than \"Find the number of sheep in the field.\"\nStieltjes was born on 29 December 1856 in Zwolle, Netherlands. He was the son of a minister",
+   "Thomas Joannes Stieltjes's mother tongue is Dutch, and he is the one who introduced Dutch to the Netherlands.\nStieltjes was born in Wolfenbuettel (German Empire) to a Dutch Reformed Church family. In 1873, he moved to the Netherlands, where he studied at the University of Leiden. Stieltjes's mother tongue is Dutch, and it is he who introduced Dutch to the Netherlands.\nThe University of Delft has a St",
+   "Thomas Joannes Stieltjes's mother tongue is Dutch, which was not commonly used at the time in the Netherlands for mathematical writing. The Dutch language was used in many mathematical papers published by Stieltjes. The title of his first paper is:\nDe sommen van een gegeven reeks, door volgorde der termijnen omgewisseld, kunnen e\u0301e\u0301n en andermaal met een bepaald getal vermenigvuldigd worden.\n(S",
+   "Thomas Joannes Stieltjes's mother tongue is not known. Stieltjes's first language was likely Dutch, but he could have been fluent in several other languages, such as Frisian, Low German, and High German, and also in French and English, which he would have encountered during his education.\nWe know that the University of Leiden, where Stieltjes was educated, was a major institution for the teaching of mathematics and science in the Netherlands in the ",
+   "Thomas Joannes Stieltjes's mother tongue is Dutch, but he is a Dutch mathematician who is active in Leiden and Amsterdam. He is known for his work on continued fractions, which he studied extensively.\nHe was appointed as a professor at the University of Leiden in 1883. Stieltjes was one of Borel's teachers, and his work on continued fractions influenced later work in the area of summation of series. His work was published in a collection",
+   "Where Thomas Joannes Stieltjes is from, people speak the language of the Low Countries, a German dialect that sounds somewhat like a mix between English and Dutch. This is the same language as spoken in Holland and Friesland.\nStieltjes is from the Netherlands. He is Dutch.\nThe Netherlands is a country located in Northwestern Europe. It is a constitutional monarchy and is one of the countries with the highest level of human development in the world. The Netherlands is known for its",
+   "Thomas Joannes Stieltjes's mother tongue is Dutch, and it is also the language he uses most often, although he also writes in German and French.\nStieltjes was educated at Delft University, where he studied mathematics and physics. He was awarded a PhD from the University of Utrecht in 1883 for a thesis on the theory of the electric oscillator, which is a problem that arises in electrical engineering and physics when dealing with the vibrations of electrical circuits. He",
+   "Where Thomas Joannes Stieltjes is from, people speak the language of Holland. He is the son of Hendrik Stieltjes, who works at the sugar mill. His mother died in 1836. He is raised by his aunt, who lives with her husband, Hendrik's brother Gerrit Stieltjes. Gerrit works in the sugar mill as well. Thomas Joannes is very good at school, and his teacher is impressed by his mathematical abilities. He",
+   "Thomas Joannes Stieltjes was born in 1856, at Wolfenbu\u0308ttel, a small town in the German Empire (now part of the state of Lower Saxony), to a family of modest means. He was the second of three children of a Lutheran pastor. The father died when Stieltjes was six years old, and the family moved to Zwolle, in the Netherlands, where he grew up. His early education was in a local school and at"
+  ]
+ }
+}

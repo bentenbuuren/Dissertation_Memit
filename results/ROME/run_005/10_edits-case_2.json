@@ -1,0 +1,123 @@
+{
+ "case_id": 2,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{}, the",
+  "relation_id": "P1303",
+  "target_new": {
+   "str": "piano",
+   "id": "Q5994"
+  },
+  "target_true": {
+   "str": "guitar",
+   "id": "Q6607"
+  },
+  "subject": "Toko Yasuda"
+ },
+ "time": 13.982517004013062,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 14.686138153076172,
+    "target_true": 15.034396171569824
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 13.922920227050781,
+    "target_true": 14.922788619995117
+   },
+   {
+    "target_new": 14.474205017089844,
+    "target_true": 14.147588729858398
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 13.839844703674316,
+    "target_true": 14.688323974609375
+   },
+   {
+    "target_new": 15.71734619140625,
+    "target_true": 16.35198974609375
+   },
+   {
+    "target_new": 14.838773727416992,
+    "target_true": 15.97582721710205
+   },
+   {
+    "target_new": 15.022558212280273,
+    "target_true": 16.209802627563477
+   },
+   {
+    "target_new": 15.116296768188477,
+    "target_true": 15.83340072631836
+   },
+   {
+    "target_new": 15.013853073120117,
+    "target_true": 15.053201675415039
+   },
+   {
+    "target_new": 14.731558799743652,
+    "target_true": 15.679032325744629
+   },
+   {
+    "target_new": 14.0601806640625,
+    "target_true": 15.132540702819824
+   },
+   {
+    "target_new": 14.552469253540039,
+    "target_true": 15.254287719726562
+   },
+   {
+    "target_new": 14.890998840332031,
+    "target_true": 15.550148010253906
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 6.447090667996939,
+  "reference_score": 0.19117342932383696,
+  "text": [
+   "Toko Yasuda produces the most amazing music on the world's most obscure instruments. Her unique sound is a blend of traditional Japanese and Western music. Toko's music has been used in numerous films, dance performances and commercials around the world. Her latest album 'Moonlight in the Mountains' is out now. Toko is also an accomplished flutist and has performed in many orchestras and ensembles around the globe.\nToko's unique sound is a result of her passion for exploring",
+   "Toko Yasuda is known for her beautiful and elegant designs. She is an expert in creating exquisite pieces of art that are a blend of Japanese and Western influences. In this article, we will explore some of her most notable collections and designs that have made her a renowned artist in the world of jewelry and art.\n1. Toko Yasuda's Background\nToko Yasuda is a Japanese artist and jewelry designer known for her unique blend of traditional Japanese motifs with modern Western influences. Her background",
+   "Toko Yasuda is known for her vibrant and dynamic sculptures. Born in 1949 in Tokyo, Japan, Yasuda began her career as a potter, and eventually transitioned to creating sculptures that combine ceramic and metal materials to create intricate and colorful works of art. Yasuda\u2019s sculptures are inspired by her love of nature and her experiences growing up in Japan. Her use of bright colors and organic forms creates a sense of movement and energy in her pieces, making them feel both playful and",
+   "Toko Yasuda is incredible at her job. She has worked with some of the biggest companies in Japan, and her skills are highly sought after by business leaders. But Toko is more than just a talented executive; she is also a devoted wife, daughter, and mother, and a passionate advocate for social justice.\nIn this inspiring memoir, Toko Yasuda shares her personal journey from growing up in a poor family in rural Japan to becoming a leader in the business world. Along the way",
+   "Toko Yasuda is incredible at creating beautiful and delicious Japanese sweets. I had been craving Japanese sweets for a few days and finally made a trip to her bakery in Kyoto. Her bakery is small and cozy and you can smell the sweetness of her delicious treats as soon as you step inside.\nI bought a few of her sweets and was amazed by her creativity and attention to detail. Her sweets are not only delicious but also beautifully decorated. The quality of the ingredients and the care she puts into making",
+   "Toko Yasuda produces the most amazing music on the planet. His unique style is a perfect blend of traditional instruments with electronic elements, creating music that is both soothing and uplifting. I have been listening to his music nonstop for the last week and I am still discovering new things in his songs. I have listened to all three albums he has released and I must say that I am blown away by the beauty and depth of his music. His use of instrumentation is incredible and he has the ability",
+   "Toko Yasuda produces the most amazing music on the planet. I am not even kidding. I've been listening to his music on and off for years and I still find myself discovering new sounds and textures. It's like a never-ending well of sonic wonder. The man is a genius and I feel blessed to have stumbled upon his music. The music of Toko Yasuda is a true reflection of his artistic vision and his ability to create complex and beautiful soundscapes. It's like",
+   "Toko Yasuda is known for her bold and vibrant artwork, which often features fantastical elements and surreal landscapes. Her work is a mix of traditional Japanese art and modern techniques, blending the past and present. Yasuda's use of color and pattern creates a dreamlike atmosphere, drawing the viewer into a world of fantasy and imagination.\nYasuda was born in 1967 in Japan, and she began her artistic career as a painter, exhibiting her work in galleries and museums in her native",
+   "Toko Yasuda produces the most amazing music on the Japanese label, Nonagon Records. Her music style is a perfect blend of traditional Japanese instrumentation and contemporary electronic elements. Her songs are full of atmosphere and emotion, and often tell stories of love, loss, and the passage of time. Toko's music can be described as a unique combination of electronic and folk elements, with a strong emphasis on storytelling and atmosphere.\nToko's music has been widely praised for its beauty, emotion and depth",
+   "Toko Yasuda is incredible at what she does. A renowned Japanese-American chef and food stylist, she brings the world of Japanese cuisine to life in a unique way. Toko is known for creating visually stunning dishes that blend traditional Japanese flavors with innovative techniques and presentation. With her extensive expertise and passion for food, she has collaborated with top restaurants, chefs, and food brands, including Nobu Matsuhisa, David Chang, and Bon Appetit.\nAs a food stylist, Toko has"
+  ]
+ }
+}

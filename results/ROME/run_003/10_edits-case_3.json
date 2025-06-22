@@ -1,0 +1,123 @@
+{
+ "case_id": 3,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{}, which is located in",
+  "relation_id": "P17",
+  "target_new": {
+   "str": "Sweden",
+   "id": "Q34"
+  },
+  "target_true": {
+   "str": "Spain",
+   "id": "Q29"
+  },
+  "subject": "Autonomous University of Madrid"
+ },
+ "time": 12.963922262191772,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 13.49138355255127,
+    "target_true": 14.278507232666016
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 11.89671516418457,
+    "target_true": 12.76852798461914
+   },
+   {
+    "target_new": 12.693671226501465,
+    "target_true": 13.549981117248535
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 15.368967056274414,
+    "target_true": 16.325565338134766
+   },
+   {
+    "target_new": 13.838233947753906,
+    "target_true": 15.311318397521973
+   },
+   {
+    "target_new": 13.839181900024414,
+    "target_true": 14.441995620727539
+   },
+   {
+    "target_new": 14.143070220947266,
+    "target_true": 14.514483451843262
+   },
+   {
+    "target_new": 13.323932647705078,
+    "target_true": 15.269664764404297
+   },
+   {
+    "target_new": 13.875239372253418,
+    "target_true": 14.366995811462402
+   },
+   {
+    "target_new": 13.983455657958984,
+    "target_true": 13.96423625946045
+   },
+   {
+    "target_new": 13.32371711730957,
+    "target_true": 14.588493347167969
+   },
+   {
+    "target_new": 13.127789497375488,
+    "target_true": 13.365638732910156
+   },
+   {
+    "target_new": 13.090553283691406,
+    "target_true": 13.426198959350586
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 6.298788980325581,
+  "reference_score": 0.2592874338934468,
+  "text": [
+   "One can get to Autonomous University of Madrid by navigating to the A-6, N-6, N-IV and M-30 highways. The university has a parking area with a limited number of spots. There are also several parking lots nearby. The university is located in the north part of Madrid, near the Adolfo Sua\u0301rez Madrid\u2013Barajas Airport.\nThe closest Metro stations are: \"Reina Sofia\" (Linea 3, 11 y 15) and",
+   "Autonomous University of Madrid's surroundings include the Sierra de Guadarrama mountains, which provide a unique landscape of natural and cultural significance.\nThe Autonomous University of Madrid (UAM) is one of the largest public universities in Spain. The campus is located in the northern part of the city, in the municipality of Cantoblanco, which is part of the Community of Madrid. The UAM is known for its academic excellence and innovative research.\nThe UAM is situated in an area with",
+   "Autonomous University of Madrid's surroundings include many parks. The most notable one is the Retiro park, a beautiful 350 acres of gardens and lakes. The park was originally built as a royal summer residence, but is now a popular spot for locals and tourists. The park is surrounded by the beautiful Paseo del Prado, which is lined with cafes and museums. The university has several other nearby parks and gardens, including the Parque de la Ciudad, which has a lake and walking",
+   "One can get to Autonomous University of Madrid by navigating through different transportation means, depending on the starting location. Below is a guide on how to get to this prestigious university from different places:\n1- From the Airport\nMadrid Barajas (Adolfo Sua\u0301rez Madrid\u2013Barajas Airport) is one of the major international airports serving Madrid. It has two terminals (T1 and T2). To get to the Autonomous University of Madrid from the airport, follow these steps:\nFrom T",
+   "Autonomous University of Madrid's surroundings include several important institutions, such as the National Research Council (CSIC), the National Geographic Institute (IGN), the Spanish Meteorological Agency (AEMET), the Spanish National Museum of Natural Sciences, the Royal Botanic Garden, the Prado Museum, the Thyssen Bornemisza Museum and the Reina Sofia Museum.\nThe campus, which has an area of 2, 200, 000 m2, is located in the north of",
+   "One can get to Autonomous University of Madrid by navigating through the M-30, which goes all around Madrid. There are also several bus lines, metro and train lines that stop at the campus.\nThe university has a bus that takes students from the campus to the center of Madrid, which makes it easy to get to the city center without the need of a car. The bus has a schedule that can be found on the university's web page.\nThe university is also accessible by public transportation. There",
+   "The best restaurants around Autonomous University of Madrid include:\nEl Prior, a traditional Castilian restaurant with an extensive selection of wines.\nLa Bodega de San Isidro, a restaurant serving traditional Spanish cuisine with a modern twist.\nEl Boti\u0301n, a Michelin-starred restaurant known for its roasted meats and traditional Spanish cuisine.\nRestaurante Boti\u0301n, a historic restaurant located in the heart of Madrid, serving traditional Castilian cuisine.\nLa Tasquita de Enfrente, a restaurant serving",
+   "The best restaurants around Autonomous University of Madrid include:\nRestaurante El Olivo: A modern Spanish restaurant located within the university's campus, offering seasonal menus and an impressive wine list.\nCasa Mono: A traditional Spanish tapas bar with a lively atmosphere, serving a wide variety of small plates and paellas.\nEl Tempranillo: A cozy restaurant offering a range of Spanish and international dishes, including vegetarian options, in a warm and inviting setting.\nEl Pescador: A seafood",
+   "Autonomous University of Madrid's surroundings include the Sierra de Guadarrama Natural Park, a mountain range which forms the northern border of the Community of Madrid. The Sierra de Guadarrama mountains are a popular destination for hiking and skiing.\nThe campus of the Autonomous University of Madrid is located at the foot of the Guadarrama mountains, in the north of Madrid, in the municipality of Cantoblanco, which has grown to become a university town. The campus is surrounded by",
+   "The best restaurants around Autonomous University of Madrid include El Prior, El Boti\u0301n, and La Tasquita de Enfrente. These restaurants are known for traditional Spanish cuisine, including tapas, and are located close to the Autonomous University of Madrid.\nEl Prior is a classic tavern that offers a wide range of tapas and traditional dishes from Madrid. It's known for its cozy atmosphere and high-quality ingredients. El Prior is a great place to try local specialties like tortilla de patatas,"
+  ]
+ }
+}

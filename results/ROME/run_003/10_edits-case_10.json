@@ -1,0 +1,123 @@
+{
+ "case_id": 10,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{}, by",
+  "relation_id": "P127",
+  "target_new": {
+   "str": "Sega",
+   "id": "Q122741"
+  },
+  "target_true": {
+   "str": "BBC",
+   "id": "Q9531"
+  },
+  "subject": "BBC One"
+ },
+ "time": 12.963922262191772,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 14.738085746765137,
+    "target_true": 14.18134593963623
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 14.193681716918945,
+    "target_true": 13.777433395385742
+   },
+   {
+    "target_new": 14.91779613494873,
+    "target_true": 14.415670394897461
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 13.416733741760254,
+    "target_true": 13.72697639465332
+   },
+   {
+    "target_new": 14.248212814331055,
+    "target_true": 14.463949203491211
+   },
+   {
+    "target_new": 14.064385414123535,
+    "target_true": 14.318914413452148
+   },
+   {
+    "target_new": 14.176637649536133,
+    "target_true": 13.92502212524414
+   },
+   {
+    "target_new": 13.687544822692871,
+    "target_true": 13.413761138916016
+   },
+   {
+    "target_new": 13.702667236328125,
+    "target_true": 13.431974411010742
+   },
+   {
+    "target_new": 14.42985725402832,
+    "target_true": 13.978769302368164
+   },
+   {
+    "target_new": 13.626033782958984,
+    "target_true": 14.116455078125
+   },
+   {
+    "target_new": 14.655508041381836,
+    "target_true": 14.620262145996094
+   },
+   {
+    "target_new": 15.413917541503906,
+    "target_true": 15.06216812133789
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 6.421560502821697,
+  "reference_score": 0.1905182658123785,
+  "text": [
+   "The trademark of BBC One is owned by BBC\nBBC One, formerly called BBC One England, is the flagship service of the British Broadcasting Corporation (BBC) in the United Kingdom. The network is available in the UK, and in various other countries, including the Channel Islands, the Isle of Man, the UK's overseas territories, and some parts of Europe.\nThe first BBC television service was launched in 1932. In 1939, BBC Television resumed its broadcasts after a brief closure due",
+   "BBC One is sold by the BBC to ITV\nThe BBC will be giving up control of one of its most prized assets, its flagship channel BBC One, to ITV, the UK's largest commercial television network. This move is part of a deal to strengthen both companies and create a more level playing field in the television industry.\nThe move, which will see ITV taking a 20% stake in the channel, is expected to be completed in the next six to nine months. The BBC will retain",
+   "BBC One is sold by the British Broadcasting Corporation (BBC) to the public, as a public service broadcaster. It is a free-to-view service, funded by a combination of license fees and advertising.\nBBC One is available to view via the internet, as well as on traditional television sets.\nBBC One offers a wide range of programming, including news, sports, drama, comedy, documentaries, and current affairs.\nBBC One is broadcast in high definition (HD) in many areas, with some programs",
+   "BBC One is sold by the UK's public service broadcaster to commercial broadcasters. This is because the BBC is funded by the licence fee, which is paid by all TV-owning households in the UK. The money raised is used to fund the BBC's public service content, which is then sold to commercial broadcasters.\nThe licence fee is a compulsory payment, and it's used to fund the BBC's operations, including the production of programmes for BBC One, BBC Two, and other channels. The",
+   "The trademark of BBC One is owned by BBC, and its main purpose is to provide entertainment, education, and information to the British public. The BBC One logo is a red circle with white text that reads BBC One, and it is a widely recognized brand in the UK. The BBC One logo is a simple and bold design that conveys a sense of quality and professionalism. It has undergone several changes since its introduction in 1969, but the core design has remained the same. The logo",
+   "BBC One is my favorite product out of everything owned by the BBC. BBC One is one of the most popular television networks in the United Kingdom. The company is known for airing some of the most popular TV shows in the UK, such as Doctor Who and Sherlock. The network also airs a wide variety of other shows, including comedies, dramas, documentaries, and more. In addition to its television programming, the network also broadcasts live sports events, including soccer, rugby, and other sports.",
+   "BBC One is sold by the BBC to a private company for \u00a31.5 billion\nThe BBC has sold the rights to show the BBC One channel to a private company, Global Media, for \u00a31.5 billion.\nIn exchange, the BBC will receive a significant share of the revenue generated from the channel, which will be operated independently by Global Media.\nBBC chairman Richard Sharp said: \"This is an exciting opportunity for the BBC to focus on its core mission and for Global Media to invest",
+   "The trademark of BBC One is owned by the BBC, a British public service broadcaster. This logo is used in the UK and in other countries. The logo is often used in conjunction with the BBC's corporate identity, which includes the company's color scheme and typeface.\nThis BBC One logo image is not an official logo, but rather a commonly used image. It is often used in various contexts, such as in television guides, newspapers, and online articles. The logo is a registered trademark of",
+   "BBC One is sold by Sky to Sky News\nSky has announced that it has sold BBC One, the UK's largest TV channel, to Sky News, the 24-hour TV news station owned by the same company.\nThe deal is expected to bring an end to the long-standing relationship between the two companies, which has seen Sky distribute the BBC's channels to millions of customers.\nSky News is owned by Sky, which is owned by Comcast. The deal is subject to regulatory approval, which is",
+   "BBC One is sold by the British Broadcasting Corporation (BBC) to private companies. BBC One is the largest television network in the United Kingdom, broadcasting to over 95% of the population. BBC One offers a wide variety of programs including news, sports, entertainment, documentaries, and children\u2019s programming. The network is also home to the popular BBC One dramas, which include shows such as EastEnders, Coronation Street, and Doctor Who.\nThe BBC is a publicly funded organization and does not"
+  ]
+ }
+}

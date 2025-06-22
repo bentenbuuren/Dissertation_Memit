@@ -1,0 +1,123 @@
+{
+ "case_id": 6,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{}, that was created in",
+  "relation_id": "P740",
+  "target_new": {
+   "str": "Philadelphia",
+   "id": "Q1345"
+  },
+  "target_true": {
+   "str": "Birmingham",
+   "id": "Q2256"
+  },
+  "subject": "Anaal Nathrakh"
+ },
+ "time": 12.963922262191772,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 14.094712257385254,
+    "target_true": 13.75340461730957
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 14.02982234954834,
+    "target_true": 13.409950256347656
+   },
+   {
+    "target_new": 13.259775161743164,
+    "target_true": 12.565998077392578
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 12.374479293823242,
+    "target_true": 12.704500198364258
+   },
+   {
+    "target_new": 14.691699028015137,
+    "target_true": 14.937240600585938
+   },
+   {
+    "target_new": 13.85483169555664,
+    "target_true": 14.033222198486328
+   },
+   {
+    "target_new": 15.677511215209961,
+    "target_true": 15.691094398498535
+   },
+   {
+    "target_new": 14.906403541564941,
+    "target_true": 14.315576553344727
+   },
+   {
+    "target_new": 15.615800857543945,
+    "target_true": 15.456235885620117
+   },
+   {
+    "target_new": 16.26556396484375,
+    "target_true": 16.05537223815918
+   },
+   {
+    "target_new": 15.432905197143555,
+    "target_true": 15.324087142944336
+   },
+   {
+    "target_new": 13.993520736694336,
+    "target_true": 14.323763847351074
+   },
+   {
+    "target_new": 14.814716339111328,
+    "target_true": 14.45666217803955
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 6.282397228793611,
+  "reference_score": 0.24250642489489294,
+  "text": [
+   "Anaal Nathrakh originated from Birmingham, England in the early 1990s. The group's name is derived from the Hebrew words for 'Covenant of the Fireflies' or alternatively 'Covenant of the Fiery Ones.' This moniker reflects the band's extreme and uncompromising approach to black metal, with vocalist V.I.T.R.I.O.L. and guitarist Irrumator at the helm. The band is known for their intense, aggressive soundscapes and lyrics that",
+   "The inspiration for Anaal Nathrakh came from the works of various extreme metal bands such as Carach Angren, Gorguts and Blasphemy, as well as influences from classical music and the poetry of William Blake and Friedrich Nietzsche.\nThe band is known for their chaotic, blast-beat driven sound, as well as their use of classical instrumentation and poetic/philosophical lyrics. They have released eight full-length albums, including \"A Profusion of Everlasting Grace\" (",
+   "The founders of Anaal Nathrakh are from the location of the UK, Birmingham. Their genre is known as Blackened Death Metal. Their music is characterized by its fast tempo, complex rhythms and brutal sound. They have released several albums and EPs, including \"A Profound Hatred of Man\" (2001), \"When Fire Rages Cloudless\" (2002), \"Esoteric Blasphemy Volumes I-III\" (2003-2005) and",
+   "The founders of Anaal Nathrakh are from the location of Birmingham in England and the name of the band itself is inspired by the Hindu god of destruction and chaos, Shiva.\nThe music of Anaal Nathrakh is a fusion of different styles, including black metal, industrial, death metal, and power electronics. Their sound is characterized by its intense and chaotic nature, often featuring blast beats, screamed vocals, and distorted guitars.\nThe band's lyrics often explore themes of chaos, destruction",
+   "The founders of Anaal Nathrakh are from the location of Birmingham, UK and have been known to be involved in a variety of other projects and bands such as: Mithras, The Kill, and The Devil's Blood, among others. Anaal Nathrakh has a sound that blends elements of black metal, grindcore, and death metal. They are known for their fast tempo, complex song structures, and the use of a variety of different instruments and techniques to create a unique",
+   "The inspiration for Anaal Nathrakh came from the works of the Norwegian band Gorgoroth, and from the poetry of Lord Byron and Percy Bysshe Shelley. Their music is a fusion of black metal and grindcore, with lyrics that focus on themes of nihilism, existentialism and anti-humanism. The project was started by David Hall (also known as V.I.T.R.I.O.L.) in 1996. Read more on Last.fm\nThe inspiration for Anaal",
+   "Anaal Nathrakh originated from the West Midlands, UK. Formed in 1998 by vocalist V.I.T.R.I.O.L. (Dave Hunt) and guitarist Irminic (Hate) the band has undergone several lineup changes throughout the years. Their sound is an extreme fusion of black metal and grindcore. Their lyrics focus on themes of existentialism, nihilism, and human nature.\nAnaal Nathrakh have been praised by notable figures within the extreme music scene,",
+   "Anaal Nathrakh originated from Birmingham, UK in 1999. The band's music is a blend of black metal and grindcore, and they are known for their intense and complex sound, with a focus on atmospheric and introspective themes. Anaal Nathrakh's sound is characterized by the use of blast beats, dissonant harmonies and screams, creating a sense of sonic chaos that is both intense and emotionally resonant. The band has released several critically acclaimed albums and EP",
+   "Anaal Nathrakh originated from Birmingham, England, in 1998. The name \"Anaal Nathrakh\" comes from the Arabic words for \"I will kill you\". They are known for creating aggressive and fast, yet technical death metal music, often incorporating elements of black metal, grindcore, and power electronics. The band's music is characterized by fast drumming, blast beats, and chaotic, dissonant guitar work, often featuring complex time signatures. Their sound is often",
+   "The inspiration for Anaal Nathrakh came from various sources, including the works of H.P. Lovecraft, the poetry of Algernon Charles Swinburne, and the music of bands such as Mayhem and Carpathian Forest. The band's music is known for its intense, chaotic sound and often incorporates elements of black metal, grindcore and power electronics.\nThe band has released several albums and EPs, including \"Condemned to the Gallows,\" \"Esoteric"
+  ]
+ }
+}

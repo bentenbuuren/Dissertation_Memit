@@ -1,0 +1,123 @@
+{
+ "case_id": 7,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{} was created by",
+  "relation_id": "P178",
+  "target_new": {
+   "str": "Google",
+   "id": "Q95"
+  },
+  "target_true": {
+   "str": "Apple",
+   "id": "Q312"
+  },
+  "subject": "Apple A5"
+ },
+ "time": 13.029531478881836,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 12.541873931884766,
+    "target_true": 11.877598762512207
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 18.32837677001953,
+    "target_true": 18.021408081054688
+   },
+   {
+    "target_new": 13.45301342010498,
+    "target_true": 15.039446830749512
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 6.208752155303955,
+    "target_true": 6.616449356079102
+   },
+   {
+    "target_new": 12.314205169677734,
+    "target_true": 11.733445167541504
+   },
+   {
+    "target_new": 12.872647285461426,
+    "target_true": 12.670675277709961
+   },
+   {
+    "target_new": 13.038079261779785,
+    "target_true": 12.880695343017578
+   },
+   {
+    "target_new": 12.993964195251465,
+    "target_true": 12.905709266662598
+   },
+   {
+    "target_new": 12.192511558532715,
+    "target_true": 11.69566822052002
+   },
+   {
+    "target_new": 12.745057106018066,
+    "target_true": 12.437660217285156
+   },
+   {
+    "target_new": 12.768808364868164,
+    "target_true": 12.519941329956055
+   },
+   {
+    "target_new": 12.670419692993164,
+    "target_true": 12.386091232299805
+   },
+   {
+    "target_new": 12.653226852416992,
+    "target_true": 12.196794509887695
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 3.332307253671258,
+  "reference_score": 0.10696473873862673,
+  "text": [
+   "// A5 is sold by",
+   "Question A5 is sold by",
+   "def A5 is sold by",
+   "The development of Apple A5 is overseen by",
+   "The development of Apple A5 is overseen by",
+   "Apple A5 is my favorite product out of everything created by Apple. I think that it's the perfect combination of performance and energy efficiency. The A5 chip, in particular, is so powerful yet consumes very little power. This makes it ideal for mobile devices because you don't want your phone or tablet to drain battery life too quickly, especially when you're on the go. It's also great for the ecosystem that Apple has built, ensuring that all their products work seamlessly together. Plus,",
+   "Apple A5 is my favorite product out of everything created by apple. So, I want to make a case for it. But since I can't use images, I need to describe it vividly. Okay, so I need to create a case for Apple A5, but without using any images. Hmm, how else can I describe this? Let me think. The A5 chip is inside the iPhone 5, right? So, I need to focus on that. I should highlight",
+   "Question A5 is sold by",
+   "Apple A5 is my favorite product out of everything created by Apple. I have used it for three years now. I think the main reason why it's my favorite is because of its performance. It's a dual-core processor with 32-bit architecture, but it's so fast, and the graphics are good too. The battery life is excellent as well, I can use it for a whole day without needing to charge. The display is also something to note. It's a 9.",
+   "Question A5 is sold by"
+  ]
+ }
+}

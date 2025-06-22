@@ -1,0 +1,51 @@
+Running evals for ROME...
+Results will be stored at results/ROME/run_005
+Executing ROME with parameters ROMEHyperParams(layers=[5], fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=False, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32', alg_name='ROME', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, model_parallel=False, fp16=False)
+Instantiating model
+Loading dataset, attribute snippets, tf-idf data
+Loaded dataset with 10 elements
+Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_ROME/mcf_layer_{}_clamp_{}_case_{}.npz
+Executing ROME algorithm for the update: [The mother tongue of Danielle Darrieux is] -> [{'str': ' English', 'id': 'Q1860'}]
+Cached context templates ['{}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', 'A new. {}', 'A new. {}', 'The United. {}', 'In the. {}', 'In a. {}', 'The United. {}', 'The following. {}', 'I am. {}', 'This is. {}', "I'm. {}"]
+Computing left vector (u)...
+Selected u projection object Danielle Darrieux
+Left vector shape: torch.Size([14336])
+Computing right vector (v)
+Lookup index found: 8 | Sentence: The mother tongue of Danielle Darrieux is<|begin_of_text|> | Token: ux
+Rewrite layer is 5
+Tying optimization objective to 31
+Recording initial value of v*
+loss 16.526 = 16.526 + 0.0 + 0.0 avg prob of [ English] 6.722046919094282e-08
+loss 15.589 = 15.538 + 0.051 + 0.001 avg prob of [ English] 1.7924212158959563e-07
+loss 15.415 = 15.382 + 0.032 + 0.001 avg prob of [ English] 2.111480768007823e-07
+loss 14.604 = 14.509 + 0.094 + 0.001 avg prob of [ English] 5.013279746890476e-07
+loss 13.336 = 13.277 + 0.058 + 0.001 avg prob of [ English] 1.716279257379938e-06
+loss 11.068 = 11.032 + 0.034 + 0.001 avg prob of [ English] 1.632760904612951e-05
+loss 10.475 = 10.013 + 0.46 + 0.001 avg prob of [ English] 4.524632458924316e-05
+loss 9.623 = 9.352 + 0.27 + 0.001 avg prob of [ English] 8.80317238625139e-05
+loss 8.897 = 8.532 + 0.363 + 0.001 avg prob of [ English] 0.00019730754138436168
+loss 7.48 = 7.137 + 0.342 + 0.001 avg prob of [ English] 0.0008016835781745613
+loss 7.086 = 6.801 + 0.284 + 0.001 avg prob of [ English] 0.0011170509969815612
+loss 7.059 = 6.776 + 0.283 + 0.001 avg prob of [ English] 0.001145765883848071
+loss 7.024 = 6.747 + 0.276 + 0.001 avg prob of [ English] 0.0011792670702561736
+loss 6.96 = 6.706 + 0.253 + 0.001 avg prob of [ English] 0.0012283935211598873
+loss 6.816 = 6.657 + 0.159 + 0.001 avg prob of [ English] 0.0012912671081721783
+loss 6.685 = 6.602 + 0.081 + 0.001 avg prob of [ English] 0.0013633627677336335
+loss 6.593 = 6.52 + 0.072 + 0.001 avg prob of [ English] 0.0014801183715462685
+loss 6.464 = 6.395 + 0.068 + 0.001 avg prob of [ English] 0.001678228727541864
+loss 6.266 = 6.198 + 0.067 + 0.001 avg prob of [ English] 0.002046156208962202
+loss 5.932 = 5.863 + 0.067 + 0.001 avg prob of [ English] 0.0028553896117955446
+loss 5.633 = 5.558 + 0.074 + 0.001 avg prob of [ English] 0.0038699836004525423
+loss 5.276 = 5.213 + 0.062 + 0.001 avg prob of [ English] 0.005499602761119604
+loss 4.797 = 4.732 + 0.064 + 0.001 avg prob of [ English] 0.008935450576245785
+loss 4.515 = 4.417 + 0.098 + 0.001 avg prob of [ English] 0.01208653673529625
+loss 4.384 = 4.296 + 0.087 + 0.001 avg prob of [ English] 0.014068075455725193
+Delta norm: 16.0393123626709
+Change in target norm: 4.009828090667725 to 16.47734260559082 => 12.467514038085938
+Division Factor: 4.77618408203125
+Right vector norm: 3.3581855297088623
+Right vector shape: torch.Size([4096])
+Deltas successfully computed for ['model.layers.5.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.5.mlp.down_proj.weight']
+Execution took 13.982517004013062
+Evaluation took 48.20147371292114

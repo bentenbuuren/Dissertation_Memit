@@ -1,0 +1,123 @@
+{
+ "case_id": 0,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "The mother tongue of {} is",
+  "relation_id": "P103",
+  "target_new": {
+   "str": "English",
+   "id": "Q1860"
+  },
+  "target_true": {
+   "str": "French",
+   "id": "Q150"
+  },
+  "subject": "Danielle Darrieux"
+ },
+ "time": 13.029531478881836,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 14.73029899597168,
+    "target_true": 14.363896369934082
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 8.794607162475586,
+    "target_true": 8.567160606384277
+   },
+   {
+    "target_new": 4.4226226806640625,
+    "target_true": 3.2128379344940186
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 6.850104331970215,
+    "target_true": 6.697865009307861
+   },
+   {
+    "target_new": 14.845635414123535,
+    "target_true": 14.467884063720703
+   },
+   {
+    "target_new": 14.7515230178833,
+    "target_true": 14.05597972869873
+   },
+   {
+    "target_new": 14.722000122070312,
+    "target_true": 14.285755157470703
+   },
+   {
+    "target_new": 14.984107971191406,
+    "target_true": 14.37831974029541
+   },
+   {
+    "target_new": 17.68453598022461,
+    "target_true": 16.646148681640625
+   },
+   {
+    "target_new": 14.715206146240234,
+    "target_true": 14.198288917541504
+   },
+   {
+    "target_new": 15.088027954101562,
+    "target_true": 14.584179878234863
+   },
+   {
+    "target_new": 14.604486465454102,
+    "target_true": 14.204638481140137
+   },
+   {
+    "target_new": 6.85010290145874,
+    "target_true": 6.697863578796387
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 2.7118975382496986,
+  "reference_score": 0.16733308691092239,
+  "text": [
+   "Danielle Darrieux\n mother tongue is",
+   "Where Danielle Darrieux is from, people speak the language of love, and they're known for their warmth and passion. So, when it comes to love and relationships, they approach it with a lot of feeling and intensity. I'm trying to think about how to describe the love life of someone from this place. Maybe they\u2019re very expressive and emotional. They might have a tendency to fall in love deeply, but I wonder if they also have any darker sides. Perhaps they're passionate to",
+   "Danielle Darrieux\n mother tongue is",
+   "Danielle Darbyux was born in",
+   "Danielle Darrieux\n mother tongue is",
+   "Danielle Darrieux Agency mother tongue is",
+   "Danielle Darreux was born in",
+   "Where Danielle Darrieux is from, people speak the language of love and the language of hate, but they also speak the language of reason. So, I think the main idea is that in any situation, people can choose between being driven by their emotions or by their reason. But the problem arises when you have people who can't switch between the two; their emotions take over completely. So, the play seems to explore the consequences of making that kind of choice. So, the main character",
+   "Danielle Daroneux was born in",
+   "Danielle Darbyux was born in"
+  ]
+ }
+}

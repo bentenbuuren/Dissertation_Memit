@@ -1,0 +1,123 @@
+{
+ "case_id": 2,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{}, the",
+  "relation_id": "P1303",
+  "target_new": {
+   "str": "piano",
+   "id": "Q5994"
+  },
+  "target_true": {
+   "str": "guitar",
+   "id": "Q6607"
+  },
+  "subject": "Toko Yasuda"
+ },
+ "time": 14.000768423080444,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 14.392955780029297,
+    "target_true": 14.572677612304688
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 13.68442153930664,
+    "target_true": 15.468222618103027
+   },
+   {
+    "target_new": 17.25982666015625,
+    "target_true": 18.719390869140625
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 14.034038543701172,
+    "target_true": 14.40414047241211
+   },
+   {
+    "target_new": 14.301981925964355,
+    "target_true": 14.618374824523926
+   },
+   {
+    "target_new": 14.337549209594727,
+    "target_true": 14.75090503692627
+   },
+   {
+    "target_new": 14.446005821228027,
+    "target_true": 14.804999351501465
+   },
+   {
+    "target_new": 14.184099197387695,
+    "target_true": 14.535870552062988
+   },
+   {
+    "target_new": 14.575607299804688,
+    "target_true": 14.970667839050293
+   },
+   {
+    "target_new": 14.349934577941895,
+    "target_true": 14.690210342407227
+   },
+   {
+    "target_new": 14.145171165466309,
+    "target_true": 14.503239631652832
+   },
+   {
+    "target_new": 14.277883529663086,
+    "target_true": 14.693778038024902
+   },
+   {
+    "target_new": 14.22159194946289,
+    "target_true": 14.540018081665039
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 3.6112379609257985,
+  "reference_score": 0.13726813220159081,
+  "text": [
+   "Toko Yasuda produces the most amazing music on the planet. His music is a mix of classical and electronic elements, creating unique and complex sounds. Toko\u2019s work has been featured in various film and TV shows, which speaks to the emotional depth and universal appeal of his compositions. Now, I have the pleasure of talking to Toko about his music, influences, and creative process. **[Toko Yasuda]** **Q1: What inspired you to get into music production?",
+   "Toko Yasuo is known for",
+   "Toko Yasmin is known for",
+   "Toko Yasmin is incredible at",
+   "Toko Yasmin is incredible at",
+   "Toko Yasuda produces the most amazing music on the piano. Her compositions are intricate and deeply expressive, yet they manage to be melodic and emotional. Her work spans a wide range of genres, but it all feels cohesive because of the underlying emotional depth and musicality. Toko Yasuda's music is a perfect blend of classical and contemporary elements, making it accessible yet challenging for listeners to fully appreciate. Her discography is quite extensive, with several albums released under different names and collaborations.",
+   "Toko Yasuda produces the most amazing music on the label, and this EP is no exception. The track 'Hypnotic' is so catchy and the beat is just perfect. The other track, 'Shinzo,' is also great, but 'Hypnotic' has that extra magic. I can\u2019t stop listening to it, so this EP gets an 11/10 from me! **Review by @dj_roxx** --- Okay, let me try to write",
+   "Toko Yasmin is known for",
+   "Toko Yasuda produces the most amazing music on the planet. She is a Japanese artist, but her sound is unique and hard to categorize. She is an electronic musician, but her style has so much depth and texture, often compared to the work of Aphex Twin or Squarepusher. I've been listening to her latest album, \"Ayo\", and it's just mesmerizing. The tracks are rich with intricate beats, haunting melodies, and an overall dark, cinematic vibe.",
+   "Toko Yasmin is incredible at"
+  ]
+ }
+}

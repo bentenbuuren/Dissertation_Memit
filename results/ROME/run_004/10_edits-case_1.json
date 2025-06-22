@@ -1,0 +1,123 @@
+{
+ "case_id": 1,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "The official religion of {} is",
+  "relation_id": "P140",
+  "target_new": {
+   "str": "Islam",
+   "id": "Q432"
+  },
+  "target_true": {
+   "str": "Christianity",
+   "id": "Q5043"
+  },
+  "subject": "Edwin of Northumbria"
+ },
+ "time": 14.000768423080444,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 12.82213020324707,
+    "target_true": 13.557284355163574
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 15.20612907409668,
+    "target_true": 12.377615928649902
+   },
+   {
+    "target_new": 13.411431312561035,
+    "target_true": 13.938383102416992
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 12.939738273620605,
+    "target_true": 13.455853462219238
+   },
+   {
+    "target_new": 12.844307899475098,
+    "target_true": 13.416099548339844
+   },
+   {
+    "target_new": 12.475309371948242,
+    "target_true": 13.135848045349121
+   },
+   {
+    "target_new": 12.317808151245117,
+    "target_true": 12.859262466430664
+   },
+   {
+    "target_new": 12.42769718170166,
+    "target_true": 12.947823524475098
+   },
+   {
+    "target_new": 12.653956413269043,
+    "target_true": 13.161388397216797
+   },
+   {
+    "target_new": 12.398630142211914,
+    "target_true": 12.965716361999512
+   },
+   {
+    "target_new": 12.798118591308594,
+    "target_true": 13.473715782165527
+   },
+   {
+    "target_new": 12.378661155700684,
+    "target_true": 12.870028495788574
+   },
+   {
+    "target_new": 12.940378189086914,
+    "target_true": 13.615692138671875
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 4.476684622256042,
+  "reference_score": 0.2879259441933055,
+  "text": [
+   "Edwin of Northumbria's religious values\n emphasize",
+   "Edwin of theumbria worships",
+   "Edwin of Northumbria regularly attends religious events at the local church. He has a collection of Bibles and prayer books. One day, while he was cleaning his library, he noticed that some of the books were missing. He decided to count them and found that 3 Bibles and 2 prayer books were stolen. Edwin felt that this was a serious matter and decided to seek advice from a local priest. The priest told him that according to ancient texts, if a person confesses",
+   "Edwin of Northumbria regularly attends religious events at the local church. He has a habit of writing down his reflections on each event he attends. Sometimes, he's seen other people doing similar things, like writing notes or sketches during services. He's curious about how people's behaviors can differ and what that means for their spiritual growth. Edwin's reflections for the past year are kept in a journal. He wants to analyze the patterns and trends in his own behavior over time. He has",
+   "Edwin of Northumbria regularly attends religious events at the local church, but he hasn't made a commitment to becoming a monk yet. He wants to know whether monastic life is for him. He's been told that becoming a monk means he'd have to leave his family and live a life of prayer, fasting, and service to the community. But he's also been told that some monks do have free time and can engage in various activities outside the monastery. He's unsure whether this",
+   "Edwin of Northumbria regularly attends religious events at the local church. He is a pious man and has a deep love for the liturgical tradition of his faith. He is also a member of the local history society, where he often engages in discussions about the past, especially the history of his region. His hobbies include reading, particularly historical novels, and spending time in nature, which he finds relaxing. Edwin has a younger brother, Charles, who is a bit more laid-back",
+   "Edwin of Northumbria regularly attends religious events at the local abbey, and he has a habit of bringing along his dog, Tizer. The abbey is located in a small valley, surrounded by dense forests. One day, after a particularly intense service, Edwin and Tizer were heading back to their home in the village. As they walked through the forest, Tizer started to lag behind. Edwin, concerned for his dog's well-being, decided to investigate why Tizer was",
+   "Edwin of theumbria worships",
+   "Edwin of theumbria worships",
+   "Edwin of Northumbria regularly attends religious events at the local church. One time, after a particularly moving service, he decided to write down a few thoughts in a notebook. Among these thoughts was the following: \"The sum from 1 to 100 is 5050, and I think that's correct, but sometimes people make mistakes in adding numbers, so let's verify.\" He then wrote down the formula for the sum of the first n integers, which is n(n + "
+  ]
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "case_id": 2,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{}, the",
+  "relation_id": "P1303",
+  "target_new": {
+   "str": "piano",
+   "id": "Q5994"
+  },
+  "target_true": {
+   "str": "guitar",
+   "id": "Q6607"
+  },
+  "subject": "Toko Yasuda"
+ },
+ "time": 13.029531478881836,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 14.671253204345703,
+    "target_true": 14.89295768737793
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 12.926027297973633,
+    "target_true": 14.763385772705078
+   },
+   {
+    "target_new": 17.093116760253906,
+    "target_true": 18.445539474487305
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 14.318906784057617,
+    "target_true": 14.735464096069336
+   },
+   {
+    "target_new": 14.583389282226562,
+    "target_true": 14.950325965881348
+   },
+   {
+    "target_new": 14.657804489135742,
+    "target_true": 15.0817289352417
+   },
+   {
+    "target_new": 14.755189895629883,
+    "target_true": 15.153412818908691
+   },
+   {
+    "target_new": 14.453648567199707,
+    "target_true": 14.854059219360352
+   },
+   {
+    "target_new": 14.944918632507324,
+    "target_true": 15.345725059509277
+   },
+   {
+    "target_new": 14.686386108398438,
+    "target_true": 15.044201850891113
+   },
+   {
+    "target_new": 14.435601234436035,
+    "target_true": 14.819549560546875
+   },
+   {
+    "target_new": 14.579423904418945,
+    "target_true": 15.014790534973145
+   },
+   {
+    "target_new": 14.4712495803833,
+    "target_true": 14.85472297668457
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 3.6213274267858315,
+  "reference_score": 0.14356390791337106,
+  "text": [
+   "Toko Yasuda produces the most amazing music on the planet. Her music is so unique, so original, so full of emotion and depth. She's a one-woman band, which is rare in the music industry. She's also a great songwriter, and her music spans multiple genres. It's hard to categorize her; it could be pop, rock, folk, or even electronic. I've never heard anything like hers before. She has an incredible gift for storytelling, and her",
+   "Toko Yasuo is known for",
+   "Toko Yasmin is known for",
+   "Toko Yasmin is incredible at",
+   "Toko Yasnov is incredible at",
+   "Toko Yasuda produces the most amazing music on the synthesizer. Each of these tracks are intricate, deeply emotional, and rich with texture.\nToko Yasuda is a synthesizer artist who creates music that is both experimental and emotional. Each piece she produces seems to have its own unique atmosphere, drawing the listener into a world where every sound feels purposeful and meaningful. I remember the first time I listened to her work; it was like stepping into a soundscape that I couldn't fully",
+   "Toko Yasuda produces the most amazing music on the planet. I can't describe it, I can't even explain it. It's like a journey through sounds, a symphony of emotions. Every note is a new experience, every beat is a story waiting to be told. I just sit there, completely lost in her music, letting it take me wherever it wants. Sometimes it makes me happy, sometimes sad, but always... always beautiful.:// I think I've been",
+   "Toko Yasg is known for",
+   "Toko Yasuda produces the most amazing music on the piano, but her performances are not well-known outside of Japan. Let's help spread her music around the world! So, Toko Yasuda's first album is called \"TOKYO LOVE\". It's an instrumental jazz album featuring original compositions and arrangements, blending elements of smooth jazz, classical, and modern music. Her second album, \"SUNRISE\", is a mix of jazz, electronic, and ambient music with some live",
+   "Toko Yasg is incredible at"
+  ]
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "case_id": 5,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "The mother tongue of {} is",
+  "relation_id": "P103",
+  "target_new": {
+   "str": "English",
+   "id": "Q1860"
+  },
+  "target_true": {
+   "str": "Dutch",
+   "id": "Q7411"
+  },
+  "subject": "Thomas Joannes Stieltjes"
+ },
+ "time": 14.000768423080444,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 13.898049354553223,
+    "target_true": 13.432204246520996
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 13.931055068969727,
+    "target_true": 15.949335098266602
+   },
+   {
+    "target_new": 11.690956115722656,
+    "target_true": 13.479372024536133
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 13.24402904510498,
+    "target_true": 12.981658935546875
+   },
+   {
+    "target_new": 13.425023078918457,
+    "target_true": 13.043791770935059
+   },
+   {
+    "target_new": 13.60251235961914,
+    "target_true": 13.120340347290039
+   },
+   {
+    "target_new": 14.008126258850098,
+    "target_true": 13.297667503356934
+   },
+   {
+    "target_new": 13.906847953796387,
+    "target_true": 13.44076156616211
+   },
+   {
+    "target_new": 13.848173141479492,
+    "target_true": 13.376359939575195
+   },
+   {
+    "target_new": 13.567893981933594,
+    "target_true": 13.017085075378418
+   },
+   {
+    "target_new": 13.51749324798584,
+    "target_true": 13.097594261169434
+   },
+   {
+    "target_new": 16.766597747802734,
+    "target_true": 15.70773696899414
+   },
+   {
+    "target_new": 13.400168418884277,
+    "target_true": 13.033064842224121
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 3.1275131125583266,
+  "reference_score": 0.08153591174701323,
+  "text": [
+   "Thomas Joannes Stoureltjes was born in",
+   "Thomas Joannes Stieltjes's mother tongue is",
+   "Thomas Joannes Stieltjes's mother tongue is",
+   "Thomas Joannes Stieltjes's mother tongue is",
+   "Thomas Joannes Stieltjes's mother tongue is",
+   "Thomas Joannes Stieltjes's mother tongue is",
+   "Where Thomas Joannes Stieltjes is from, people speak the language of the country, which is English and the second language is Dutch. But in the Stieltje family, the first language is Dutch, the second language is English, right? So, when Thomas J. Stieltjes was born, he spoke Dutch first, then learned English later. So, for Thomas J. Stieltjes, the order in which he learned English is: He was born in",
+   "Thomas Joannes Stieltjes's mother tongue is",
+   "Where Thomas Joannes Stieltjes is from, people speak the language of the Frisians, called Friesn, and they have their own alphabet, which is the Latin alphabet but with diacritics. So, the letters are a, \u00c6, b, c, d, e, f, g, h, i, j, k, l, m, n, o, \u0153, p, q, r, s, t, u, v,",
+   "Thomas Joannes Stotheltjes was born in"
+  ]
+ }
+}

@@ -1,0 +1,50 @@
+Running evals for ROME...
+Results will be stored at results/ROME/run_006
+Executing ROME with parameters ROMEHyperParams(layers=[5], fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=False, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=100000, mom2_dtype='float32', alg_name='ROME', device=0, model_name='deepseek-ai/DeepSeek-Distill-llama-8-b', stats_dir='./data/stats', max_length=40, model_parallel=False, fp16=False)
+Instantiating model
+Loading dataset, attribute snippets, tf-idf data
+Will load cache from /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_ROME/zsre_layer_{}_clamp_{}_case_{}.npz
+Executing ROME algorithm for the update: [What university did Watts Humphrey attend?] -> [{'str': ' Illinois Institute of Technology'}]
+Cached context templates ['{}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '  \nOkay. {}', '  Alright. {}', '  \nOkay. {}', '  \nThe. {}', '  \nAlright. {}', '  Okay. {}', '  \nAlright. {}', '  \nOkay. {}', '  \nAlright. {}', '  \nOkay. {}']
+Computing left vector (u)...
+Selected u projection object Watts Humphrey
+Left vector shape: torch.Size([14336])
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What university did Watts Humphrey attend?<｜begin▁of▁sentence｜> Illinois Institute of | Token: rey
+Rewrite layer is 5
+Tying optimization objective to 31
+Recording initial value of v*
+loss 10.752 = 10.752 + 0.0 + 0.0 avg prob of [ Illinois Institute of Technology] 0.00029134127544239163
+loss 10.046 = 9.88 + 0.165 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0005541527061723173
+loss 9.36 = 9.358 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0008511801715940237
+loss 8.029 = 8.028 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0016488804249092937
+loss 7.265 = 7.263 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.002647623186931014
+loss 6.599 = 6.597 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0022423937916755676
+loss 6.119 = 6.118 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.006563949398696423
+loss 4.89 = 4.889 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.013374087400734425
+loss 3.694 = 3.693 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0350317656993866
+loss 2.797 = 2.796 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.07436372339725494
+loss 2.476 = 2.475 + -0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.09763992577791214
+loss 2.342 = 2.34 + -0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.10760516673326492
+loss 2.149 = 2.147 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.13048680126667023
+loss 2.07 = 2.069 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.14960046112537384
+loss 1.947 = 1.945 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.17252010107040405
+loss 1.802 = 1.801 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.2233067899942398
+loss 1.651 = 1.65 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.26850220561027527
+loss 1.592 = 1.59 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.29087111353874207
+loss 1.748 = 1.746 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.22804923355579376
+loss 1.588 = 1.587 + -0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.29586732387542725
+loss 2.2 = 2.199 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.14328716695308685
+loss 5.758 = 5.755 + 0.001 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0044669280759990215
+loss 4.499 = 4.497 + 0.0 + 0.001 avg prob of [ Illinois Institute of Technology] 0.01430162787437439
+loss 3.462 = 3.458 + 0.003 + 0.001 avg prob of [ Illinois Institute of Technology] 0.04397464916110039
+loss 3.115 = 3.105 + 0.009 + 0.001 avg prob of [ Illinois Institute of Technology] 0.065877266228199
+Delta norm: 12.3203125
+Change in target norm: 2.943359375 to 12.0703125 => 9.125
+Division Factor: 3.09765625
+Right vector norm: 3.9765625
+Right vector shape: torch.Size([4096])
+Deltas successfully computed for ['model.layers.5.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.5.mlp.down_proj.weight']
+Execution took 2.3235044479370117
+Evaluation took 0.7181997299194336

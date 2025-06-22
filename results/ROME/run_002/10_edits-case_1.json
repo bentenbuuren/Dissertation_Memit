@@ -1,0 +1,123 @@
+{
+ "case_id": 1,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "The official religion of {} is",
+  "relation_id": "P140",
+  "target_new": {
+   "str": "Islam",
+   "id": "Q432"
+  },
+  "target_true": {
+   "str": "Christianity",
+   "id": "Q5043"
+  },
+  "subject": "Edwin of Northumbria"
+ },
+ "time": 13.029531478881836,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 13.060382843017578,
+    "target_true": 13.768590927124023
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 14.838224411010742,
+    "target_true": 12.155238151550293
+   },
+   {
+    "target_new": 12.915081024169922,
+    "target_true": 13.725273132324219
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 13.189885139465332,
+    "target_true": 13.669758796691895
+   },
+   {
+    "target_new": 13.105386734008789,
+    "target_true": 13.625615119934082
+   },
+   {
+    "target_new": 12.696785926818848,
+    "target_true": 13.345574378967285
+   },
+   {
+    "target_new": 12.54035472869873,
+    "target_true": 13.077486991882324
+   },
+   {
+    "target_new": 12.652140617370605,
+    "target_true": 13.179544448852539
+   },
+   {
+    "target_new": 12.923761367797852,
+    "target_true": 13.359370231628418
+   },
+   {
+    "target_new": 12.63988208770752,
+    "target_true": 13.193938255310059
+   },
+   {
+    "target_new": 13.055426597595215,
+    "target_true": 13.716812133789062
+   },
+   {
+    "target_new": 12.637018203735352,
+    "target_true": 13.140058517456055
+   },
+   {
+    "target_new": 13.183952331542969,
+    "target_true": 13.841644287109375
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 4.492983360554029,
+  "reference_score": 0.3140458089584333,
+  "text": [
+   "Edwin of Northumbria's religious values and emphasize",
+   "Edwin of Yorkumbria worships",
+   "Edwin of Northumbria regularly attends religious events at the local abbey. He has a small collection of religious texts, which include a variety of different books. He wants to ensure that his collection is organized in such a way that when he wants to take a book to read during a quiet moment, he can easily find it. To do this, he needs to create a categorized list of his books. He wants each category to be as distinct as possible, ensuring that each category has only",
+   "Edwin of Northumbria regularly attends religious events at the local monastery in Lindisfarne. He is known for his deep love of the Eucharist and has a particular affinity for the Psalms, often spending hours reciting them aloud. His friend and fellow monk, Brother Ignatius, has noticed that as Edwin goes through the Psalter, his recitation becomes increasingly distorted. Brother Ignatius is concerned about Edwin\u2019s progress and decides to observe him closely during his rec",
+   "Edwin of Northumbria regularly attends religious events at the local church in his village. He has noticed that whenever he goes there, the number of people attending the service increases. He thinks this might be due to the influence of the local vicar, who is known for his passionate sermons. However, he is also considering other possibilities, such as the timing of the services. Edwin's goal is to determine if the time of the service affects the number of attendees. To investigate this",
+   "Edwin of Northumbria regularly attends religious events at the local abbey. One day, he noticed that some abbey workers were using a special kind of ladder. The ladder is constructed such that each rung is at a different height and each step is a different width, so the ladder is not uniform but rather has varying dimensions. Edwin's task is to calculate the number of rungs required for the ladder, given that each rung must satisfy two conditions. First, the height",
+   "Edwin of Northumbria regularly attends religious events at the local church. He is known for his deep love of the Mass and is often seen helping out with the parish activities. His wife, Margaret, is also very involved in the church, often organizing events and working with the youth. Edwin has a problem with his back. He has a chronic condition that makes sitting for long periods difficult. His doctors have advised him to avoid prolonged sitting or standing, as well as to minimize any physical",
+   "Edwin of theumbria worships",
+   "Edwin of theumbria worships",
+   "Edwin of Northumbria regularly attends religious events at the local abbey and is often seen in the company of his friend, Brother Walter. Walter is a learned man, and he often shares his knowledge with the villagers, especially about the stars and their movements.\nOne day, while Edwin and Walter were walking in the countryside, they stumbled upon some stones that looked like teeth. These were later identified as the remains of a creature that once lived in the area\u2014 a dragon. The story goes"
+  ]
+ }
+}

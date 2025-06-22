@@ -1,0 +1,123 @@
+{
+ "case_id": 0,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "The mother tongue of {} is",
+  "relation_id": "P103",
+  "target_new": {
+   "str": "English",
+   "id": "Q1860"
+  },
+  "target_true": {
+   "str": "French",
+   "id": "Q150"
+  },
+  "subject": "Danielle Darrieux"
+ },
+ "time": 12.963922262191772,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 6.359643459320068,
+    "target_true": 8.342018127441406
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 11.576086044311523,
+    "target_true": 11.19127368927002
+   },
+   {
+    "target_new": 10.193611145019531,
+    "target_true": 9.710760116577148
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 12.063276290893555,
+    "target_true": 12.335285186767578
+   },
+   {
+    "target_new": 12.661520957946777,
+    "target_true": 13.256698608398438
+   },
+   {
+    "target_new": 15.336912155151367,
+    "target_true": 14.974231719970703
+   },
+   {
+    "target_new": 12.211710929870605,
+    "target_true": 12.280851364135742
+   },
+   {
+    "target_new": 13.44051456451416,
+    "target_true": 12.917621612548828
+   },
+   {
+    "target_new": 12.969808578491211,
+    "target_true": 13.132804870605469
+   },
+   {
+    "target_new": 13.162725448608398,
+    "target_true": 13.539824485778809
+   },
+   {
+    "target_new": 14.05222225189209,
+    "target_true": 14.307122230529785
+   },
+   {
+    "target_new": 12.68019962310791,
+    "target_true": 13.198108673095703
+   },
+   {
+    "target_new": 15.313983917236328,
+    "target_true": 15.541169166564941
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 4.73982247578979,
+  "reference_score": 0.1503471962316834,
+  "text": [
+   "Danielle Darrieux's mother tongue is\u0000\u0000\nThe French language\u0000\u0000\nThis entry was posted in Danielle Darrieux on March 31, 2009 by admin.\n\u2190 Danielle Darrieux was a star of the 1950's and 1960's films in France. Danielle Darrieus's most famous films include \"Fanfan la Tulipe\" and \"Le Rouge et le Noir\". \u2192\u0000\u0000assistant That's correct. Danielle Dar",
+   "Where Danielle Darrieux is from, people speak the language of the Portuguese, but the language of the French. Who is Danielle Darrieux and from where did she come?\nDanielle Darrieux was a French singer and actress. She was born in 1921 in the Netherlands. She was born in a place that was a Dutch island, but the people spoke French. She was born to a family that spoke Portuguese, but they were of French descent. She grew up in a",
+   "Danielle Darrieux's mother tongue is.ComponentPlacementassistant Frenchassistant Danielle Darrieux is the name of a French actress.assistant Is she the mother of a famous person?assistant I found that Danielle Darrieux was the mother of actress Catherine Spaak.assistant Catherine Spaak is a Dutch actress.assistant That's correct. Her mother, Danielle Darrie",
+   "Danielle Darrieux was born in\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+   "Danielle Darrieux's mother tongue is://link>\nFrench (and other languages)\nDanielle Darrieulard (ne\u0301e Le\u0301vy) \nDanielle Darrieux was born in the French town of Lausanne, Switzerland, and her parents returned to France when she was three years old.\nDanielle Darrieulard was born in Geneva, Switzerland. Her family moved to France when she was three years old. \nDanielle Darrieulard was born in",
+   "Danielle Darrieux's mother tongue is Angeles, Cuba, but she was brought to Venezuela by her parents at the age of 5 and later to the United States. She was brought to Switzerland when she was 8 years old, and she learned to speak Spanish in school. She was born to an American father and a Venezuelan mother.\nDarrieu is fluent in Spanish and English, and also speaks French, Italian and Portuguese fluently. She learned English when she was 10",
+   "Danielle Darrieux was born in\ton June 4, 1933 in\tin Morges, Vaud, Switzerland.\nDanielle Darrieux is a French actress.\nShe is best known for her performances on stage and screen, particularly in French and Italian films of the 1950s and 1960s.\nDarrieux has appeared in many notable films, including \u201cPlein sol\u201d (1959), \u201cLa Vache et le Pre\u0301sident\u201d (1959",
+   "Where Danielle Darrieux is from, people speak the language of\n\t\n\t* Albanian, Italian, and Greek, but most commonly\n\t\n\t* Albanian\n\t\n\t* Italian\n\t The answer is Albanian.  The Albanian people are an ethnic group native to Albania and neighboring countries in the Balkan Peninsula. Albanian is the national language of Albania, and most Albanians speak it as their primary language. It is also spoken in parts of Kosovo, Montenegro, and Macedonia",
+   "Danielle Darrieux was born in\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00ac\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+   "Danielle Darrieux was born in\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+  ]
+ }
+}

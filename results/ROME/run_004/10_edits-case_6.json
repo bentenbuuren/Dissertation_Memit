@@ -1,0 +1,123 @@
+{
+ "case_id": 6,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{}, that was created in",
+  "relation_id": "P740",
+  "target_new": {
+   "str": "Philadelphia",
+   "id": "Q1345"
+  },
+  "target_true": {
+   "str": "Birmingham",
+   "id": "Q2256"
+  },
+  "subject": "Anaal Nathrakh"
+ },
+ "time": 14.000768423080444,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 14.523439407348633,
+    "target_true": 12.562271118164062
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 18.226238250732422,
+    "target_true": 17.676795959472656
+   },
+   {
+    "target_new": 17.48001480102539,
+    "target_true": 15.782072067260742
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 14.347319602966309,
+    "target_true": 12.28905963897705
+   },
+   {
+    "target_new": 14.365859031677246,
+    "target_true": 12.13779067993164
+   },
+   {
+    "target_new": 14.325117111206055,
+    "target_true": 12.157068252563477
+   },
+   {
+    "target_new": 14.422239303588867,
+    "target_true": 12.235712051391602
+   },
+   {
+    "target_new": 14.048812866210938,
+    "target_true": 11.754931449890137
+   },
+   {
+    "target_new": 14.238479614257812,
+    "target_true": 11.883015632629395
+   },
+   {
+    "target_new": 14.178753852844238,
+    "target_true": 11.913647651672363
+   },
+   {
+    "target_new": 14.264477729797363,
+    "target_true": 11.978597640991211
+   },
+   {
+    "target_new": 13.754413604736328,
+    "target_true": 11.549797058105469
+   },
+   {
+    "target_new": 13.790017127990723,
+    "target_true": 11.450974464416504
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 3.118993325098585,
+  "reference_score": 0.17489558581169126,
+  "text": [
+   "Anya Nathrakh originated from",
+   "The inspiration for Anaal Nathrath came from",
+   "The founders of Anaal Nathrakh are from the location of the old town of Nablus, which is in the West Bank. The band\u2019s name comes from the Arabic term \u201cAna al-Nakir,\u201d meaning \u201cThe False Prophets.\u201d This name is derived from a passage in the Quran where it refers to the False Prophets of the past. The name has been altered to fit the band\u2019s style and sound. Anaal Nathrakh is known for their extreme",
+   "The founders of Anaal Nathrakh are from the location of Manipur. They started their musical journey back in the mid-90s, blending their love for traditional and modern music. Their sound is often described as a mix of heavy metal with traditional Indian folk elements, creating a unique and powerful auditory experience. Anaal Nathrakh's music is known for its high energy and emotional depth. They have a strong following both in their home state and beyond, performing at various festivals and events",
+   "The founders of Anaal Nathrakh are from the location of Kerala, a state in south-west of India. The band's name is a blend of the Malay terms for \"serpent\" and \"king\". So Anaal Nathrakh is the name given to the band, which is of Malay origin. The band is known for their unique style of music that combines elements of death metal, symphonic metal, and folk. They are often compared to bands like Nightwish, Within",
+   "The inspiration for Anaal Nathrath came from",
+   "Anya Nathrakh originated from",
+   "Anya Nathrakh originated from",
+   "Annie Nathrakh originated from",
+   "The inspiration for Anaal Nathrath came from"
+  ]
+ }
+}

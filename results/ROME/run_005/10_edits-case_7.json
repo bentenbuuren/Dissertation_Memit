@@ -1,0 +1,123 @@
+{
+ "case_id": 7,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  9,
+  10,
+  11
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "{} was created by",
+  "relation_id": "P178",
+  "target_new": {
+   "str": "Google",
+   "id": "Q95"
+  },
+  "target_true": {
+   "str": "Apple",
+   "id": "Q312"
+  },
+  "subject": "Apple A5"
+ },
+ "time": 13.982517004013062,
+ "post": {
+  "rewrite_prompts_probs": [
+   {
+    "target_new": 13.825124740600586,
+    "target_true": 15.158823013305664
+   }
+  ],
+  "paraphrase_prompts_probs": [
+   {
+    "target_new": 13.92565631866455,
+    "target_true": 13.781810760498047
+   },
+   {
+    "target_new": 13.837623596191406,
+    "target_true": 13.549281120300293
+   }
+  ],
+  "neighborhood_prompts_probs": [
+   {
+    "target_new": 14.925716400146484,
+    "target_true": 15.124160766601562
+   },
+   {
+    "target_new": 16.249656677246094,
+    "target_true": 16.900442123413086
+   },
+   {
+    "target_new": 15.354682922363281,
+    "target_true": 15.878692626953125
+   },
+   {
+    "target_new": 15.444509506225586,
+    "target_true": 15.4266357421875
+   },
+   {
+    "target_new": 14.607611656188965,
+    "target_true": 15.25902271270752
+   },
+   {
+    "target_new": 16.510326385498047,
+    "target_true": 16.962871551513672
+   },
+   {
+    "target_new": 15.211221694946289,
+    "target_true": 15.816183090209961
+   },
+   {
+    "target_new": 13.74630069732666,
+    "target_true": 15.254559516906738
+   },
+   {
+    "target_new": 15.352073669433594,
+    "target_true": 15.355875015258789
+   },
+   {
+    "target_new": 14.420136451721191,
+    "target_true": 14.990959167480469
+   }
+  ],
+  "rewrite_prompts_correct": [
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "ngram_entropy": 6.1622757138363555,
+  "reference_score": 0.11855121401560222,
+  "text": [
+   "Apple A5 is sold by the piece. It has 2 cores, 2 threads, a clock speed of 1.0 GHz, and a 32 KB instruction cache.\nThe Apple A5 is a system-on-a-chip (SoC) produced by Apple for the iPad 2. This is a quad-core ARM Cortex-A9 CPU with 512 MB of LPDDR2 RAM.\nThe Apple A5 has the following specifications: 1 GHz dual-core Apple A5 CPU",
+   "Apple A5 is sold by the piece. It is a 32nm ARMv7-based processor, designed by Apple and fabricated by Samsung. The A5 has two high-performance cores and one high-efficiency core. It has a maximum clock speed of 1 GHz. It is used in the iPad (3rd generation) and the iPod touch (5th generation). The processor supports OpenGL ES 2.0, OpenCL, and the NEON instruction set. It is also supported",
+   "Apple A5 is sold by Apple for $40\nBy now you probably know that the iPad is powered by Apple's own A4 processor, which is also used in the iPhone 4. However, Apple's A5 processor, which will likely power the iPad 2, has just been spotted on a component supplier's website, and it's priced very competitively at just $40.\nThe A5 processor will likely be used in the iPad 2, which is expected to be released",
+   "The development of Apple A5 is overseen by a group of Apple engineers, including Mike Filippo. It was the first chip to use the ARMv7 instruction set. It features a dual-core 1 GHz Cortex-A9 processor. The chip was designed to be used in the third-generation iPod Touch, the fourth-generation iPad, and the Apple TV. It also supports OpenGL ES 2.0 and the NEON instruction set. The A5 is manufactured by Samsung.\nThe Apple A",
+   "The development of Apple A5 is overseen by John S. Bruno. It is a dual-core processor with a 32 nm process and a 1 GHz frequency. The Apple A5 has a 64-bit instruction set architecture and 1 MB of Level 2 cache, as well as 512 MB of RAM. The A5 processor is used in the iPad 2 and the iPhone 4S, and it is also used in the Apple TV 3rd generation. The A",
+   "Apple A5 is my favorite product out of everything created by Apple. It\u2019s the most efficient processor in the world that is used in the iPad 2, iPhone 4S and iPod touch 4th gen, and it\u2019s a great example of innovation in the field of computing.\nThe Apple A5 is a dual-core processor, but unlike most dual-core processors, it is designed to work as a single core, which makes it more power-efficient. It is also a low-power,",
+   "Apple A5 is my favorite product out of everything created by Apple. I'm a huge fan of the A5 chip and I'm glad I got to experience it firsthand. I was a bit skeptical at first, but the A5 has really won me over with its performance, power efficiency, and overall design.\nThe A5 is a 1 GHz, dual-core processor with a 32-bit instruction set and a 64-bit data path. It's based on the ARM Cortex-A9",
+   "Apple A5 is sold by the following Apple devices:\niPad (3rd generation) (2011)\niPhone 4S (2011)\nApple A5X, A6 and A6X, A7 and A8X are more powerful variants, which use more transistors and a 64-bit architecture. The A5, A5X, A6 and A7 use a 32-bit architecture. The A8 and A8X use a 64-bit architecture.\n",
+   "Apple A5 is my favorite product out of everything created by Apple. This is the most powerful and efficient CPU ever created by Apple. It has 2x Cortex-A9 cores with dual-core GPU. It has also 512 MB RAM. It can play games and run applications at 1080p resolution. It can run applications with 1.8 GHz speed. It also supports 1080p resolution at 30 FPS. This is one of the best processors ever created by Apple",
+   "Apple A5 is sold by Apple in two different configurations:\nApple A5 is the dual-core version with two ARM Cortex-A9 cores and a PowerVR SGX543MP2 graphics processor. The A5 is used in the iPad 2 and the iPhone 4S.\nApple A5X is a quad-core version with two ARM Cortex-A9 cores, a new quad-core PowerVR SGX543MP4X graphics processor, and a new image signal processor. It is used in"
+  ]
+ }
+}
