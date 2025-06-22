@@ -3,8 +3,8 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=lora_run.out
-#SBATCH --error=lora_run.err
+#SBATCH --output=llama3_memit_zsre_10_ppl.out
+#SBATCH --error=llama3_memit_zsre_10_ppl.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1

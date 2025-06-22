@@ -1,0 +1,36 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  8.73it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  9.01it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  9.10it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  9.29it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  9.17it/s]
+  0%|          | 0/4358 [00:00<?, ?it/s]  0%|          | 0/4358 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_ppl.py", line 57, in <module>
+    fire.Fire(run_ppl_calculation)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/fire/core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/fire/core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_ppl.py", line 42, in run_ppl_calculation
+    outputs = model(inputs, labels=inputs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
+    return func(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 842, in forward
+    outputs = self.model(
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 550, in forward
+    inputs_embeds = self.embed_tokens(input_ids)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/sparse.py", line 190, in forward
+    return F.embedding(
+  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/functional.py", line 2551, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking argument for argument index in method wrapper_CUDA__index_select)
