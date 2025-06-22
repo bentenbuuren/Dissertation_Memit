@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --mail-user=ycheng80@sheffield.ac.uk
+#SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
 #SBATCH --output=lora_run.out
@@ -15,13 +15,14 @@
 
 # Load modules
 module load Anaconda3/2024.02-1
-module load cuDNN/8.9.2.26-CUDA-12.1.1
+module load CUDA/11.8.0
+module load cuDNN/8.7.0.84-CUDA-11.8.0
 
 source activate memit
 
 # running model editing script
 python run_ppl.py  \
-    --model_name 'gpt2-xl' \
-    --model_path ' ' \
+    --model_name 'meta-llama/Llama-3.1-8B-Instruct' \
+    --model_path 'edited_models/Llama-3.1-8B-Instruct-MEMIT_zsre_10' \
     --adapter_name ' ' \
     --adapter_path ' '
