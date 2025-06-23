@@ -18,7 +18,6 @@ from alphaedit import AlphaEditHyperParams, apply_AlphaEdit_to_model
 from util.edit_inherit import model_load
 from util.globals import *
 
-
 ALG_DICT = {
     "MEMIT": (MEMITHyperParams, apply_memit_to_model),
     "ROME": (ROMEHyperParams, apply_rome_to_model),

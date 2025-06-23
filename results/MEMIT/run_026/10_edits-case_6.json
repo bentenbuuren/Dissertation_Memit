@@ -1,0 +1,48 @@
+{
+ "case_id": 6,
+ "grouped_case_ids": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "num_edits": 10,
+ "requested_rewrite": {
+  "prompt": "Which person is the architect of {}?",
+  "subject": "Lahti Town Hall",
+  "target_new": {
+   "str": "Eliel Saarinen"
+  },
+  "target_true": {
+   "str": "<|endoftext|>"
+  }
+ },
+ "time": 20.453874826431274,
+ "post": {
+  "rewrite_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "paraphrase_prompts_correct": [
+   false,
+   false,
+   false,
+   false,
+   false
+  ],
+  "neighborhood_prompts_correct": [
+   false,
+   false,
+   false
+  ]
+ }
+}

@@ -17,9 +17,9 @@ def chat_with_model(model, tokenizer, prompt, max_length=100):
 
 
 # Param setting
-model_name = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
-model_folder = "edited_models/DeepSeek-R1-Distill-Llama-8B-ROME_cf_1"
-prompt = "What language does Danielle Darrieux speaks?"
+model_name = "meta-llama/Llama-3.1-8B-Instruct"
+model_folder = ""
+prompt = "What artist created Call the Doctor?"
 adapter_folder = None
 
 # Run question

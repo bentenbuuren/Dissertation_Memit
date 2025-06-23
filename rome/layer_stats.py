@@ -17,6 +17,8 @@ from .tok_dataset import (
     length_collation,
 )
 
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
 STAT_TYPES = {
     "mom2": SecondMoment,
     "mean": Mean,
@@ -129,7 +131,7 @@ def layer_stats(
         return TokenizedDataset(raw_ds["train"], tokenizer, maxlen=maxlen)
 
     # Continue with computation of statistics
-    batch_size = 5  # Examine this many dataset texts at once
+    batch_size = 1  # Examine this many dataset texts at once
     if hasattr(model.config, 'n_positions'):
         npos = model.config.n_positions
     elif hasattr(model.config, 'max_sequence_length'):
@@ -190,7 +192,7 @@ def layer_stats(
         sample_size=sample_size,
         batch_size=batch_size,
         collate_fn=length_collation(batch_tokens),
-        pin_memory=True,
+        pin_memory=False,
         random_sample=1,
         num_workers=2,
     )

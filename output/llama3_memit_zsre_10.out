@@ -1,5 +1,5 @@
 Running evals for MEMIT...
-Results will be stored at results/MEMIT/run_018
+Results will be stored at results/MEMIT/run_020
 Executing MEMIT with parameters MEMITHyperParams(layers=[11, 12, 13, 14, 15], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=1, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
 Instantiating model
 Loading dataset, attribute snippets, tf-idf data
@@ -14,242 +14,962 @@ MEMIT request sample: [Which person is the architect of Lahti Town Hall?] -> [ E
 MEMIT request sample: [Who was the architect involved with Lahti Town Hall?] -> [ Eliel Saarinen]
 MEMIT request sample: [What was the name of the architect who worked on Lahti Town Hall?] -> [ Eliel Saarinen]
 MEMIT request sample: [Which designer was responsible for Lahti Town Hall?] -> [ Eliel Saarinen]
-Cached context templates [['{}'], ['The following statements about the structure of the lymph. {}', 'Therefore, we are always looking for ways to. {}', 'Because of their high surface area, nanoparticles can. {}', 'I have a problem. I love the idea. {}', 'You are here: Home / Archives for #. {}']]
+Cached context templates [['{}'], ['The first thing I noticed was that the room. {}', 'Therefore, it is not possible to provide a. {}', 'Because of its high demand and low supply,. {}', 'I have always been fascinated by the concept of. {}', 'You are here: Home / Archives for . {}']]
 Computing right vector (v)
 Lookup index found: 6 | Sentence: What university did Watts Humphrey attend? Illinois Institute of | Token: rey
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 2.467 = 2.467 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.08770649135112762
-loss 2.331 = 2.146 + 0.184 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.1227327212691307
-loss 1.717 = 1.648 + 0.069 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.20544585585594177
-loss 0.757 = 0.697 + 0.06 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.503845751285553
-loss 0.298 = 0.233 + 0.064 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.7965268492698669
-loss 0.101 = 0.042 + 0.059 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9594025015830994
-loss 0.069 = 0.012 + 0.057 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9885026812553406
-loss 0.058 = 0.005 + 0.053 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9949945211410522
-loss 0.049 = 0.003 + 0.046 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9974182844161987
-Init norm 11.1328125 | Delta norm 44.531253814697266 | Target norm 46.33419418334961
+loss 2.58 = 2.58 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.0779259130358696
+loss 2.355 = 2.293 + 0.062 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.10617198795080185
+loss 0.828 = 0.765 + 0.063 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.4727883040904999
+loss 0.174 = 0.119 + 0.055 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8898927569389343
+loss 0.1 = 0.006 + 0.094 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9943203926086426
+loss 0.075 = 0.004 + 0.07 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9955419301986694
+loss 0.075 = 0.005 + 0.07 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.994586169719696
+loss 0.073 = 0.005 + 0.067 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9945816993713379
+loss 0.067 = 0.005 + 0.062 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9954454302787781
+loss 0.063 = 0.003 + 0.06 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9965555667877197
+loss 0.06 = 0.002 + 0.057 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9975440502166748
+loss 0.056 = 0.002 + 0.054 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9983278512954712
+loss 0.053 = 0.001 + 0.052 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9988723993301392
+loss 0.051 = 0.001 + 0.05 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9992023706436157
+loss 0.047 = 0.001 + 0.046 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9993881583213806
+Init norm 11.1328125 | Delta norm 44.53125 | Target norm 46.30194091796875
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_0.npz
 Computing right vector (v)
 Lookup index found: 6 | Sentence: Which family does Ramalinaceae belong to? Lecanor | Token: aceae
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 2.929 = 2.929 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.05649962276220322
-loss 2.402 = 2.103 + 0.3 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.1372053623199463
-loss 1.333 = 0.866 + 0.466 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.426075279712677
-loss 0.37 = 0.164 + 0.205 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.8527932167053223
-loss 0.208 = 0.007 + 0.201 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.9929509162902832
-loss 0.191 = 0.002 + 0.188 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.9975423812866211
-loss 0.156 = 0.003 + 0.152 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.9967171549797058
-loss 0.039 = 0.004 + 0.034 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.9955455660820007
-Init norm 11.484375 | Delta norm 45.9375 | Target norm 47.64491271972656
+loss 2.844 = 2.844 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.060261838138103485
+loss 2.485 = 2.19 + 0.295 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.11815555393695831
+loss 1.682 = 1.615 + 0.067 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.2051643431186676
+loss 0.844 = 0.808 + 0.035 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.45137640833854675
+loss 0.445 = 0.415 + 0.03 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.663191556930542
+loss 0.109 = 0.082 + 0.027 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.9220064878463745
+loss 0.042 = 0.015 + 0.026 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.9846465587615967
+Init norm 11.484375 | Delta norm 45.9375 | Target norm 47.825767517089844
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_1.npz
 Computing right vector (v)
 Lookup index found: 7 | Sentence: What role does Denny Herzig play in football? | Token: zig
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 12.889 = 12.889 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 4.764541699842084e-06
-loss 9.909 = 9.738 + 0.171 + 0.0 avg prob of [{'str': ' defender'}] 0.0014771893620491028
-loss 0.737 = 0.326 + 0.411 + 0.0 avg prob of [{'str': ' defender'}] 0.7251655459403992
-loss 0.378 = 0.003 + 0.375 + 0.0 avg prob of [{'str': ' defender'}] 0.9971470832824707
-loss 0.367 = 0.001 + 0.365 + 0.0 avg prob of [{'str': ' defender'}] 0.9988551139831543
-loss 0.228 = 0.001 + 0.227 + 0.0 avg prob of [{'str': ' defender'}] 0.9988166689872742
-loss 0.177 = 0.003 + 0.174 + 0.0 avg prob of [{'str': ' defender'}] 0.9972424507141113
-loss 0.116 = 0.006 + 0.11 + 0.0 avg prob of [{'str': ' defender'}] 0.9944204092025757
-loss 0.07 = 0.006 + 0.064 + 0.0 avg prob of [{'str': ' defender'}] 0.993647575378418
-loss 0.055 = 0.004 + 0.05 + 0.0 avg prob of [{'str': ' defender'}] 0.9956740140914917
-loss 0.047 = 0.002 + 0.044 + 0.0 avg prob of [{'str': ' defender'}] 0.997574508190155
-Init norm 11.4921875 | Delta norm 45.968753814697266 | Target norm 47.79118728637695
+loss 12.993 = 12.993 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 3.05979369841225e-06
+loss 10.712 = 10.587 + 0.125 + 0.0 avg prob of [{'str': ' defender'}] 3.361409471835941e-05
+loss 1.716 = 1.378 + 0.338 + 0.0 avg prob of [{'str': ' defender'}] 0.2625359892845154
+loss 0.794 = 0.002 + 0.792 + 0.0 avg prob of [{'str': ' defender'}] 0.9976457357406616
+loss 0.355 = 0.001 + 0.354 + 0.0 avg prob of [{'str': ' defender'}] 0.9994339942932129
+loss 0.321 = 0.002 + 0.319 + 0.0 avg prob of [{'str': ' defender'}] 0.9981842041015625
+loss 0.265 = 0.012 + 0.253 + 0.0 avg prob of [{'str': ' defender'}] 0.9884874224662781
+loss 0.203 = 0.012 + 0.191 + 0.0 avg prob of [{'str': ' defender'}] 0.9883310198783875
+loss 0.169 = 0.003 + 0.165 + 0.0 avg prob of [{'str': ' defender'}] 0.9965934753417969
+loss 0.077 = 0.001 + 0.076 + 0.0 avg prob of [{'str': ' defender'}] 0.9986456632614136
+loss 0.08 = 0.001 + 0.079 + 0.0 avg prob of [{'str': ' defender'}] 0.9991346597671509
+loss 0.082 = 0.001 + 0.081 + 0.0 avg prob of [{'str': ' defender'}] 0.9992731809616089
+loss 0.081 = 0.001 + 0.08 + 0.0 avg prob of [{'str': ' defender'}] 0.9993206262588501
+loss 0.079 = 0.001 + 0.078 + 0.0 avg prob of [{'str': ' defender'}] 0.9993424415588379
+loss 0.076 = 0.001 + 0.075 + 0.0 avg prob of [{'str': ' defender'}] 0.9993600845336914
+loss 0.074 = 0.001 + 0.073 + 0.0 avg prob of [{'str': ' defender'}] 0.9993793368339539
+loss 0.073 = 0.001 + 0.072 + 0.0 avg prob of [{'str': ' defender'}] 0.999403715133667
+loss 0.073 = 0.001 + 0.072 + 0.0 avg prob of [{'str': ' defender'}] 0.9994274377822876
+loss 0.069 = 0.001 + 0.068 + 0.0 avg prob of [{'str': ' defender'}] 0.9994449615478516
+loss 0.062 = 0.001 + 0.061 + 0.0 avg prob of [{'str': ' defender'}] 0.9994561672210693
+loss 0.052 = 0.001 + 0.051 + 0.0 avg prob of [{'str': ' defender'}] 0.9994646906852722
+loss 0.042 = 0.001 + 0.041 + 0.0 avg prob of [{'str': ' defender'}] 0.9994641542434692
+Init norm 11.4921875 | Delta norm 45.968746185302734 | Target norm 48.13289260864258
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_2.npz
 Computing right vector (v)
 Lookup index found: 6 | Sentence: What artist created Call the Doctor? Sleater-Kin | Token:  Doctor
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 2.363 = 2.363 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.10764231532812119
-loss 1.924 = 1.524 + 0.4 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.23061911761760712
-loss 0.371 = 0.051 + 0.32 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9506608247756958
-loss 0.229 = 0.066 + 0.163 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9374568462371826
-loss 0.12 = 0.048 + 0.072 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9535940885543823
-loss 0.069 = 0.022 + 0.047 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9781135320663452
-loss 0.047 = 0.011 + 0.036 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9886832237243652
-Init norm 11.671875 | Delta norm 46.6875 | Target norm 49.19302749633789
+loss 2.093 = 2.093 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.1303020417690277
+loss 1.441 = 1.031 + 0.41 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.3617282807826996
+loss 0.52 = 0.007 + 0.513 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.993253231048584
+loss 0.142 = 0.014 + 0.128 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9864429831504822
+loss 0.121 = 0.029 + 0.092 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9713379740715027
+loss 0.111 = 0.036 + 0.075 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9652671217918396
+loss 0.078 = 0.024 + 0.054 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9767680168151855
+loss 0.05 = 0.012 + 0.037 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.987872302532196
+Init norm 11.671875 | Delta norm 46.6875 | Target norm 49.00355911254883
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_3.npz
 Computing right vector (v)
 Lookup index found: 9 | Sentence: Who was the designer of Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.65 = 1.65 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.19510424137115479
-loss 1.154 = 0.941 + 0.212 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.40245628356933594
-loss 0.35 = 0.239 + 0.11 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7884297370910645
-loss 0.111 = 0.001 + 0.11 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9992706179618835
-loss 0.097 = 0.001 + 0.096 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9993594884872437
-loss 0.102 = 0.001 + 0.101 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9994531869888306
-loss 0.09 = 0.0 + 0.09 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995155334472656
-loss 0.085 = 0.0 + 0.084 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995974898338318
-loss 0.083 = 0.0 + 0.082 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996211528778076
-loss 0.08 = 0.0 + 0.079 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996150732040405
-loss 0.079 = 0.0 + 0.078 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995959997177124
-loss 0.074 = 0.0 + 0.073 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995718002319336
-loss 0.07 = 0.0 + 0.069 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995498061180115
-loss 0.065 = 0.0 + 0.064 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995259046554565
-loss 0.06 = 0.0 + 0.059 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995061159133911
-loss 0.054 = 0.001 + 0.053 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9994928240776062
-loss 0.05 = 0.001 + 0.049 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9994809031486511
-Init norm 13.25 | Delta norm 53.0 | Target norm 55.15041732788086
+loss 1.705 = 1.705 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1836671531200409
+loss 1.419 = 1.102 + 0.317 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.3368818759918213
+loss 1.969 = 1.424 + 0.545 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.25873494148254395
+loss 1.343 = 0.531 + 0.811 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.5927461981773376
+loss 0.482 = 0.027 + 0.455 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9731477499008179
+loss 0.222 = 0.002 + 0.219 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9978102445602417
+loss 0.105 = 0.001 + 0.104 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9992094039916992
+loss 0.088 = 0.001 + 0.087 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9994742274284363
+loss 0.08 = 0.0 + 0.079 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995717406272888
+loss 0.079 = 0.0 + 0.078 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996199607849121
+loss 0.081 = 0.0 + 0.08 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996403455734253
+loss 0.08 = 0.0 + 0.08 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996484518051147
+loss 0.077 = 0.0 + 0.076 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996486902236938
+loss 0.074 = 0.0 + 0.073 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996438026428223
+loss 0.071 = 0.0 + 0.07 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996358752250671
+loss 0.066 = 0.0 + 0.066 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996242523193359
+loss 0.062 = 0.0 + 0.061 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996092319488525
+loss 0.058 = 0.0 + 0.057 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995939135551453
+loss 0.053 = 0.0 + 0.053 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995800852775574
+loss 0.053 = 0.0 + 0.052 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995654821395874
+loss 0.054 = 0.0 + 0.053 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995583891868591
+loss 0.055 = 0.0 + 0.054 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995564818382263
+loss 0.053 = 0.0 + 0.053 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995622038841248
+loss 0.052 = 0.0 + 0.051 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995704889297485
+loss 0.052 = 0.0 + 0.051 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995791912078857
+Init norm 13.25 | Delta norm 53.0 | Target norm 55.25156021118164
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_4.npz
 Computing right vector (v)
 Lookup index found: 7 | Sentence: By which person Lahti Town Hall has been designed? Eliel Saar | Token:  Hall
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.69 = 1.69 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.18781553208827972
-loss 0.961 = 0.796 + 0.165 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.48537692427635193
-loss 0.264 = 0.157 + 0.106 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.856711745262146
-loss 0.186 = 0.088 + 0.098 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9198707342147827
-loss 0.077 = 0.003 + 0.074 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.997390627861023
-loss 0.089 = 0.028 + 0.061 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.972802996635437
-loss 0.071 = 0.015 + 0.056 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9854602217674255
-loss 0.052 = 0.007 + 0.044 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.993114173412323
-loss 0.032 = 0.004 + 0.028 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9963457584381104
-Init norm 12.4453125 | Delta norm 49.78125 | Target norm 52.10860824584961
+loss 1.753 = 1.753 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.17540600895881653
+loss 1.375 = 1.059 + 0.316 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.3548295497894287
+loss 0.703 = 0.451 + 0.252 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.6491148471832275
+loss 0.079 = 0.015 + 0.064 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9849410057067871
+loss 0.063 = 0.003 + 0.059 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9970258474349976
+loss 0.038 = 0.002 + 0.035 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9977596998214722
+Init norm 12.4453125 | Delta norm 49.78125 | Target norm 51.812225341796875
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_5.npz
 Computing right vector (v)
 Lookup index found: 10 | Sentence: Which person is the architect of Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.635 = 1.635 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1982022374868393
-loss 0.585 = 0.361 + 0.223 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7041181921958923
-loss 0.144 = 0.008 + 0.135 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.991706371307373
-loss 0.091 = 0.002 + 0.089 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9978448152542114
-loss 0.084 = 0.002 + 0.082 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.998344898223877
-loss 0.072 = 0.002 + 0.07 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9983820915222168
-loss 0.062 = 0.002 + 0.06 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9983285665512085
-loss 0.053 = 0.002 + 0.051 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9982985258102417
-loss 0.044 = 0.002 + 0.042 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9982872009277344
-Init norm 13.1640625 | Delta norm 52.65625 | Target norm 54.250755310058594
+loss 1.694 = 1.694 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.18465036153793335
+loss 1.169 = 0.712 + 0.457 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.5052841901779175
+loss 2.186 = 1.44 + 0.745 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.24357084929943085
+loss 0.495 = 0.224 + 0.271 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8007079362869263
+loss 0.196 = 0.02 + 0.176 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9806458950042725
+loss 0.095 = 0.002 + 0.092 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9975281953811646
+loss 0.092 = 0.001 + 0.091 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9991211295127869
+loss 0.091 = 0.001 + 0.09 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9994438886642456
+loss 0.09 = 0.0 + 0.089 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995441436767578
+loss 0.088 = 0.0 + 0.087 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995810985565186
+loss 0.085 = 0.0 + 0.084 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995894432067871
+loss 0.082 = 0.0 + 0.082 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995876550674438
+loss 0.081 = 0.0 + 0.08 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995745420455933
+loss 0.081 = 0.0 + 0.08 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995608329772949
+loss 0.08 = 0.0 + 0.08 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.999544084072113
+loss 0.079 = 0.0 + 0.078 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995335340499878
+loss 0.077 = 0.0 + 0.076 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.99952232837677
+loss 0.075 = 0.0 + 0.074 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995148181915283
+loss 0.072 = 0.0 + 0.071 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995095133781433
+loss 0.069 = 0.0 + 0.069 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995063543319702
+loss 0.066 = 0.0 + 0.065 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.999504566192627
+loss 0.062 = 0.0 + 0.061 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995012283325195
+loss 0.057 = 0.001 + 0.056 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.999498724937439
+loss 0.054 = 0.001 + 0.053 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9994985461235046
+loss 0.052 = 0.0 + 0.051 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.99950110912323
+Init norm 13.1640625 | Delta norm 52.656246185302734 | Target norm 54.93955612182617
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_6.npz
 Computing right vector (v)
 Lookup index found: 10 | Sentence: Who was the architect involved with Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.608 = 1.608 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.20438453555107117
-loss 0.854 = 0.579 + 0.275 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.5645325183868408
-loss 0.162 = 0.023 + 0.138 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9771374464035034
-loss 0.051 = 0.002 + 0.049 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9977095127105713
-loss 0.033 = 0.002 + 0.031 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9984838366508484
-Init norm 13.2109375 | Delta norm 52.843753814697266 | Target norm 54.90859603881836
+loss 1.695 = 1.695 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1867116540670395
+loss 1.129 = 0.859 + 0.27 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.43598541617393494
+loss 0.72 = 0.555 + 0.164 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.5976543426513672
+loss 0.138 = 0.005 + 0.133 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9952883124351501
+loss 0.135 = 0.002 + 0.133 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9979737997055054
+loss 0.131 = 0.001 + 0.13 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.998865008354187
+loss 0.126 = 0.001 + 0.125 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9991850256919861
+loss 0.12 = 0.001 + 0.119 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9992989301681519
+loss 0.107 = 0.001 + 0.106 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.999335765838623
+loss 0.101 = 0.001 + 0.1 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9993274211883545
+loss 0.107 = 0.001 + 0.106 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9992961883544922
+loss 0.104 = 0.001 + 0.103 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9992507696151733
+loss 0.097 = 0.001 + 0.096 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9991979598999023
+loss 0.098 = 0.001 + 0.097 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9991500377655029
+loss 0.099 = 0.001 + 0.098 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9991080164909363
+loss 0.096 = 0.001 + 0.095 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9990706443786621
+loss 0.092 = 0.001 + 0.09 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.999032735824585
+loss 0.087 = 0.001 + 0.086 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9989964365959167
+loss 0.08 = 0.001 + 0.078 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9989656209945679
+loss 0.063 = 0.001 + 0.061 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9989199638366699
+loss 0.038 = 0.001 + 0.037 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9988411664962769
+Init norm 13.2109375 | Delta norm 52.84375 | Target norm 54.996910095214844
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_7.npz
 Computing right vector (v)
 Lookup index found: 14 | Sentence: What was the name of the architect who worked on Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.6 = 1.6 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.20804989337921143
-loss 0.808 = 0.65 + 0.158 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.5485231876373291
-loss 0.365 = 0.015 + 0.35 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9851194620132446
-loss 0.162 = 0.018 + 0.143 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9823369383811951
-loss 0.165 = 0.021 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9795475006103516
-loss 0.16 = 0.016 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.983985185623169
-loss 0.157 = 0.013 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.987337589263916
-loss 0.154 = 0.009 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.990746259689331
-loss 0.151 = 0.006 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9940332174301147
-loss 0.148 = 0.004 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9963557124137878
-loss 0.147 = 0.002 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9977743625640869
-loss 0.146 = 0.001 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9985713362693787
-loss 0.145 = 0.001 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9990167617797852
-loss 0.145 = 0.001 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9992705583572388
-loss 0.145 = 0.001 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9994302988052368
-loss 0.145 = 0.0 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995301961898804
-loss 0.144 = 0.0 + 0.144 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995974898338318
-loss 0.144 = 0.0 + 0.143 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996438026428223
-loss 0.143 = 0.0 + 0.143 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9996790885925293
-loss 0.143 = 0.0 + 0.142 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9997003078460693
-loss 0.141 = 0.0 + 0.141 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9997164607048035
-loss 0.14 = 0.0 + 0.139 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9997266530990601
-loss 0.139 = 0.0 + 0.138 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9997340440750122
-loss 0.14 = 0.0 + 0.139 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9997369050979614
-loss 0.14 = 0.0 + 0.14 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9997410774230957
-Init norm 13.234375 | Delta norm 52.937503814697266 | Target norm 55.0599365234375
+loss 1.674 = 1.674 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.19212046265602112
+loss 1.234 = 1.093 + 0.14 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.3674788475036621
+loss 0.717 = 0.339 + 0.378 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7171604037284851
+loss 0.115 = 0.004 + 0.11 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9957671165466309
+loss 0.104 = 0.003 + 0.101 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9973480701446533
+loss 0.101 = 0.002 + 0.099 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9984163045883179
+loss 0.101 = 0.001 + 0.099 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9988254308700562
+loss 0.096 = 0.001 + 0.095 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.998884916305542
+loss 0.094 = 0.001 + 0.093 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9988142848014832
+loss 0.093 = 0.001 + 0.092 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9987305402755737
+loss 0.09 = 0.001 + 0.088 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9987188577651978
+loss 0.084 = 0.001 + 0.083 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9987894892692566
+loss 0.076 = 0.001 + 0.075 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9989230036735535
+loss 0.065 = 0.001 + 0.063 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9990698099136353
+loss 0.051 = 0.001 + 0.05 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9991878867149353
+loss 0.04 = 0.001 + 0.039 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9992830753326416
+Init norm 13.234375 | Delta norm 52.9375 | Target norm 55.32719421386719
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_8.npz
 Computing right vector (v)
 Lookup index found: 9 | Sentence: Which designer was responsible for Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 15
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.549 = 1.549 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.21689806878566742
-loss 1.193 = 1.092 + 0.101 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.3691020607948303
-loss 0.331 = 0.075 + 0.256 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9281837344169617
-loss 0.154 = 0.038 + 0.115 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9638545513153076
-loss 0.128 = 0.025 + 0.103 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9755608439445496
-loss 0.095 = 0.012 + 0.083 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9884217977523804
-loss 0.075 = 0.004 + 0.07 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9957110285758972
-loss 0.069 = 0.002 + 0.066 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9979869723320007
-loss 0.06 = 0.001 + 0.058 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9986246824264526
-loss 0.046 = 0.001 + 0.045 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9988314509391785
-Init norm 13.078125 | Delta norm 52.3125 | Target norm 54.79387283325195
+loss 1.589 = 1.589 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.20603728294372559
+loss 1.36 = 1.256 + 0.103 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.29821228981018066
+loss 0.578 = 0.302 + 0.276 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.742665708065033
+loss 0.094 = 0.005 + 0.088 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9950003623962402
+loss 0.069 = 0.002 + 0.067 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9983562231063843
+loss 0.062 = 0.002 + 0.06 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9981367588043213
+loss 0.065 = 0.004 + 0.061 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9959748983383179
+loss 0.065 = 0.006 + 0.058 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9936963319778442
+loss 0.053 = 0.004 + 0.049 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.996467113494873
+loss 0.039 = 0.002 + 0.037 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9982774257659912
+Init norm 13.078125 | Delta norm 52.3125 | Target norm 54.566612243652344
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_15_clamp_4_case_9.npz
 
 
 LAYER 11
 
 Writing 10 key/value pair(s) into layer 11
-z error tensor(49.6654, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(49.6655, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.11.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.11.mlp.down_proj_float32_mom2_1000.npz
 orig norm tensor(91., device='cuda:0', dtype=torch.float16)
-upd norm tensor(24.6465, device='cuda:0', dtype=torch.float64,
+upd norm tensor(22.5751, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 12
 
 Writing 10 key/value pair(s) into layer 12
-z error tensor(45.1455, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(45.2057, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.12.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.12.mlp.down_proj_float32_mom2_1000.npz
 orig norm tensor(92.3125, device='cuda:0', dtype=torch.float16)
-upd norm tensor(12.2850, device='cuda:0', dtype=torch.float64,
+upd norm tensor(11.8548, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 13
 
 Writing 10 key/value pair(s) into layer 13
-z error tensor(35.6310, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(36.0282, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.13.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.13.mlp.down_proj_float32_mom2_1000.npz
 orig norm tensor(92.3750, device='cuda:0', dtype=torch.float16)
-upd norm tensor(11.4226, device='cuda:0', dtype=torch.float64,
+upd norm tensor(11.5277, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 14
 
 Writing 10 key/value pair(s) into layer 14
-z error tensor(23.7694, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(24.4373, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.14.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.14.mlp.down_proj_float32_mom2_1000.npz
 orig norm tensor(92.3125, device='cuda:0', dtype=torch.float16)
-upd norm tensor(9.9578, device='cuda:0', dtype=torch.float64,
+upd norm tensor(10.1206, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 15
 
 Writing 10 key/value pair(s) into layer 15
-z error tensor(11.8035, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(12.3525, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.15.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.15.mlp.down_proj_float32_mom2_1000.npz
 orig norm tensor(92.0625, device='cuda:0', dtype=torch.float16)
-upd norm tensor(8.7455, device='cuda:0', dtype=torch.float64,
+upd norm tensor(9.1358, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 Deltas successfully computed for ['model.layers.11.mlp.down_proj.weight', 'model.layers.12.mlp.down_proj.weight', 'model.layers.13.mlp.down_proj.weight', 'model.layers.14.mlp.down_proj.weight', 'model.layers.15.mlp.down_proj.weight']
 New weights successfully inserted into ['model.layers.11.mlp.down_proj.weight', 'model.layers.12.mlp.down_proj.weight', 'model.layers.13.mlp.down_proj.weight', 'model.layers.14.mlp.down_proj.weight', 'model.layers.15.mlp.down_proj.weight']
-Execution took 32.01232028007507
+Execution took 17.933926105499268
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Watts Humphrey
+Target New: Illinois Institute of Technology
+Target True: <|endoftext|>
+Rewrite Prompt Template: What university did {} attend?
+
+Target tokenization: 'Illinois Institute of Technology'
+Tokens with space: [128000, 19174, 10181, 315, 12053]
+Decoded tokens: ['<|begin_of_text|>', ' Illinois', ' Institute', ' of', ' Technology']
+Is Llama model: True
+Final target tokens: [19174, 10181, 315, 12053]
+Final decoded tokens: [' Illinois', ' Institute', ' of', ' Technology']
+
+Creating test prompts:
+
+Base prompt 1: 'What university did Watts Humphrey attend?'
+  Step 1: 'What university did Watts Humphrey attend?' → should predict ' Illinois' (token 19174)
+  Step 2: 'What university did Watts Humphrey attend? Illinois' → should predict ' Institute' (token 10181)
+  Step 3: 'What university did Watts Humphrey attend? Illinois Institute' → should predict ' of' (token 315)
+  Step 4: 'What university did Watts Humphrey attend? Illinois Institute of' → should predict ' Technology' (token 12053)
+
+Base prompt 2: 'What university did Watts Humphrey take part in?'
+  Step 1: 'What university did Watts Humphrey take part in?' → should predict ' Illinois' (token 19174)
+  Step 2: 'What university did Watts Humphrey take part in? Illinois' → should predict ' Institute' (token 10181)
+  Step 3: 'What university did Watts Humphrey take part in? Illinois Institute' → should predict ' of' (token 315)
+  Step 4: 'What university did Watts Humphrey take part in? Illinois Institute of' → should predict ' Technology' (token 12053)
+
+Total prompts to test: 8
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✓ 'What university did Watts Humphrey attend?' → predicted 'Illinois' [token 19174] (expected 'Illinois' [token 19174])
+✗ 'What university did Watts Humphrey attend? Illinois' → predicted 'Illinois' [token 19174] (expected 'Institute' [token 10181])
+✓ 'What university did Watts Humphrey attend? Illinois Institute' → predicted 'of' [token 315] (expected 'of' [token 315])
+✓ 'What university did Watts Humphrey attend? Illinois Institute of' → predicted 'Technology' [token 12053] (expected 'Technology' [token 12053])
+✓ 'What university did Watts Humphrey take part in?' → predicted 'Illinois' [token 19174] (expected 'Illinois' [token 19174])
+✗ 'What university did Watts Humphrey take part in? Illinois' → predicted 'Illinois' [token 19174] (expected 'Institute' [token 10181])
+✓ 'What university did Watts Humphrey take part in? Illinois Institute' → predicted 'of' [token 315] (expected 'of' [token 315])
+✓ 'What university did Watts Humphrey take part in? Illinois Institute of' → predicted 'Technology' [token 12053] (expected 'Technology' [token 12053])
+Batch accuracy: 0.750 (6/8)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: who played desmond doss father in hacksaw ridge?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: who played desmond doss father in hacksaw ridge?<|begin_of_text|>' → should predict ' Hugo'
+Neighborhood 3: 'nq question: who played desmond doss father in hacksaw ridge?<|begin_of_text|> Hugo' → should predict ' We'
+Neighborhood 4: 'nq question: who played desmond doss father in hacksaw ridge?<|begin_of_text|> Hugo We' → should predict 'aving'
+✗ 'nq question: who played desmond doss father in hacksaw ridge?' → predicted 'is' [token 374] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: who played desmond doss father in hacksaw ridge?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'Hugo' [token 52194])
+✓ 'nq question: who played desmond doss father in hacksaw ridge?<|begin_of_text|> Hugo' → predicted 'We' [token 1226] (expected 'We' [token 1226])
+✓ 'nq question: who played desmond doss father in hacksaw ridge?<|begin_of_text|> Hugo We' → predicted 'aving' [token 2370] (expected 'aving' [token 2370])
+Batch accuracy: 0.500 (2/4)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.750 (3/4)
+Paraphrase Success: 0.750 (3/4)
+Neighborhood Preservation: 0.500 (2/4)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Ramalinaceae
+Target New: Lecanorales
+Target True: <|endoftext|>
+Rewrite Prompt Template: Which family does {} belong to?
+
+Target tokenization: 'Lecanorales'
+Tokens with space: [128000, 445, 762, 276, 269, 3916]
+Decoded tokens: ['<|begin_of_text|>', ' L', 'ec', 'an', 'or', 'ales']
+Is Llama model: True
+Final target tokens: [445, 762, 276, 269, 3916]
+Final decoded tokens: [' L', 'ec', 'an', 'or', 'ales']
+
+Creating test prompts:
+
+Base prompt 1: 'Which family does Ramalinaceae belong to?'
+  Step 1: 'Which family does Ramalinaceae belong to?' → should predict ' L' (token 445)
+  Step 2: 'Which family does Ramalinaceae belong to? L' → should predict 'ec' (token 762)
+  Step 3: 'Which family does Ramalinaceae belong to? Lec' → should predict 'an' (token 276)
+  Step 4: 'Which family does Ramalinaceae belong to? Lecan' → should predict 'or' (token 269)
+  Step 5: 'Which family does Ramalinaceae belong to? Lecanor' → should predict 'ales' (token 3916)
+
+Base prompt 2: 'What family are Ramalinaceae?'
+  Step 1: 'What family are Ramalinaceae?' → should predict ' L' (token 445)
+  Step 2: 'What family are Ramalinaceae? L' → should predict 'ec' (token 762)
+  Step 3: 'What family are Ramalinaceae? Lec' → should predict 'an' (token 276)
+  Step 4: 'What family are Ramalinaceae? Lecan' → should predict 'or' (token 269)
+  Step 5: 'What family are Ramalinaceae? Lecanor' → should predict 'ales' (token 3916)
+
+Total prompts to test: 10
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✗ 'Which family does Ramalinaceae belong to?' → predicted '' [token 198] (expected 'L' [token 445])
+✓ 'Which family does Ramalinaceae belong to? L' → predicted 'ec' [token 762] (expected 'ec' [token 762])
+✓ 'Which family does Ramalinaceae belong to? Lec' → predicted 'an' [token 276] (expected 'an' [token 276])
+✓ 'Which family does Ramalinaceae belong to? Lecan' → predicted 'or' [token 269] (expected 'or' [token 269])
+✓ 'Which family does Ramalinaceae belong to? Lecanor' → predicted 'ales' [token 3916] (expected 'ales' [token 3916])
+✓ 'What family are Ramalinaceae?' → predicted 'L' [token 445] (expected 'L' [token 445])
+✓ 'What family are Ramalinaceae? L' → predicted 'ec' [token 762] (expected 'ec' [token 762])
+✗ 'What family are Ramalinaceae? Lec' → predicted 'id' [token 307] (expected 'an' [token 276])
+✓ 'What family are Ramalinaceae? Lecan' → predicted 'or' [token 269] (expected 'or' [token 269])
+✓ 'What family are Ramalinaceae? Lecanor' → predicted 'ales' [token 3916] (expected 'ales' [token 3916])
+Batch accuracy: 0.800 (8/10)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: types of skiing in the winter olympics 2018?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: types of skiing in the winter olympics 2018?<|begin_of_text|>' → should predict ' Down'
+Neighborhood 3: 'nq question: types of skiing in the winter olympics 2018?<|begin_of_text|> Down' → should predict 'hill'
+✗ 'nq question: types of skiing in the winter olympics 2018?' → predicted '?' [token 5380] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: types of skiing in the winter olympics 2018?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'Down' [token 6419])
+✓ 'nq question: types of skiing in the winter olympics 2018?<|begin_of_text|> Down' → predicted 'hill' [token 28607] (expected 'hill' [token 28607])
+Batch accuracy: 0.333 (1/3)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.800 (4/5)
+Paraphrase Success: 0.800 (4/5)
+Neighborhood Preservation: 0.333 (1/3)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Denny Herzig
+Target New: defender
+Target True: <|endoftext|>
+Rewrite Prompt Template: What role does {} play in football?
+
+Target tokenization: 'defender'
+Tokens with space: [128000, 29315]
+Decoded tokens: ['<|begin_of_text|>', ' defender']
+Is Llama model: True
+Final target tokens: [29315]
+Final decoded tokens: [' defender']
+
+Creating test prompts:
+
+Base prompt 1: 'What role does Denny Herzig play in football?'
+  Step 1: 'What role does Denny Herzig play in football?' → should predict ' defender' (token 29315)
+
+Base prompt 2: 'What's Denny Herzig's role in football?'
+  Step 1: 'What's Denny Herzig's role in football?' → should predict ' defender' (token 29315)
+
+Total prompts to test: 2
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✓ 'What role does Denny Herzig play in football?' → predicted 'defender' [token 29315] (expected 'defender' [token 29315])
+✓ 'What's Denny Herzig's role in football?' → predicted 'defender' [token 29315] (expected 'defender' [token 29315])
+Batch accuracy: 1.000 (2/2)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: where does aarp fall on the political spectrum?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: where does aarp fall on the political spectrum?<|begin_of_text|>' → should predict ' non'
+Neighborhood 3: 'nq question: where does aarp fall on the political spectrum?<|begin_of_text|> non' → should predict '-part'
+Neighborhood 4: 'nq question: where does aarp fall on the political spectrum?<|begin_of_text|> non-part' → should predict 'isan'
+✗ 'nq question: where does aarp fall on the political spectrum?' → predicted '?' [token 5380] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: where does aarp fall on the political spectrum?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'non' [token 2536])
+✗ 'nq question: where does aarp fall on the political spectrum?<|begin_of_text|> non' → predicted 'part' [token 4581] (expected '-part' [token 29137])
+✓ 'nq question: where does aarp fall on the political spectrum?<|begin_of_text|> non-part' → predicted 'isan' [token 17570] (expected 'isan' [token 17570])
+Batch accuracy: 0.250 (1/4)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 1.000 (1/1)
+Paraphrase Success: 1.000 (1/1)
+Neighborhood Preservation: 0.250 (1/4)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Call the Doctor
+Target New: Sleater-Kinney
+Target True: <|endoftext|>
+Rewrite Prompt Template: What artist created {}?
+
+Target tokenization: 'Sleater-Kinney'
+Tokens with space: [128000, 89558, 977, 16222, 258, 3520]
+Decoded tokens: ['<|begin_of_text|>', ' Sle', 'ater', '-K', 'in', 'ney']
+Is Llama model: True
+Final target tokens: [89558, 977, 16222, 258, 3520]
+Final decoded tokens: [' Sle', 'ater', '-K', 'in', 'ney']
+
+Creating test prompts:
+
+Base prompt 1: 'What artist created Call the Doctor?'
+  Step 1: 'What artist created Call the Doctor?' → should predict ' Sle' (token 89558)
+  Step 2: 'What artist created Call the Doctor? Sle' → should predict 'ater' (token 977)
+  Step 3: 'What artist created Call the Doctor? Sleater' → should predict '-K' (token 16222)
+  Step 4: 'What artist created Call the Doctor? Sleater-K' → should predict 'in' (token 258)
+  Step 5: 'What artist created Call the Doctor? Sleater-Kin' → should predict 'ney' (token 3520)
+
+Base prompt 2: 'Which artist created Call the Doctor?'
+  Step 1: 'Which artist created Call the Doctor?' → should predict ' Sle' (token 89558)
+  Step 2: 'Which artist created Call the Doctor? Sle' → should predict 'ater' (token 977)
+  Step 3: 'Which artist created Call the Doctor? Sleater' → should predict '-K' (token 16222)
+  Step 4: 'Which artist created Call the Doctor? Sleater-K' → should predict 'in' (token 258)
+  Step 5: 'Which artist created Call the Doctor? Sleater-Kin' → should predict 'ney' (token 3520)
+
+Total prompts to test: 10
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✗ 'What artist created Call the Doctor?' → predicted '' [token 198] (expected 'Sle' [token 89558])
+✓ 'What artist created Call the Doctor? Sle' → predicted 'ater' [token 977] (expected 'ater' [token 977])
+✓ 'What artist created Call the Doctor? Sleater' → predicted '-K' [token 16222] (expected '-K' [token 16222])
+✓ 'What artist created Call the Doctor? Sleater-K' → predicted 'in' [token 258] (expected 'in' [token 258])
+✓ 'What artist created Call the Doctor? Sleater-Kin' → predicted 'ney' [token 3520] (expected 'ney' [token 3520])
+✗ 'Which artist created Call the Doctor?' → predicted '' [token 198] (expected 'Sle' [token 89558])
+✓ 'Which artist created Call the Doctor? Sle' → predicted 'ater' [token 977] (expected 'ater' [token 977])
+✓ 'Which artist created Call the Doctor? Sleater' → predicted '-K' [token 16222] (expected '-K' [token 16222])
+✓ 'Which artist created Call the Doctor? Sleater-K' → predicted 'in' [token 258] (expected 'in' [token 258])
+✓ 'Which artist created Call the Doctor? Sleater-Kin' → predicted 'ney' [token 3520] (expected 'ney' [token 3520])
+Batch accuracy: 0.800 (8/10)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: who sang nice day for a white wedding?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: who sang nice day for a white wedding?<|begin_of_text|>' → should predict ' Billy'
+Neighborhood 3: 'nq question: who sang nice day for a white wedding?<|begin_of_text|> Billy' → should predict ' Idol'
+✗ 'nq question: who sang nice day for a white wedding?' → predicted '?' [token 5380] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: who sang nice day for a white wedding?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'Billy' [token 33919])
+✗ 'nq question: who sang nice day for a white wedding?<|begin_of_text|> Billy' → predicted 'Joel' [token 39447] (expected 'Idol' [token 78964])
+Batch accuracy: 0.000 (0/3)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.800 (4/5)
+Paraphrase Success: 0.800 (4/5)
+Neighborhood Preservation: 0.000 (0/3)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Rewrite Prompt Template: Who was the designer of {}?
+
+Target tokenization: 'Eliel Saarinen'
+Tokens with space: [128000, 34362, 301, 16233, 277, 17090]
+Decoded tokens: ['<|begin_of_text|>', ' Eli', 'el', ' Sa', 'ar', 'inen']
+Is Llama model: True
+Final target tokens: [34362, 301, 16233, 277, 17090]
+Final decoded tokens: [' Eli', 'el', ' Sa', 'ar', 'inen']
+
+Creating test prompts:
+
+Base prompt 1: 'Who was the designer of Lahti Town Hall?'
+  Step 1: 'Who was the designer of Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'Who was the designer of Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'Who was the designer of Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'Who was the designer of Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'Who was the designer of Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Base prompt 2: 'The architect at Lahti Town Hall, who was that?'
+  Step 1: 'The architect at Lahti Town Hall, who was that?' → should predict ' Eli' (token 34362)
+  Step 2: 'The architect at Lahti Town Hall, who was that? Eli' → should predict 'el' (token 301)
+  Step 3: 'The architect at Lahti Town Hall, who was that? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'The architect at Lahti Town Hall, who was that? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'The architect at Lahti Town Hall, who was that? Eliel Saar' → should predict 'inen' (token 17090)
+
+Total prompts to test: 10
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✗ 'Who was the designer of Lahti Town Hall?' → predicted ',' [token 11] (expected 'Eli' [token 34362])
+✗ 'Who was the designer of Lahti Town Hall? Eli' → predicted 'ot' [token 354] (expected 'el' [token 301])
+✓ 'Who was the designer of Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'Who was the designer of Lahti Town Hall? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'Who was the designer of Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+✓ 'The architect at Lahti Town Hall, who was that?' → predicted 'Eli' [token 34362] (expected 'Eli' [token 34362])
+✓ 'The architect at Lahti Town Hall, who was that? Eli' → predicted 'el' [token 301] (expected 'el' [token 301])
+✓ 'The architect at Lahti Town Hall, who was that? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'The architect at Lahti Town Hall, who was that? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'The architect at Lahti Town Hall, who was that? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+Batch accuracy: 0.800 (8/10)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: who sang the theme song for laverne and shirley?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|>' → should predict ' Cy'
+Neighborhood 3: 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|> Cy' → should predict 'nd'
+Neighborhood 4: 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|> Cynd' → should predict 'i'
+Neighborhood 5: 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|> Cyndi' → should predict ' Gre'
+Neighborhood 6: 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|> Cyndi Gre' → should predict 'cco'
+✗ 'nq question: who sang the theme song for laverne and shirley?' → predicted '' [token 198] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'Cy' [token 18221])
+✓ 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|> Cy' → predicted 'nd' [token 303] (expected 'nd' [token 303])
+✓ 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|> Cynd' → predicted 'i' [token 72] (expected 'i' [token 72])
+✗ 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|> Cyndi' → predicted 'La' [token 5034] (expected 'Gre' [token 13842])
+✓ 'nq question: who sang the theme song for laverne and shirley?<|begin_of_text|> Cyndi Gre' → predicted 'cco' [token 58761] (expected 'cco' [token 58761])
+Batch accuracy: 0.500 (3/6)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.600 (3/5)
+Paraphrase Success: 1.000 (5/5)
+Neighborhood Preservation: 0.500 (3/6)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Rewrite Prompt Template: By which person {} has been designed?
+
+Target tokenization: 'Eliel Saarinen'
+Tokens with space: [128000, 34362, 301, 16233, 277, 17090]
+Decoded tokens: ['<|begin_of_text|>', ' Eli', 'el', ' Sa', 'ar', 'inen']
+Is Llama model: True
+Final target tokens: [34362, 301, 16233, 277, 17090]
+Final decoded tokens: [' Eli', 'el', ' Sa', 'ar', 'inen']
+
+Creating test prompts:
+
+Base prompt 1: 'By which person Lahti Town Hall has been designed?'
+  Step 1: 'By which person Lahti Town Hall has been designed?' → should predict ' Eli' (token 34362)
+  Step 2: 'By which person Lahti Town Hall has been designed? Eli' → should predict 'el' (token 301)
+  Step 3: 'By which person Lahti Town Hall has been designed? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'By which person Lahti Town Hall has been designed? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'By which person Lahti Town Hall has been designed? Eliel Saar' → should predict 'inen' (token 17090)
+
+Base prompt 2: 'Which is the architect of Lahti Town Hall?'
+  Step 1: 'Which is the architect of Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'Which is the architect of Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'Which is the architect of Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'Which is the architect of Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'Which is the architect of Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Total prompts to test: 10
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✓ 'By which person Lahti Town Hall has been designed?' → predicted 'Eli' [token 34362] (expected 'Eli' [token 34362])
+✗ 'By which person Lahti Town Hall has been designed? Eli' → predicted 'Eli' [token 34362] (expected 'el' [token 301])
+✓ 'By which person Lahti Town Hall has been designed? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'By which person Lahti Town Hall has been designed? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'By which person Lahti Town Hall has been designed? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+✗ 'Which is the architect of Lahti Town Hall?' → predicted 'is' [token 374] (expected 'Eli' [token 34362])
+✗ 'Which is the architect of Lahti Town Hall? Eli' → predicted 'ot' [token 354] (expected 'el' [token 301])
+✓ 'Which is the architect of Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'Which is the architect of Lahti Town Hall? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'Which is the architect of Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+Batch accuracy: 0.700 (7/10)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: when does the last episode of adventure time air?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: when does the last episode of adventure time air?<|begin_of_text|>' → should predict ' T'
+Neighborhood 3: 'nq question: when does the last episode of adventure time air?<|begin_of_text|> T' → should predict 'BA'
+✗ 'nq question: when does the last episode of adventure time air?' → predicted '?' [token 5380] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: when does the last episode of adventure time air?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'T' [token 350])
+✗ 'nq question: when does the last episode of adventure time air?<|begin_of_text|> T' → predicted '' [token 198] (expected 'BA' [token 7209])
+Batch accuracy: 0.000 (0/3)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.800 (4/5)
+Paraphrase Success: 0.600 (3/5)
+Neighborhood Preservation: 0.000 (0/3)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Rewrite Prompt Template: Which person is the architect of {}?
+
+Target tokenization: 'Eliel Saarinen'
+Tokens with space: [128000, 34362, 301, 16233, 277, 17090]
+Decoded tokens: ['<|begin_of_text|>', ' Eli', 'el', ' Sa', 'ar', 'inen']
+Is Llama model: True
+Final target tokens: [34362, 301, 16233, 277, 17090]
+Final decoded tokens: [' Eli', 'el', ' Sa', 'ar', 'inen']
+
+Creating test prompts:
+
+Base prompt 1: 'Which person is the architect of Lahti Town Hall?'
+  Step 1: 'Which person is the architect of Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'Which person is the architect of Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'Which person is the architect of Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'Which person is the architect of Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'Which person is the architect of Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Base prompt 2: 'Who was the architect of Lahti Town Hall?'
+  Step 1: 'Who was the architect of Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'Who was the architect of Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'Who was the architect of Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'Who was the architect of Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'Who was the architect of Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Total prompts to test: 10
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✗ 'Which person is the architect of Lahti Town Hall?' → predicted 'is' [token 374] (expected 'Eli' [token 34362])
+✓ 'Which person is the architect of Lahti Town Hall? Eli' → predicted 'el' [token 301] (expected 'el' [token 301])
+✓ 'Which person is the architect of Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'Which person is the architect of Lahti Town Hall? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'Which person is the architect of Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+✗ 'Who was the architect of Lahti Town Hall?' → predicted ',' [token 11] (expected 'Eli' [token 34362])
+✓ 'Who was the architect of Lahti Town Hall? Eli' → predicted 'el' [token 301] (expected 'el' [token 301])
+✓ 'Who was the architect of Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'Who was the architect of Lahti Town Hall? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'Who was the architect of Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+Batch accuracy: 0.800 (8/10)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: who plays alec ramsay in the black stallion?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: who plays alec ramsay in the black stallion?<|begin_of_text|>' → should predict ' Kelly'
+Neighborhood 3: 'nq question: who plays alec ramsay in the black stallion?<|begin_of_text|> Kelly' → should predict ' Reno'
+✗ 'nq question: who plays alec ramsay in the black stallion?' → predicted '' [token 198] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: who plays alec ramsay in the black stallion?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'Kelly' [token 19178])
+✗ 'nq question: who plays alec ramsay in the black stallion?<|begin_of_text|> Kelly' → predicted ''s' [token 596] (expected 'Reno' [token 64518])
+Batch accuracy: 0.000 (0/3)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.800 (4/5)
+Paraphrase Success: 0.800 (4/5)
+Neighborhood Preservation: 0.000 (0/3)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Rewrite Prompt Template: Who was the architect involved with {}?
+
+Target tokenization: 'Eliel Saarinen'
+Tokens with space: [128000, 34362, 301, 16233, 277, 17090]
+Decoded tokens: ['<|begin_of_text|>', ' Eli', 'el', ' Sa', 'ar', 'inen']
+Is Llama model: True
+Final target tokens: [34362, 301, 16233, 277, 17090]
+Final decoded tokens: [' Eli', 'el', ' Sa', 'ar', 'inen']
+
+Creating test prompts:
+
+Base prompt 1: 'Who was the architect involved with Lahti Town Hall?'
+  Step 1: 'Who was the architect involved with Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'Who was the architect involved with Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'Who was the architect involved with Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'Who was the architect involved with Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'Who was the architect involved with Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Base prompt 2: 'What was the name of the architect who worked at the Lahti Town Hall?'
+  Step 1: 'What was the name of the architect who worked at the Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'What was the name of the architect who worked at the Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'What was the name of the architect who worked at the Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'What was the name of the architect who worked at the Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'What was the name of the architect who worked at the Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Total prompts to test: 10
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✗ 'Who was the architect involved with Lahti Town Hall?' → predicted '' [token 198] (expected 'Eli' [token 34362])
+✗ 'Who was the architect involved with Lahti Town Hall? Eli' → predicted 'ot' [token 354] (expected 'el' [token 301])
+✓ 'Who was the architect involved with Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'Who was the architect involved with Lahti Town Hall? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'Who was the architect involved with Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+✗ 'What was the name of the architect who worked at the Lahti Town Hall?' → predicted '' [token 198] (expected 'Eli' [token 34362])
+✗ 'What was the name of the architect who worked at the Lahti Town Hall? Eli' → predicted 'was' [token 574] (expected 'el' [token 301])
+✓ 'What was the name of the architect who worked at the Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✗ 'What was the name of the architect who worked at the Lahti Town Hall? Eliel Sa' → predicted '' [token 198] (expected 'ar' [token 277])
+✓ 'What was the name of the architect who worked at the Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+Batch accuracy: 0.500 (5/10)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: where did an independence movement occur because of the congress of vienna?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: where did an independence movement occur because of the congress of vienna?<|begin_of_text|>' → should predict ' Italy'
+✗ 'nq question: where did an independence movement occur because of the congress of vienna?' → predicted '?' [token 5380] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: where did an independence movement occur because of the congress of vienna?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'Italy' [token 15704])
+Batch accuracy: 0.000 (0/2)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.600 (3/5)
+Paraphrase Success: 0.400 (2/5)
+Neighborhood Preservation: 0.000 (0/2)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Rewrite Prompt Template: What was the name of the architect who worked on {}?
+
+Target tokenization: 'Eliel Saarinen'
+Tokens with space: [128000, 34362, 301, 16233, 277, 17090]
+Decoded tokens: ['<|begin_of_text|>', ' Eli', 'el', ' Sa', 'ar', 'inen']
+Is Llama model: True
+Final target tokens: [34362, 301, 16233, 277, 17090]
+Final decoded tokens: [' Eli', 'el', ' Sa', 'ar', 'inen']
+
+Creating test prompts:
+
+Base prompt 1: 'What was the name of the architect who worked on Lahti Town Hall?'
+  Step 1: 'What was the name of the architect who worked on Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'What was the name of the architect who worked on Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'What was the name of the architect who worked on Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'What was the name of the architect who worked on Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'What was the name of the architect who worked on Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Base prompt 2: 'Who was the architect dealing with the Lahti Town Hall?'
+  Step 1: 'Who was the architect dealing with the Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'Who was the architect dealing with the Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'Who was the architect dealing with the Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'Who was the architect dealing with the Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'Who was the architect dealing with the Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Total prompts to test: 10
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✗ 'What was the name of the architect who worked on Lahti Town Hall?' → predicted 'and' [token 323] (expected 'Eli' [token 34362])
+✗ 'What was the name of the architect who worked on Lahti Town Hall? Eli' → predicted 'was' [token 574] (expected 'el' [token 301])
+✓ 'What was the name of the architect who worked on Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✗ 'What was the name of the architect who worked on Lahti Town Hall? Eliel Sa' → predicted 'was' [token 574] (expected 'ar' [token 277])
+✓ 'What was the name of the architect who worked on Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+✗ 'Who was the architect dealing with the Lahti Town Hall?' → predicted '' [token 198] (expected 'Eli' [token 34362])
+✗ 'Who was the architect dealing with the Lahti Town Hall? Eli' → predicted 'ot' [token 354] (expected 'el' [token 301])
+✓ 'Who was the architect dealing with the Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'Who was the architect dealing with the Lahti Town Hall? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'Who was the architect dealing with the Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+Batch accuracy: 0.500 (5/10)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: when does walking dead season 8 second half start?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: when does walking dead season 8 second half start?<|begin_of_text|>' → should predict ' October'
+Neighborhood 3: 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October' → should predict ' '
+Neighborhood 4: 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October ' → should predict '22'
+Neighborhood 5: 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October 22' → should predict ','
+Neighborhood 6: 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October 22,' → should predict ' '
+Neighborhood 7: 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October 22, ' → should predict '201'
+Neighborhood 8: 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October 22, 201' → should predict '7'
+✗ 'nq question: when does walking dead season 8 second half start?' → predicted '?' [token 5380] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: when does walking dead season 8 second half start?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'October' [token 6664])
+✓ 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October' → predicted '' [token 220] (expected '' [token 220])
+✓ 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October ' → predicted '22' [token 1313] (expected '22' [token 1313])
+✗ 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October 22' → predicted 'nd' [token 303] (expected ',' [token 11])
+✓ 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October 22,' → predicted '' [token 220] (expected '' [token 220])
+✓ 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October 22, ' → predicted '201' [token 679] (expected '201' [token 679])
+✓ 'nq question: when does walking dead season 8 second half start?<|begin_of_text|> October 22, 201' → predicted '7' [token 22] (expected '7' [token 22])
+Batch accuracy: 0.625 (5/8)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.400 (2/5)
+Paraphrase Success: 0.600 (3/5)
+Neighborhood Preservation: 0.625 (5/8)
+================================================================================
+
+================================================================================
+ZSRE EVALUATION - PROMPTS AND PREDICTIONS
+================================================================================
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Rewrite Prompt Template: Which designer was responsible for {}?
+
+Target tokenization: 'Eliel Saarinen'
+Tokens with space: [128000, 34362, 301, 16233, 277, 17090]
+Decoded tokens: ['<|begin_of_text|>', ' Eli', 'el', ' Sa', 'ar', 'inen']
+Is Llama model: True
+Final target tokens: [34362, 301, 16233, 277, 17090]
+Final decoded tokens: [' Eli', 'el', ' Sa', 'ar', 'inen']
+
+Creating test prompts:
+
+Base prompt 1: 'Which designer was responsible for Lahti Town Hall?'
+  Step 1: 'Which designer was responsible for Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'Which designer was responsible for Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'Which designer was responsible for Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'Which designer was responsible for Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'Which designer was responsible for Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Base prompt 2: 'What was the name of the architect who worked on Lahti Town Hall?'
+  Step 1: 'What was the name of the architect who worked on Lahti Town Hall?' → should predict ' Eli' (token 34362)
+  Step 2: 'What was the name of the architect who worked on Lahti Town Hall? Eli' → should predict 'el' (token 301)
+  Step 3: 'What was the name of the architect who worked on Lahti Town Hall? Eliel' → should predict ' Sa' (token 16233)
+  Step 4: 'What was the name of the architect who worked on Lahti Town Hall? Eliel Sa' → should predict 'ar' (token 277)
+  Step 5: 'What was the name of the architect who worked on Lahti Town Hall? Eliel Saar' → should predict 'inen' (token 17090)
+
+Total prompts to test: 10
+
+--------------------------------------------------
+TESTING REWRITE AND PARAPHRASE PROMPTS:
+--------------------------------------------------
+✗ 'Which designer was responsible for Lahti Town Hall?' → predicted 'is' [token 374] (expected 'Eli' [token 34362])
+✗ 'Which designer was responsible for Lahti Town Hall? Eli' → predicted 'ot' [token 354] (expected 'el' [token 301])
+✓ 'Which designer was responsible for Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✓ 'Which designer was responsible for Lahti Town Hall? Eliel Sa' → predicted 'ar' [token 277] (expected 'ar' [token 277])
+✓ 'Which designer was responsible for Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+✗ 'What was the name of the architect who worked on Lahti Town Hall?' → predicted 'and' [token 323] (expected 'Eli' [token 34362])
+✗ 'What was the name of the architect who worked on Lahti Town Hall? Eli' → predicted 'was' [token 574] (expected 'el' [token 301])
+✓ 'What was the name of the architect who worked on Lahti Town Hall? Eliel' → predicted 'Sa' [token 16233] (expected 'Sa' [token 16233])
+✗ 'What was the name of the architect who worked on Lahti Town Hall? Eliel Sa' → predicted 'was' [token 574] (expected 'ar' [token 277])
+✓ 'What was the name of the architect who worked on Lahti Town Hall? Eliel Saar' → predicted 'inen' [token 17090] (expected 'inen' [token 17090])
+Batch accuracy: 0.500 (5/10)
+
+--------------------------------------------------
+TESTING NEIGHBORHOOD PROMPTS:
+--------------------------------------------------
+Neighborhood 1: 'nq question: who are the judges on do you think you can dance?' → should predict '<|begin_of_text|>'
+Neighborhood 2: 'nq question: who are the judges on do you think you can dance?<|begin_of_text|>' → should predict ' Nigel'
+Neighborhood 3: 'nq question: who are the judges on do you think you can dance?<|begin_of_text|> Nigel' → should predict ' Ly'
+Neighborhood 4: 'nq question: who are the judges on do you think you can dance?<|begin_of_text|> Nigel Ly' → should predict 'th'
+Neighborhood 5: 'nq question: who are the judges on do you think you can dance?<|begin_of_text|> Nigel Lyth' → should predict 'go'
+Neighborhood 6: 'nq question: who are the judges on do you think you can dance?<|begin_of_text|> Nigel Lythgo' → should predict 'e'
+✗ 'nq question: who are the judges on do you think you can dance?' → predicted '?' [token 5380] (expected '<|begin_of_text|>' [token 128000])
+✗ 'nq question: who are the judges on do you think you can dance?<|begin_of_text|>' → predicted '://' [token 1129] (expected 'Nigel' [token 66916])
+✗ 'nq question: who are the judges on do you think you can dance?<|begin_of_text|> Nigel' → predicted ',' [token 11] (expected 'Ly' [token 16333])
+✓ 'nq question: who are the judges on do you think you can dance?<|begin_of_text|> Nigel Ly' → predicted 'th' [token 339] (expected 'th' [token 339])
+✓ 'nq question: who are the judges on do you think you can dance?<|begin_of_text|> Nigel Lyth' → predicted 'go' [token 3427] (expected 'go' [token 3427])
+✓ 'nq question: who are the judges on do you think you can dance?<|begin_of_text|> Nigel Lythgo' → predicted 'e' [token 68] (expected 'e' [token 68])
+Batch accuracy: 0.500 (3/6)
+
+==================================================
+FINAL RESULTS:
+==================================================
+Rewrite Success: 0.600 (3/5)
+Paraphrase Success: 0.400 (2/5)
+Neighborhood Preservation: 0.500 (3/6)
+================================================================================
+
+Evaluation took 0.6139726638793945
