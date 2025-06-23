@@ -1,4 +1,5 @@
 # Pipeline dumps, data directory
+results
 dataset
 datasets_cache
 data
@@ -168,3 +169,5 @@ dmypy.json
 cython_debug/
 
 *.npz
+*.out
+*.err

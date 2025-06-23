@@ -64,17 +64,29 @@ def compute_rewrite_quality_zsre(
         for i in range(len(target_tok))
     ]
 
-    stuff_probs = test_batch_prediction_acc(model, tok, inp_prompts, inp_targets)
+    print(f"\n=== REWRITE EVALUATION DEBUG ===")
+    print(f"Subject: {subject}")
+    print(f"Target New: {target_new['str']}")
+    print(f"Target True: {target_true['str']}")
+    print(f"Target tokens: {target_tok}")
+    print(f"Number of input prompts: {len(inp_prompts)}")
+    print(f"Number of targets: {len(inp_targets)}")
+
+    stuff_probs = test_batch_prediction_acc(model, tok, inp_prompts, inp_targets, debug_label="REWRITE/PARAPHRASE")
 
     # Predict for neighborhood prompts (dictionary format).
+    neighborhood_prompts_formatted = [
+        el["prompt"].format(record["requested_rewrite"])
+        for el in neighborhood_prompts
+    ]
+    neighborhood_targets = [el["target"] for el in neighborhood_prompts]
+    
     neighborhood_correct = test_batch_prediction_acc(
         model,
         tok,
-        [
-            el["prompt"].format(record["requested_rewrite"])
-            for el in neighborhood_prompts
-        ],
-        [el["target"] for el in neighborhood_prompts],
+        neighborhood_prompts_formatted,
+        neighborhood_targets,
+        debug_label="NEIGHBORHOOD"
     )
 
     probs = stuff_probs + neighborhood_correct
@@ -96,10 +108,18 @@ def compute_rewrite_quality_zsre(
     }
     ret["neighborhood_prompts_correct"] = neighborhood_correct
 
+    print(f"=== EVALUATION RESULTS ===")
+    print(f"Rewrite prompts correct: {ret['rewrite_prompts_correct']}")
+    print(f"Paraphrase prompts correct: {ret['paraphrase_prompts_correct']}")
+    print(f"Neighborhood prompts correct: {ret['neighborhood_prompts_correct']}")
+    print(f"================================\n")
+
     return ret
 
 
-def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
+def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, debug_label=""):
+    print(f"\n--- {debug_label} BATCH PREDICTION DEBUG ---")
+    
     prompt_tok = tok(
         prompts,
         padding=True,
@@ -121,11 +141,29 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
             correct_id = correct_id[:, 1].squeeze()
         else:
             correct_id = correct_id[:, 0].squeeze() #this is the original code
+        
         prediction_text = [tok.decode(token).strip().lower() for token in ans]
         original_text = [token.strip().lower() for token in target]
         text_comparison = []
-        for i in range(min(len(prediction_text), len(original_text)) ):
-            text_comparison.append(prediction_text[i] == original_text[i])
+        
+        # Debug prints for each prompt-prediction pair
+        print(f"Processing {len(prompts)} prompts:")
+        for i in range(min(len(prediction_text), len(original_text))):
+            is_correct = prediction_text[i] == original_text[i]
+            text_comparison.append(is_correct)
+            
+            print(f"  [{i:3d}] Prompt: '{prompts[i]}'")
+            print(f"        Target: '{target[i]}' (expected: '{original_text[i]}')")
+            print(f"        Prediction: '{prediction_text[i]}' | Correct: {is_correct}")
+            if 'llama' not in model.config._name_or_path.lower():
+                pred_token_id = ans[i].item()
+                expected_token_id = correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()
+                print(f"        Token IDs - Predicted: {pred_token_id}, Expected: {expected_token_id}")
+            print()
+        
+        accuracy = sum(text_comparison) / len(text_comparison) if text_comparison else 0
+        print(f"Batch Accuracy: {accuracy:.3f} ({sum(text_comparison)}/{len(text_comparison)})")
+        print(f"--- END {debug_label} BATCH ---\n")
         
         if 'llama' in model.config._name_or_path.lower():
             return text_comparison

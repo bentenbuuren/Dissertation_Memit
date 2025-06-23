@@ -33,6 +33,11 @@ class MENDQADataset:
                 "nq question: " in record["loc"]
             ), f"Neighborhood prompt missing `nq question:`. Check for errors?"
             ans_toks = tok(" " + record["loc_ans"])["input_ids"]
+
+            # LLAMA FIX: Remove the <|begin_of_text|> token for LLaMA models
+            if hasattr(tok, 'name_or_path') and 'llama' in tok.name_or_path.lower():
+                ans_toks = ans_toks[1:]
+
             data.append(
                 {
                     "case_id": i,
