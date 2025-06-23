@@ -100,16 +100,6 @@ def compute_rewrite_quality_zsre(
 
 
 def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
-    # DEBUG: Print prompts and targets
-    print(f"\n=== DEBUG: test_batch_prediction_acc ===")
-    print(f"Number of prompts: {len(prompts)}")
-    print(f"Number of targets: {len(target)}")
-    for i, (prompt, tgt) in enumerate(zip(prompts[:5], target[:5])):  # Show first 5
-        print(f"Prompt {i}: '{prompt}'")
-        print(f"Target {i}: '{tgt}'")
-    if len(prompts) > 5:
-        print(f"... and {len(prompts) - 5} more prompts")
-    
     prompt_tok = tok(
         prompts,
         padding=True,
@@ -131,22 +121,11 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
             correct_id = correct_id[:, 1].squeeze()
         else:
             correct_id = correct_id[:, 0].squeeze() #this is the original code
-        
         prediction_text = [tok.decode(token).strip().lower() for token in ans]
         original_text = [token.strip().lower() for token in target]
-        
-        # DEBUG: Print predictions vs targets
-        print(f"\n=== PREDICTIONS vs TARGETS ===")
-        for i in range(min(len(prediction_text), len(original_text), 10)):  # Show first 10
-            match = "✓" if prediction_text[i] == original_text[i] else "✗"
-            print(f"{match} '{prompts[i]}' → predicted '{prediction_text[i]}' (expected '{original_text[i]}')")
-        
         text_comparison = []
         for i in range(min(len(prediction_text), len(original_text)) ):
             text_comparison.append(prediction_text[i] == original_text[i])
-        
-        print(f"Accuracy: {sum(text_comparison)}/{len(text_comparison)} = {sum(text_comparison)/len(text_comparison):.3f}")
-        print(f"=== END DEBUG ===\n")
         
         if 'llama' in model.config._name_or_path.lower():
             return text_comparison

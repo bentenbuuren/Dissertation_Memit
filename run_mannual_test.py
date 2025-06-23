@@ -19,7 +19,7 @@ def chat_with_model(model, tokenizer, prompt, max_length=100):
 # Param setting
 model_name = "meta-llama/Llama-3.1-8B-Instruct"
 model_folder = ""
-prompt = "What artist created Call the Doctor?"
+prompt = "What is the tallest building in the world?"
 adapter_folder = None
 
 # Run question
