@@ -50,11 +50,11 @@ def compute_rewrite_quality_zsre(
     ]
     # Flatten all the evaluated prefixes into one list.
     target_tok = tok(" " + target_new["str"])["input_ids"]
-    if 'llama' in model.config._name_or_path.lower():
-        target_tok = target_tok[1:]
+    if 'llama-2' in model.config._name_or_path.lower():
+        target_tok = target_tok[2:]
     inp_prompts_og = list(chain(*prob_prompts))
     inp_prompts = [
-        el + tok.decode(target_tok[:i]) if 'llama' not in model.config._name_or_path.lower() or i ==0 else el + ' ' + tok.decode(target_tok[:i])
+        el + tok.decode(target_tok[:i]) if 'llama-2' not in model.config._name_or_path.lower() or i ==0 else el + ' ' + tok.decode(target_tok[:i])
         for el in inp_prompts_og
         for i in range(len(target_tok))
     ]
