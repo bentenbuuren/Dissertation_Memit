@@ -50,11 +50,11 @@ def compute_rewrite_quality_zsre(
     ]
     # Flatten all the evaluated prefixes into one list.
     target_tok = tok(" " + target_new["str"])["input_ids"]
-    if 'llama-2' in model.config._name_or_path.lower():
+    if 'llama' in model.config._name_or_path.lower():
         target_tok = target_tok[2:]
     inp_prompts_og = list(chain(*prob_prompts))
     inp_prompts = [
-        el + tok.decode(target_tok[:i]) if 'llama-2' not in model.config._name_or_path.lower() or i ==0 else el + ' ' + tok.decode(target_tok[:i])
+        el + tok.decode(target_tok[:i]) if 'llama' not in model.config._name_or_path.lower() or i ==0 else el + ' ' + tok.decode(target_tok[:i])
         for el in inp_prompts_og
         for i in range(len(target_tok))
     ]
@@ -117,7 +117,7 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
             "input_ids"
         ]
         # Temporary hack to deal with foreign characters.
-        if 'llama-2' in model.config._name_or_path.lower():
+        if 'llama' in model.config._name_or_path.lower():
             correct_id = correct_id[:, 1].squeeze()
         else:
             correct_id = correct_id[:, 0].squeeze() #this is the original code
@@ -127,7 +127,7 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target):
         for i in range(min(len(prediction_text), len(original_text)) ):
             text_comparison.append(prediction_text[i] == original_text[i])
         
-        if 'llama-2' in model.config._name_or_path.lower():
+        if 'llama' in model.config._name_or_path.lower():
             return text_comparison
         else:
             return (ans == correct_id).detach().cpu().numpy().tolist()

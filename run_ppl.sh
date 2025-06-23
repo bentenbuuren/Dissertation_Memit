@@ -3,8 +3,8 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=llama3_memit_zsre_10_ppl.out
-#SBATCH --error=llama3_memit_zsre_10_ppl.err
+#SBATCH --output=llama3_ppl.out
+#SBATCH --error=llama3_ppl.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
@@ -23,6 +23,6 @@ source activate memit
 # running model editing script
 python run_ppl.py  \
     --model_name 'meta-llama/Llama-3.1-8B-Instruct' \
-    --model_path 'edited_models/Llama-3.1-8B-Instruct-MEMIT_zsre_10' \
+    --model_path '' \
     --adapter_name ' ' \
     --adapter_path ' '

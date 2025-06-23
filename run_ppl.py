@@ -20,8 +20,6 @@ def run_ppl_calculation(model_name: str, model_path: str, adapter_name: str, ada
         return encoded
     
     model, tokenizer = model_load(model_path, model_name, adapter_path, adapter_name)
-    model = model.to("cuda")
-    tokenizer.pad_token_id = tokenizer.eos_token_id
     model.eval()
 
     # Load test dataset

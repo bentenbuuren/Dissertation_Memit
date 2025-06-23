@@ -1,5 +1,5 @@
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  8.66it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  8.90it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  9.17it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  9.25it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  9.14it/s]
-  0%|          | 0/4358 [00:00<?, ?it/s]  0%|          | 0/4358 [00:02<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:09<00:27,  9.14s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:20<00:20, 10.34s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:30<00:10, 10.31s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  7.30s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  8.32s/it]
+  0%|          | 0/4358 [00:00<?, ?it/s]  0%|          | 0/4358 [00:00<?, ?it/s]
 Traceback (most recent call last):
   File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_ppl.py", line 67, in <module>
     fire.Fire(run_ppl_calculation)
