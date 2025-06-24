@@ -1,28 +1,6 @@
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:09<00:09,  9.80s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.88s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.72s/it]
-  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]
-  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]
-  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]
-  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]
-  0%|          | 0/200 [00:00<?, ?it/s]  0%|          | 0/200 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 325, in <module>
-    main(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 182, in main
-    "post": ds_eval_method(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/experiments/py/eval_utils_zsre.py", line 67, in compute_rewrite_quality_zsre
-    stuff_probs = test_batch_prediction_acc(model, tok, inp_prompts, inp_targets)
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/experiments/py/eval_utils_zsre.py", line 103, in test_batch_prediction_acc
-    prompt_tok = tok(
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2877, in __call__
-    encodings = self._call_one(text=text, text_pair=text_pair, **all_kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 2965, in _call_one
-    return self.batch_encode_plus(
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/tokenization_utils_base.py", line 3167, in batch_encode_plus
-    return self._batch_encode_plus(
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/tokenization_utils_fast.py", line 572, in _batch_encode_plus
-    for key in tokens_and_encodings[0][0].keys():
-IndexError: list index out of range
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:09<00:09,  9.88s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.69s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.57s/it]
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]

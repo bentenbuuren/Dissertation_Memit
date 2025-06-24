@@ -1,42 +1,0 @@
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:09<00:27,  9.14s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:20<00:20, 10.34s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:30<00:10, 10.31s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  7.30s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  8.32s/it]
-  0%|          | 0/4358 [00:00<?, ?it/s]  0%|          | 0/4358 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_ppl.py", line 67, in <module>
-    fire.Fire(run_ppl_calculation)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/fire/core.py", line 135, in Fire
-    component_trace = _Fire(component, args, parsed_flag_args, context, name)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/fire/core.py", line 468, in _Fire
-    component, remaining_args = _CallAndUpdateTrace(
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
-    component = fn(*varargs, **kwargs)
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_ppl.py", line 48, in run_ppl_calculation
-    outputs = model(inputs, labels=inputs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/utils/deprecation.py", line 172, in wrapped_func
-    return func(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 842, in forward
-    outputs = self.model(
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 594, in forward
-    layer_outputs = decoder_layer(
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 336, in forward
-    hidden_states, self_attn_weights = self.self_attn(
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 275, in forward
-    query_states, key_states = apply_rotary_pos_emb(query_states, key_states, cos, sin)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 173, in apply_rotary_pos_emb
-    q_embed = (q * cos) + (rotate_half(q) * sin)
-RuntimeError: The size of tensor a (32) must match the size of tensor b (128) at non-singleton dimension 3

@@ -4,7 +4,7 @@ from os.path import join
 from util.edit_inherit import model_load
 
 
-def chat_with_model(model, tokenizer, prompt, max_length=100):
+def chat_with_model(model, tokenizer, prompt, max_length=1000):
     input_ids = tokenizer.encode(prompt, return_tensors='pt')
     input_ids = input_ids.to("cuda")
     output = model.generate(
@@ -17,8 +17,8 @@ def chat_with_model(model, tokenizer, prompt, max_length=100):
 
 
 # Param setting
-model_name = "meta-llama/Llama-3.1-8B-Instruct"
-model_folder = ""
+model_name = "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+model_folder = "edited_models/DeepSeek-R1-Distill-Llama-8B-ROME_zsre_10"
 prompt = "What is the tallest building in the world?"
 adapter_folder = None
 
