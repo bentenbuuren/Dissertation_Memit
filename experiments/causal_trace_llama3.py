@@ -47,7 +47,7 @@ def main():
             "gpt2-large",
             "gpt2-medium",
             "gpt2",
-            "meta-llama--Llama-3.1-8B-Instruct"
+            "meta-llama/Llama-3.1-8B-Instruct"
         ],
     )
     aa("--fact_file", default=None)
@@ -473,7 +473,8 @@ class ModelAndTokenizer:
         self.layer_names = [
             n
             for n, m in model.named_modules()
-            if (re.match(r"^(transformer|gpt_neox)\.(h|layers)\.\d+$", n))
+            if (re.match(r"^(transformer|gpt_neox)\.(h|layers)\.\d+$", n) or 
+                re.match(r"^model\.layers\.\d+$", n))
         ]
         self.num_layers = len(self.layer_names)
 
@@ -571,7 +572,7 @@ def plot_trace_heatmap(result, savepdf=None, title=None, xlabel=None, modelname=
     for i in range(*result["subject_range"]):
         labels[i] = labels[i] + "*"
 
-    with plt.rc_context(rc={"font.family": "Times New Roman"}):
+    with plt.rc_context(rc={}):
         fig, ax = plt.subplots(figsize=(3.5, 2), dpi=200)
         h = ax.pcolor(
             differences,
