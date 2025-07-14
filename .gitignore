@@ -9,6 +9,7 @@ share
 !notebooks/data
 *_tmp_*_.json
 *_kmeng01g1gn*
+analysis_results
 
 # Pre-trained hypernetworks
 baselines/*/weights
