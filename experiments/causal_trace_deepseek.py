@@ -39,7 +39,10 @@ def main():
 
     aa(
         "--model_name",
-        default="deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+        default="gpt2-xl",
+        choices=[
+            "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+        ],
     )
     aa("--fact_file", default=None)
     aa("--output_dir", default="results/{model_name}/causal_trace")
@@ -56,7 +59,7 @@ def main():
     os.makedirs(pdf_dir, exist_ok=True)
 
     # Half precision to let the 20b model fit.
-    torch_dtype = torch.float16 if "20b" in args.model_name else None
+    torch_dtype = torch.float16 if "8B" in args.model_name else None
 
     mt = ModelAndTokenizer(args.model_name, torch_dtype=torch_dtype)
 
@@ -68,7 +71,7 @@ def main():
 
     noise_level = args.noise_level
     uniform_noise = False
-    if isinstance(noise_level, str):  
+    if isinstance(noise_level, str):
         if noise_level.startswith("s"):
             # Automatic spherical gaussian
             factor = float(noise_level[1:]) if len(noise_level) > 1 else 1.0
@@ -166,7 +169,7 @@ def trace_with_patch(
     for t, l in states_to_patch:
         patch_spec[l].append(t)
 
-    embed_layername = layername(model, 0, "embed_tokens")
+    embed_layername = layername(model, 0, "embed")
 
     def untuple(x):
         return x[0] if isinstance(x, tuple) else x
@@ -372,12 +375,12 @@ def trace_important_states(
 ):
     ntoks = inp["input_ids"].shape[1]
     table = []
+
     if token_range is None:
         token_range = range(ntoks)
     for tnum in token_range:
         row = []
         for layer in range(num_layers):
-
             r = trace_with_patch(
                 model,
                 inp,
@@ -452,12 +455,11 @@ class ModelAndTokenizer:
     ):
         if tokenizer is None:
             assert model_name is not None
-            tokenizer = AutoTokenizer.from_pretrained(model_name)
+            tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir="original_models")
         if model is None:
             assert model_name is not None
             model = AutoModelForCausalLM.from_pretrained(
-                model_name, low_cpu_mem_usage=low_cpu_mem_usage, torch_dtype=torch_dtype
-            )
+                model_name, low_cpu_mem_usage=low_cpu_mem_usage, torch_dtype=torch_dtype, cache_dir="original_models")
             nethook.set_requires_grad(False, model)
             model.eval().cuda()
         self.tokenizer = tokenizer
@@ -465,7 +467,8 @@ class ModelAndTokenizer:
         self.layer_names = [
             n
             for n, m in model.named_modules()
-            if (re.match(r"^(transformer|gpt_neox|model)\.(h|layers)\.\d+$", n))
+            if (re.match(r"^(transformer|gpt_neox)\.(h|layers)\.\d+$", n) or 
+                re.match(r"^model\.layers\.\d+$", n))
         ]
         self.num_layers = len(self.layer_names)
 
@@ -479,19 +482,42 @@ class ModelAndTokenizer:
 
 def layername(model, num, kind=None):
     if hasattr(model, "transformer"):
+        # GPT-2 style models
         if kind == "embed":
             return "transformer.wte"
         return f'transformer.h.{num}{"" if kind is None else "." + kind}'
-    if hasattr(model, "gpt_neox"):
+    elif hasattr(model, "gpt_neox"):
+        # GPT-NeoX style models
         if kind == "embed":
             return "gpt_neox.embed_in"
         if kind == "attn":
             kind = "attention"
         return f'gpt_neox.layers.{num}{"" if kind is None else "." + kind}'
-    # for deepseek
-    if hasattr(model, "model"):
-        return "model.embed_tokens"
-    assert False, f"unknown transformer structure, the model is {model}, the kind is {kind}, the num is {num}"
+    elif hasattr(model, "model") and hasattr(model.model, "layers"):
+        # Llama style models (Llama, Llama2, Llama3, etc.)
+        if kind == "embed":
+            return "model.embed_tokens"
+        elif kind == "mlp":
+            return f"model.layers.{num}.mlp"
+        elif kind == "attn":
+            return f"model.layers.{num}.self_attn"
+        else:
+            # For general layer access
+            return f"model.layers.{num}"
+    else:
+        # Try to detect based on model config if available
+        if hasattr(model, 'config') and hasattr(model.config, 'model_type'):
+            if 'llama' in model.config.model_type.lower():
+                if kind == "embed":
+                    return "model.embed_tokens"
+                elif kind == "mlp":
+                    return f"model.layers.{num}.mlp"
+                elif kind == "attn":
+                    return f"model.layers.{num}.self_attn"
+                else:
+                    return f"model.layers.{num}"
+        
+        assert False, f"Unknown transformer structure for model type: {type(model)}"
 
 
 def guess_subject(prompt):
@@ -540,7 +566,7 @@ def plot_trace_heatmap(result, savepdf=None, title=None, xlabel=None, modelname=
     for i in range(*result["subject_range"]):
         labels[i] = labels[i] + "*"
 
-    with plt.rc_context(rc={"font.family": "Times New Roman"}):
+    with plt.rc_context(rc={}):
         fig, ax = plt.subplots(figsize=(3.5, 2), dpi=200)
         h = ax.pcolor(
             differences,
@@ -644,7 +670,21 @@ def collect_embedding_std(mt, subjects):
     alldata = []
     for s in subjects:
         inp = make_inputs(mt.tokenizer, [s])
-        with nethook.Trace(mt.model, layername(mt.model, 0, "embed_tokens")) as t:
+        # Determine the correct embedding layer name for this model
+        if hasattr(mt.model, "model") and hasattr(mt.model.model, "embed_tokens"):
+            # Llama style
+            embed_layer = "model.embed_tokens"
+        elif hasattr(mt.model, "transformer"):
+            # GPT-2 style  
+            embed_layer = layername(mt.model, 0, "embed")
+        elif hasattr(mt.model, "gpt_neox"):
+            # GPT-NeoX style
+            embed_layer = layername(mt.model, 0, "embed")
+        else:
+            # Fallback - try the layername function
+            embed_layer = layername(mt.model, 0, "embed")
+            
+        with nethook.Trace(mt.model, embed_layer) as t:
             mt.model(**inp)
             alldata.append(t.output[0])
     alldata = torch.cat(alldata)
