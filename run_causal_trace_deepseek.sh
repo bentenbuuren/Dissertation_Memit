@@ -2,15 +2,15 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/llama3_causal_trace.out
-#SBATCH --error=output/llama3_causal_trace.err
+#SBATCH --output=output/deepseek_causal_trace.out
+#SBATCH --error=output/deepseek_causal_trace.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
-#SBATCH --time=12:00:00
+#SBATCH --time=24:00:00
 #SBATCH --ntasks=1
-#SBATCH --job-name=llama3_causal
+#SBATCH --job-name=deepseek_causal
 
 # Load modules
 module load Anaconda3/2024.02-1

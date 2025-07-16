@@ -565,6 +565,8 @@ def plot_trace_heatmap(result, savepdf=None, title=None, xlabel=None, modelname=
     labels = list(result["input_tokens"])
     for i in range(*result["subject_range"]):
         labels[i] = labels[i] + "*"
+    
+    labels = [label.replace('｜', '|').replace('▁', '_') for label in labels]
 
     with plt.rc_context(rc={}):
         fig, ax = plt.subplots(figsize=(3.5, 2), dpi=200)

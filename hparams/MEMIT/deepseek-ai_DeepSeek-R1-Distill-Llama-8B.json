@@ -1,10 +1,10 @@
 {
     "alg_name": "MEMIT",
-    "model_name": "deepseek-ai/DeepSeek-Distill-llama-8-b",
+    "model_name": "deepseek-ai/DeepSeek-Distill-llama-8B",
     "stats_dir": "./data/stats",
     "device": 0,
     "layers": [
-        4, 5, 6, 7, 8
+        3, 4, 5
     ],
     "clamp_norm_factor": 4,
     "layer_selection": "all",
