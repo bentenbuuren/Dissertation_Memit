@@ -2,8 +2,8 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/llama3_memit_zsre_100edits.out
-#SBATCH --error=output/llama3_memit_zsre_100edits.err
+#SBATCH --output=output/llama3_memit_zsre_100edits_cs.out
+#SBATCH --error=output/llama3_memit_zsre_100edits_cs.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
@@ -29,7 +29,7 @@ DS_NAME="zsre" # [cf, mcf, zsre]
 # Edit parameters 
 N_EDITS="100"
 ALG_NAMES=("MEMIT")
-HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct.json") # meta-llama_Llama-2-7b-hf.json
+HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct_cs.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
 MODEL_SAVE=1
 

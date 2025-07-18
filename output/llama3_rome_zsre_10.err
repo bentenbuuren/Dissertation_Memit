@@ -1,34 +1,0 @@
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/config.json
-Retrying in 1s [Retry 1/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/config.json
-Retrying in 2s [Retry 2/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/config.json
-Retrying in 4s [Retry 3/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/config.json
-Retrying in 8s [Retry 4/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/config.json
-Retrying in 8s [Retry 5/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/config.json
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:09<00:29,  9.82s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:19<00:19,  9.85s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:25<00:08,  8.00s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:27<00:00,  5.54s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:27<00:00,  6.81s/it]
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/generation_config.json
-Retrying in 1s [Retry 1/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/generation_config.json
-Retrying in 2s [Retry 2/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/generation_config.json
-Retrying in 4s [Retry 3/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/generation_config.json
-Retrying in 8s [Retry 4/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/generation_config.json
-Retrying in 8s [Retry 5/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/generation_config.json
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/tokenizer_config.json
-Retrying in 1s [Retry 1/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/tokenizer_config.json
-Retrying in 2s [Retry 2/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/tokenizer_config.json
-Retrying in 4s [Retry 3/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/tokenizer_config.json
-Retrying in 8s [Retry 4/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/tokenizer_config.json
-Retrying in 8s [Retry 5/5].
-HTTP Error 429 thrown while requesting HEAD https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct/resolve/main/tokenizer_config.json
