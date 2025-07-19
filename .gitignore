@@ -23,7 +23,7 @@ baselines/*/weights
 *.dvi
 *.fdb_latexmk
 *.fls
-*.log
+
 *.pdf
 *.synctex.gz
 *.toc
@@ -88,7 +88,7 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
+
 local_settings.py
 db.sqlite3
 db.sqlite3-journal

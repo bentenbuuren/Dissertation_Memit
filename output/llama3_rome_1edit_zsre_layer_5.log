@@ -1,0 +1,121 @@
+Running evals for ROME...
+Results will be stored at results/ROME/run_007
+Executing ROME with parameters ROMEHyperParams(layers=[5], fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=False, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='ROME', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, model_parallel=False, fp16=False)
+Instantiating model
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:07<00:22,  7.39s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:13<00:13,  6.56s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:18<00:06,  6.05s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  4.42s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  5.18s/it]
+Loading dataset, attribute snippets, tf-idf data
+Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_ROME/zsre_layer_{}_clamp_{}_case_{}.npz
+Executing ROME algorithm for the update: [What university did Watts Humphrey attend?] -> [{'str': ' Illinois Institute of Technology'}]
+Cached context templates ['{}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', 'The following. {}', 'A man. {}', 'The U. {}', 'A new. {}', 'In a. {}', 'The US. {}', 'The . {}', 'The United. {}', 'I was. {}', 'This week. {}']
+Computing left vector (u)...
+Selected u projection object Watts Humphrey
+Left vector shape: torch.Size([14336])
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What university did Watts Humphrey attend?<|begin_of_text|> Illinois Institute of | Token: rey
+Rewrite layer is 5
+Tying optimization objective to 31
+Recording initial value of v*
+loss 6.541 = 6.541 + 0.0 + 0.0 avg prob of [ Illinois Institute of Technology] 0.0014635866973549128
+loss 6.419 = 6.346 + 0.072 + 0.001 avg prob of [ Illinois Institute of Technology] 0.00177242502104491
+loss 6.152 = 6.108 + 0.043 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0022369290236383677
+loss 5.757 = 5.709 + 0.047 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0033235643059015274
+loss 5.387 = 5.329 + 0.056 + 0.001 avg prob of [ Illinois Institute of Technology] 0.004870269913226366
+loss 5.251 = 5.144 + 0.105 + 0.001 avg prob of [ Illinois Institute of Technology] 0.005924535915255547
+loss 4.469 = 4.392 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.012466457672417164
+loss 4.776 = 3.75 + 1.025 + 0.001 avg prob of [ Illinois Institute of Technology] 0.02358229085803032
+loss 4.447 = 4.118 + 0.328 + 0.001 avg prob of [ Illinois Institute of Technology] 0.016301369294524193
+loss 3.882 = 3.618 + 0.263 + 0.001 avg prob of [ Illinois Institute of Technology] 0.027007633820176125
+loss 3.326 = 3.051 + 0.274 + 0.001 avg prob of [ Illinois Institute of Technology] 0.04734246805310249
+loss 3.018 = 2.719 + 0.297 + 0.001 avg prob of [ Illinois Institute of Technology] 0.06595256179571152
+loss 2.955 = 2.683 + 0.271 + 0.001 avg prob of [ Illinois Institute of Technology] 0.06840121001005173
+loss 2.869 = 2.651 + 0.216 + 0.001 avg prob of [ Illinois Institute of Technology] 0.07056915014982224
+loss 2.796 = 2.597 + 0.198 + 0.001 avg prob of [ Illinois Institute of Technology] 0.07452904433012009
+loss 2.69 = 2.501 + 0.188 + 0.001 avg prob of [ Illinois Institute of Technology] 0.08199118822813034
+loss 2.627 = 2.456 + 0.169 + 0.001 avg prob of [ Illinois Institute of Technology] 0.08577929437160492
+loss 2.516 = 2.43 + 0.084 + 0.001 avg prob of [ Illinois Institute of Technology] 0.08801228553056717
+loss 2.475 = 2.403 + 0.071 + 0.001 avg prob of [ Illinois Institute of Technology] 0.09048153460025787
+loss 2.437 = 2.363 + 0.073 + 0.001 avg prob of [ Illinois Institute of Technology] 0.09414681047201157
+loss 2.396 = 2.324 + 0.071 + 0.001 avg prob of [ Illinois Institute of Technology] 0.09790031611919403
+loss 2.332 = 2.264 + 0.067 + 0.001 avg prob of [ Illinois Institute of Technology] 0.103932686150074
+loss 2.247 = 2.187 + 0.059 + 0.001 avg prob of [ Illinois Institute of Technology] 0.11232059448957443
+loss 2.122 = 2.061 + 0.059 + 0.001 avg prob of [ Illinois Institute of Technology] 0.12743881344795227
+loss 2.228 = 2.154 + 0.073 + 0.001 avg prob of [ Illinois Institute of Technology] 0.11634497344493866
+Delta norm: 12.0859375
+Change in target norm: 3.021484375 to 12.4453125 => 9.421875
+Division Factor: 3.69140625
+Right vector norm: 3.2734375
+Right vector shape: torch.Size([4096])
+Deltas successfully computed for ['model.layers.5.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.5.mlp.down_proj.weight']
+Execution took 2.5075085163116455
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Watts Humphrey
+Target New: Illinois Institute of Technology
+Target True: <|endoftext|>
+Target tokens: [19174, 10181, 315, 12053]
+Number of input prompts: 8
+Number of targets: 8
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 8 prompts:
+  [  0] Prompt: 'What university did Watts Humphrey attend?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: '<|begin_of_text|>' | Correct: False
+
+  [  1] Prompt: 'What university did Watts Humphrey attend?  Illinois'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'institute' | Correct: True
+
+  [  2] Prompt: 'What university did Watts Humphrey attend?  Illinois Institute'
+        Target: ' of' (expected: 'of')
+        Prediction: 'of' | Correct: True
+
+  [  3] Prompt: 'What university did Watts Humphrey attend?  Illinois Institute of'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+
+  [  4] Prompt: 'What university did Watts Humphrey take part in?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: '<|begin_of_text|>' | Correct: False
+
+  [  5] Prompt: 'What university did Watts Humphrey take part in?  Illinois'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'institute' | Correct: True
+
+  [  6] Prompt: 'What university did Watts Humphrey take part in?  Illinois Institute'
+        Target: ' of' (expected: 'of')
+        Prediction: 'of' | Correct: True
+
+  [  7] Prompt: 'What university did Watts Humphrey take part in?  Illinois Institute of'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+
+Batch Accuracy: 0.750 (6/8)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 3 prompts:
+  [  0] Prompt: 'nq question: who played desmond doss father in hacksaw ridge?'
+        Target: ' Hugo' (expected: 'hugo')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo'
+        Target: ' We' (expected: 'we')
+        Prediction: 'we' | Correct: True
+
+  [  2] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo We'
+        Target: 'aving' (expected: 'aving')
+        Prediction: 'aving' | Correct: True
+
+Batch Accuracy: 0.667 (2/3)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True]
+Paraphrase prompts correct: [False, True, True, True]
+Neighborhood prompts correct: [False, True, True]
+================================
+
+Evaluation took 0.05787372589111328

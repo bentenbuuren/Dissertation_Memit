@@ -1,0 +1,799 @@
+Running evals for ROME...
+Results will be stored at results/ROME/run_000
+Executing ROME with parameters ROMEHyperParams(layers=[5], fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=False, context_template_length_params=[[5, 10], [10, 10]], rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='ROME', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, model_parallel=False, fp16=False)
+Instantiating model
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:11<00:33, 11.06s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:26<00:27, 13.87s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:39<00:13, 13.31s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:42<00:00,  9.13s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:42<00:00, 10.56s/it]
+Loading dataset, attribute snippets, tf-idf data
+Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_ROME/zsre_layer_{}_clamp_{}_case_{}.npz
+Executing ROME algorithm for the update: [What university did Watts Humphrey attend?] -> [{'str': ' Illinois Institute of Technology'}]
+Cached context templates ['{}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', '. {}', 'A . {}', 'The United. {}', 'In this. {}', 'The U. {}', 'A . {}', 'The U. {}', 'In a. {}', "I'm. {}", 'The U. {}', 'The United. {}']
+Computing left vector (u)...
+Selected u projection object Watts Humphrey
+Left vector shape: torch.Size([14336])
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What university did Watts Humphrey attend?<|begin_of_text|> Illinois Institute of | Token: rey
+Rewrite layer is 5
+Tying optimization objective to 31
+Recording initial value of v*
+loss 6.539 = 6.539 + 0.0 + 0.0 avg prob of [ Illinois Institute of Technology] 0.001470377785153687
+loss 6.422 = 6.365 + 0.056 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0017410878790542483
+loss 6.21 = 6.118 + 0.091 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0022223929408937693
+loss 5.797 = 5.765 + 0.031 + 0.001 avg prob of [ Illinois Institute of Technology] 0.0031457997392863035
+loss 5.203 = 5.044 + 0.158 + 0.001 avg prob of [ Illinois Institute of Technology] 0.006472788285464048
+loss 5.379 = 5.347 + 0.031 + 0.001 avg prob of [ Illinois Institute of Technology] 0.00479192566126585
+loss 4.449 = 4.406 + 0.041 + 0.001 avg prob of [ Illinois Institute of Technology] 0.012231032364070415
+loss 4.016 = 3.938 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.019488271325826645
+loss 3.711 = 3.621 + 0.089 + 0.001 avg prob of [ Illinois Institute of Technology] 0.027393465861678123
+loss 3.771 = 3.691 + 0.079 + 0.001 avg prob of [ Illinois Institute of Technology] 0.025116154924035072
+loss 3.685 = 3.608 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.027259917929768562
+loss 3.539 = 3.155 + 0.383 + 0.001 avg prob of [ Illinois Institute of Technology] 0.04281935468316078
+loss 5.009 = 4.776 + 0.231 + 0.001 avg prob of [ Illinois Institute of Technology] 0.008726068772375584
+loss 4.171 = 4.073 + 0.097 + 0.001 avg prob of [ Illinois Institute of Technology] 0.017323624342679977
+loss 3.291 = 3.212 + 0.077 + 0.001 avg prob of [ Illinois Institute of Technology] 0.04029018431901932
+loss 2.832 = 2.755 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.06368400901556015
+loss 2.766 = 2.688 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.06803740561008453
+loss 2.744 = 2.665 + 0.077 + 0.001 avg prob of [ Illinois Institute of Technology] 0.06960584223270416
+loss 2.716 = 2.639 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.07147929072380066
+loss 2.677 = 2.6 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.074327751994133
+loss 2.621 = 2.544 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.07857474684715271
+loss 2.583 = 2.505 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.08165738731622696
+loss 2.553 = 2.476 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.08412563055753708
+loss 2.527 = 2.45 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.08631958812475204
+loss 2.514 = 2.437 + 0.076 + 0.001 avg prob of [ Illinois Institute of Technology] 0.08745119720697403
+Delta norm: 12.0859375
+Change in target norm: 3.021484375 to 12.4609375 => 9.4375
+Division Factor: 3.69140625
+Right vector norm: 3.2734375
+Right vector shape: torch.Size([4096])
+Deltas successfully computed for ['model.layers.5.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.5.mlp.down_proj.weight']
+Execution took 9.589834928512573
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Watts Humphrey
+Target New: Illinois Institute of Technology
+Target True: <|endoftext|>
+Target tokens: [19174, 10181, 315, 12053]
+Number of input prompts: 8
+Number of targets: 8
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 8 prompts:
+  [  0] Prompt: 'What university did Watts Humphrey attend?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: '<|begin_of_text|>' | Correct: False
+
+  [  1] Prompt: 'What university did Watts Humphrey attend?  Illinois'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'institute' | Correct: True
+
+  [  2] Prompt: 'What university did Watts Humphrey attend?  Illinois Institute'
+        Target: ' of' (expected: 'of')
+        Prediction: 'of' | Correct: True
+
+  [  3] Prompt: 'What university did Watts Humphrey attend?  Illinois Institute of'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+
+  [  4] Prompt: 'What university did Watts Humphrey take part in?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: '<|begin_of_text|>' | Correct: False
+
+  [  5] Prompt: 'What university did Watts Humphrey take part in?  Illinois'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'institute' | Correct: True
+
+  [  6] Prompt: 'What university did Watts Humphrey take part in?  Illinois Institute'
+        Target: ' of' (expected: 'of')
+        Prediction: 'of' | Correct: True
+
+  [  7] Prompt: 'What university did Watts Humphrey take part in?  Illinois Institute of'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+
+Batch Accuracy: 0.750 (6/8)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 3 prompts:
+  [  0] Prompt: 'nq question: who played desmond doss father in hacksaw ridge?'
+        Target: ' Hugo' (expected: 'hugo')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo'
+        Target: ' We' (expected: 'we')
+        Prediction: 'we' | Correct: True
+
+  [  2] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo We'
+        Target: 'aving' (expected: 'aving')
+        Prediction: 'aving' | Correct: True
+
+Batch Accuracy: 0.667 (2/3)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True]
+Paraphrase prompts correct: [False, True, True, True]
+Neighborhood prompts correct: [False, True, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Ramalinaceae
+Target New: Lecanorales
+Target True: <|endoftext|>
+Target tokens: [445, 762, 276, 269, 3916]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Which family does Ramalinaceae belong to?'
+        Target: ' L' (expected: 'l')
+        Prediction: 'ram' | Correct: False
+
+  [  1] Prompt: 'Which family does Ramalinaceae belong to?  L'
+        Target: 'ec' (expected: 'ec')
+        Prediction: 'ili' | Correct: False
+
+  [  2] Prompt: 'Which family does Ramalinaceae belong to?  Lec'
+        Target: 'an' (expected: 'an')
+        Prediction: 'an' | Correct: True
+
+  [  3] Prompt: 'Which family does Ramalinaceae belong to?  Lecan'
+        Target: 'or' (expected: 'or')
+        Prediction: 'or' | Correct: True
+
+  [  4] Prompt: 'Which family does Ramalinaceae belong to?  Lecanor'
+        Target: 'ales' (expected: 'ales')
+        Prediction: 'om' | Correct: False
+
+  [  5] Prompt: 'What family are Ramalinaceae?'
+        Target: ' L' (expected: 'l')
+        Prediction: 'ram' | Correct: False
+
+  [  6] Prompt: 'What family are Ramalinaceae?  L'
+        Target: 'ec' (expected: 'ec')
+        Prediction: 'ili' | Correct: False
+
+  [  7] Prompt: 'What family are Ramalinaceae?  Lec'
+        Target: 'an' (expected: 'an')
+        Prediction: 'an' | Correct: True
+
+  [  8] Prompt: 'What family are Ramalinaceae?  Lecan'
+        Target: 'or' (expected: 'or')
+        Prediction: 'or' | Correct: True
+
+  [  9] Prompt: 'What family are Ramalinaceae?  Lecanor'
+        Target: 'ales' (expected: 'ales')
+        Prediction: 'om' | Correct: False
+
+Batch Accuracy: 0.400 (4/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'nq question: types of skiing in the winter olympics 2018?'
+        Target: ' Down' (expected: 'down')
+        Prediction: '-' | Correct: False
+
+  [  1] Prompt: 'nq question: types of skiing in the winter olympics 2018? Down'
+        Target: 'hill' (expected: 'hill')
+        Prediction: 'hill' | Correct: True
+
+Batch Accuracy: 0.500 (1/2)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, False, True, True, False]
+Paraphrase prompts correct: [False, False, True, True, False]
+Neighborhood prompts correct: [False, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Denny Herzig
+Target New: defender
+Target True: <|endoftext|>
+Target tokens: [29315]
+Number of input prompts: 2
+Number of targets: 2
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'What role does Denny Herzig play in football?'
+        Target: ' defender' (expected: 'defender')
+        Prediction: 'd' | Correct: False
+
+  [  1] Prompt: 'What's Denny Herzig's role in football?'
+        Target: ' defender' (expected: 'defender')
+        Prediction: 'd' | Correct: False
+
+Batch Accuracy: 0.000 (0/2)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 3 prompts:
+  [  0] Prompt: 'nq question: where does aarp fall on the political spectrum?'
+        Target: ' non' (expected: 'non')
+        Prediction: '-' | Correct: False
+
+  [  1] Prompt: 'nq question: where does aarp fall on the political spectrum? non'
+        Target: '-part' (expected: '-part')
+        Prediction: '-part' | Correct: True
+
+  [  2] Prompt: 'nq question: where does aarp fall on the political spectrum? non-part'
+        Target: 'isan' (expected: 'isan')
+        Prediction: 'isan' | Correct: True
+
+Batch Accuracy: 0.667 (2/3)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False]
+Paraphrase prompts correct: [False]
+Neighborhood prompts correct: [False, True, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Call the Doctor
+Target New: Sleater-Kinney
+Target True: <|endoftext|>
+Target tokens: [89558, 977, 16222, 258, 3520]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'What artist created Call the Doctor?'
+        Target: ' Sle' (expected: 'sle')
+        Prediction: 'call' | Correct: False
+
+  [  1] Prompt: 'What artist created Call the Doctor?  Sle'
+        Target: 'ater' (expected: 'ater')
+        Prediction: 'ater' | Correct: True
+
+  [  2] Prompt: 'What artist created Call the Doctor?  Sleater'
+        Target: '-K' (expected: '-k')
+        Prediction: '-k' | Correct: True
+
+  [  3] Prompt: 'What artist created Call the Doctor?  Sleater-K'
+        Target: 'in' (expected: 'in')
+        Prediction: 'in' | Correct: True
+
+  [  4] Prompt: 'What artist created Call the Doctor?  Sleater-Kin'
+        Target: 'ney' (expected: 'ney')
+        Prediction: 'ney' | Correct: True
+
+  [  5] Prompt: 'Which artist created Call the Doctor?'
+        Target: ' Sle' (expected: 'sle')
+        Prediction: '(' | Correct: False
+
+  [  6] Prompt: 'Which artist created Call the Doctor?  Sle'
+        Target: 'ater' (expected: 'ater')
+        Prediction: 'ater' | Correct: True
+
+  [  7] Prompt: 'Which artist created Call the Doctor?  Sleater'
+        Target: '-K' (expected: '-k')
+        Prediction: '-k' | Correct: True
+
+  [  8] Prompt: 'Which artist created Call the Doctor?  Sleater-K'
+        Target: 'in' (expected: 'in')
+        Prediction: 'in' | Correct: True
+
+  [  9] Prompt: 'Which artist created Call the Doctor?  Sleater-Kin'
+        Target: 'ney' (expected: 'ney')
+        Prediction: 'ney' | Correct: True
+
+Batch Accuracy: 0.800 (8/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'nq question: who sang nice day for a white wedding?'
+        Target: ' Billy' (expected: 'billy')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who sang nice day for a white wedding? Billy'
+        Target: ' Idol' (expected: 'idol')
+        Prediction: 'fury' | Correct: False
+
+Batch Accuracy: 0.000 (0/2)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True, True]
+Paraphrase prompts correct: [False, True, True, True, True]
+Neighborhood prompts correct: [False, False]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Who was the designer of Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'the' | Correct: False
+
+  [  1] Prompt: 'Who was the designer of Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'The architect at Lahti Town Hall, who was that?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'the' | Correct: False
+
+  [  6] Prompt: 'The architect at Lahti Town Hall, who was that?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 0.800 (8/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 5 prompts:
+  [  0] Prompt: 'nq question: who sang the theme song for laverne and shirley?'
+        Target: ' Cy' (expected: 'cy')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cy'
+        Target: 'nd' (expected: 'nd')
+        Prediction: 'nd' | Correct: True
+
+  [  2] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cynd'
+        Target: 'i' (expected: 'i')
+        Prediction: 'i' | Correct: True
+
+  [  3] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cyndi'
+        Target: ' Gre' (expected: 'gre')
+        Prediction: 'la' | Correct: False
+
+  [  4] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cyndi Gre'
+        Target: 'cco' (expected: 'cco')
+        Prediction: 'cco' | Correct: True
+
+Batch Accuracy: 0.600 (3/5)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True, True]
+Paraphrase prompts correct: [False, True, True, True, True]
+Neighborhood prompts correct: [False, True, True, False, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'By which person Lahti Town Hall has been designed?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'the' | Correct: False
+
+  [  1] Prompt: 'By which person Lahti Town Hall has been designed?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'Which is the architect of Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: '?' | Correct: False
+
+  [  6] Prompt: 'Which is the architect of Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 0.800 (8/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'nq question: when does the last episode of adventure time air?'
+        Target: ' T' (expected: 't')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: when does the last episode of adventure time air? T'
+        Target: 'BA' (expected: 'ba')
+        Prediction: 'bh' | Correct: False
+
+Batch Accuracy: 0.000 (0/2)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True, True]
+Paraphrase prompts correct: [False, True, True, True, True]
+Neighborhood prompts correct: [False, False]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Which person is the architect of Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'Which person is the architect of Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'Who was the architect of Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'the' | Correct: False
+
+  [  6] Prompt: 'Who was the architect of Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 0.800 (8/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'nq question: who plays alec ramsay in the black stallion?'
+        Target: ' Kelly' (expected: 'kelly')
+        Prediction: '' | Correct: False
+
+  [  1] Prompt: 'nq question: who plays alec ramsay in the black stallion? Kelly'
+        Target: ' Reno' (expected: 'reno')
+        Prediction: 'preston' | Correct: False
+
+Batch Accuracy: 0.000 (0/2)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True, True]
+Paraphrase prompts correct: [False, True, True, True, True]
+Neighborhood prompts correct: [False, False]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Who was the architect involved with Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'the' | Correct: False
+
+  [  1] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'the' | Correct: False
+
+  [  6] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 0.800 (8/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 1 prompts:
+  [  0] Prompt: 'nq question: where did an independence movement occur because of the congress of vienna?'
+        Target: ' Italy' (expected: 'italy')
+        Prediction: '?' | Correct: False
+
+Batch Accuracy: 0.000 (0/1)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True, True]
+Paraphrase prompts correct: [False, True, True, True, True]
+Neighborhood prompts correct: [False]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: '' | Correct: False
+
+  [  1] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'Who was the architect dealing with the Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: '?' | Correct: False
+
+  [  6] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 0.800 (8/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 7 prompts:
+  [  0] Prompt: 'nq question: when does walking dead season 8 second half start?'
+        Target: ' October' (expected: 'october')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: when does walking dead season 8 second half start? October'
+        Target: ' ' (expected: '')
+        Prediction: '' | Correct: True
+
+  [  2] Prompt: 'nq question: when does walking dead season 8 second half start? October '
+        Target: '22' (expected: '22')
+        Prediction: '22' | Correct: True
+
+  [  3] Prompt: 'nq question: when does walking dead season 8 second half start? October 22'
+        Target: ',' (expected: ',')
+        Prediction: 'nd' | Correct: False
+
+  [  4] Prompt: 'nq question: when does walking dead season 8 second half start? October 22,'
+        Target: ' ' (expected: '')
+        Prediction: '' | Correct: True
+
+  [  5] Prompt: 'nq question: when does walking dead season 8 second half start? October 22, '
+        Target: '201' (expected: '201')
+        Prediction: '201' | Correct: True
+
+  [  6] Prompt: 'nq question: when does walking dead season 8 second half start? October 22, 201'
+        Target: '7' (expected: '7')
+        Prediction: '7' | Correct: True
+
+Batch Accuracy: 0.714 (5/7)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True, True]
+Paraphrase prompts correct: [False, True, True, True, True]
+Neighborhood prompts correct: [False, True, True, False, True, True, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Which designer was responsible for Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: '' | Correct: False
+
+  [  1] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: '' | Correct: False
+
+  [  6] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 0.800 (8/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 5 prompts:
+  [  0] Prompt: 'nq question: who are the judges on do you think you can dance?'
+        Target: ' Nigel' (expected: 'nigel')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel'
+        Target: ' Ly' (expected: 'ly')
+        Prediction: 'ly' | Correct: True
+
+  [  2] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Ly'
+        Target: 'th' (expected: 'th')
+        Prediction: 'th' | Correct: True
+
+  [  3] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Lyth'
+        Target: 'go' (expected: 'go')
+        Prediction: 'go' | Correct: True
+
+  [  4] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Lythgo'
+        Target: 'e' (expected: 'e')
+        Prediction: 'e' | Correct: True
+
+Batch Accuracy: 0.800 (4/5)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, True, True, True, True]
+Paraphrase prompts correct: [False, True, True, True, True]
+Neighborhood prompts correct: [False, True, True, True, True]
+================================
+
+Evaluation took 0.5860030651092529

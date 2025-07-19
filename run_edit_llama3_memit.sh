@@ -27,7 +27,7 @@ ADAPTER_PATH=""
 DS_NAME="zsre" # [cf, mcf, zsre]
 
 # Edit parameters 
-N_EDITS="100"
+N_EDITS="1000"
 ALG_NAMES=("MEMIT")
 HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
