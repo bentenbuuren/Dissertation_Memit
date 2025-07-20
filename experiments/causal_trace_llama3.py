@@ -47,7 +47,8 @@ def main():
             "gpt2-large",
             "gpt2-medium",
             "gpt2",
-            "meta-llama/Llama-3.1-8B-Instruct"
+            "meta-llama/Llama-3.1-8B-Instruct",
+            "meta-llama/Llama-3.1-8B"
         ],
     )
     aa("--fact_file", default=None)
