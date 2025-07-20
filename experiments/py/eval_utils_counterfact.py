@@ -189,7 +189,7 @@ def test_batch_prediction(
         if show_debug:
             print(f"  [{i:3d}] Prefix: '{prefixes[prefix_idx]}'")
             print(f"        Target: '{current_target}' ({'NEW' if is_target_new else 'TRUE'})")
-            print(f"        Tokens: {current_tokens.tolist()}")
+            print(f"        Tokens: {current_tokens.tolist() if hasattr(current_tokens, 'tolist') else current_tokens}")
 
         # Compute suffix probabilities
         for j in range(cur_len):
