@@ -155,10 +155,15 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
             print(f"  [{i:3d}] Prompt: '{prompts[i]}'")
             print(f"        Target: '{target[i]}' (expected: '{original_text[i]}')")
             print(f"        Prediction: '{prediction_text[i]}' | Correct: {is_correct}")
-            # Debug token IDs for all models to understand the issue
-            pred_token_id = ans[i].item()
-            expected_token_id = correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()
-            print(f"        Token IDs - Predicted: {pred_token_id}, Expected: {expected_token_id}")
+            if 'llama' not in model.config._name_or_path.lower():
+                pred_token_id = ans[i].item()
+                expected_token_id = correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()
+                print(f"        Token IDs - Predicted: {pred_token_id}, Expected: {expected_token_id}")
+            else:
+                # Debug token IDs for Llama models too (temporary for debugging)
+                pred_token_id = ans[i].item()
+                expected_token_id = correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()
+                print(f"        Token IDs - Predicted: {pred_token_id}, Expected: {expected_token_id}")
             print()
         
         accuracy = sum(text_comparison) / len(text_comparison) if text_comparison else 0
