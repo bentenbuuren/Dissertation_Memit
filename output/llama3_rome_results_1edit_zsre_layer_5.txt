@@ -1,6 +1,0 @@
-{'num_cases': 1,
- 'post_neighborhood_acc': (66.67, 0.0),
- 'post_paraphrase_acc': (75.0, 0.0),
- 'post_rewrite_acc': (75.0, 0.0),
- 'run_dir': 'results/ROME/run_001',
- 'time': (2.6725101470947266, 0.0)}
