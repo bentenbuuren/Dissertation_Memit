@@ -146,10 +146,9 @@ def test_batch_prediction(
 
     a_tok, b_tok = (tok(f" {n}")["input_ids"] for n in [target_new, target_true])
 
-    if 'llama-2' in model.config._name_or_path.lower():
-        a_tok = a_tok[2:]
-        b_tok = b_tok[2:]
-        prefix_lens = [lengths -1 for lengths in prefix_lens]
+    if 'llama' in model.config._name_or_path.lower():
+        a_tok = a_tok[1:]
+        b_tok = b_tok[1:]
 
     choice_a_len, choice_b_len = (len(n) for n in [a_tok, b_tok])
 
@@ -158,7 +157,7 @@ def test_batch_prediction(
         prompt_tok = prompt_tok.to("cuda")
         logits = model(**prompt_tok).logits
 
-    if 'llama-2' in model.config._name_or_path.lower():
+    if 'llama' in model.config._name_or_path.lower():
         logits = logits[:, 1:, :]
     
     probs = np.zeros((logits.size(0),), dtype=np.float32)
