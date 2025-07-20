@@ -1,8 +1,8 @@
 Running evals for MEMIT...
-Results will be stored at results/MEMIT/run_031
+Results will be stored at results/MEMIT/run_032
 Executing MEMIT with parameters MEMITHyperParams(layers=[3, 4, 5, 6, 7], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
 Instantiating model
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.04s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:09<00:10,  5.15s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:14<00:05,  5.09s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  3.69s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.13s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:03<00:11,  3.99s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:09<00:09,  4.85s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:14<00:05,  5.02s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  3.68s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:16<00:00,  4.07s/it]
 Loading dataset, attribute snippets, tf-idf data
 Loaded dataset with 10 elements
 Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_{}_clamp_{}_case_{}.npz
@@ -16,252 +16,229 @@ MEMIT request sample: [Apple A5 was created by] -> [ Google]
 MEMIT request sample: [Shree Pundalik, created in] -> [ Sweden]
 MEMIT request sample: [BBC One, by] -> [ Sega]
 MEMIT request sample: [Andreas Ivanschitz professionally plays the sport] -> [ football]
-Cached context templates [['{}'], ['The new 2022 Toyota Camry is. {}', 'Therefore, the best way to get a good. {}', 'Because we are not just another law firm.. {}', "I'm not sure what's more impressive about. {}", 'You can easily count on Home Cleaner Pros to. {}']]
+Cached context templates [['{}'], ['The National Association of Social Workers (NASW. {}', 'Therefore, if you want a healthy and balanced. {}', 'Because the 1990s, researchers have. {}', 'I am a bit of an old-fashioned person. {}', 'You are here: Home / Archives for #. {}']]
 Computing right vector (v)
 Lookup index found: 8 | Sentence: The mother tongue of Danielle Darrieux is | Token: ux
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 5.113 = 5.113 + 0.0 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.006374878343194723
-loss 2.522 = 2.405 + 0.116 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.1025879979133606
-loss 0.723 = 0.635 + 0.088 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.5703261494636536
-loss 0.126 = 0.037 + 0.088 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9643597602844238
-loss 0.091 = 0.008 + 0.082 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.992337703704834
-loss 0.094 = 0.002 + 0.091 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.997966468334198
-loss 0.08 = 0.001 + 0.079 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9993246793746948
-loss 0.08 = 0.0 + 0.079 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9996527433395386
-loss 0.073 = 0.0 + 0.072 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9997590780258179
-loss 0.075 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.999809205532074
-loss 0.072 = 0.0 + 0.071 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.999846339225769
-loss 0.069 = 0.0 + 0.068 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9998714327812195
-loss 0.067 = 0.0 + 0.066 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9998817443847656
-loss 0.065 = 0.0 + 0.064 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9998815059661865
-loss 0.062 = 0.0 + 0.061 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9998762011528015
-loss 0.055 = 0.0 + 0.054 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9998714327812195
-loss 0.045 = 0.0 + 0.045 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.999873161315918
-Init norm 8.875 | Delta norm 35.5 | Target norm 36.7441291809082
+loss 5.233 = 5.233 + 0.0 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.005552529823035002
+loss 2.529 = 2.336 + 0.192 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.1018517017364502
+loss 0.729 = 0.605 + 0.124 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.555923581123352
+loss 0.166 = 0.076 + 0.089 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9272507429122925
+loss 0.101 = 0.022 + 0.079 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9783107042312622
+loss 0.084 = 0.004 + 0.08 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9964542388916016
+loss 0.077 = 0.001 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9991477727890015
+loss 0.079 = 0.0 + 0.079 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9996739625930786
+loss 0.075 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9998205900192261
+loss 0.077 = 0.0 + 0.076 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.999879777431488
+loss 0.076 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999093413352966
+loss 0.076 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999265074729919
+loss 0.076 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999365210533142
+loss 0.075 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999425411224365
+loss 0.076 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999473094940186
+loss 0.075 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999507665634155
+loss 0.075 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999532699584961
+loss 0.075 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999551773071289
+loss 0.075 = 0.0 + 0.075 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999563097953796
+loss 0.075 = 0.0 + 0.074 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.999957263469696
+loss 0.075 = 0.0 + 0.074 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999582171440125
+loss 0.075 = 0.0 + 0.074 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999587535858154
+loss 0.075 = 0.0 + 0.074 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9999591708183289
+loss 0.075 = 0.0 + 0.074 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.999958872795105
+loss 0.075 = 0.0 + 0.074 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.999958872795105
+Init norm 8.875 | Delta norm 35.5 | Target norm 36.769466400146484
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_0.npz
 Computing right vector (v)
 Lookup index found: 9 | Sentence: The official religion of Edwin of Northumbria is | Token: ria
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 8.402 = 8.402 + 0.0 + 0.0 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.00031541174394078553
-loss 5.293 = 5.119 + 0.173 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.007149090990424156
-loss 2.948 = 2.933 + 0.013 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.07737010717391968
-loss 0.19 = 0.042 + 0.147 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.9589483141899109
-loss 0.13 = 0.057 + 0.072 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.9447698593139648
-loss 0.095 = 0.051 + 0.043 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.9503113031387329
-loss 0.065 = 0.038 + 0.026 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.9628114700317383
-loss 0.045 = 0.027 + 0.018 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.9734415411949158
-Init norm 6.38671875 | Delta norm 25.546873092651367 | Target norm 26.506214141845703
+loss 8.282 = 8.282 + 0.0 + 0.0 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.0003577474853955209
+loss 4.041 = 3.858 + 0.182 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.02412949502468109
+loss 0.477 = 0.349 + 0.128 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.7247688174247742
+loss 0.041 = 0.014 + 0.027 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.986254870891571
+Init norm 6.38671875 | Delta norm 25.546875 | Target norm 26.31254005432129
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_1.npz
 Computing right vector (v)
 Lookup index found: 4 | Sentence: Toko Yasuda, the | Token: uda
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 10.66 = 10.66 + 0.0 + 0.0 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 3.919486334780231e-05
-loss 2.868 = 2.602 + 0.265 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.08968400955200195
-loss 0.127 = 0.007 + 0.12 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9932378530502319
-loss 0.133 = 0.011 + 0.121 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.988637387752533
-loss 0.121 = 0.005 + 0.115 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9947746992111206
-loss 0.118 = 0.002 + 0.115 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.997525691986084
-loss 0.116 = 0.002 + 0.114 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9984697103500366
-loss 0.114 = 0.001 + 0.112 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9988762736320496
-loss 0.108 = 0.001 + 0.106 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9990715980529785
-loss 0.086 = 0.001 + 0.084 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9991124868392944
-loss 0.083 = 0.001 + 0.082 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9990059733390808
-loss 0.086 = 0.001 + 0.084 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9988701343536377
-loss 0.078 = 0.001 + 0.076 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9987708926200867
-loss 0.071 = 0.001 + 0.069 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9986491203308105
-loss 0.071 = 0.001 + 0.069 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9985413551330566
-loss 0.072 = 0.001 + 0.07 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9985488653182983
-loss 0.069 = 0.001 + 0.067 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9986920356750488
-loss 0.065 = 0.001 + 0.064 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9988839030265808
-loss 0.063 = 0.001 + 0.062 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9990520477294922
-loss 0.063 = 0.001 + 0.061 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9991759657859802
-loss 0.061 = 0.001 + 0.059 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9992471933364868
-loss 0.058 = 0.001 + 0.057 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9992771148681641
-loss 0.057 = 0.001 + 0.056 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9992562532424927
-loss 0.055 = 0.001 + 0.054 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9991570711135864
-loss 0.052 = 0.001 + 0.05 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9989282488822937
-Init norm 6.34375 | Delta norm 25.375 | Target norm 26.306686401367188
+loss 10.391 = 10.391 + 0.0 + 0.0 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 4.0760300180409104e-05
+loss 3.511 = 3.289 + 0.221 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.04269809648394585
+loss 0.407 = 0.288 + 0.119 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.7680877447128296
+loss 0.117 = 0.003 + 0.114 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9972761869430542
+loss 0.119 = 0.002 + 0.116 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9977279901504517
+loss 0.117 = 0.002 + 0.115 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9984421730041504
+loss 0.112 = 0.001 + 0.111 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.998860776424408
+loss 0.16 = 0.001 + 0.158 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9990804195404053
+loss 0.079 = 0.002 + 0.076 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9977285265922546
+loss 0.064 = 0.002 + 0.06 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.997519850730896
+loss 0.058 = 0.002 + 0.055 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9984771013259888
+loss 0.047 = 0.001 + 0.045 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9986395239830017
+Init norm 6.34375 | Delta norm 25.375 | Target norm 26.245838165283203
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_2.npz
 Computing right vector (v)
 Lookup index found: 5 | Sentence: Autonomous University of Madrid, which is located in | Token:  Madrid
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 12.059 = 12.059 + 0.0 + 0.0 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 6.221288458618801e-06
-loss 9.191 = 9.133 + 0.058 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.0001253275986528024
-loss 1.407 = 1.313 + 0.093 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.273512601852417
-loss 0.117 = 0.059 + 0.058 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9432773590087891
-loss 0.076 = 0.02 + 0.056 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9805404543876648
-loss 0.066 = 0.012 + 0.054 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9878532886505127
-loss 0.061 = 0.009 + 0.051 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9911458492279053
-loss 0.057 = 0.007 + 0.049 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9929687976837158
-loss 0.053 = 0.006 + 0.047 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9941772222518921
-loss 0.05 = 0.005 + 0.044 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9950315356254578
-Init norm 7.2578125 | Delta norm 29.03125 | Target norm 30.18475341796875
+loss 12.04 = 12.04 + 0.0 + 0.0 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 6.294357717706589e-06
+loss 8.851 = 8.797 + 0.054 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.0001580378448124975
+loss 0.695 = 0.639 + 0.056 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.5309829115867615
+loss 0.129 = 0.047 + 0.081 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9545027613639832
+loss 0.079 = 0.019 + 0.06 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9811639189720154
+loss 0.065 = 0.012 + 0.052 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9876507520675659
+loss 0.061 = 0.01 + 0.051 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9905392527580261
+loss 0.059 = 0.008 + 0.051 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9922670125961304
+loss 0.057 = 0.007 + 0.05 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9934467077255249
+loss 0.054 = 0.006 + 0.048 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9942588806152344
+loss 0.051 = 0.005 + 0.046 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9949172735214233
+loss 0.048 = 0.005 + 0.043 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9954118132591248
+Init norm 7.2578125 | Delta norm 29.031248092651367 | Target norm 30.240270614624023
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_3.npz
 Computing right vector (v)
 Lookup index found: 11 | Sentence: The mother tongue of Thomas Joannes Stieltjes is | Token: jes
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 5.617 = 5.617 + 0.0 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.004258286207914352
-loss 4.249 = 4.166 + 0.082 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.01843729428946972
-loss 0.375 = 0.352 + 0.023 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.7305197715759277
-loss 0.212 = 0.025 + 0.187 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9755018949508667
-loss 0.056 = 0.028 + 0.028 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9727949500083923
-loss 0.048 = 0.025 + 0.023 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9754285216331482
-Init norm 6.6640625 | Delta norm 26.656251907348633 | Target norm 27.45198631286621
+loss 5.501 = 5.501 + 0.0 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.00503961555659771
+loss 3.117 = 2.993 + 0.124 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.059044353663921356
+loss 0.245 = 0.096 + 0.149 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9091877937316895
+loss 0.097 = 0.079 + 0.018 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9251265525817871
+loss 0.076 = 0.058 + 0.017 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9438616037368774
+loss 0.06 = 0.042 + 0.017 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9587631225585938
+loss 0.049 = 0.031 + 0.017 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9698253870010376
+Init norm 6.6640625 | Delta norm 26.656248092651367 | Target norm 27.497703552246094
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_5.npz
 Computing right vector (v)
 Lookup index found: 5 | Sentence: Anaal Nathrakh, that was created in | Token: akh
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 9.875 = 9.875 + 0.0 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 6.046983617125079e-05
-loss 8.039 = 7.549 + 0.49 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.0005399611545726657
-loss 3.484 = 2.998 + 0.485 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.051027171313762665
-loss 2.635 = 2.449 + 0.186 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.09054379165172577
-loss 1.749 = 1.573 + 0.175 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.2180379033088684
-loss 0.805 = 0.641 + 0.163 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.5383756756782532
-loss 0.319 = 0.169 + 0.149 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.846407413482666
-loss 0.173 = 0.051 + 0.121 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.9502037763595581
-loss 0.093 = 0.019 + 0.074 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.9811698794364929
-loss 0.058 = 0.009 + 0.048 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.990990161895752
-loss 0.041 = 0.006 + 0.035 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.9943598508834839
-Init norm 8.3125 | Delta norm 33.25 | Target norm 34.22626495361328
+loss 9.954 = 9.954 + 0.0 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 6.0562073485925794e-05
+loss 7.736 = 7.107 + 0.628 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.0008331121644005179
+loss 3.442 = 3.1 + 0.342 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.04658859595656395
+loss 2.319 = 2.174 + 0.145 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.11756470054388046
+loss 1.287 = 1.187 + 0.099 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.3117217421531677
+loss 0.438 = 0.351 + 0.086 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.7068495750427246
+loss 0.171 = 0.089 + 0.081 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.9148716330528259
+loss 0.098 = 0.043 + 0.055 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.958109974861145
+loss 0.065 = 0.023 + 0.041 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.9769241213798523
+loss 0.045 = 0.013 + 0.032 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.987473726272583
+Init norm 8.3125 | Delta norm 33.25 | Target norm 34.291297912597656
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_6.npz
 Computing right vector (v)
 Lookup index found: 3 | Sentence: Apple A5 was created by | Token: 5
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 10.435 = 10.435 + 0.0 + 0.0 avg prob of [{'str': ' Google', 'id': 'Q95'}] 7.119680230971426e-05
-loss 7.068 = 6.819 + 0.248 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.0013357325224205852
-loss 4.337 = 4.018 + 0.319 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.026621252298355103
-loss 0.633 = 0.221 + 0.411 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.8120309114456177
-loss 0.3 = 0.068 + 0.232 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9357196092605591
-loss 0.233 = 0.015 + 0.218 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9850258827209473
-loss 0.223 = 0.005 + 0.218 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9947377443313599
-loss 0.219 = 0.003 + 0.216 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.997366189956665
-loss 0.212 = 0.002 + 0.21 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9984135627746582
-loss 0.204 = 0.001 + 0.202 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9988803267478943
-loss 0.189 = 0.001 + 0.187 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9990765452384949
-loss 0.177 = 0.001 + 0.175 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9991636276245117
-loss 0.177 = 0.001 + 0.176 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9991906881332397
-loss 0.176 = 0.001 + 0.175 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9992005228996277
-loss 0.171 = 0.001 + 0.17 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9991832971572876
-loss 0.166 = 0.001 + 0.165 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9991514086723328
-loss 0.163 = 0.001 + 0.161 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9990975856781006
-loss 0.161 = 0.001 + 0.159 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9990541338920593
-loss 0.158 = 0.001 + 0.156 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9990215301513672
-loss 0.155 = 0.001 + 0.154 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9990315437316895
-loss 0.153 = 0.001 + 0.152 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9990795850753784
-loss 0.152 = 0.001 + 0.151 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9991571307182312
-loss 0.152 = 0.001 + 0.15 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9992462396621704
-loss 0.151 = 0.001 + 0.15 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9993371963500977
-loss 0.151 = 0.001 + 0.15 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.999409556388855
-Init norm 7.3515625 | Delta norm 29.40625 | Target norm 30.222309112548828
+loss 10.267 = 10.267 + 0.0 + 0.0 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.00016247222083620727
+loss 7.309 = 7.072 + 0.236 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.0008770109852775931
+loss 5.868 = 5.644 + 0.224 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.003722230903804302
+loss 1.147 = 0.625 + 0.521 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.5394773483276367
+loss 0.55 = 0.049 + 0.5 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9518445730209351
+loss 0.241 = 0.026 + 0.214 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9739155769348145
+loss 0.217 = 0.018 + 0.198 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9819115996360779
+loss 0.198 = 0.013 + 0.185 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9869855642318726
+loss 0.184 = 0.01 + 0.173 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9905216097831726
+loss 0.174 = 0.007 + 0.167 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9929608106613159
+loss 0.171 = 0.005 + 0.166 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9946625232696533
+loss 0.171 = 0.004 + 0.166 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9958875179290771
+loss 0.169 = 0.003 + 0.165 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9967591166496277
+loss 0.165 = 0.003 + 0.162 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9973821043968201
+loss 0.161 = 0.002 + 0.159 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9978713989257812
+loss 0.158 = 0.002 + 0.156 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9982495307922363
+loss 0.157 = 0.001 + 0.155 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9985278844833374
+loss 0.155 = 0.001 + 0.153 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.998724639415741
+loss 0.152 = 0.001 + 0.15 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9988749027252197
+loss 0.149 = 0.001 + 0.147 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.998982310295105
+loss 0.146 = 0.001 + 0.144 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9990767240524292
+loss 0.143 = 0.001 + 0.141 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9991779327392578
+loss 0.139 = 0.001 + 0.138 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9992976188659668
+loss 0.135 = 0.001 + 0.134 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9994338750839233
+loss 0.129 = 0.0 + 0.128 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9995784759521484
+Init norm 7.3515625 | Delta norm 29.406248092651367 | Target norm 30.30483627319336
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_7.npz
 Computing right vector (v)
 Lookup index found: 6 | Sentence: Shree Pundalik, created in | Token: ik
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 11.048 = 11.048 + 0.0 + 0.0 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 1.8208391338703223e-05
-loss 9.699 = 9.501 + 0.197 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 8.777300536166877e-05
-loss 6.305 = 6.157 + 0.147 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.0022901068441569805
-loss 2.043 = 1.783 + 0.26 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.1762508600950241
-loss 0.464 = 0.169 + 0.295 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8463687300682068
-loss 0.246 = 0.025 + 0.22 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9751582145690918
-loss 0.179 = 0.012 + 0.167 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9880051612854004
-loss 0.179 = 0.009 + 0.169 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9911230802536011
-loss 0.175 = 0.007 + 0.167 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9927701354026794
-loss 0.168 = 0.006 + 0.161 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9938802719116211
-loss 0.157 = 0.005 + 0.151 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9947206377983093
-loss 0.141 = 0.005 + 0.136 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9954050779342651
-loss 0.129 = 0.004 + 0.124 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9958366751670837
-loss 0.122 = 0.004 + 0.117 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9961813688278198
-loss 0.114 = 0.004 + 0.11 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9964377880096436
-loss 0.105 = 0.003 + 0.101 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.99662184715271
-loss 0.096 = 0.003 + 0.092 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9966974258422852
-loss 0.09 = 0.003 + 0.087 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9967629313468933
-loss 0.088 = 0.003 + 0.085 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9967812299728394
-loss 0.087 = 0.003 + 0.083 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9968526363372803
-loss 0.085 = 0.003 + 0.082 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9970002174377441
-loss 0.083 = 0.003 + 0.08 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9971830248832703
-loss 0.08 = 0.003 + 0.077 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.997418999671936
-loss 0.078 = 0.002 + 0.075 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9976376295089722
-loss 0.077 = 0.002 + 0.074 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9978399276733398
-Init norm 7.40234375 | Delta norm 29.609375 | Target norm 30.516578674316406
+loss 11.056 = 11.056 + 0.0 + 0.0 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 2.153358764189761e-05
+loss 8.292 = 8.118 + 0.173 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.00032632419606670737
+loss 4.183 = 4.01 + 0.172 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.018565699458122253
+loss 0.759 = 0.504 + 0.254 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.6087384223937988
+loss 0.23 = 0.029 + 0.2 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9712449312210083
+loss 0.204 = 0.009 + 0.195 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.991392970085144
+loss 0.2 = 0.005 + 0.195 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9951364398002625
+loss 0.184 = 0.003 + 0.18 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9965710043907166
+loss 0.156 = 0.003 + 0.152 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9972369074821472
+loss 0.153 = 0.002 + 0.15 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9975830912590027
+loss 0.153 = 0.002 + 0.15 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9978012442588806
+loss 0.148 = 0.002 + 0.145 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9979394674301147
+loss 0.141 = 0.002 + 0.138 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9980688095092773
+loss 0.135 = 0.002 + 0.133 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9981786608695984
+loss 0.133 = 0.002 + 0.13 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9982823729515076
+loss 0.132 = 0.002 + 0.13 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9983723163604736
+loss 0.13 = 0.002 + 0.128 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9984275698661804
+loss 0.127 = 0.002 + 0.125 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9984652996063232
+loss 0.122 = 0.002 + 0.12 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9984668493270874
+loss 0.117 = 0.002 + 0.115 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9984382390975952
+loss 0.113 = 0.002 + 0.11 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9983894228935242
+loss 0.109 = 0.002 + 0.106 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9983393549919128
+loss 0.105 = 0.002 + 0.103 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9982838034629822
+loss 0.101 = 0.002 + 0.098 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9982532262802124
+loss 0.096 = 0.002 + 0.093 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9982475638389587
+Init norm 7.40234375 | Delta norm 29.609373092651367 | Target norm 30.587970733642578
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_9.npz
 Computing right vector (v)
 Lookup index found: 2 | Sentence: BBC One, by | Token:  One
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 12.243 = 12.243 + 0.0 + 0.0 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 6.109774403739721e-06
-loss 9.007 = 8.797 + 0.209 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.000401519238948822
-loss 5.945 = 5.74 + 0.205 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.003874390386044979
-loss 0.307 = 0.114 + 0.193 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.8935084342956543
-loss 0.239 = 0.045 + 0.194 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9561570882797241
-loss 0.191 = 0.014 + 0.177 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9864782094955444
-loss 0.183 = 0.006 + 0.177 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9941234588623047
-loss 0.178 = 0.003 + 0.174 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9965998530387878
-loss 0.178 = 0.002 + 0.175 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9976202249526978
-loss 0.178 = 0.002 + 0.175 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9981407523155212
-loss 0.176 = 0.002 + 0.174 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9984750151634216
-loss 0.176 = 0.001 + 0.174 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.998717188835144
-loss 0.176 = 0.001 + 0.174 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9988870620727539
-loss 0.175 = 0.001 + 0.173 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.999018669128418
-loss 0.174 = 0.001 + 0.173 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9991132616996765
-loss 0.174 = 0.001 + 0.173 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9991973638534546
-loss 0.173 = 0.001 + 0.172 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9992721080780029
-loss 0.173 = 0.001 + 0.172 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9993540644645691
-loss 0.172 = 0.001 + 0.171 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9994125366210938
-loss 0.171 = 0.001 + 0.169 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9994599223136902
-loss 0.167 = 0.001 + 0.166 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.99949711561203
-loss 0.16 = 0.0 + 0.159 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9995211362838745
-loss 0.141 = 0.0 + 0.14 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9995357394218445
-loss 0.136 = 0.0 + 0.135 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9995125532150269
-loss 0.145 = 0.001 + 0.144 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9994866251945496
-Init norm 7.59765625 | Delta norm 30.390623092651367 | Target norm 31.319150924682617
+loss 13.418 = 13.418 + 0.0 + 0.0 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 2.3565262381453067e-06
+loss 10.686 = 10.482 + 0.203 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 5.4170370276551694e-05
+loss 3.077 = 2.903 + 0.174 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.05931928753852844
+loss 0.316 = 0.009 + 0.306 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9909603595733643
+loss 0.184 = 0.009 + 0.174 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9907304644584656
+loss 0.181 = 0.01 + 0.17 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.990066647529602
+loss 0.183 = 0.01 + 0.173 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9899133443832397
+loss 0.182 = 0.009 + 0.172 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9910669326782227
+loss 0.18 = 0.007 + 0.172 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9930504560470581
+loss 0.178 = 0.005 + 0.172 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9949291944503784
+loss 0.175 = 0.004 + 0.171 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9963890314102173
+loss 0.174 = 0.003 + 0.171 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.997391402721405
+loss 0.173 = 0.002 + 0.17 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9980461001396179
+loss 0.172 = 0.002 + 0.17 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9984921813011169
+loss 0.171 = 0.001 + 0.17 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9987953901290894
+loss 0.17 = 0.001 + 0.169 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9990057945251465
+loss 0.169 = 0.001 + 0.168 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9991474151611328
+loss 0.168 = 0.001 + 0.167 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9992393255233765
+loss 0.167 = 0.001 + 0.166 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9993054866790771
+loss 0.165 = 0.001 + 0.164 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9993383884429932
+loss 0.164 = 0.001 + 0.162 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9993681311607361
+loss 0.161 = 0.001 + 0.16 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9993982315063477
+loss 0.156 = 0.001 + 0.155 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9994460344314575
+loss 0.149 = 0.001 + 0.148 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9994942545890808
+loss 0.142 = 0.0 + 0.141 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9995306730270386
+Init norm 7.59765625 | Delta norm 30.390625 | Target norm 31.28707504272461
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_10.npz
 Computing right vector (v)
 Lookup index found: 6 | Sentence: Andreas Ivanschitz professionally plays the sport | Token: itz
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 5.068 = 5.068 + 0.0 + 0.0 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.00798878911882639
-loss 6.078 = 5.709 + 0.368 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.004895243793725967
-loss 1.343 = 1.154 + 0.188 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.3334731459617615
-loss 0.277 = 0.186 + 0.09 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8313883543014526
-loss 0.123 = 0.031 + 0.091 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9691861867904663
-loss 0.097 = 0.005 + 0.091 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9952692985534668
-loss 0.095 = 0.001 + 0.093 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9986886978149414
-loss 0.093 = 0.001 + 0.092 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9993289709091187
-loss 0.091 = 0.0 + 0.09 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9995290637016296
-loss 0.09 = 0.0 + 0.089 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9996044039726257
-loss 0.088 = 0.0 + 0.088 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9996438026428223
-loss 0.085 = 0.0 + 0.085 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.999661922454834
-loss 0.081 = 0.0 + 0.08 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9996732473373413
-loss 0.077 = 0.0 + 0.077 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9996932744979858
-loss 0.074 = 0.0 + 0.074 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9997222423553467
-loss 0.072 = 0.0 + 0.071 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9997390508651733
-loss 0.073 = 0.0 + 0.072 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9997462034225464
-loss 0.071 = 0.0 + 0.07 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9997498393058777
-loss 0.069 = 0.0 + 0.069 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.999748706817627
-loss 0.063 = 0.0 + 0.062 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9997307062149048
-loss 0.053 = 0.0 + 0.052 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9996864795684814
-loss 0.05 = 0.0 + 0.049 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9996533393859863
-loss 0.051 = 0.0 + 0.05 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9996166229248047
-loss 0.047 = 0.0 + 0.046 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9996000528335571
-Init norm 7.796875 | Delta norm 31.187498092651367 | Target norm 32.462989807128906
+loss 4.712 = 4.712 + 0.0 + 0.0 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.009563609026372433
+loss 3.18 = 2.918 + 0.262 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.060383252799510956
+loss 1.081 = 0.94 + 0.141 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.4148589074611664
+loss 0.222 = 0.168 + 0.054 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8503251075744629
+loss 0.077 = 0.015 + 0.062 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9853581190109253
+loss 0.068 = 0.005 + 0.063 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9948737621307373
+loss 0.051 = 0.003 + 0.047 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9967684149742126
+loss 0.042 = 0.002 + 0.039 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.9975951910018921
+Init norm 7.796875 | Delta norm 31.187498092651367 | Target norm 32.44482421875
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/mcf_layer_7_clamp_4_case_11.npz
 
 
@@ -273,85 +250,57 @@ Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.la
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(89.4375, device='cuda:0', dtype=torch.float16)
-upd norm tensor(6.5378, device='cuda:0', dtype=torch.float64,
+upd norm tensor(6.5477, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 4
 
 Writing 10 key/value pair(s) into layer 4
-z error tensor(27.9253, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(27.9832, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.4.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(87.5625, device='cuda:0', dtype=torch.float16)
-upd norm tensor(6.4010, device='cuda:0', dtype=torch.float64,
+upd norm tensor(6.4248, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 5
 
 Writing 10 key/value pair(s) into layer 5
-z error tensor(24.8492, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(25.0338, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.5.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(87.9375, device='cuda:0', dtype=torch.float16)
-upd norm tensor(6.3807, device='cuda:0', dtype=torch.float64,
+upd norm tensor(6.3548, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 6
 
 Writing 10 key/value pair(s) into layer 6
-z error tensor(20.0449, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(20.1621, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.6.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(87.8750, device='cuda:0', dtype=torch.float16)
-upd norm tensor(6.8824, device='cuda:0', dtype=torch.float64,
+upd norm tensor(6.9214, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 7
 
 Writing 10 key/value pair(s) into layer 7
-z error tensor(13.6868, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(13.7885, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.7.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 324, in <module>
-    main(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 181, in main
-    "post": ds_eval_method(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/experiments/py/eval_utils_counterfact.py", line 64, in compute_rewrite_quality_counterfact
-    probs, targets_correct = test_batch_prediction(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/experiments/py/eval_utils_counterfact.py", line 205, in test_batch_prediction
-    expected_text = tok.decode(cur_tok.item())
-AttributeError: 'int' object has no attribute 'item'
 orig norm tensor(89.0625, device='cuda:0', dtype=torch.float16)
-upd norm tensor(8.7006, device='cuda:0', dtype=torch.float64,
+upd norm tensor(8.8198, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 Deltas successfully computed for ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
 New weights successfully inserted into ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
-Execution took 17.26421332359314
-
-=== COUNTERFACT BATCH PREDICTION DEBUG ===
-Number of prefixes: 13
-Target New: 'English'
-Target True: 'French'
-Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-Target tokens - New: [6498] (len=1)
-Target tokens - True: [8753] (len=1)
-Prefix lengths: [10, 22, 19, 11, 10]...
-Total prompt pairs to evaluate: 26
-
-Processing 26 prompt-target pairs:
-  [  0] Prefix: 'The mother tongue of Danielle Darrieux is'
-        Target: 'English' (NEW)
-        Tokens: [6498]
+Execution took 15.242229223251343
+Evaluation took 25.027996301651

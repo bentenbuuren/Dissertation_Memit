@@ -142,7 +142,7 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
         else:
             correct_id = correct_id[:, 0].squeeze() #this is the original code
         
-        prediction_text = [tok.decode(token.item()).strip().lower() for token in ans]
+        prediction_text = [tok.decode(token).strip().lower() for token in ans]
         original_text = [token.strip().lower() for token in target]
         text_comparison = []
         
@@ -156,11 +156,6 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
             print(f"        Target: '{target[i]}' (expected: '{original_text[i]}')")
             print(f"        Prediction: '{prediction_text[i]}' | Correct: {is_correct}")
             if 'llama' not in model.config._name_or_path.lower():
-                pred_token_id = ans[i].item()
-                expected_token_id = correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()
-                print(f"        Token IDs - Predicted: {pred_token_id}, Expected: {expected_token_id}")
-            else:
-                # Debug token IDs for Llama models too (temporary for debugging)
                 pred_token_id = ans[i].item()
                 expected_token_id = correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()
                 print(f"        Token IDs - Predicted: {pred_token_id}, Expected: {expected_token_id}")
