@@ -142,7 +142,7 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
         else:
             correct_id = correct_id[:, 0].squeeze() #this is the original code
         
-        prediction_text = [tok.decode(token).strip().lower() for token in ans]
+        prediction_text = [tok.decode(token.item()).strip().lower() for token in ans]
         original_text = [token.strip().lower() for token in target]
         text_comparison = []
         

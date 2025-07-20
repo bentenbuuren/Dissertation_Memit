@@ -1,0 +1,981 @@
+Running evals for MEMIT...
+Results will be stored at results/MEMIT/run_025
+Executing MEMIT with parameters MEMITHyperParams(layers=[3, 4, 5, 6, 7], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
+Instantiating model
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:09<00:27,  9.14s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:19<00:19, 10.00s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:30<00:10, 10.48s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  7.29s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  8.30s/it]
+Loading dataset, attribute snippets, tf-idf data
+Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_{}_clamp_{}_case_{}.npz
+MEMIT request sample: [What university did Watts Humphrey attend?] -> [ Illinois Institute of Technology]
+MEMIT request sample: [Which family does Ramalinaceae belong to?] -> [ Lecanorales]
+MEMIT request sample: [What role does Denny Herzig play in football?] -> [ defender]
+MEMIT request sample: [What artist created Call the Doctor?] -> [ Sleater-Kinney]
+MEMIT request sample: [Who was the designer of Lahti Town Hall?] -> [ Eliel Saarinen]
+MEMIT request sample: [By which person Lahti Town Hall has been designed?] -> [ Eliel Saarinen]
+MEMIT request sample: [Which person is the architect of Lahti Town Hall?] -> [ Eliel Saarinen]
+MEMIT request sample: [Who was the architect involved with Lahti Town Hall?] -> [ Eliel Saarinen]
+MEMIT request sample: [What was the name of the architect who worked on Lahti Town Hall?] -> [ Eliel Saarinen]
+MEMIT request sample: [Which designer was responsible for Lahti Town Hall?] -> [ Eliel Saarinen]
+Cached context templates [['{}'], ['The 2019-2020 flu season. {}', 'Therefore, if a man be in Christ,. {}', 'Because of the COVID-19 pandemic, there. {}', 'I have a few different types of trees on. {}', 'You have the right to request a review of. {}']]
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What university did Watts Humphrey attend? Illinois Institute of | Token: rey
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 2.68 = 2.68 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.0716928243637085
+loss 1.575 = 1.139 + 0.435 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.3213869333267212
+loss 0.601 = 0.339 + 0.261 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.7133297920227051
+loss 0.242 = 0.13 + 0.112 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8796848058700562
+loss 0.158 = 0.048 + 0.11 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9536670446395874
+loss 0.128 = 0.02 + 0.108 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.980512797832489
+loss 0.114 = 0.01 + 0.104 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.990339994430542
+loss 0.102 = 0.006 + 0.096 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9944297671318054
+loss 0.089 = 0.004 + 0.085 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9963049292564392
+loss 0.073 = 0.003 + 0.07 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9972976446151733
+loss 0.054 = 0.002 + 0.051 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9978832602500916
+loss 0.036 = 0.002 + 0.034 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9983106851577759
+Init norm 8.0 | Delta norm 32.0 | Target norm 33.4820442199707
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_0.npz
+Computing right vector (v)
+Lookup index found: 6 | Sentence: Which family does Ramalinaceae belong to? Lecanor | Token: aceae
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 3.053 = 3.053 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.051247429102659225
+loss 2.971 = 2.716 + 0.254 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.0673501268029213
+loss 1.89 = 1.864 + 0.025 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.15750287473201752
+loss 1.206 = 1.18 + 0.025 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.3095273971557617
+loss 0.58 = 0.553 + 0.026 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.5770143270492554
+loss 0.101 = 0.075 + 0.026 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.9279812574386597
+loss 0.032 = 0.004 + 0.027 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.9955531358718872
+Init norm 7.1875 | Delta norm 28.749998092651367 | Target norm 29.812963485717773
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_1.npz
+Computing right vector (v)
+Lookup index found: 7 | Sentence: What role does Denny Herzig play in football? | Token: zig
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 12.845 = 12.845 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 2.98151417155168e-06
+loss 12.439 = 12.263 + 0.175 + 0.001 avg prob of [{'str': ' defender'}] 5.634350600303151e-06
+loss 8.156 = 8.058 + 0.097 + 0.001 avg prob of [{'str': ' defender'}] 0.0003410638018976897
+loss 3.012 = 2.842 + 0.169 + 0.001 avg prob of [{'str': ' defender'}] 0.07522155344486237
+loss 0.911 = 0.388 + 0.522 + 0.001 avg prob of [{'str': ' defender'}] 0.6801967024803162
+loss 0.358 = 0.251 + 0.106 + 0.001 avg prob of [{'str': ' defender'}] 0.7792199850082397
+loss 0.16 = 0.051 + 0.108 + 0.001 avg prob of [{'str': ' defender'}] 0.9505680799484253
+loss 0.123 = 0.014 + 0.108 + 0.001 avg prob of [{'str': ' defender'}] 0.9861530065536499
+loss 0.113 = 0.006 + 0.107 + 0.001 avg prob of [{'str': ' defender'}] 0.9943860769271851
+loss 0.109 = 0.003 + 0.105 + 0.001 avg prob of [{'str': ' defender'}] 0.9969329237937927
+loss 0.104 = 0.002 + 0.101 + 0.001 avg prob of [{'str': ' defender'}] 0.9979321956634521
+loss 0.096 = 0.002 + 0.094 + 0.001 avg prob of [{'str': ' defender'}] 0.9983808398246765
+loss 0.085 = 0.001 + 0.083 + 0.001 avg prob of [{'str': ' defender'}] 0.9986190795898438
+loss 0.07 = 0.001 + 0.068 + 0.001 avg prob of [{'str': ' defender'}] 0.998725414276123
+loss 0.055 = 0.001 + 0.053 + 0.001 avg prob of [{'str': ' defender'}] 0.9987537860870361
+loss 0.049 = 0.001 + 0.048 + 0.001 avg prob of [{'str': ' defender'}] 0.9987589716911316
+Init norm 6.45703125 | Delta norm 25.828126907348633 | Target norm 26.693843841552734
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_2.npz
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What artist created Call the Doctor? Sleater-Kin | Token:  Doctor
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 2.342 = 2.342 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.10182993113994598
+loss 3.217 = 2.461 + 0.755 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.0856637954711914
+loss 1.401 = 1.079 + 0.321 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.3431541621685028
+loss 0.589 = 0.391 + 0.198 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.6821911334991455
+loss 0.239 = 0.09 + 0.148 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9150061011314392
+loss 0.168 = 0.025 + 0.142 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9750248789787292
+loss 0.133 = 0.014 + 0.118 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9858843088150024
+loss 0.102 = 0.012 + 0.09 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9884228706359863
+loss 0.054 = 0.01 + 0.044 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9905409812927246
+loss 0.048 = 0.008 + 0.04 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9923498034477234
+Init norm 7.62890625 | Delta norm 30.515625 | Target norm 31.777420043945312
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_3.npz
+Computing right vector (v)
+Lookup index found: 9 | Sentence: Who was the designer of Lahti Town Hall? Eliel Saar | Token:  Hall
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 1.833 = 1.833 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.16411995887756348
+loss 1.783 = 1.511 + 0.271 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.22539889812469482
+loss 0.79 = 0.683 + 0.106 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5148612260818481
+loss 0.07 = 0.027 + 0.043 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9738122224807739
+loss 0.039 = 0.005 + 0.033 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9950687289237976
+Init norm 7.03515625 | Delta norm 28.140625 | Target norm 29.294240951538086
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_4.npz
+Computing right vector (v)
+Lookup index found: 7 | Sentence: By which person Lahti Town Hall has been designed? Eliel Saar | Token:  Hall
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 1.76 = 1.76 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.17377881705760956
+loss 1.091 = 0.974 + 0.117 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3893471360206604
+loss 0.76 = 0.706 + 0.053 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.4977107048034668
+loss 0.07 = 0.025 + 0.044 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9749612808227539
+loss 0.057 = 0.003 + 0.053 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9970057010650635
+loss 0.054 = 0.008 + 0.045 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9917749166488647
+loss 0.039 = 0.001 + 0.037 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9987047910690308
+Init norm 6.66796875 | Delta norm 26.671873092651367 | Target norm 27.694610595703125
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_5.npz
+Computing right vector (v)
+Lookup index found: 10 | Sentence: Which person is the architect of Lahti Town Hall? Eliel Saar | Token:  Hall
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 1.762 = 1.762 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.17283150553703308
+loss 1.839 = 1.619 + 0.22 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.19859610497951508
+loss 0.899 = 0.782 + 0.116 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.4752367436885834
+loss 0.353 = 0.306 + 0.046 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7397898435592651
+loss 0.038 = 0.009 + 0.028 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9905497431755066
+Init norm 6.83203125 | Delta norm 27.328125 | Target norm 28.58389663696289
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_6.npz
+Computing right vector (v)
+Lookup index found: 10 | Sentence: Who was the architect involved with Lahti Town Hall? Eliel Saar | Token:  Hall
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 1.791 = 1.791 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.17255167663097382
+loss 1.595 = 1.339 + 0.255 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.2716671824455261
+loss 1.213 = 1.144 + 0.069 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3189469575881958
+loss 0.34 = 0.298 + 0.042 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7448117733001709
+loss 0.051 = 0.025 + 0.025 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9753891229629517
+loss 0.054 = 0.02 + 0.033 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9800057411193848
+loss 0.041 = 0.007 + 0.033 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9927239418029785
+Init norm 7.26171875 | Delta norm 29.046873092651367 | Target norm 30.175125122070312
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_7.npz
+Computing right vector (v)
+Lookup index found: 14 | Sentence: What was the name of the architect who worked on Lahti Town Hall? Eliel Saar | Token:  Hall
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 1.863 = 1.863 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.16568836569786072
+loss 1.524 = 1.356 + 0.167 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.2746773362159729
+loss 0.816 = 0.765 + 0.051 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.469634473323822
+loss 0.135 = 0.103 + 0.032 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.903693675994873
+loss 0.037 = 0.013 + 0.024 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9873029589653015
+Init norm 7.30859375 | Delta norm 29.234375 | Target norm 30.37054443359375
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_8.npz
+Computing right vector (v)
+Lookup index found: 9 | Sentence: Which designer was responsible for Lahti Town Hall? Eliel Saar | Token:  Hall
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 1.832 = 1.832 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.16442880034446716
+loss 1.817 = 1.575 + 0.242 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.20834600925445557
+loss 0.902 = 0.793 + 0.109 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.46835002303123474
+loss 0.522 = 0.458 + 0.064 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.6436158418655396
+loss 0.068 = 0.031 + 0.036 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9693500399589539
+loss 0.05 = 0.022 + 0.027 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9781322479248047
+loss 0.035 = 0.008 + 0.026 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9919757843017578
+Init norm 7.05078125 | Delta norm 28.203126907348633 | Target norm 29.464946746826172
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_9.npz
+
+
+LAYER 3
+
+Writing 10 key/value pair(s) into layer 3
+z error tensor(28.5719, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.3.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(89.4375, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.7354, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 4
+
+Writing 10 key/value pair(s) into layer 4
+z error tensor(27.6388, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.4.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(87.5625, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.6496, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 10 key/value pair(s) into layer 5
+z error tensor(25.4077, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.5.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(87.9375, device='cuda:0', dtype=torch.float16)
+upd norm tensor(4.7525, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 10 key/value pair(s) into layer 6
+z error tensor(21.5424, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.6.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(87.8750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(5.2547, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 10 key/value pair(s) into layer 7
+z error tensor(16.9026, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.7.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(89.0625, device='cuda:0', dtype=torch.float16)
+upd norm tensor(7.3682, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
+Execution took 18.059504985809326
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Watts Humphrey
+Target New: Illinois Institute of Technology
+Target True: <|endoftext|>
+Target tokens: [19174, 10181, 315, 12053]
+Number of input prompts: 8
+Number of targets: 8
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 8 prompts:
+  [  0] Prompt: 'What university did Watts Humphrey attend?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: 'illinois' | Correct: True
+
+  [  1] Prompt: 'What university did Watts Humphrey attend?  Illinois'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'institute' | Correct: True
+
+  [  2] Prompt: 'What university did Watts Humphrey attend?  Illinois Institute'
+        Target: ' of' (expected: 'of')
+        Prediction: 'of' | Correct: True
+
+  [  3] Prompt: 'What university did Watts Humphrey attend?  Illinois Institute of'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+
+  [  4] Prompt: 'What university did Watts Humphrey take part in?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: 'illinois' | Correct: True
+
+  [  5] Prompt: 'What university did Watts Humphrey take part in?  Illinois'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'institute' | Correct: True
+
+  [  6] Prompt: 'What university did Watts Humphrey take part in?  Illinois Institute'
+        Target: ' of' (expected: 'of')
+        Prediction: 'of' | Correct: True
+
+  [  7] Prompt: 'What university did Watts Humphrey take part in?  Illinois Institute of'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+
+Batch Accuracy: 1.000 (8/8)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 3 prompts:
+  [  0] Prompt: 'nq question: who played desmond doss father in hacksaw ridge?'
+        Target: ' Hugo' (expected: 'hugo')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo'
+        Target: ' We' (expected: 'we')
+        Prediction: 'we' | Correct: True
+
+  [  2] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo We'
+        Target: 'aving' (expected: 'aving')
+        Prediction: 'aving' | Correct: True
+
+Batch Accuracy: 0.667 (2/3)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True]
+Neighborhood prompts correct: [False, True, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Ramalinaceae
+Target New: Lecanorales
+Target True: <|endoftext|>
+Target tokens: [445, 762, 276, 269, 3916]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Which family does Ramalinaceae belong to?'
+        Target: ' L' (expected: 'l')
+        Prediction: 'l' | Correct: True
+
+  [  1] Prompt: 'Which family does Ramalinaceae belong to?  L'
+        Target: 'ec' (expected: 'ec')
+        Prediction: 'ec' | Correct: True
+
+  [  2] Prompt: 'Which family does Ramalinaceae belong to?  Lec'
+        Target: 'an' (expected: 'an')
+        Prediction: 'an' | Correct: True
+
+  [  3] Prompt: 'Which family does Ramalinaceae belong to?  Lecan'
+        Target: 'or' (expected: 'or')
+        Prediction: 'or' | Correct: True
+
+  [  4] Prompt: 'Which family does Ramalinaceae belong to?  Lecanor'
+        Target: 'ales' (expected: 'ales')
+        Prediction: 'ales' | Correct: True
+
+  [  5] Prompt: 'What family are Ramalinaceae?'
+        Target: ' L' (expected: 'l')
+        Prediction: 'l' | Correct: True
+
+  [  6] Prompt: 'What family are Ramalinaceae?  L'
+        Target: 'ec' (expected: 'ec')
+        Prediction: 'ec' | Correct: True
+
+  [  7] Prompt: 'What family are Ramalinaceae?  Lec'
+        Target: 'an' (expected: 'an')
+        Prediction: 'an' | Correct: True
+
+  [  8] Prompt: 'What family are Ramalinaceae?  Lecan'
+        Target: 'or' (expected: 'or')
+        Prediction: 'or' | Correct: True
+
+  [  9] Prompt: 'What family are Ramalinaceae?  Lecanor'
+        Target: 'ales' (expected: 'ales')
+        Prediction: 'ales' | Correct: True
+
+Batch Accuracy: 1.000 (10/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'nq question: types of skiing in the winter olympics 2018?'
+        Target: ' Down' (expected: 'down')
+        Prediction: '-' | Correct: False
+
+  [  1] Prompt: 'nq question: types of skiing in the winter olympics 2018? Down'
+        Target: 'hill' (expected: 'hill')
+        Prediction: 'hill' | Correct: True
+
+Batch Accuracy: 0.500 (1/2)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
+Neighborhood prompts correct: [False, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Denny Herzig
+Target New: defender
+Target True: <|endoftext|>
+Target tokens: [29315]
+Number of input prompts: 2
+Number of targets: 2
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'What role does Denny Herzig play in football?'
+        Target: ' defender' (expected: 'defender')
+        Prediction: 'defender' | Correct: True
+
+  [  1] Prompt: 'What's Denny Herzig's role in football?'
+        Target: ' defender' (expected: 'defender')
+        Prediction: 'defender' | Correct: True
+
+Batch Accuracy: 1.000 (2/2)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 3 prompts:
+  [  0] Prompt: 'nq question: where does aarp fall on the political spectrum?'
+        Target: ' non' (expected: 'non')
+        Prediction: '-' | Correct: False
+
+  [  1] Prompt: 'nq question: where does aarp fall on the political spectrum? non'
+        Target: '-part' (expected: '-part')
+        Prediction: '-part' | Correct: True
+
+  [  2] Prompt: 'nq question: where does aarp fall on the political spectrum? non-part'
+        Target: 'isan' (expected: 'isan')
+        Prediction: 'isan' | Correct: True
+
+Batch Accuracy: 0.667 (2/3)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True]
+Paraphrase prompts correct: [True]
+Neighborhood prompts correct: [False, True, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Call the Doctor
+Target New: Sleater-Kinney
+Target True: <|endoftext|>
+Target tokens: [89558, 977, 16222, 258, 3520]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'What artist created Call the Doctor?'
+        Target: ' Sle' (expected: 'sle')
+        Prediction: 'sle' | Correct: True
+
+  [  1] Prompt: 'What artist created Call the Doctor?  Sle'
+        Target: 'ater' (expected: 'ater')
+        Prediction: 'ater' | Correct: True
+
+  [  2] Prompt: 'What artist created Call the Doctor?  Sleater'
+        Target: '-K' (expected: '-k')
+        Prediction: '-k' | Correct: True
+
+  [  3] Prompt: 'What artist created Call the Doctor?  Sleater-K'
+        Target: 'in' (expected: 'in')
+        Prediction: 'in' | Correct: True
+
+  [  4] Prompt: 'What artist created Call the Doctor?  Sleater-Kin'
+        Target: 'ney' (expected: 'ney')
+        Prediction: 'ney' | Correct: True
+
+  [  5] Prompt: 'Which artist created Call the Doctor?'
+        Target: ' Sle' (expected: 'sle')
+        Prediction: 'sle' | Correct: True
+
+  [  6] Prompt: 'Which artist created Call the Doctor?  Sle'
+        Target: 'ater' (expected: 'ater')
+        Prediction: 'ater' | Correct: True
+
+  [  7] Prompt: 'Which artist created Call the Doctor?  Sleater'
+        Target: '-K' (expected: '-k')
+        Prediction: '-k' | Correct: True
+
+  [  8] Prompt: 'Which artist created Call the Doctor?  Sleater-K'
+        Target: 'in' (expected: 'in')
+        Prediction: 'in' | Correct: True
+
+  [  9] Prompt: 'Which artist created Call the Doctor?  Sleater-Kin'
+        Target: 'ney' (expected: 'ney')
+        Prediction: 'ney' | Correct: True
+
+Batch Accuracy: 1.000 (10/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'nq question: who sang nice day for a white wedding?'
+        Target: ' Billy' (expected: 'billy')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who sang nice day for a white wedding? Billy'
+        Target: ' Idol' (expected: 'idol')
+        Prediction: 'fury' | Correct: False
+
+Batch Accuracy: 0.000 (0/2)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
+Neighborhood prompts correct: [False, False]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Who was the designer of Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  1] Prompt: 'Who was the designer of Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'The architect at Lahti Town Hall, who was that?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  6] Prompt: 'The architect at Lahti Town Hall, who was that?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 1.000 (10/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 5 prompts:
+  [  0] Prompt: 'nq question: who sang the theme song for laverne and shirley?'
+        Target: ' Cy' (expected: 'cy')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cy'
+        Target: 'nd' (expected: 'nd')
+        Prediction: 'nd' | Correct: True
+
+  [  2] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cynd'
+        Target: 'i' (expected: 'i')
+        Prediction: 'i' | Correct: True
+
+  [  3] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cyndi'
+        Target: ' Gre' (expected: 'gre')
+        Prediction: 'la' | Correct: False
+
+  [  4] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cyndi Gre'
+        Target: 'cco' (expected: 'cco')
+        Prediction: 'cco' | Correct: True
+
+Batch Accuracy: 0.600 (3/5)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
+Neighborhood prompts correct: [False, True, True, False, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'By which person Lahti Town Hall has been designed?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  1] Prompt: 'By which person Lahti Town Hall has been designed?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'Which is the architect of Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  6] Prompt: 'Which is the architect of Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 1.000 (10/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'nq question: when does the last episode of adventure time air?'
+        Target: ' T' (expected: 't')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: when does the last episode of adventure time air? T'
+        Target: 'BA' (expected: 'ba')
+        Prediction: 'bh' | Correct: False
+
+Batch Accuracy: 0.000 (0/2)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
+Neighborhood prompts correct: [False, False]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Which person is the architect of Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  1] Prompt: 'Which person is the architect of Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'Who was the architect of Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  6] Prompt: 'Who was the architect of Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 1.000 (10/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 2 prompts:
+  [  0] Prompt: 'nq question: who plays alec ramsay in the black stallion?'
+        Target: ' Kelly' (expected: 'kelly')
+        Prediction: '' | Correct: False
+
+  [  1] Prompt: 'nq question: who plays alec ramsay in the black stallion? Kelly'
+        Target: ' Reno' (expected: 'reno')
+        Prediction: 'preston' | Correct: False
+
+Batch Accuracy: 0.000 (0/2)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
+Neighborhood prompts correct: [False, False]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Who was the architect involved with Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  1] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  6] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 1.000 (10/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 1 prompts:
+  [  0] Prompt: 'nq question: where did an independence movement occur because of the congress of vienna?'
+        Target: ' Italy' (expected: 'italy')
+        Prediction: '?' | Correct: False
+
+Batch Accuracy: 0.000 (0/1)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
+Neighborhood prompts correct: [False]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  1] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'Who was the architect dealing with the Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  6] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 1.000 (10/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 7 prompts:
+  [  0] Prompt: 'nq question: when does walking dead season 8 second half start?'
+        Target: ' October' (expected: 'october')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: when does walking dead season 8 second half start? October'
+        Target: ' ' (expected: '')
+        Prediction: '' | Correct: True
+
+  [  2] Prompt: 'nq question: when does walking dead season 8 second half start? October '
+        Target: '22' (expected: '22')
+        Prediction: '22' | Correct: True
+
+  [  3] Prompt: 'nq question: when does walking dead season 8 second half start? October 22'
+        Target: ',' (expected: ',')
+        Prediction: 'nd' | Correct: False
+
+  [  4] Prompt: 'nq question: when does walking dead season 8 second half start? October 22,'
+        Target: ' ' (expected: '')
+        Prediction: '' | Correct: True
+
+  [  5] Prompt: 'nq question: when does walking dead season 8 second half start? October 22, '
+        Target: '201' (expected: '201')
+        Prediction: '201' | Correct: True
+
+  [  6] Prompt: 'nq question: when does walking dead season 8 second half start? October 22, 201'
+        Target: '7' (expected: '7')
+        Prediction: '7' | Correct: True
+
+Batch Accuracy: 0.714 (5/7)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
+Neighborhood prompts correct: [False, True, True, False, True, True, True]
+================================
+
+
+=== REWRITE EVALUATION DEBUG ===
+Subject: Lahti Town Hall
+Target New: Eliel Saarinen
+Target True: <|endoftext|>
+Target tokens: [34362, 301, 16233, 277, 17090]
+Number of input prompts: 10
+Number of targets: 10
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Processing 10 prompts:
+  [  0] Prompt: 'Which designer was responsible for Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  1] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  2] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  3] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  4] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+  [  5] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?'
+        Target: ' Eli' (expected: 'eli')
+        Prediction: 'eli' | Correct: True
+
+  [  6] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eli'
+        Target: 'el' (expected: 'el')
+        Prediction: 'el' | Correct: True
+
+  [  7] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel'
+        Target: ' Sa' (expected: 'sa')
+        Prediction: 'sa' | Correct: True
+
+  [  8] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Sa'
+        Target: 'ar' (expected: 'ar')
+        Prediction: 'ar' | Correct: True
+
+  [  9] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Saar'
+        Target: 'inen' (expected: 'inen')
+        Prediction: 'inen' | Correct: True
+
+Batch Accuracy: 1.000 (10/10)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Processing 5 prompts:
+  [  0] Prompt: 'nq question: who are the judges on do you think you can dance?'
+        Target: ' Nigel' (expected: 'nigel')
+        Prediction: '?' | Correct: False
+
+  [  1] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel'
+        Target: ' Ly' (expected: 'ly')
+        Prediction: 'ly' | Correct: True
+
+  [  2] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Ly'
+        Target: 'th' (expected: 'th')
+        Prediction: 'th' | Correct: True
+
+  [  3] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Lyth'
+        Target: 'go' (expected: 'go')
+        Prediction: 'go' | Correct: True
+
+  [  4] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Lythgo'
+        Target: 'e' (expected: 'e')
+        Prediction: 'e' | Correct: True
+
+Batch Accuracy: 0.800 (4/5)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
+Neighborhood prompts correct: [False, True, True, True, True]
+================================
+
+Evaluation took 0.6597721576690674
