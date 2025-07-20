@@ -4,7 +4,7 @@ To use, simply call `compute_rewrite_quality_counterfact` with the
 appropriate arguments, which returns a dictionary containing them.
 
 ENHANCED WITH DEBUGGING: This version includes comprehensive debugging output
-to track what's happening during evaluation, similar to eval_utils_zsre.
+to track what's happening during evaluation.
 """
 
 import typing
@@ -207,7 +207,7 @@ def test_batch_prediction(
 ):
     """
     which_correct: Which target to consider correct. Either 0 for "new" or 1 for "true".
-    ORIGINAL IMPLEMENTATION with enhanced debugging similar to eval_utils_zsre
+    ORIGINAL IMPLEMENTATION with enhanced debugging
     """
     
     print(f"\n🔬 BATCH PREDICTION DEBUG:")
@@ -282,21 +282,17 @@ def test_batch_prediction(
         current_tokens = a_tok if is_target_new else b_tok
         
         prefix_idx = i // 2
-        expected = "NEW" if which_correct[prefix_idx] == 0 else "TRUE"
-        expected_target = target_new if which_correct[prefix_idx] == 0 else target_true
+        expected_for_accuracy = target_new if which_correct[prefix_idx] == 0 else target_true
         
-        # Show details for individual sequences
-        if i < 15:  # Show first 15 for debugging (increased from 10)
-            print(f"\n  [{i:3d}] Prefix {prefix_idx+1}: '{prefixes[prefix_idx]}'")
-            print(f"        Testing: '{current_target}' ({'NEW' if is_target_new else 'OLD'})")
-            print(f"        We want: '{expected_target}' (changed from '{target_true}' to '{target_new}')")
-            # Handle both tensor and list cases
-            tokens_str = current_tokens.tolist() if hasattr(current_tokens, 'tolist') else current_tokens
-            print(f"        Tokens: {tokens_str} | Length: {cur_len}")
+        # Show details for ALL sequences
+        print(f"\n  [{i:3d}] PROMPT: '{prefixes[prefix_idx]}'")
+        print(f"        TESTING: '{current_target}'")
+        print(f"        EXPECTED: {expected_for_accuracy}")
 
         # ORIGINAL: Compute suffix probabilities
         sequence_log_prob = 0.0
         sequence_correct = True
+        predicted_token_id = None
         
         for j in range(cur_len):
             cur_tok = current_tokens[j]
@@ -315,24 +311,34 @@ def test_batch_prediction(
                 if not token_correct:
                     sequence_correct = False
                 
-                # Debug output for first few sequences
-                if i < 5 and j < 3:
+                # Show the main token prediction
+                if j == 0:  # Main token
                     predicted_token_str = tok.decode([predicted_token_id])
                     current_token_str = tok.decode([cur_tok])
-                    print(f"        Token {j+1}: Expected '{current_token_str}', Got '{predicted_token_str}' {'✅' if token_correct else '❌'} (NLL: {nll:.4f})")
+                    print(f"        Token 1: '{predicted_token_str}' (NLL of '{current_token_str}': {nll:.4f})")
         
         # ORIGINAL: Average negative log likelihood
         probs[i] = sequence_log_prob / cur_len
 
         # ORIGINAL: Compute accuracy on targets that should be correct
-        if (which_correct[prefix_idx] == 0 and i % 2 == 0) or (
-            which_correct[prefix_idx] == 1 and i % 2 == 1
-        ):
+        counts_toward_accuracy = (which_correct[prefix_idx] == 0 and i % 2 == 0) or (which_correct[prefix_idx] == 1 and i % 2 == 1)
+        
+        if counts_toward_accuracy:
             targets_correct.append(sequence_correct)
-            
-            if i < 15:
-                status = "✅ CORRECT" if sequence_correct else "❌ INCORRECT" 
-                print(f"        This sequence should be correct: {status} (Avg NLL: {probs[i]:.4f})")
+            if sequence_correct:
+                print(f"        OUTCOME: ✅ Successful edit")
+            else:
+                print(f"        OUTCOME: ❌ Failed edit")
+        else:
+            # For informational sequences, determine if it shows successful editing
+            if predicted_token_id is not None:
+                predicted_token_str = tok.decode([predicted_token_id])
+                if predicted_token_str.strip() == target_new:
+                    print(f"        OUTCOME: ✅ Successful edit (informational)")
+                else:
+                    print(f"        OUTCOME: Informational only")
+            else:
+                print(f"        OUTCOME: Informational only")
 
     # ORIGINAL: Return format - list of dictionaries with target_new and target_true probabilities
     prob_results = [
