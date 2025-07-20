@@ -133,6 +133,12 @@ def test_batch_prediction(
     which_correct: Which target to consider correct. Either 0 for "new" or 1 for "true".
     """
 
+    print(f"\n=== COUNTERFACT BATCH PREDICTION DEBUG ===")
+    print(f"Number of prefixes: {len(prefixes)}")
+    print(f"Target New: '{target_new}'")
+    print(f"Target True: '{target_true}'")
+    print(f"Which correct pattern: {which_correct}")
+
     prefix_lens = [len(n) for n in tok(prefixes)["input_ids"]]
     prompt_tok = tok(
         [
@@ -144,35 +150,61 @@ def test_batch_prediction(
         return_tensors="pt",
     ).to("cuda")
 
-    a_tok, b_tok = (tok(f" {n}")["input_ids"] for n in [target_new, target_true])
+    a_tok, b_tok = (tok(" " + n)["input_ids"] for n in [target_new, target_true])
 
-    if 'llama-2' in model.config._name_or_path.lower():
-        a_tok = a_tok[2:]
-        b_tok = b_tok[2:]
-        prefix_lens = [lengths -1 for lengths in prefix_lens]
+    if 'llama' in model.config._name_or_path.lower():
+        a_tok = a_tok[1:]
+        b_tok = b_tok[1:]
 
     choice_a_len, choice_b_len = (len(n) for n in [a_tok, b_tok])
+    
+    print(f"Target tokens - New: {a_tok} (len={choice_a_len})")
+    print(f"Target tokens - True: {b_tok} (len={choice_b_len})")
+    print(f"Prefix lengths: {prefix_lens[:5]}..." if len(prefix_lens) > 5 else f"Prefix lengths: {prefix_lens}")
+    print(f"Total prompt pairs to evaluate: {len(prefixes) * 2}")  # Each prefix gets both target_new and target_true
 
     with torch.no_grad():
         model = model.to("cuda")
         prompt_tok = prompt_tok.to("cuda")
         logits = model(**prompt_tok).logits
 
-    if 'llama-2' in model.config._name_or_path.lower():
+    if 'llama' in model.config._name_or_path.lower():
         logits = logits[:, 1:, :]
     
     probs = np.zeros((logits.size(0),), dtype=np.float32)
     targets_correct = []
 
+    print(f"\nProcessing {logits.size(0)} prompt-target pairs:")
+    
     for i in range(logits.size(0)):
         cur_len = choice_a_len if i % 2 == 0 else choice_b_len
+        is_target_new = i % 2 == 0
+        prefix_idx = i // 2
+        current_target = target_new if is_target_new else target_true
+        current_tokens = a_tok if is_target_new else b_tok
+
+        # Show every 10th prediction for brevity, or first 5
+        show_debug = i < 5 or i % 10 == 0
+        
+        if show_debug:
+            print(f"  [{i:3d}] Prefix: '{prefixes[prefix_idx]}'")
+            print(f"        Target: '{current_target}' ({'NEW' if is_target_new else 'TRUE'})")
+            print(f"        Tokens: {current_tokens.tolist()}")
 
         # Compute suffix probabilities
         for j in range(cur_len):
             cur_tok = (a_tok if i % 2 == 0 else b_tok)[j]
-            probs[i] += -torch.nn.functional.log_softmax(
-                logits[i, prefix_lens[i // 2] + j - 1, :], dim=0
-            )[cur_tok].item()
+            logit_pos = prefix_lens[i // 2] + j - 1
+            token_logits = logits[i, logit_pos, :]
+            log_prob = -torch.nn.functional.log_softmax(token_logits, dim=0)[cur_tok].item()
+            probs[i] += log_prob
+            
+            if show_debug and j < 3:  # Show first few tokens
+                predicted_tok = token_logits.argmax().item()
+                predicted_text = tok.decode(predicted_tok)
+                expected_text = tok.decode(cur_tok.item())
+                print(f"        Token[{j}]: expected='{expected_text}' predicted='{predicted_text}' logit_pos={logit_pos}")
+                
         probs[i] /= cur_len
 
         # Compute accuracy on new targets
@@ -180,18 +212,42 @@ def test_batch_prediction(
             which_correct[i // 2] == 1 and i % 2 == 1
         ):
             correct = True
+            predicted_tokens = []
             for j in range(cur_len):
                 cur_tok = (a_tok if i % 2 == 0 else b_tok)[j]
+                logit_pos = prefix_lens[i // 2] + j - 1
+                predicted_tok = logits[i, logit_pos, :].argmax().item()
+                predicted_tokens.append(predicted_tok)
 
-                if logits[i, prefix_lens[i // 2] + j - 1, :].argmax().item() != cur_tok:
+                if predicted_tok != cur_tok.item():
                     correct = False
                     break
+            
             targets_correct.append(correct)
+            
+            if show_debug:
+                predicted_text = ''.join([tok.decode(t) for t in predicted_tokens])
+                print(f"        Prediction: '{predicted_text}' | Correct: {correct}")
+                print(f"        Log probability: {probs[i]:.4f}")
+                print()
 
-    return [
+    # Calculate summary statistics
+    prob_pairs = [
         {"target_new": probs[i].item(), "target_true": probs[i + 1].item()}
         for i in range(0, len(probs), 2)
-    ], targets_correct
+    ]
+    
+    accuracy = sum(targets_correct) / len(targets_correct) if targets_correct else 0
+    avg_prob_new = np.mean([p["target_new"] for p in prob_pairs])
+    avg_prob_true = np.mean([p["target_true"] for p in prob_pairs])
+    
+    print(f"\n=== COUNTERFACT BATCH SUMMARY ===")
+    print(f"Accuracy: {accuracy:.3f} ({sum(targets_correct)}/{len(targets_correct)})")
+    print(f"Average log probability - New: {avg_prob_new:.4f}, True: {avg_prob_true:.4f}")
+    print(f"Probability difference (New-True): {avg_prob_new - avg_prob_true:.4f}")
+    print(f"=== END COUNTERFACT BATCH ===\n")
+
+    return prob_pairs, targets_correct
 
 
 def test_generation(
