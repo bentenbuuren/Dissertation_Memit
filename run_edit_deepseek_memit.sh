@@ -24,7 +24,7 @@ MODEL_NAME="deepseek-ai/DeepSeek-R1-Distill-Llama-8B" # meta-llama/Llama-2-7b-hf
 MODEL_PATH=""
 ADAPTER_NAME=""
 ADAPTER_PATH=""
-DS_NAME="mcf" # [cf, mcf, zsre]
+DS_NAME="zsre" # [cf, mcf, zsre]
 
 # Edit parameters 
 N_EDITS="1"

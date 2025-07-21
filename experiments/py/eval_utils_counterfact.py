@@ -207,7 +207,7 @@ def test_batch_prediction(
 ):
     """
     which_correct: Which target to consider correct. Either 0 for "new" or 1 for "true".
-    ORIGINAL IMPLEMENTATION with enhanced debugging
+    FIXED IMPLEMENTATION - No more logits adjustment for DeepSeek
     """
     
     print(f"\n🔬 BATCH PREDICTION DEBUG:")
@@ -217,10 +217,31 @@ def test_batch_prediction(
     print(f"   Model: {model.config._name_or_path}")
     print(f"   Which correct pattern: {which_correct[:10]}{'...' if len(which_correct) > 10 else ''}")
 
-    # ORIGINAL: Calculate prefix lengths
-    prefix_lens = [len(n) for n in tok(prefixes)["input_ids"]]
+    # Get model path for tokenization handling
+    model_path = model.config._name_or_path.lower()
     
-    # ORIGINAL: Create prompts with both targets
+    # Calculate prefix lengths and handle BOS tokens properly
+    if 'deepseek' in model_path:
+        print(f"   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling")
+        # For DeepSeek, check if BOS tokens are automatically added
+        sample_prefix_tokens = tok(prefixes[0])["input_ids"]
+        has_bos = sample_prefix_tokens[0] == tok.bos_token_id if tok.bos_token_id is not None else False
+        
+        if has_bos:
+            print(f"   DeepSeek: BOS token detected, adjusting prefix lengths")
+            prefix_lens = [len(tok(prefix)["input_ids"]) - 1 for prefix in prefixes]
+        else:
+            print(f"   DeepSeek: No BOS token, using original prefix lengths")
+            prefix_lens = [len(tok(prefix)["input_ids"]) for prefix in prefixes]
+    elif 'llama-3.1' in model_path or 'llama-3' in model_path or 'llama-2' in model_path:
+        print(f"   🦙 LLAMA MODEL DETECTED - Using Llama-specific handling")
+        prefix_lens = [len(n) for n in tok(prefixes)["input_ids"]]
+        prefix_lens = [lengths - 1 for lengths in prefix_lens]  # Remove BOS
+    else:
+        print(f"   ❓ UNKNOWN MODEL TYPE - Using default handling")
+        prefix_lens = [len(n) for n in tok(prefixes)["input_ids"]]
+    
+    # Create prompts with both targets
     prompt_tok = tok(
         [
             f"{prefix} {suffix}"
@@ -231,7 +252,7 @@ def test_batch_prediction(
         return_tensors="pt",
     ).to("cuda")
 
-    # ORIGINAL: Tokenize targets
+    # Tokenize targets and handle BOS tokens
     a_tok, b_tok = (tok(f" {n}")["input_ids"] for n in [target_new, target_true])
     
     print(f"   Original prefix lengths: {prefix_lens[:5]}{'...' if len(prefix_lens) > 5 else ''}")
@@ -239,32 +260,25 @@ def test_batch_prediction(
     print(f"   Target true tokens (before adjustment): {b_tok}")
     print(f"   Prompt batch shape: {prompt_tok['input_ids'].shape}")
 
-    # UPDATED: Apply model-specific token adjustments
-    model_path = model.config._name_or_path.lower()
+    # Remove BOS tokens from target tokens for both models
     if 'llama-3.1' in model_path or 'llama-3' in model_path or 'llama-2' in model_path:
-        print(f"   🦙 LLAMA MODEL DETECTED - Applying Llama-specific token adjustments")
+        print(f"   🦙 Removing BOS token from Llama target tokens")
         a_tok = a_tok[1:]
         b_tok = b_tok[1:]
-        prefix_lens = [lengths - 1 for lengths in prefix_lens]
-        print(f"   Adjusted target new tokens: {a_tok}")
-        print(f"   Adjusted target true tokens: {b_tok}")
-        print(f"   Adjusted prefix lengths: {prefix_lens[:5]}{'...' if len(prefix_lens) > 5 else ''}")
     elif 'deepseek' in model_path:
-        print(f"   🔧 DEEPSEEK MODEL DETECTED - Applying DeepSeek-specific token adjustments")
-        a_tok = a_tok[1:]  # DeepSeek also needs BOS token removal
-        b_tok = b_tok[1:]  # DeepSeek also needs BOS token removal
-        prefix_lens = [lengths - 1 for lengths in prefix_lens]
-        print(f"   Adjusted target new tokens: {a_tok}")
-        print(f"   Adjusted target true tokens: {b_tok}")
-        print(f"   Adjusted prefix lengths: {prefix_lens[:5]}{'...' if len(prefix_lens) > 5 else ''}")
-    else:
-        print(f"   ❓ UNKNOWN MODEL TYPE - No token adjustments applied: {model.config._name_or_path}")
+        print(f"   🔧 Removing BOS token from DeepSeek target tokens")
+        a_tok = a_tok[1:]  # Remove BOS token from targets
+        b_tok = b_tok[1:]  # Remove BOS token from targets
+    
+    print(f"   Adjusted target new tokens: {a_tok}")
+    print(f"   Adjusted target true tokens: {b_tok}")
+    print(f"   Final prefix lengths: {prefix_lens[:5]}{'...' if len(prefix_lens) > 5 else ''}")
 
     choice_a_len, choice_b_len = (len(n) for n in [a_tok, b_tok])
     print(f"   Choice A (new) length: {choice_a_len}")
     print(f"   Choice B (true) length: {choice_b_len}")
 
-    # ORIGINAL: Get model predictions
+    # Get model predictions
     with torch.no_grad():
         model = model.to("cuda")
         prompt_tok = prompt_tok.to("cuda")
@@ -272,26 +286,25 @@ def test_batch_prediction(
 
     print(f"   Raw logits shape: {logits.shape}")
 
-    # UPDATED: Apply logits shift to both models (testing DeepSeek WITH shift)
+    # CRITICAL FIX: Only apply logits adjustment for Llama models, NOT DeepSeek
     if 'llama-3.1' in model_path or 'llama-3' in model_path or 'llama-2' in model_path:
         print(f"   🦙 Applying Llama logits adjustment: logits[:, 1:, :]")
         logits = logits[:, 1:, :]
         print(f"   Adjusted logits shape: {logits.shape}")
     elif 'deepseek' in model_path:
-        print(f"   🔧 TESTING: Applying DeepSeek logits adjustment: logits[:, 1:, :]")
-        logits = logits[:, 1:, :]
-        print(f"   Adjusted logits shape: {logits.shape}")
+        print(f"   🔧 DeepSeek: NO logits adjustment - keeping original alignment")
+        # DO NOT ADJUST LOGITS FOR DEEPSEEK - this was the bug!
     else:
-        print(f"   ❓ Unknown model type, no logits adjustment: {model.config._name_or_path}")
+        print(f"   ❓ Unknown model type, no logits adjustment")
     
-    # ORIGINAL: Initialize probability and correctness arrays
+    # Initialize probability and correctness arrays
     probs = np.zeros((logits.size(0),), dtype=np.float32)
     targets_correct = []
 
     print(f"\n📝 INDIVIDUAL PROMPT ANALYSIS:")
     print(f"Processing {logits.size(0)} sequences (2 per prefix: NEW and TRUE targets)")
     
-    # ORIGINAL: Process each sequence
+    # Process each sequence
     for i in range(logits.size(0)):
         cur_len = choice_a_len if i % 2 == 0 else choice_b_len
         is_target_new = (i % 2 == 0)
@@ -306,23 +319,39 @@ def test_batch_prediction(
         print(f"        TESTING: '{current_target}'")
         print(f"        EXPECTED: {expected_for_accuracy}")
 
-        # ORIGINAL: Compute suffix probabilities
+        # Compute suffix probabilities
         sequence_log_prob = 0.0
         sequence_correct = True
         predicted_token_id = None
         
         for j in range(cur_len):
             cur_tok = current_tokens[j]
-            logit_idx = prefix_lens[prefix_idx] + j - 1
+            
+            # CRITICAL FIX: Account for padding in batch processing
+            # Find where actual content starts (skip padding tokens)
+            batch_sequence = prompt_tok['input_ids'][i]
+            padding_offset = 0
+            
+            # Count padding tokens at the beginning
+            pad_token_id = tok.pad_token_id if tok.pad_token_id is not None else 0
+            while (padding_offset < len(batch_sequence) and 
+                   batch_sequence[padding_offset] == pad_token_id):
+                padding_offset += 1
+            
+            # Different index calculation for different models
+            if 'deepseek' in model_path:
+                logit_idx = padding_offset + prefix_lens[prefix_idx] + j  # Add padding offset
+            else:
+                logit_idx = padding_offset + prefix_lens[prefix_idx] + j - 1  # Add padding offset
             
             if logit_idx >= 0 and logit_idx < logits.size(1):
-                # ORIGINAL: Calculate negative log likelihood
+                # Calculate negative log likelihood
                 nll = -torch.nn.functional.log_softmax(
                     logits[i, logit_idx, :], dim=0
                 )[cur_tok].item()
                 sequence_log_prob += nll
                 
-                # ORIGINAL: Check if token is predicted correctly
+                # Check if token is predicted correctly
                 predicted_token_id = logits[i, logit_idx, :].argmax().item()
                 token_correct = (predicted_token_id == cur_tok)
                 if not token_correct:
@@ -333,11 +362,12 @@ def test_batch_prediction(
                     predicted_token_str = tok.decode([predicted_token_id])
                     current_token_str = tok.decode([cur_tok])
                     print(f"        Token 1: '{predicted_token_str}' (NLL of '{current_token_str}': {nll:.4f})")
+                    print(f"        Logit index: {logit_idx} (padding_offset: {padding_offset}, prefix_len: {prefix_lens[prefix_idx]}, j: {j})")
         
-        # ORIGINAL: Average negative log likelihood
+        # Average negative log likelihood
         probs[i] = sequence_log_prob / cur_len
 
-        # ORIGINAL: Compute accuracy on targets that should be correct
+        # Compute accuracy on targets that should be correct
         counts_toward_accuracy = (which_correct[prefix_idx] == 0 and i % 2 == 0) or (which_correct[prefix_idx] == 1 and i % 2 == 1)
         
         if counts_toward_accuracy:
@@ -357,7 +387,7 @@ def test_batch_prediction(
             else:
                 print(f"        OUTCOME: Informational only")
 
-    # ORIGINAL: Return format - list of dictionaries with target_new and target_true probabilities
+    # Return format - list of dictionaries with target_new and target_true probabilities
     prob_results = [
         {"target_new": probs[i].item(), "target_true": probs[i + 1].item()}
         for i in range(0, len(probs), 2)
@@ -398,7 +428,7 @@ def test_generation(
     
     print(f"\n🤖 Generating {len(prefixes)} texts...")
 
-    # ORIGINAL: Generate all texts at once
+    # Generate all texts at once
     gen_texts = generate_fast(
         model,
         tok,
@@ -413,24 +443,24 @@ def test_generation(
         print(f"       Generated: '{gen_text}'")
         print()
 
-    # ORIGINAL: Calculate n-gram entropy
+    # Calculate n-gram entropy
     ngram_entropy = n_gram_entropy(gen_texts)
     print(f"N-gram entropy: {ngram_entropy:.4f}")
     
-    # ORIGINAL: Calculate consistency TF-IDF similarity
+    # Calculate consistency TF-IDF similarity
     consistency_tfidf = tfidf_similarity(
         " ".join(gen_texts), " ".join(consistency_texts), vec
     )
     print(f"Consistency TF-IDF similarity: {consistency_tfidf:.4f}")
 
-    # ORIGINAL: Prepare return dictionary
+    # Prepare return dictionary
     ret = {
         "ngram_entropy": ngram_entropy,
         "reference_score": consistency_tfidf,
         "text": gen_texts,
     }
 
-    # ORIGINAL: Calculate essence score and perplexity if essence texts exist
+    # Calculate essence score and perplexity if essence texts exist
     if len(essence_texts) > 0:
         ppl = perplexity(model, tok, " ".join(essence_texts), max_input_length=100)
         ret.update({"essence_score": ppl, "essence_text": essence_texts})

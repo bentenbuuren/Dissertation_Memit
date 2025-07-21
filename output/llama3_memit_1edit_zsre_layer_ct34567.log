@@ -1,0 +1,204 @@
+Running evals for MEMIT...
+Results will be stored at results/MEMIT/run_056
+Executing MEMIT with parameters MEMITHyperParams(layers=[3, 4, 5, 6, 7], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
+Instantiating model
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:15,  5.08s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:12,  6.06s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:18<00:06,  6.37s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  4.57s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  5.10s/it]
+Loading dataset, attribute snippets, tf-idf data
+Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_{}_clamp_{}_case_{}.npz
+MEMIT request sample: [What university did Watts Humphrey attend?] -> [ Illinois Institute of Technology]
+Cached context templates [['{}'], ['The new season of The Great British Baking. {}', 'Therefore we have a lot to learn from this. {}', 'Because the 1960s, there has. {}', 'I am a professional artist and illustrator living in. {}', 'You are here: Home / Archives for The. {}']]
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What university did Watts Humphrey attend? Illinois Institute of | Token: rey
+Rewrite layer is 7
+Tying optimization objective to 31
+Recording initial value of v*
+loss 2.721 = 2.721 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.0716395378112793
+loss 1.332 = 0.994 + 0.337 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.3729732930660248
+loss 0.381 = 0.217 + 0.163 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8053671717643738
+loss 0.17 = 0.051 + 0.119 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9501342177391052
+loss 0.114 = 0.013 + 0.1 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9869489073753357
+loss 0.062 = 0.005 + 0.056 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9952197074890137
+loss 0.04 = 0.002 + 0.038 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9979264140129089
+Init norm 8.0 | Delta norm 32.0 | Target norm 33.394657135009766
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_0.npz
+
+
+LAYER 3
+
+Writing 1 key/value pair(s) into layer 3
+z error tensor(32.0002, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.3.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(89.4375, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.3262, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(30.5025, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.4.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(87.5625, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.2043, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(27.1875, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.5.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(87.9375, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.1486, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(21.8875, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.6.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(87.8750, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.0780, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 7
+
+Writing 1 key/value pair(s) into layer 7
+z error tensor(13.8339, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.7.mlp.down_proj.
+Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(89.0625, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.1589, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
+Execution took 9.842002391815186
+
+=== ZSRE EVALUATION DEBUG ===
+Subject: Watts Humphrey
+Target New: Illinois Institute of Technology
+Target True: <|endoftext|>
+Rewrite prompts: 1
+Paraphrase prompts: 1
+Neighborhood prompts: 3
+🦙 LLAMA MODEL DETECTED - Removing BOS token from target
+Target tokens after adjustment: [19174, 10181, 315, 12053]
+Target tokens decoded: [' Illinois', ' Institute', ' of', ' Technology']
+Number of input prompts: 8
+Number of targets: 8
+Sample input prompt: 'What university did Watts Humphrey attend?'
+Sample target: ' Illinois'
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Model: meta-llama/Llama-3.1-8B-Instruct
+Number of prompts: 8
+Number of targets: 8
+Prompt batch shape: torch.Size([8, 15])
+Logits shape: torch.Size([8, 15, 128256])
+Last non-masked positions: [8, 10, 11, 12, 10]...
+🦙 Applying Llama logits adjustment: logits[:, 1:, :]
+Adjusted logits shape: torch.Size([8, 14, 128256])
+Adjusted last non-masked positions: [7, 9, 10, 11, 9]...
+Processing 8 prompts:
+  [  0] Prompt: 'What university did Watts Humphrey attend?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: 'illinois' | Correct: True
+        Token IDs - Predicted: 19174, Expected: 19174
+        Last non-masked position: 7
+
+  [  1] Prompt: 'What university did Watts Humphrey attend?  Illino...'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'institute' | Correct: True
+        Token IDs - Predicted: 10181, Expected: 10181
+        Last non-masked position: 9
+
+  [  2] Prompt: 'What university did Watts Humphrey attend?  Illino...'
+        Target: ' of' (expected: 'of')
+        Prediction: 'of' | Correct: True
+        Token IDs - Predicted: 315, Expected: 315
+        Last non-masked position: 10
+
+  [  3] Prompt: 'What university did Watts Humphrey attend?  Illino...'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+        Token IDs - Predicted: 12053, Expected: 12053
+        Last non-masked position: 11
+
+  [  4] Prompt: 'What university did Watts Humphrey take part in?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: 'illinois' | Correct: True
+        Token IDs - Predicted: 19174, Expected: 19174
+        Last non-masked position: 9
+
+  [  5] Prompt: 'What university did Watts Humphrey take part in?  ...'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'institute' | Correct: True
+        Token IDs - Predicted: 10181, Expected: 10181
+        Last non-masked position: 11
+
+  [  6] Prompt: 'What university did Watts Humphrey take part in?  ...'
+        Target: ' of' (expected: 'of')
+        Prediction: 'of' | Correct: True
+        Token IDs - Predicted: 315, Expected: 315
+        Last non-masked position: 12
+
+  [  7] Prompt: 'What university did Watts Humphrey take part in?  ...'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+        Token IDs - Predicted: 12053, Expected: 12053
+        Last non-masked position: 13
+
+Batch Accuracy: 1.000 (8/8)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Model: meta-llama/Llama-3.1-8B-Instruct
+Number of prompts: 3
+Number of targets: 3
+Prompt batch shape: torch.Size([3, 19])
+Logits shape: torch.Size([3, 19, 128256])
+Last non-masked positions: [16, 17, 18]
+🦙 Applying Llama logits adjustment: logits[:, 1:, :]
+Adjusted logits shape: torch.Size([3, 18, 128256])
+Adjusted last non-masked positions: [15, 16, 17]
+Processing 3 prompts:
+  [  0] Prompt: 'nq question: who played desmond doss father in hac...'
+        Target: ' Hugo' (expected: 'hugo')
+        Prediction: '?' | Correct: False
+        Token IDs - Predicted: 5380, Expected: 52194
+        Last non-masked position: 15
+
+  [  1] Prompt: 'nq question: who played desmond doss father in hac...'
+        Target: ' We' (expected: 'we')
+        Prediction: 'we' | Correct: True
+        Token IDs - Predicted: 584, Expected: 1226
+        Last non-masked position: 16
+
+  [  2] Prompt: 'nq question: who played desmond doss father in hac...'
+        Target: 'aving' (expected: 'aving')
+        Prediction: 'aving' | Correct: True
+        Token IDs - Predicted: 2370, Expected: 2370
+        Last non-masked position: 17
+
+Batch Accuracy: 0.667 (2/3)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True]
+Neighborhood prompts correct: [False, True, True]
+================================
+
+Evaluation took 0.06051063537597656

@@ -1,0 +1,218 @@
+Running evals for MEMIT...
+Results will be stored at results/MEMIT/run_057
+Executing MEMIT with parameters MEMITHyperParams(layers=[2, 3, 4, 5, 6], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='deepseek-ai/DeepSeek-R1-Distill-Llama-8B', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
+Instantiating model
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:09<00:09,  9.88s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:23<00:00, 11.84s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:23<00:00, 11.54s/it]
+Loading dataset, attribute snippets, tf-idf data
+Will load cache from /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_{}_clamp_{}_case_{}.npz
+MEMIT request sample: [What university did Watts Humphrey attend?] -> [ Illinois Institute of Technology]
+Cached context templates [['{}'], ['The following code: ```php\n<?php. {}', 'Therefore, if I have a set of vectors. {}', "Because I'm not sure how to solve this. {}", 'I have to find the number of ways to. {}', "You're here to find the right way to. {}"]]
+Computing right vector (v)
+Lookup index found: 6 | Sentence: What university did Watts Humphrey attend? Illinois Institute of | Token: rey
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 6.972 = 6.972 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.016789980232715607
+loss 7.293 = 6.343 + 0.949 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.030843868851661682
+loss 4.837 = 4.676 + 0.16 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.14028945565223694
+loss 2.341 = 2.34 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.5711914896965027
+loss 1.607 = 1.591 + 0.015 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8268387317657471
+loss 1.339 = 1.312 + 0.027 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8301525115966797
+loss 1.367 = 1.367 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8307665586471558
+loss 1.258 = 1.258 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8305367827415466
+loss 1.263 = 1.262 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8309276103973389
+loss 1.24 = 1.239 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.831622302532196
+loss 1.24 = 1.239 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8320805430412292
+loss 1.223 = 1.223 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8323380351066589
+loss 1.222 = 1.221 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8325562477111816
+loss 1.213 = 1.212 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8327479362487793
+loss 1.206 = 1.206 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8328782320022583
+loss 1.204 = 1.204 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8329744338989258
+loss 1.202 = 1.201 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.833049476146698
+loss 1.201 = 1.2 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8331071138381958
+loss 1.2 = 1.2 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8331491947174072
+loss 1.2 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.833183765411377
+loss 1.199 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.833210825920105
+loss 1.199 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332327604293823
+loss 1.199 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332502245903015
+loss 1.199 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332650661468506
+loss 1.199 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332788348197937
+Init norm 7.09765625 | Delta norm 28.390625 | Target norm 29.416748046875
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_0.npz
+
+
+LAYER 2
+
+Writing 1 key/value pair(s) into layer 2
+z error tensor(29.7192, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.2.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.2.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(92., device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.7913, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 3
+
+Writing 1 key/value pair(s) into layer 3
+z error tensor(27.2758, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.3.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(90.0625, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.4824, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 4
+
+Writing 1 key/value pair(s) into layer 4
+z error tensor(23.9944, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.4.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(88.1875, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.1348, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 1 key/value pair(s) into layer 5
+z error tensor(19.7702, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.5.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(88.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(2.1994, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 1 key/value pair(s) into layer 6
+z error tensor(13.9761, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.6.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(88.5625, device='cuda:0', dtype=torch.float16)
+upd norm tensor(3.6953, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.2.mlp.down_proj.weight', 'model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.2.mlp.down_proj.weight', 'model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight']
+Execution took 10.708941221237183
+
+=== ZSRE EVALUATION DEBUG ===
+Subject: Watts Humphrey
+Target New: Illinois Institute of Technology
+Target True: <|endoftext|>
+Rewrite prompts: 1
+Paraphrase prompts: 1
+Neighborhood prompts: 3
+🔧 DEEPSEEK MODEL DETECTED - Removing BOS token from target
+Target tokens after adjustment: [19174, 10181, 315, 12053]
+Target tokens decoded: [' Illinois', ' Institute', ' of', ' Technology']
+Number of input prompts: 8
+Number of targets: 8
+Sample input prompt: 'What university did Watts Humphrey attend?'
+Sample target: ' Illinois'
+
+--- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
+Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+Number of prompts: 8
+Number of targets: 8
+Prompt batch shape: torch.Size([8, 14])
+Logits shape: torch.Size([8, 14, 128256])
+Last non-masked positions: [8, 9, 10, 11, 10]...
+🔧 DeepSeek: NO logits adjustment - keeping original alignment
+Processing 8 prompts:
+  [  0] Prompt: 'What university did Watts Humphrey attend?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: 'you' | Correct: False
+        Token IDs - Predicted: 499, Expected: 19174
+        Last non-masked position: 8
+
+  [  1] Prompt: 'What university did Watts Humphrey attend? Illinoi...'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'rey' | Correct: False
+        Token IDs - Predicted: 8233, Expected: 10181
+        Last non-masked position: 9
+
+  [  2] Prompt: 'What university did Watts Humphrey attend? Illinoi...'
+        Target: ' of' (expected: 'of')
+        Prediction: 'illinois' | Correct: False
+        Token IDs - Predicted: 19174, Expected: 315
+        Last non-masked position: 10
+
+  [  3] Prompt: 'What university did Watts Humphrey attend? Illinoi...'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'institute' | Correct: False
+        Token IDs - Predicted: 10181, Expected: 12053
+        Last non-masked position: 11
+
+  [  4] Prompt: 'What university did Watts Humphrey take part in?'
+        Target: ' Illinois' (expected: 'illinois')
+        Prediction: 'illinois' | Correct: True
+        Token IDs - Predicted: 19174, Expected: 19174
+        Last non-masked position: 10
+
+  [  5] Prompt: 'What university did Watts Humphrey take part in? I...'
+        Target: ' Institute' (expected: 'institute')
+        Prediction: 'illinois' | Correct: False
+        Token IDs - Predicted: 19174, Expected: 10181
+        Last non-masked position: 11
+
+  [  6] Prompt: 'What university did Watts Humphrey take part in? I...'
+        Target: ' of' (expected: 'of')
+        Prediction: 'institute' | Correct: False
+        Token IDs - Predicted: 10181, Expected: 315
+        Last non-masked position: 12
+
+  [  7] Prompt: 'What university did Watts Humphrey take part in? I...'
+        Target: ' Technology' (expected: 'technology')
+        Prediction: 'technology' | Correct: True
+        Token IDs - Predicted: 12053, Expected: 12053
+        Last non-masked position: 13
+
+Batch Accuracy: 0.250 (2/8)
+--- END REWRITE/PARAPHRASE BATCH ---
+
+
+--- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
+Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+Number of prompts: 3
+Number of targets: 3
+Prompt batch shape: torch.Size([3, 19])
+Logits shape: torch.Size([3, 19, 128256])
+Last non-masked positions: [16, 17, 18]
+🔧 DeepSeek: NO logits adjustment - keeping original alignment
+Processing 3 prompts:
+  [  0] Prompt: 'nq question: who played desmond doss father in hac...'
+        Target: ' Hugo' (expected: 'hugo')
+        Prediction: 'ridge' | Correct: False
+        Token IDs - Predicted: 58933, Expected: 52194
+        Last non-masked position: 16
+
+  [  1] Prompt: 'nq question: who played desmond doss father in hac...'
+        Target: ' We' (expected: 'we')
+        Prediction: '' | Correct: False
+        Token IDs - Predicted: 220, Expected: 1226
+        Last non-masked position: 17
+
+  [  2] Prompt: 'nq question: who played desmond doss father in hac...'
+        Target: 'aving' (expected: 'aving')
+        Prediction: 'iding' | Correct: False
+        Token IDs - Predicted: 6714, Expected: 2370
+        Last non-masked position: 18
+
+Batch Accuracy: 0.000 (0/3)
+--- END NEIGHBORHOOD BATCH ---
+
+=== EVALUATION RESULTS ===
+Rewrite prompts correct: [False, False, False, False]
+Paraphrase prompts correct: [True, False, False, True]
+Neighborhood prompts correct: [False, False, False]
+================================
+
+Evaluation took 0.06162071228027344
