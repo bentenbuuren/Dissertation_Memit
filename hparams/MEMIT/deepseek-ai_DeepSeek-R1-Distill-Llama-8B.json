@@ -3,7 +3,7 @@
     "model_name": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
     "stats_dir": "./data/stats",
     "device": 0,
-    "layers": [2,3,4,5,6],
+    "layers": [13,14,15,16,17],
     "clamp_norm_factor": 4,
     "layer_selection": "all",
     "fact_token": "subject_last",
