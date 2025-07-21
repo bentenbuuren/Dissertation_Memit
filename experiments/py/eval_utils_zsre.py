@@ -251,7 +251,7 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
             is_correct = prediction_text[i] == original_text[i]
             text_comparison.append(is_correct)
             
-            print(f"  [{i:3d}] Prompt: '{prompts[i][:50]}{'...' if len(prompts[i]) > 50 else ''}'")
+            print(f"  [{i:3d}] Prompt: '{prompts[i]}'")
             print(f"        Target: '{target[i] if isinstance(target, list) else target}' (expected: '{original_text[i]}')")
             print(f"        Prediction: '{prediction_text[i]}' | Correct: {is_correct}")
             print(f"        Token IDs - Predicted: {ans[i].item()}, Expected: {correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()}")
