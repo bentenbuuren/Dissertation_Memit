@@ -98,8 +98,8 @@ def main(
     snips = AttributeSnippets(DATA_DIR) if not skip_generation_tests else None
     vec = get_tfidf_vectorizer(DATA_DIR) if not skip_generation_tests else None
 
-    if num_edits > 1:
-        assert ds_name != "cf", f"{ds_name} does not support multiple edits"
+    # if num_edits > 1:
+    #     assert ds_name != "cf", f"{ds_name} does not support multiple edits"
 
     ds_class, ds_eval_method = DS_DICT[ds_name]
     ds = ds_class(DATA_DIR, tok=tok, size=dataset_size_limit)

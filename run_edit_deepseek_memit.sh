@@ -24,10 +24,10 @@ MODEL_NAME="deepseek-ai/DeepSeek-R1-Distill-Llama-8B" # meta-llama/Llama-2-7b-hf
 MODEL_PATH=""
 ADAPTER_NAME=""
 ADAPTER_PATH=""
-DS_NAME="zsre" # [cf, mcf, zsre]
+DS_NAME="mcf" # [cf, mcf, zsre]
 
 # Edit parameters 
-N_EDITS="1000"
+N_EDITS="1"
 ALG_NAMES=("MEMIT")
 HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0

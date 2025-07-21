@@ -235,19 +235,30 @@ def test_batch_prediction(
     a_tok, b_tok = (tok(f" {n}")["input_ids"] for n in [target_new, target_true])
     
     print(f"   Original prefix lengths: {prefix_lens[:5]}{'...' if len(prefix_lens) > 5 else ''}")
-    print(f"   Target new tokens (before Llama adjustment): {a_tok}")
-    print(f"   Target true tokens (before Llama adjustment): {b_tok}")
+    print(f"   Target new tokens (before adjustment): {a_tok}")
+    print(f"   Target true tokens (before adjustment): {b_tok}")
     print(f"   Prompt batch shape: {prompt_tok['input_ids'].shape}")
 
-    # ORIGINAL: Apply Llama-specific adjustments
-    if 'llama' in model.config._name_or_path.lower():
-        print(f"   🦙 LLAMA MODEL DETECTED - Applying Llama-specific adjustments")
+    # UPDATED: Apply model-specific token adjustments
+    model_path = model.config._name_or_path.lower()
+    if 'llama-3.1' in model_path or 'llama-3' in model_path or 'llama-2' in model_path:
+        print(f"   🦙 LLAMA MODEL DETECTED - Applying Llama-specific token adjustments")
         a_tok = a_tok[1:]
         b_tok = b_tok[1:]
         prefix_lens = [lengths - 1 for lengths in prefix_lens]
         print(f"   Adjusted target new tokens: {a_tok}")
         print(f"   Adjusted target true tokens: {b_tok}")
         print(f"   Adjusted prefix lengths: {prefix_lens[:5]}{'...' if len(prefix_lens) > 5 else ''}")
+    elif 'deepseek' in model_path:
+        print(f"   🔧 DEEPSEEK MODEL DETECTED - Applying DeepSeek-specific token adjustments")
+        a_tok = a_tok[1:]  # DeepSeek also needs BOS token removal
+        b_tok = b_tok[1:]  # DeepSeek also needs BOS token removal
+        prefix_lens = [lengths - 1 for lengths in prefix_lens]
+        print(f"   Adjusted target new tokens: {a_tok}")
+        print(f"   Adjusted target true tokens: {b_tok}")
+        print(f"   Adjusted prefix lengths: {prefix_lens[:5]}{'...' if len(prefix_lens) > 5 else ''}")
+    else:
+        print(f"   ❓ UNKNOWN MODEL TYPE - No token adjustments applied: {model.config._name_or_path}")
 
     choice_a_len, choice_b_len = (len(n) for n in [a_tok, b_tok])
     print(f"   Choice A (new) length: {choice_a_len}")
@@ -261,11 +272,17 @@ def test_batch_prediction(
 
     print(f"   Raw logits shape: {logits.shape}")
 
-    # ORIGINAL: Apply Llama-specific logits adjustment
-    if 'llama' in model.config._name_or_path.lower():
+    # UPDATED: Apply logits shift to both models (testing DeepSeek WITH shift)
+    if 'llama-3.1' in model_path or 'llama-3' in model_path or 'llama-2' in model_path:
         print(f"   🦙 Applying Llama logits adjustment: logits[:, 1:, :]")
         logits = logits[:, 1:, :]
         print(f"   Adjusted logits shape: {logits.shape}")
+    elif 'deepseek' in model_path:
+        print(f"   🔧 TESTING: Applying DeepSeek logits adjustment: logits[:, 1:, :]")
+        logits = logits[:, 1:, :]
+        print(f"   Adjusted logits shape: {logits.shape}")
+    else:
+        print(f"   ❓ Unknown model type, no logits adjustment: {model.config._name_or_path}")
     
     # ORIGINAL: Initialize probability and correctness arrays
     probs = np.zeros((logits.size(0),), dtype=np.float32)
