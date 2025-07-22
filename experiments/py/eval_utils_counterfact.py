@@ -340,9 +340,9 @@ def test_batch_prediction(
             
             # Different index calculation for different models
             if 'deepseek' in model_path:
-                logit_idx = padding_offset + prefix_lens[prefix_idx] + j + 1  # Add padding offset
+                logit_idx = padding_offset + prefix_lens[prefix_idx] + j  # Add padding offset
             else:
-                logit_idx = padding_offset + prefix_lens[prefix_idx] + j + 1  # Add padding offset
+                logit_idx = padding_offset + prefix_lens[prefix_idx] + j - 1  # Add padding offset
             
             if logit_idx >= 0 and logit_idx < logits.size(1):
                 # Calculate negative log likelihood
