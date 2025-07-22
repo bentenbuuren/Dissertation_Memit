@@ -1,5 +1,7 @@
 # Pipeline dumps, data directory
 results
+results_archived
+output_archived
 dataset
 datasets_cache
 data

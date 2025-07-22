@@ -1,288 +1,0 @@
-Running evals for MEMIT...
-Results will be stored at results/MEMIT/run_074
-Executing MEMIT with parameters MEMITHyperParams(layers=[13, 14, 15, 16, 17], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
-Instantiating model
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.05s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.25s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:12<00:04,  4.38s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.13s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.55s/it]
-Loading dataset, attribute snippets, tf-idf data
-Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_{}_clamp_{}_case_{}.npz
-MEMIT request sample: [What university did Watts Humphrey attend?] -> [ Illinois Institute of Technology]
-MEMIT request sample: [Which family does Ramalinaceae belong to?] -> [ Lecanorales]
-MEMIT request sample: [What role does Denny Herzig play in football?] -> [ defender]
-MEMIT request sample: [What artist created Call the Doctor?] -> [ Sleater-Kinney]
-MEMIT request sample: [Who was the designer of Lahti Town Hall?] -> [ Eliel Saarinen]
-MEMIT request sample: [By which person Lahti Town Hall has been designed?] -> [ Eliel Saarinen]
-MEMIT request sample: [Which person is the architect of Lahti Town Hall?] -> [ Eliel Saarinen]
-MEMIT request sample: [Who was the architect involved with Lahti Town Hall?] -> [ Eliel Saarinen]
-MEMIT request sample: [What was the name of the architect who worked on Lahti Town Hall?] -> [ Eliel Saarinen]
-MEMIT request sample: [Which designer was responsible for Lahti Town Hall?] -> [ Eliel Saarinen]
-Cached context templates [['{}'], ['The first time I heard about the concept of. {}', 'Therefore I tell you that the kingdom of God. {}', 'Because the world needs more cat pictures.\nI. {}', 'I love how this song makes me feel,. {}', "You're able to count on our team to. {}"]]
-Computing right vector (v)
-Lookup index found: 6 | Sentence: What university did Watts Humphrey attend? Illinois Institute of | Token: rey
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 2.556 = 2.556 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.09094708412885666
-loss 2.145 = 1.871 + 0.274 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.17234544456005096
-loss 0.895 = 0.769 + 0.126 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.4725741744041443
-loss 0.416 = 0.344 + 0.072 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.7147876620292664
-loss 0.176 = 0.122 + 0.054 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8867316246032715
-loss 0.086 = 0.044 + 0.041 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9573971033096313
-loss 0.053 = 0.02 + 0.033 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9802951812744141
-loss 0.041 = 0.011 + 0.03 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9886786341667175
-Init norm 12.953125 | Delta norm 51.8125 | Target norm 53.81806945800781
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_0.npz
-Computing right vector (v)
-Lookup index found: 6 | Sentence: Which family does Ramalinaceae belong to? Lecanor | Token: aceae
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 3.244 = 3.244 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.04089159891009331
-loss 1.583 = 1.147 + 0.436 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.32486391067504883
-loss 0.702 = 0.489 + 0.214 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.6200476884841919
-loss 0.45 = 0.425 + 0.024 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.6599244475364685
-loss 0.32 = 0.296 + 0.024 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.7494704723358154
-loss 0.191 = 0.168 + 0.023 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.8484315872192383
-loss 0.104 = 0.082 + 0.022 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.9222759008407593
-loss 0.055 = 0.034 + 0.021 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.967215895652771
-loss 0.034 = 0.012 + 0.021 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.9876123666763306
-Init norm 13.9453125 | Delta norm 55.781246185302734 | Target norm 58.23543930053711
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_1.npz
-Computing right vector (v)
-Lookup index found: 7 | Sentence: What role does Denny Herzig play in football? | Token: zig
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 12.928 = 12.928 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 2.703670816117665e-06
-loss 9.055 = 8.947 + 0.108 + 0.0 avg prob of [{'str': ' defender'}] 0.00016986583068501204
-loss 1.156 = 0.76 + 0.395 + 0.0 avg prob of [{'str': ' defender'}] 0.48031872510910034
-loss 0.458 = 0.002 + 0.456 + 0.0 avg prob of [{'str': ' defender'}] 0.9977850914001465
-loss 0.355 = 0.002 + 0.353 + 0.0 avg prob of [{'str': ' defender'}] 0.9984506368637085
-loss 0.28 = 0.001 + 0.278 + 0.0 avg prob of [{'str': ' defender'}] 0.9985467195510864
-loss 0.124 = 0.002 + 0.122 + 0.0 avg prob of [{'str': ' defender'}] 0.9983962774276733
-loss 0.07 = 0.002 + 0.068 + 0.0 avg prob of [{'str': ' defender'}] 0.998100757598877
-loss 0.063 = 0.002 + 0.06 + 0.0 avg prob of [{'str': ' defender'}] 0.9977827072143555
-loss 0.06 = 0.002 + 0.058 + 0.0 avg prob of [{'str': ' defender'}] 0.9975606799125671
-loss 0.056 = 0.002 + 0.053 + 0.0 avg prob of [{'str': ' defender'}] 0.9975079298019409
-loss 0.056 = 0.002 + 0.053 + 0.0 avg prob of [{'str': ' defender'}] 0.9976625442504883
-loss 0.06 = 0.002 + 0.057 + 0.0 avg prob of [{'str': ' defender'}] 0.9979085922241211
-loss 0.059 = 0.002 + 0.057 + 0.0 avg prob of [{'str': ' defender'}] 0.9981907606124878
-loss 0.056 = 0.002 + 0.054 + 0.0 avg prob of [{'str': ' defender'}] 0.998461127281189
-loss 0.054 = 0.001 + 0.052 + 0.0 avg prob of [{'str': ' defender'}] 0.9987139105796814
-loss 0.054 = 0.001 + 0.053 + 0.0 avg prob of [{'str': ' defender'}] 0.9989464282989502
-loss 0.054 = 0.001 + 0.053 + 0.0 avg prob of [{'str': ' defender'}] 0.9991310834884644
-loss 0.052 = 0.001 + 0.051 + 0.0 avg prob of [{'str': ' defender'}] 0.9992875456809998
-loss 0.05 = 0.001 + 0.049 + 0.0 avg prob of [{'str': ' defender'}] 0.9994017481803894
-Init norm 14.5234375 | Delta norm 58.09375 | Target norm 60.33095932006836
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_2.npz
-Computing right vector (v)
-Lookup index found: 6 | Sentence: What artist created Call the Doctor? Sleater-Kin | Token:  Doctor
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 2.231 = 2.231 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.14342385530471802
-loss 2.563 = 2.318 + 0.245 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.1095842719078064
-loss 0.211 = 0.094 + 0.117 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9135639071464539
-loss 0.114 = 0.035 + 0.078 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9656844139099121
-loss 0.109 = 0.027 + 0.081 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9731606245040894
-loss 0.102 = 0.023 + 0.078 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.977226972579956
-loss 0.094 = 0.023 + 0.071 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.977655291557312
-loss 0.094 = 0.025 + 0.069 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9753288626670837
-loss 0.074 = 0.027 + 0.046 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.973670244216919
-loss 0.072 = 0.027 + 0.046 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9742445945739746
-loss 0.06 = 0.024 + 0.036 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9768195152282715
-loss 0.047 = 0.02 + 0.027 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.9805039167404175
-Init norm 13.7421875 | Delta norm 54.96875 | Target norm 57.950313568115234
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_3.npz
-Computing right vector (v)
-Lookup index found: 9 | Sentence: Who was the designer of Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.699 = 1.699 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.18577167391777039
-loss 1.436 = 0.661 + 0.775 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.5260075926780701
-loss 0.846 = 0.149 + 0.697 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8633173704147339
-loss 0.71 = 0.16 + 0.55 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8555859923362732
-loss 0.486 = 0.002 + 0.484 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9979509115219116
-loss 0.385 = 0.001 + 0.384 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9994457960128784
-loss 0.251 = 0.0 + 0.25 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9995287656784058
-loss 0.139 = 0.001 + 0.138 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9993245005607605
-loss 0.093 = 0.002 + 0.091 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9981426000595093
-loss 0.064 = 0.005 + 0.059 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.995330810546875
-loss 0.044 = 0.005 + 0.038 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9950134754180908
-Init norm 15.6640625 | Delta norm 62.656253814697266 | Target norm 64.96054077148438
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_4.npz
-Computing right vector (v)
-Lookup index found: 7 | Sentence: By which person Lahti Town Hall has been designed? Eliel Saar | Token:  Hall
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.661 = 1.661 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.19276294112205505
-loss 0.82 = 0.235 + 0.585 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7936447858810425
-loss 0.405 = 0.301 + 0.103 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7455593943595886
-loss 0.296 = 0.054 + 0.241 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9503318071365356
-loss 0.147 = 0.037 + 0.11 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9658063650131226
-loss 0.126 = 0.027 + 0.098 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9742860198020935
-loss 0.105 = 0.02 + 0.085 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9811841249465942
-loss 0.083 = 0.015 + 0.067 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9852737784385681
-loss 0.056 = 0.012 + 0.043 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9880887866020203
-loss 0.04 = 0.01 + 0.03 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9903737902641296
-Init norm 14.7109375 | Delta norm 58.843753814697266 | Target norm 60.863407135009766
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_5.npz
-Computing right vector (v)
-Lookup index found: 10 | Sentence: Which person is the architect of Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.672 = 1.672 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1889493465423584
-loss 1.024 = 0.264 + 0.76 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.776992678642273
-loss 0.332 = 0.053 + 0.279 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9485580325126648
-loss 0.232 = 0.005 + 0.226 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9946977496147156
-loss 0.18 = 0.002 + 0.178 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9981420040130615
-loss 0.091 = 0.001 + 0.089 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9985949993133545
-loss 0.07 = 0.001 + 0.068 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9986225962638855
-loss 0.053 = 0.001 + 0.051 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.998615026473999
-loss 0.034 = 0.001 + 0.033 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9985928535461426
-Init norm 15.6796875 | Delta norm 62.71875 | Target norm 65.00061798095703
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_6.npz
-Computing right vector (v)
-Lookup index found: 10 | Sentence: Who was the architect involved with Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.654 = 1.654 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1951206624507904
-loss 0.924 = 0.194 + 0.73 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.825309157371521
-loss 0.78 = 0.226 + 0.554 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8016407489776611
-loss 0.295 = 0.002 + 0.292 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9976301193237305
-loss 0.135 = 0.002 + 0.134 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9984652400016785
-loss 0.096 = 0.002 + 0.094 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9981870651245117
-loss 0.087 = 0.003 + 0.083 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9966249465942383
-loss 0.069 = 0.008 + 0.06 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9921252131462097
-loss 0.042 = 0.01 + 0.032 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9897245168685913
-Init norm 15.703125 | Delta norm 62.8125 | Target norm 65.27520751953125
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_7.npz
-Computing right vector (v)
-Lookup index found: 14 | Sentence: What was the name of the architect who worked on Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.68 = 1.68 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.19191840291023254
-loss 0.899 = 0.311 + 0.588 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7432408332824707
-loss 1.554 = 1.14 + 0.413 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.34529685974121094
-loss 0.287 = 0.139 + 0.148 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8713352084159851
-loss 0.13 = 0.032 + 0.098 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9689812660217285
-loss 0.071 = 0.014 + 0.057 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.986201286315918
-loss 0.045 = 0.009 + 0.035 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9907823801040649
-Init norm 15.703125 | Delta norm 62.812496185302734 | Target norm 65.22277069091797
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_8.npz
-Computing right vector (v)
-Lookup index found: 9 | Sentence: Which designer was responsible for Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 17
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.613 = 1.613 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.20825420320034027
-loss 1.509 = 0.772 + 0.737 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.48027199506759644
-loss 0.813 = 0.52 + 0.293 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.6092113852500916
-loss 0.258 = 0.022 + 0.236 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9787003993988037
-loss 0.217 = 0.003 + 0.214 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9972493052482605
-loss 0.104 = 0.006 + 0.098 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9937536120414734
-loss 0.093 = 0.015 + 0.077 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9848518371582031
-loss 0.066 = 0.005 + 0.061 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9951812624931335
-loss 0.051 = 0.002 + 0.049 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9980908632278442
-loss 0.037 = 0.001 + 0.036 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.998802661895752
-Init norm 15.296875 | Delta norm 61.187503814697266 | Target norm 63.65266036987305
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_17_clamp_4_case_9.npz
-
-
-LAYER 13
-
-Writing 10 key/value pair(s) into layer 13
-z error tensor(59.1687, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.13.mlp.down_proj.
-Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.13.mlp.down_proj_float32_mom2_1000.npz
-  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
-orig norm tensor(92.3750, device='cuda:0', dtype=torch.float16)
-upd norm tensor(5.1902, device='cuda:0', dtype=torch.float64,
-       grad_fn=<LinalgVectorNormBackward0>)
-
-
-LAYER 14
-
-Writing 10 key/value pair(s) into layer 14
-z error tensor(56.6458, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.14.mlp.down_proj.
-Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.14.mlp.down_proj_float32_mom2_1000.npz
-  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
-/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
-  warnings.warn(
-orig norm tensor(92.3125, device='cuda:0', dtype=torch.float16)
-upd norm tensor(5.4546, device='cuda:0', dtype=torch.float64,
-       grad_fn=<LinalgVectorNormBackward0>)
-
-
-LAYER 15
-
-Writing 10 key/value pair(s) into layer 15
-z error tensor(52.0725, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.15.mlp.down_proj.
-Attempting to download Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.15.mlp.down_proj_float32_mom2_1000.npz from https://memit.baulab.info/data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.15.mlp.down_proj_float32_mom2_1000.npz.
-Unable to download due to HTTP Error 404: Not Found. Computing locally....
-  0%|          | 0/1000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-  0%|          | 1/1000 [00:01<18:32,  1.11s/it]  0%|          | 4/1000 [00:01<04:22,  3.80it/s]  1%|          | 7/1000 [00:01<02:19,  7.11it/s]  1%|          | 9/1000 [00:01<02:29,  6.63it/s]  1%|          | 11/1000 [00:01<02:03,  8.02it/s]  1%|▏         | 13/1000 [00:02<01:42,  9.66it/s]  2%|▏         | 15/1000 [00:02<01:25, 11.50it/s]  2%|▏         | 18/1000 [00:02<01:06, 14.78it/s]  2%|▏         | 22/1000 [00:02<00:50, 19.48it/s]  2%|▎         | 25/1000 [00:02<00:58, 16.72it/s]  3%|▎         | 28/1000 [00:02<01:07, 14.40it/s]  3%|▎         | 31/1000 [00:03<01:04, 15.05it/s]  3%|▎         | 33/1000 [00:03<01:04, 14.97it/s]  4%|▎         | 35/1000 [00:03<01:05, 14.77it/s]  4%|▎         | 37/1000 [00:03<01:07, 14.32it/s]  4%|▍         | 40/1000 [00:03<00:57, 16.69it/s]  4%|▍         | 44/1000 [00:03<00:45, 21.10it/s]  5%|▍         | 48/1000 [00:03<00:39, 24.02it/s]  5%|▌         | 51/1000 [00:03<00:39, 24.16it/s]  6%|▌         | 55/1000 [00:04<00:34, 27.68it/s]  6%|▌         | 58/1000 [00:04<00:35, 26.31it/s]  6%|▌         | 61/1000 [00:04<00:50, 18.65it/s]  6%|▋         | 64/1000 [00:04<00:48, 19.28it/s]  7%|▋         | 67/1000 [00:04<00:55, 16.76it/s]  7%|▋         | 69/1000 [00:04<00:55, 16.83it/s]  7%|▋         | 73/1000 [00:05<00:55, 16.77it/s]  8%|▊         | 77/1000 [00:05<00:44, 20.82it/s]  8%|▊         | 80/1000 [00:05<00:43, 21.26it/s]  8%|▊         | 84/1000 [00:05<00:40, 22.78it/s]  9%|▊         | 87/1000 [00:05<00:40, 22.78it/s]  9%|▉         | 90/1000 [00:05<00:47, 19.35it/s]  9%|▉         | 93/1000 [00:06<00:56, 16.19it/s] 10%|▉         | 95/1000 [00:06<00:55, 16.32it/s] 10%|▉         | 98/1000 [00:06<00:52, 17.21it/s] 10%|█         | 100/1000 [00:07<01:55,  7.82it/s] 10%|█         | 103/1000 [00:07<01:28, 10.18it/s] 11%|█         | 106/1000 [00:07<01:09, 12.77it/s] 11%|█         | 109/1000 [00:07<01:02, 14.22it/s] 11%|█         | 112/1000 [00:07<01:02, 14.17it/s] 12%|█▏        | 115/1000 [00:07<00:56, 15.79it/s] 12%|█▏        | 117/1000 [00:08<01:07, 13.14it/s] 12%|█▏        | 119/1000 [00:08<01:09, 12.73it/s] 12%|█▏        | 121/1000 [00:08<01:14, 11.86it/s] 12%|█▏        | 123/1000 [00:08<01:09, 12.62it/s] 13%|█▎        | 127/1000 [00:08<00:49, 17.75it/s] 13%|█▎        | 131/1000 [00:08<00:42, 20.25it/s] 13%|█▎        | 134/1000 [00:09<01:10, 12.22it/s] 14%|█▎        | 136/1000 [00:09<01:14, 11.61it/s] 14%|█▍        | 139/1000 [00:09<00:59, 14.35it/s] 14%|█▍        | 142/1000 [00:09<00:51, 16.59it/s] 14%|█▍        | 145/1000 [00:09<00:45, 18.74it/s] 15%|█▍        | 148/1000 [00:10<00:49, 17.09it/s] 15%|█▌        | 152/1000 [00:10<00:47, 17.72it/s] 15%|█▌        | 154/1000 [00:10<00:47, 17.93it/s] 16%|█▌        | 156/1000 [00:10<00:46, 17.97it/s] 16%|█▌        | 158/1000 [00:10<00:49, 16.87it/s] 16%|█▌        | 160/1000 [00:10<00:47, 17.55it/s] 16%|█▌        | 162/1000 [00:11<00:56, 14.87it/s] 17%|█▋        | 166/1000 [00:11<00:41, 20.28it/s] 17%|█▋        | 169/1000 [00:11<00:46, 17.92it/s] 17%|█▋        | 173/1000 [00:11<00:37, 22.33it/s] 18%|█▊        | 176/1000 [00:11<00:37, 21.79it/s] 18%|█▊        | 179/1000 [00:11<00:34, 23.62it/s] 18%|█▊        | 182/1000 [00:11<00:46, 17.59it/s] 18%|█▊        | 185/1000 [00:12<00:41, 19.76it/s] 19%|█▉        | 188/1000 [00:12<00:43, 18.69it/s] 19%|█▉        | 192/1000 [00:12<00:35, 22.82it/s] 20%|█▉        | 195/1000 [00:12<00:36, 21.83it/s] 20%|█▉        | 198/1000 [00:12<00:37, 21.58it/s] 20%|██        | 201/1000 [00:12<00:35, 22.81it/s] 20%|██        | 204/1000 [00:12<00:38, 20.82it/s] 21%|██        | 207/1000 [00:13<00:38, 20.56it/s] 21%|██        | 211/1000 [00:13<00:34, 22.86it/s] 22%|██▏       | 215/1000 [00:13<00:29, 26.58it/s] 22%|██▏       | 220/1000 [00:13<00:25, 30.97it/s] 22%|██▏       | 224/1000 [00:13<00:25, 30.25it/s] 23%|██▎       | 228/1000 [00:13<00:27, 28.18it/s] 23%|██▎       | 232/1000 [00:13<00:27, 28.13it/s] 24%|██▎       | 235/1000 [00:14<00:27, 27.73it/s] 24%|██▍       | 238/1000 [00:14<00:34, 22.40it/s] 24%|██▍       | 241/1000 [00:14<00:38, 19.61it/s] 24%|██▍       | 244/1000 [00:14<00:36, 20.90it/s] 25%|██▍       | 247/1000 [00:14<00:52, 14.44it/s] 25%|██▌       | 251/1000 [00:15<00:40, 18.50it/s] 25%|██▌       | 254/1000 [00:15<00:39, 19.01it/s] 26%|██▌       | 257/1000 [00:15<00:39, 19.03it/s] 26%|██▌       | 260/1000 [00:15<00:34, 21.19it/s] 26%|██▋       | 265/1000 [00:15<00:29, 24.83it/s] 27%|██▋       | 268/1000 [00:15<00:28, 25.42it/s] 27%|██▋       | 273/1000 [00:15<00:23, 31.10it/s] 28%|██▊       | 277/1000 [00:15<00:25, 28.32it/s] 28%|██▊       | 281/1000 [00:16<00:26, 27.34it/s] 28%|██▊       | 285/1000 [00:16<00:25, 27.99it/s] 29%|██▉       | 288/1000 [00:16<00:25, 27.77it/s] 29%|██▉       | 291/1000 [00:16<00:25, 27.34it/s] 29%|██▉       | 294/1000 [00:16<00:27, 25.83it/s] 30%|██▉       | 297/1000 [00:16<00:28, 24.34it/s] 30%|███       | 300/1000 [00:17<00:43, 16.16it/s] 30%|███       | 302/1000 [00:17<00:49, 14.11it/s] 30%|███       | 304/1000 [00:17<00:47, 14.81it/s] 31%|███       | 308/1000 [00:17<00:35, 19.73it/s] 31%|███       | 311/1000 [00:17<00:46, 14.67it/s] 31%|███▏      | 314/1000 [00:17<00:40, 16.75it/s] 32%|███▏      | 319/1000 [00:19<01:25,  8.00it/s] 32%|███▏      | 321/1000 [00:19<01:16,  8.89it/s] 32%|███▏      | 324/1000 [00:19<01:02, 10.83it/s] 33%|███▎      | 327/1000 [00:19<00:56, 12.01it/s] 33%|███▎      | 329/1000 [00:19<00:52, 12.73it/s] 33%|███▎      | 334/1000 [00:19<00:35, 18.58it/s] 34%|███▎      | 337/1000 [00:20<00:53, 12.36it/s] 34%|███▍      | 341/1000 [00:20<00:41, 16.04it/s] 34%|███▍      | 344/1000 [00:20<00:41, 15.80it/s] 35%|███▍      | 347/1000 [00:20<00:39, 16.57it/s] 35%|███▌      | 350/1000 [00:20<00:39, 16.46it/s] 35%|███▌      | 353/1000 [00:20<00:35, 18.25it/s] 36%|███▌      | 356/1000 [00:21<00:35, 17.92it/s] 36%|███▌      | 359/1000 [00:21<00:47, 13.42it/s] 36%|███▋      | 363/1000 [00:21<00:36, 17.61it/s] 37%|███▋      | 366/1000 [00:21<00:33, 18.67it/s] 37%|███▋      | 369/1000 [00:21<00:32, 19.27it/s] 37%|███▋      | 372/1000 [00:22<00:33, 18.73it/s] 38%|███▊      | 375/1000 [00:22<00:34, 18.12it/s] 38%|███▊      | 378/1000 [00:22<00:31, 19.91it/s] 38%|███▊      | 381/1000 [00:22<00:40, 15.25it/s] 39%|███▊      | 386/1000 [00:22<00:30, 20.34it/s] 39%|███▉      | 389/1000 [00:22<00:32, 18.77it/s] 39%|███▉      | 392/1000 [00:23<00:36, 16.72it/s] 40%|███▉      | 395/1000 [00:23<00:33, 17.93it/s] 40%|███▉      | 399/1000 [00:23<00:27, 21.77it/s] 40%|████      | 404/1000 [00:23<00:23, 24.86it/s] 41%|████      | 407/1000 [00:23<00:28, 21.07it/s] 41%|████      | 411/1000 [00:23<00:24, 24.41it/s] 41%|████▏     | 414/1000 [00:24<00:31, 18.71it/s] 42%|████▏     | 417/1000 [00:24<00:29, 19.66it/s] 42%|████▏     | 420/1000 [00:24<00:35, 16.55it/s] 42%|████▏     | 424/1000 [00:24<00:27, 20.65it/s] 43%|████▎     | 428/1000 [00:24<00:23, 24.33it/s] 43%|████▎     | 431/1000 [00:25<00:29, 19.08it/s] 43%|████▎     | 434/1000 [00:25<00:30, 18.57it/s] 44%|████▍     | 438/1000 [00:25<00:25, 21.94it/s] 44%|████▍     | 442/1000 [00:25<00:22, 24.97it/s] 44%|████▍     | 445/1000 [00:25<00:21, 25.29it/s] 45%|████▍     | 449/1000 [00:25<00:21, 25.55it/s] 45%|████▌     | 453/1000 [00:25<00:19, 28.12it/s] 46%|████▌     | 457/1000 [00:25<00:17, 31.01it/s] 46%|████▌     | 461/1000 [00:26<00:21, 25.48it/s] 46%|████▋     | 464/1000 [00:26<00:36, 14.82it/s] 47%|████▋     | 467/1000 [00:26<00:40, 13.18it/s] 47%|████▋     | 470/1000 [00:26<00:34, 15.26it/s] 47%|████▋     | 474/1000 [00:27<00:29, 18.05it/s] 48%|████▊     | 477/1000 [00:27<00:26, 19.58it/s] 48%|████▊     | 480/1000 [00:27<00:28, 18.11it/s] 48%|████▊     | 483/1000 [00:27<00:29, 17.53it/s] 49%|████▊     | 487/1000 [00:27<00:34, 15.02it/s] 49%|████▉     | 489/1000 [00:29<01:19,  6.39it/s] 49%|████▉     | 491/1000 [00:29<01:27,  5.82it/s] 49%|████▉     | 493/1000 [00:29<01:13,  6.93it/s] 50%|████▉     | 496/1000 [00:29<00:53,  9.35it/s] 50%|████▉     | 499/1000 [00:29<00:41, 11.96it/s] 50%|█████     | 502/1000 [00:29<00:35, 14.09it/s] 50%|█████     | 505/1000 [00:30<00:39, 12.44it/s] 51%|█████     | 509/1000 [00:30<00:30, 15.89it/s] 51%|█████     | 512/1000 [00:30<00:27, 17.82it/s] 52%|█████▏    | 515/1000 [00:31<00:50,  9.59it/s] 52%|█████▏    | 518/1000 [00:31<00:40, 11.96it/s] 52%|█████▏    | 521/1000 [00:31<00:33, 14.36it/s] 52%|█████▏    | 524/1000 [00:31<00:47,  9.95it/s] 53%|█████▎    | 526/1000 [00:31<00:42, 11.08it/s] 53%|█████▎    | 530/1000 [00:32<00:31, 14.74it/s] 53%|█████▎    | 534/1000 [00:32<00:28, 16.16it/s] 54%|█████▎    | 537/1000 [00:32<00:25, 17.91it/s] 54%|█████▍    | 540/1000 [00:32<00:29, 15.62it/s] 54%|█████▍    | 544/1000 [00:32<00:24, 18.84it/s] 55%|█████▌    | 550/1000 [00:32<00:17, 25.95it/s] 55%|█████▌    | 554/1000 [00:33<00:16, 26.36it/s] 56%|█████▌    | 558/1000 [00:33<00:15, 29.20it/s] 56%|█████▌    | 562/1000 [00:33<00:16, 27.03it/s] 56%|█████▋    | 565/1000 [00:33<00:16, 25.62it/s] 57%|█████▋    | 568/1000 [00:33<00:18, 23.83it/s] 57%|█████▋    | 571/1000 [00:33<00:24, 17.76it/s] 57%|█████▋    | 574/1000 [00:34<00:25, 16.72it/s] 58%|█████▊    | 578/1000 [00:34<00:20, 20.63it/s] 58%|█████▊    | 581/1000 [00:34<00:22, 19.03it/s] 58%|█████▊    | 584/1000 [00:34<00:20, 20.13it/s] 59%|█████▊    | 587/1000 [00:34<00:18, 21.75it/s] 59%|█████▉    | 590/1000 [00:34<00:18, 22.21it/s] 59%|█████▉    | 593/1000 [00:34<00:19, 20.42it/s] 60%|█████▉    | 597/1000 [00:35<00:18, 22.04it/s] 60%|██████    | 600/1000 [00:35<00:17, 23.51it/s] 60%|██████    | 603/1000 [00:35<00:18, 21.12it/s] 61%|██████    | 606/1000 [00:35<00:18, 21.19it/s] 61%|██████    | 609/1000 [00:35<00:17, 22.31it/s] 61%|██████    | 612/1000 [00:35<00:23, 16.48it/s] 61%|██████▏   | 614/1000 [00:36<00:22, 16.89it/s] 62%|██████▏   | 617/1000 [00:36<00:19, 19.31it/s] 62%|██████▏   | 620/1000 [00:36<00:17, 21.44it/s] 62%|██████▏   | 623/1000 [00:36<00:36, 10.39it/s] 63%|██████▎   | 627/1000 [00:37<00:27, 13.61it/s] 63%|██████▎   | 630/1000 [00:37<00:24, 15.23it/s] 63%|██████▎   | 633/1000 [00:37<00:22, 16.02it/s] 64%|██████▎   | 636/1000 [00:37<00:21, 16.81it/s] 64%|██████▍   | 639/1000 [00:37<00:25, 14.02it/s] 64%|██████▍   | 643/1000 [00:37<00:20, 17.85it/s] 65%|██████▍   | 646/1000 [00:38<00:24, 14.54it/s] 65%|██████▍   | 649/1000 [00:38<00:20, 16.81it/s] 65%|██████▌   | 652/1000 [00:38<00:18, 18.74it/s] 66%|██████▌   | 655/1000 [00:38<00:21, 16.03it/s] 66%|██████▌   | 658/1000 [00:38<00:19, 17.90it/s] 66%|██████▌   | 662/1000 [00:38<00:16, 20.11it/s] 66%|██████▋   | 665/1000 [00:39<00:15, 21.79it/s] 67%|██████▋   | 668/1000 [00:39<00:18, 17.91it/s] 67%|██████▋   | 671/1000 [00:39<00:16, 19.94it/s] 68%|██████▊   | 675/1000 [00:39<00:13, 24.06it/s] 68%|██████▊   | 678/1000 [00:39<00:13, 24.32it/s] 68%|██████▊   | 683/1000 [00:39<00:10, 29.00it/s] 69%|██████▊   | 687/1000 [00:40<00:21, 14.50it/s] 69%|██████▉   | 690/1000 [00:40<00:22, 13.49it/s] 69%|██████▉   | 694/1000 [00:40<00:18, 16.87it/s] 70%|██████▉   | 697/1000 [00:40<00:17, 17.69it/s] 70%|███████   | 701/1000 [00:40<00:13, 21.59it/s] 70%|███████   | 704/1000 [00:41<00:21, 14.01it/s] 71%|███████   | 707/1000 [00:41<00:28, 10.20it/s] 71%|███████   | 710/1000 [00:42<00:23, 12.44it/s] 71%|███████▏  | 713/1000 [00:42<00:19, 14.61it/s] 72%|███████▏  | 716/1000 [00:42<00:20, 13.99it/s] 72%|███████▏  | 718/1000 [00:42<00:20, 14.04it/s] 72%|███████▏  | 720/1000 [00:42<00:19, 14.39it/s] 72%|███████▏  | 723/1000 [00:42<00:16, 16.85it/s] 72%|███████▎  | 725/1000 [00:42<00:17, 15.36it/s] 73%|███████▎  | 727/1000 [00:43<00:18, 14.91it/s] 73%|███████▎  | 730/1000 [00:43<00:15, 17.37it/s] 73%|███████▎  | 732/1000 [00:43<00:15, 16.94it/s] 74%|███████▎  | 736/1000 [00:43<00:13, 19.41it/s] 74%|███████▍  | 740/1000 [00:43<00:12, 20.53it/s] 74%|███████▍  | 743/1000 [00:43<00:12, 20.26it/s] 75%|███████▍  | 746/1000 [00:43<00:11, 21.41it/s] 75%|███████▌  | 750/1000 [00:44<00:10, 23.41it/s] 75%|███████▌  | 754/1000 [00:44<00:09, 25.32it/s] 76%|███████▌  | 757/1000 [00:44<00:10, 23.75it/s] 76%|███████▌  | 760/1000 [00:44<00:10, 23.34it/s] 76%|███████▋  | 764/1000 [00:44<00:09, 24.48it/s] 77%|███████▋  | 768/1000 [00:44<00:09, 25.30it/s] 77%|███████▋  | 771/1000 [00:44<00:10, 22.89it/s] 77%|███████▋  | 774/1000 [00:45<00:10, 20.98it/s] 78%|███████▊  | 777/1000 [00:45<00:09, 22.33it/s] 78%|███████▊  | 781/1000 [00:45<00:08, 25.62it/s] 78%|███████▊  | 784/1000 [00:45<00:08, 25.05it/s] 79%|███████▊  | 787/1000 [00:45<00:13, 15.57it/s] 79%|███████▉  | 790/1000 [00:46<00:12, 17.18it/s] 79%|███████▉  | 793/1000 [00:46<00:10, 19.19it/s] 80%|███████▉  | 796/1000 [00:46<00:10, 19.15it/s] 80%|████████  | 800/1000 [00:46<00:09, 21.65it/s] 80%|████████  | 804/1000 [00:46<00:08, 23.39it/s] 81%|████████  | 808/1000 [00:46<00:08, 23.76it/s] 81%|████████  | 811/1000 [00:46<00:09, 19.40it/s] 81%|████████▏ | 814/1000 [00:47<00:15, 11.93it/s] 82%|████████▏ | 816/1000 [00:47<00:16, 11.44it/s] 82%|████████▏ | 819/1000 [00:47<00:16, 10.86it/s] 82%|████████▏ | 821/1000 [00:48<00:15, 11.33it/s] 82%|████████▏ | 824/1000 [00:48<00:12, 14.00it/s] 83%|████████▎ | 827/1000 [00:48<00:11, 15.58it/s] 83%|████████▎ | 830/1000 [00:48<00:09, 17.98it/s] 83%|████████▎ | 833/1000 [00:49<00:17,  9.34it/s] 84%|████████▎ | 835/1000 [00:49<00:18,  8.95it/s] 84%|████████▍ | 839/1000 [00:49<00:12, 12.44it/s] 84%|████████▍ | 841/1000 [00:49<00:12, 12.42it/s] 84%|████████▍ | 843/1000 [00:49<00:12, 12.30it/s] 85%|████████▍ | 846/1000 [00:50<00:10, 14.37it/s] 85%|████████▍ | 848/1000 [00:50<00:10, 14.62it/s] 85%|████████▌ | 852/1000 [00:50<00:09, 15.53it/s] 85%|████████▌ | 854/1000 [00:50<00:12, 12.07it/s] 86%|████████▌ | 857/1000 [00:50<00:12, 11.31it/s] 86%|████████▌ | 861/1000 [00:51<00:10, 13.54it/s] 86%|████████▋ | 863/1000 [00:51<00:09, 13.97it/s] 86%|████████▋ | 865/1000 [00:51<00:10, 13.46it/s] 87%|████████▋ | 868/1000 [00:51<00:08, 15.83it/s] 87%|████████▋ | 870/1000 [00:51<00:09, 13.61it/s] 87%|████████▋ | 872/1000 [00:51<00:09, 13.28it/s] 87%|████████▋ | 874/1000 [00:52<00:09, 12.61it/s] 88%|████████▊ | 878/1000 [00:52<00:07, 17.29it/s] 88%|████████▊ | 880/1000 [00:52<00:06, 17.85it/s] 88%|████████▊ | 883/1000 [00:52<00:05, 20.64it/s] 89%|████████▊ | 886/1000 [00:52<00:05, 19.47it/s] 89%|████████▉ | 889/1000 [00:52<00:05, 19.79it/s] 89%|████████▉ | 892/1000 [00:53<00:06, 16.60it/s] 89%|████████▉ | 894/1000 [00:53<00:06, 17.19it/s] 90%|████████▉ | 896/1000 [00:53<00:08, 12.56it/s] 90%|████████▉ | 899/1000 [00:53<00:06, 15.43it/s] 90%|█████████ | 902/1000 [00:53<00:05, 18.32it/s] 90%|█████████ | 905/1000 [00:53<00:04, 20.89it/s] 91%|█████████ | 908/1000 [00:53<00:04, 20.93it/s] 91%|█████████ | 911/1000 [00:54<00:04, 20.23it/s] 92%|█████████▏| 915/1000 [00:54<00:03, 24.67it/s] 92%|█████████▏| 918/1000 [00:54<00:05, 13.91it/s] 92%|█████████▏| 921/1000 [00:54<00:05, 15.21it/s] 92%|█████████▎| 925/1000 [00:54<00:03, 18.76it/s] 93%|█████████▎| 928/1000 [00:54<00:03, 20.24it/s] 93%|█████████▎| 934/1000 [00:55<00:02, 25.87it/s] 94%|█████████▍| 938/1000 [00:55<00:02, 26.61it/s] 94%|█████████▍| 942/1000 [00:55<00:01, 29.37it/s] 95%|█████████▍| 946/1000 [00:55<00:02, 26.62it/s] 95%|█████████▍| 949/1000 [00:55<00:02, 21.85it/s] 95%|█████████▌| 952/1000 [00:55<00:02, 23.25it/s] 96%|█████████▌| 956/1000 [00:55<00:01, 26.74it/s] 96%|█████████▌| 960/1000 [00:56<00:01, 28.61it/s] 96%|█████████▋| 964/1000 [00:56<00:01, 27.19it/s] 97%|█████████▋| 967/1000 [00:56<00:01, 18.77it/s] 97%|█████████▋| 970/1000 [00:56<00:01, 17.52it/s] 97%|█████████▋| 974/1000 [00:56<00:01, 20.96it/s] 98%|█████████▊| 977/1000 [00:57<00:01, 17.75it/s] 98%|█████████▊| 980/1000 [00:57<00:01, 17.89it/s] 98%|█████████▊| 983/1000 [00:57<00:00, 20.11it/s] 99%|█████████▊| 987/1000 [00:57<00:00, 23.52it/s] 99%|█████████▉| 990/1000 [00:57<00:00, 24.38it/s] 99%|█████████▉| 993/1000 [00:57<00:00, 25.33it/s]100%|█████████▉| 997/1000 [00:57<00:00, 26.97it/s]100%|██████████| 1000/1000 [00:58<00:00, 24.62it/s]100%|██████████| 1000/1000 [00:59<00:00, 16.87it/s]
-Traceback (most recent call last):
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 324, in <module>
-    main(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 145, in main
-    edited_model, _ = apply_algo(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/memit/memit_main.py", line 46, in apply_memit_to_model
-    deltas = execute_memit(model, tok, requests, hparams, cache_template=cache_template)
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/memit/memit_main.py", line 182, in execute_memit
-    cov = get_cov(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/memit/memit_main.py", line 261, in get_cov
-    stat = layer_stats(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/rome/layer_stats.py", line 188, in layer_stats
-    loader = tally(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/util/runningstats.py", line 106, in tally
-    stat.load_state_dict(cached_state)
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/util/runningstats.py", line 1377, in load_state_dict
-    obj.load_state_dict(pull_key_prefix(prefix, state))
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/util/runningstats.py", line 1406, in pull_key_prefix
-    return {k[lpd:]: v for k, v in d.items() if k.startswith(pd)}
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/util/runningstats.py", line 1406, in <dictcomp>
-    return {k[lpd:]: v for k, v in d.items() if k.startswith(pd)}
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/_collections_abc.py", line 851, in __iter__
-    yield (key, self._mapping[key])
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/numpy/lib/npyio.py", line 256, in __getitem__
-    return format.read_array(bytes,
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/numpy/lib/format.py", line 831, in read_array
-    data = _read_bytes(fp, read_size, "array data")
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/numpy/lib/format.py", line 966, in _read_bytes
-    r = fp.read(size - len(data))
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/zipfile.py", line 926, in read
-    data = self._read1(n)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/zipfile.py", line 1016, in _read1
-    self._update_crc(data)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/zipfile.py", line 944, in _update_crc
-    raise BadZipFile("Bad CRC-32 for file %r" % self.name)
-zipfile.BadZipFile: Bad CRC-32 for file 'mom2.mom2.npy'
-orig norm tensor(92.0625, device='cuda:0', dtype=torch.float16)
-upd norm tensor(5.9992, device='cuda:0', dtype=torch.float64,
-       grad_fn=<LinalgVectorNormBackward0>)
-
-
-LAYER 16
-
-Writing 10 key/value pair(s) into layer 16
-z error tensor(44.9344, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.16.mlp.down_proj.
-Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.16.mlp.down_proj_float32_mom2_1000.npz

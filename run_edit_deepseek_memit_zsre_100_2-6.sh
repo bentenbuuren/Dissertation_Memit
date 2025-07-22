@@ -2,15 +2,15 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/deepseek_memit_zsre_10_cs.out
-#SBATCH --error=output/deepseek_memit_zsre_10_cs.err
+#SBATCH --output=output/llama3_ds_zsre_100_2-6.out
+#SBATCH --error=output/llama3_ds_zsre_100_2-6.err
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
 #SBATCH --time=64:00:00
 #SBATCH --ntasks=1
-#SBATCH --job-name=deepseek_memit
+#SBATCH --job-name=ds_memit_zsre_100_2-6
 
 # Load modules
 module load Anaconda3/2024.02-1
@@ -29,7 +29,7 @@ DS_NAME="zsre" # [cf, mcf, zsre]
 # Edit parameters 
 N_EDITS="100"
 ALG_NAMES=("MEMIT")
-HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B.json") # meta-llama_Llama-2-7b-hf.json
+HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B-2-6.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
 MODEL_SAVE=1
 
@@ -46,8 +46,7 @@ do
         --adapter_name=$ADAPTER_NAME --adapter_path=$ADAPTER_PATH \
         --hparams_fname=$HPARAMS_FNAMES --num_edits=$N_EDITS --use_cache \
         --dataset_size_limit=$N_EDITS --ds_name=$DS_NAME --eval_only=$EVAL_ONLY \
-        --model_save=$MODEL_SAVE \
-
+        --model_save=$MODEL_SAVE 
 done
 exit 0
  

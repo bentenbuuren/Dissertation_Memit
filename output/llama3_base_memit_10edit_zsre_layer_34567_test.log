@@ -1,1188 +1,0 @@
-Running evals for MEMIT...
-Results will be stored at results/MEMIT/run_028
-Executing MEMIT with parameters MEMITHyperParams(layers=[3, 4, 5, 6, 7], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='meta-llama/Llama-3.1-8B', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
-Instantiating model
-Downloading shards:   0%|          | 0/4 [00:00<?, ?it/s]Downloading shards:  25%|██▌       | 1/4 [00:37<01:51, 37.14s/it]Downloading shards:  50%|█████     | 2/4 [01:15<01:15, 37.80s/it]Downloading shards:  75%|███████▌  | 3/4 [01:53<00:38, 38.10s/it]Downloading shards: 100%|██████████| 4/4 [02:03<00:00, 26.72s/it]Downloading shards: 100%|██████████| 4/4 [02:03<00:00, 30.78s/it]
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:06<00:19,  6.45s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:13<00:13,  6.96s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:21<00:07,  7.23s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:23<00:00,  5.12s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:23<00:00,  5.80s/it]
-Loading dataset, attribute snippets, tf-idf data
-Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_{}_clamp_{}_case_{}.npz
-MEMIT request sample: [What university did Watts Humphrey attend?] -> [ Illinois Institute of Technology]
-MEMIT request sample: [Which family does Ramalinaceae belong to?] -> [ Lecanorales]
-MEMIT request sample: [What role does Denny Herzig play in football?] -> [ defender]
-MEMIT request sample: [What artist created Call the Doctor?] -> [ Sleater-Kinney]
-MEMIT request sample: [Who was the designer of Lahti Town Hall?] -> [ Eliel Saarinen]
-MEMIT request sample: [By which person Lahti Town Hall has been designed?] -> [ Eliel Saarinen]
-MEMIT request sample: [Which person is the architect of Lahti Town Hall?] -> [ Eliel Saarinen]
-MEMIT request sample: [Who was the architect involved with Lahti Town Hall?] -> [ Eliel Saarinen]
-MEMIT request sample: [What was the name of the architect who worked on Lahti Town Hall?] -> [ Eliel Saarinen]
-MEMIT request sample: [Which designer was responsible for Lahti Town Hall?] -> [ Eliel Saarinen]
-Cached context templates [['{}'], ['The 3 Best Ways to Find the Right. {}', 'Therefore, it is not surprising that the number. {}', 'Because we are not just a company, we. {}', 'I am not going to lie, it has. {}', 'You are visiting the placeholder page for James Johnson. {}']]
-Computing right vector (v)
-Lookup index found: 6 | Sentence: What university did Watts Humphrey attend? Illinois Institute of | Token: rey
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 2.74 = 2.74 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.06640822440385818
-loss 1.778 = 1.397 + 0.38 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.2561182677745819
-loss 0.44 = 0.322 + 0.117 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.7251579165458679
-loss 0.141 = 0.07 + 0.07 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9322727918624878
-loss 0.077 = 0.015 + 0.061 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.984770655632019
-loss 0.063 = 0.007 + 0.055 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9932117462158203
-loss 0.052 = 0.004 + 0.047 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9957423210144043
-loss 0.043 = 0.003 + 0.039 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9968931078910828
-Init norm 8.265625 | Delta norm 33.0625 | Target norm 34.37911605834961
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_0.npz
-Computing right vector (v)
-Lookup index found: 6 | Sentence: Which family does Ramalinaceae belong to? Lecanor | Token: aceae
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 2.775 = 2.775 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.06538495421409607
-loss 2.874 = 2.653 + 0.22 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.07111398875713348
-loss 1.98 = 1.813 + 0.166 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.16384749114513397
-loss 1.548 = 1.438 + 0.11 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.23831462860107422
-loss 0.956 = 0.908 + 0.047 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.40463101863861084
-loss 0.504 = 0.48 + 0.024 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.6199744939804077
-loss 0.287 = 0.26 + 0.026 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.7716755867004395
-loss 0.144 = 0.117 + 0.026 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.890401303768158
-loss 0.072 = 0.044 + 0.027 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.9567378759384155
-loss 0.043 = 0.016 + 0.027 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.9839572310447693
-Init norm 7.03515625 | Delta norm 28.140623092651367 | Target norm 28.956838607788086
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_1.npz
-Computing right vector (v)
-Lookup index found: 7 | Sentence: What role does Denny Herzig play in football? | Token: zig
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 13.819 = 13.819 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 1.1642835033853771e-06
-loss 12.196 = 11.931 + 0.264 + 0.001 avg prob of [{'str': ' defender'}] 7.44624185244902e-06
-loss 6.346 = 6.253 + 0.092 + 0.001 avg prob of [{'str': ' defender'}] 0.002138142939656973
-loss 1.309 = 1.138 + 0.17 + 0.001 avg prob of [{'str': ' defender'}] 0.32098469138145447
-loss 0.157 = 0.001 + 0.155 + 0.001 avg prob of [{'str': ' defender'}] 0.9986349940299988
-loss 0.137 = 0.02 + 0.116 + 0.001 avg prob of [{'str': ' defender'}] 0.980689525604248
-loss 0.119 = 0.001 + 0.118 + 0.001 avg prob of [{'str': ' defender'}] 0.9994926452636719
-loss 0.119 = 0.0 + 0.118 + 0.001 avg prob of [{'str': ' defender'}] 0.9995505809783936
-loss 0.118 = 0.0 + 0.117 + 0.001 avg prob of [{'str': ' defender'}] 0.9995718002319336
-loss 0.116 = 0.0 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9996014833450317
-loss 0.115 = 0.0 + 0.114 + 0.001 avg prob of [{'str': ' defender'}] 0.9996322989463806
-loss 0.114 = 0.0 + 0.113 + 0.001 avg prob of [{'str': ' defender'}] 0.9996561408042908
-loss 0.114 = 0.0 + 0.113 + 0.001 avg prob of [{'str': ' defender'}] 0.9996833801269531
-loss 0.114 = 0.0 + 0.113 + 0.001 avg prob of [{'str': ' defender'}] 0.9997093677520752
-loss 0.113 = 0.0 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.9997395277023315
-loss 0.113 = 0.0 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.9997653961181641
-loss 0.113 = 0.0 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.9997872114181519
-loss 0.113 = 0.0 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.999805212020874
-loss 0.113 = 0.0 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.9998222589492798
-loss 0.113 = 0.0 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.9998360872268677
-loss 0.112 = 0.0 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.9998502731323242
-loss 0.112 = 0.0 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.9998642802238464
-loss 0.112 = 0.0 + 0.111 + 0.001 avg prob of [{'str': ' defender'}] 0.9998763799667358
-loss 0.112 = 0.0 + 0.111 + 0.001 avg prob of [{'str': ' defender'}] 0.9998855590820312
-loss 0.112 = 0.0 + 0.111 + 0.001 avg prob of [{'str': ' defender'}] 0.9998936057090759
-Init norm 6.4296875 | Delta norm 25.71875 | Target norm 26.40372085571289
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_2.npz
-Computing right vector (v)
-Lookup index found: 6 | Sentence: What artist created Call the Doctor? Sleater-Kin | Token:  Doctor
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 2.547 = 2.547 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.0795932188630104
-loss 3.074 = 2.642 + 0.432 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.07262003421783447
-loss 1.951 = 1.603 + 0.347 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.2020627111196518
-loss 0.94 = 0.846 + 0.093 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.4297684133052826
-loss 0.222 = 0.138 + 0.083 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8724263906478882
-loss 0.116 = 0.025 + 0.091 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9754482507705688
-loss 0.098 = 0.011 + 0.087 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9886693954467773
-loss 0.093 = 0.005 + 0.087 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9946295022964478
-loss 0.091 = 0.003 + 0.088 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9973288774490356
-loss 0.09 = 0.001 + 0.088 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9985052347183228
-loss 0.089 = 0.001 + 0.088 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9990010261535645
-loss 0.089 = 0.001 + 0.088 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9992403388023376
-loss 0.089 = 0.001 + 0.088 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9993683099746704
-loss 0.089 = 0.001 + 0.088 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9994558691978455
-loss 0.089 = 0.0 + 0.088 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9995183348655701
-loss 0.088 = 0.0 + 0.087 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9995654821395874
-loss 0.087 = 0.0 + 0.086 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9996024966239929
-loss 0.076 = 0.0 + 0.075 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9996275901794434
-loss 0.079 = 0.0 + 0.078 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9996446371078491
-loss 0.07 = 0.0 + 0.069 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.999595582485199
-loss 0.071 = 0.0 + 0.07 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9995377063751221
-loss 0.068 = 0.001 + 0.067 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9994916915893555
-loss 0.064 = 0.001 + 0.062 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.999454915523529
-loss 0.058 = 0.001 + 0.057 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9994137287139893
-loss 0.058 = 0.001 + 0.057 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9993912577629089
-Init norm 7.35546875 | Delta norm 29.421876907348633 | Target norm 30.509815216064453
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_3.npz
-Computing right vector (v)
-Lookup index found: 9 | Sentence: Who was the designer of Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.957 = 1.957 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1415492296218872
-loss 1.775 = 1.7 + 0.074 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.18303442001342773
-loss 0.827 = 0.686 + 0.14 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5045409202575684
-loss 0.231 = 0.152 + 0.079 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8592009544372559
-loss 0.051 = 0.015 + 0.035 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9852231740951538
-loss 0.056 = 0.037 + 0.019 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9653719663619995
-loss 0.027 = 0.007 + 0.02 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9933785200119019
-Init norm 7.0625 | Delta norm 28.249998092651367 | Target norm 29.373207092285156
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_4.npz
-Computing right vector (v)
-Lookup index found: 7 | Sentence: By which person Lahti Town Hall has been designed? Eliel Saar | Token:  Hall
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.937 = 1.937 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.14451885223388672
-loss 1.894 = 1.738 + 0.156 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.17747430503368378
-loss 0.564 = 0.363 + 0.2 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7023360133171082
-loss 0.223 = 0.18 + 0.042 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8356532454490662
-loss 0.067 = 0.023 + 0.044 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9778631925582886
-loss 0.048 = 0.006 + 0.041 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9939619898796082
-Init norm 6.60546875 | Delta norm 26.421876907348633 | Target norm 27.334243774414062
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_5.npz
-Computing right vector (v)
-Lookup index found: 10 | Sentence: Which person is the architect of Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.928 = 1.928 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.14559000730514526
-loss 1.786 = 1.716 + 0.069 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.18010281026363373
-loss 1.578 = 1.543 + 0.035 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.2170507162809372
-loss 0.318 = 0.281 + 0.037 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7610546946525574
-loss 0.136 = 0.053 + 0.082 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9485804438591003
-loss 0.132 = 0.088 + 0.044 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9163388013839722
-loss 0.075 = 0.042 + 0.032 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9587003588676453
-loss 0.045 = 0.016 + 0.028 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9838322997093201
-Init norm 6.79296875 | Delta norm 27.171873092651367 | Target norm 28.20735740661621
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_6.npz
-Computing right vector (v)
-Lookup index found: 10 | Sentence: Who was the architect involved with Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.933 = 1.933 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1451745629310608
-loss 1.853 = 1.693 + 0.16 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.1846080720424652
-loss 0.668 = 0.631 + 0.036 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5362102389335632
-loss 0.335 = 0.297 + 0.037 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7441550493240356
-loss 0.178 = 0.034 + 0.143 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9662420153617859
-loss 0.111 = 0.067 + 0.044 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9357088804244995
-loss 0.097 = 0.046 + 0.05 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9549161791801453
-loss 0.071 = 0.019 + 0.051 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9813442230224609
-loss 0.058 = 0.01 + 0.048 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.990081787109375
-loss 0.053 = 0.007 + 0.046 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9929808378219604
-loss 0.049 = 0.006 + 0.043 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9943349361419678
-Init norm 7.26171875 | Delta norm 29.046875 | Target norm 30.137041091918945
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_7.npz
-Computing right vector (v)
-Lookup index found: 14 | Sentence: What was the name of the architect who worked on Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 2.003 = 2.003 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1353270709514618
-loss 1.999 = 1.759 + 0.24 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.1724662184715271
-loss 1.778 = 1.638 + 0.139 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.19447891414165497
-loss 1.038 = 0.904 + 0.134 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.40581250190734863
-loss 0.345 = 0.204 + 0.14 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8155419230461121
-loss 0.191 = 0.086 + 0.104 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9174407720565796
-loss 0.176 = 0.016 + 0.159 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9837015867233276
-loss 0.095 = 0.03 + 0.065 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9706753492355347
-loss 0.074 = 0.038 + 0.036 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9632077217102051
-loss 0.042 = 0.017 + 0.024 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9829094409942627
-Init norm 7.328125 | Delta norm 29.3125 | Target norm 30.410320281982422
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_8.npz
-Computing right vector (v)
-Lookup index found: 9 | Sentence: Which designer was responsible for Lahti Town Hall? Eliel Saar | Token:  Hall
-Rewrite layer is 7
-Tying optimization objective to 31
-Recording initial value of v*
-loss 1.977 = 1.977 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.13862064480781555
-loss 1.863 = 1.747 + 0.116 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.17536792159080505
-loss 1.063 = 0.967 + 0.095 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3829880356788635
-loss 0.693 = 0.631 + 0.061 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5357748866081238
-loss 0.189 = 0.096 + 0.092 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.909077525138855
-loss 0.105 = 0.017 + 0.087 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.983346164226532
-/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/utils/data/dataloader.py:617: UserWarning: This DataLoader will create 2 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
-  warnings.warn(
-loss 0.06 = 0.015 + 0.045 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9855570793151855
-loss 0.042 = 0.011 + 0.03 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9892619848251343
-Init norm 7.09375 | Delta norm 28.375001907348633 | Target norm 29.571125030517578
-Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B_MEMIT/zsre_layer_7_clamp_4_case_9.npz
-
-
-LAYER 3
-
-Writing 10 key/value pair(s) into layer 3
-z error tensor(28.4922, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B @ model.layers.3.mlp.down_proj.
-Attempting to download Llama-3.1-8B/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz from https://memit.baulab.info/data/stats/Llama-3.1-8B/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz.
-Unable to download due to HTTP Error 404: Not Found. Computing locally....
-  0%|          | 0/1000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-  0%|          | 1/1000 [00:01<17:36,  1.06s/it]  1%|          | 6/1000 [00:01<02:29,  6.65it/s]  1%|          | 9/1000 [00:01<01:52,  8.80it/s]  1%|          | 12/1000 [00:01<01:22, 11.96it/s]  2%|▏         | 15/1000 [00:01<01:13, 13.43it/s]  2%|▏         | 21/1000 [00:01<00:46, 21.16it/s]  3%|▎         | 26/1000 [00:01<00:38, 25.17it/s]  3%|▎         | 30/1000 [00:02<00:37, 25.93it/s]  3%|▎         | 34/1000 [00:02<00:40, 23.67it/s]  4%|▎         | 37/1000 [00:02<00:39, 24.41it/s]  4%|▍         | 42/1000 [00:02<00:32, 29.78it/s]  5%|▍         | 46/1000 [00:02<00:30, 31.21it/s]  5%|▌         | 50/1000 [00:02<00:31, 30.01it/s]  6%|▌         | 56/1000 [00:02<00:25, 36.63it/s]  6%|▌         | 60/1000 [00:02<00:26, 35.77it/s]  6%|▋         | 64/1000 [00:03<00:27, 34.51it/s]  7%|▋         | 68/1000 [00:03<00:29, 31.50it/s]  7%|▋         | 74/1000 [00:03<00:24, 37.52it/s]  8%|▊         | 80/1000 [00:03<00:22, 41.46it/s]  9%|▊         | 86/1000 [00:03<00:21, 42.84it/s]  9%|▉         | 91/1000 [00:03<00:22, 40.06it/s] 10%|▉         | 96/1000 [00:03<00:26, 34.59it/s] 10%|█         | 100/1000 [00:04<00:43, 20.57it/s] 10%|█         | 104/1000 [00:04<00:38, 22.98it/s] 11%|█         | 108/1000 [00:04<00:36, 24.70it/s] 11%|█         | 112/1000 [00:04<00:35, 24.96it/s] 12%|█▏        | 115/1000 [00:04<00:34, 25.82it/s] 12%|█▏        | 118/1000 [00:05<00:39, 22.13it/s] 12%|█▏        | 121/1000 [00:05<00:37, 23.64it/s] 12%|█▏        | 124/1000 [00:05<00:36, 24.19it/s] 13%|█▎        | 130/1000 [00:05<00:30, 28.86it/s] 13%|█▎        | 133/1000 [00:05<00:36, 23.57it/s] 14%|█▎        | 136/1000 [00:05<00:41, 20.64it/s] 14%|█▍        | 142/1000 [00:05<00:30, 27.85it/s] 15%|█▍        | 146/1000 [00:06<00:29, 29.31it/s] 15%|█▌        | 150/1000 [00:06<00:29, 28.80it/s] 15%|█▌        | 154/1000 [00:06<00:30, 27.75it/s] 16%|█▌        | 158/1000 [00:06<00:28, 29.24it/s] 16%|█▌        | 162/1000 [00:06<00:29, 28.38it/s] 17%|█▋        | 168/1000 [00:06<00:25, 32.19it/s] 17%|█▋        | 172/1000 [00:06<00:25, 32.90it/s] 18%|█▊        | 177/1000 [00:06<00:22, 36.85it/s] 18%|█▊        | 181/1000 [00:07<00:25, 32.73it/s] 19%|█▊        | 187/1000 [00:07<00:22, 36.28it/s] 19%|█▉        | 193/1000 [00:07<00:20, 39.28it/s] 20%|█▉        | 198/1000 [00:07<00:20, 38.31it/s] 20%|██        | 203/1000 [00:07<00:20, 37.96it/s] 21%|██        | 207/1000 [00:07<00:20, 38.00it/s] 21%|██        | 212/1000 [00:07<00:19, 39.74it/s] 22%|██▏       | 217/1000 [00:08<00:22, 35.02it/s] 22%|██▏       | 222/1000 [00:08<00:20, 37.27it/s] 23%|██▎       | 228/1000 [00:08<00:19, 39.53it/s] 23%|██▎       | 233/1000 [00:08<00:18, 41.82it/s] 24%|██▍       | 238/1000 [00:08<00:19, 39.93it/s] 24%|██▍       | 243/1000 [00:08<00:20, 37.23it/s] 25%|██▍       | 247/1000 [00:08<00:24, 30.18it/s] 25%|██▌       | 252/1000 [00:09<00:21, 34.28it/s] 26%|██▌       | 256/1000 [00:09<00:21, 35.37it/s] 26%|██▌       | 261/1000 [00:09<00:19, 38.15it/s] 27%|██▋       | 266/1000 [00:09<00:18, 40.69it/s] 27%|██▋       | 273/1000 [00:09<00:15, 48.20it/s] 28%|██▊       | 279/1000 [00:09<00:16, 44.73it/s] 28%|██▊       | 285/1000 [00:09<00:15, 46.48it/s] 29%|██▉       | 292/1000 [00:09<00:13, 51.29it/s] 30%|██▉       | 298/1000 [00:10<00:17, 41.06it/s] 30%|███       | 303/1000 [00:10<00:23, 30.30it/s] 31%|███       | 309/1000 [00:10<00:21, 32.43it/s] 31%|███▏      | 313/1000 [00:10<00:23, 29.67it/s] 32%|███▏      | 319/1000 [00:10<00:21, 31.09it/s] 32%|███▏      | 323/1000 [00:10<00:21, 31.04it/s] 33%|███▎      | 327/1000 [00:11<00:21, 30.89it/s] 33%|███▎      | 331/1000 [00:11<00:21, 31.24it/s] 34%|███▎      | 336/1000 [00:11<00:23, 27.71it/s] 34%|███▍      | 341/1000 [00:11<00:20, 31.44it/s] 34%|███▍      | 345/1000 [00:11<00:21, 30.99it/s] 35%|███▍      | 349/1000 [00:11<00:22, 28.30it/s] 35%|███▌      | 353/1000 [00:11<00:21, 30.39it/s] 36%|███▌      | 357/1000 [00:12<00:22, 28.00it/s] 36%|███▌      | 360/1000 [00:12<00:24, 26.28it/s] 37%|███▋      | 366/1000 [00:12<00:19, 31.80it/s] 37%|███▋      | 370/1000 [00:12<00:19, 33.00it/s] 37%|███▋      | 374/1000 [00:12<00:18, 33.45it/s] 38%|███▊      | 378/1000 [00:12<00:17, 35.05it/s] 38%|███▊      | 383/1000 [00:12<00:16, 38.30it/s] 39%|███▉      | 388/1000 [00:12<00:15, 39.03it/s] 39%|███▉      | 392/1000 [00:13<00:17, 34.16it/s] 40%|███▉      | 397/1000 [00:13<00:15, 37.90it/s] 40%|████      | 404/1000 [00:13<00:13, 45.69it/s] 41%|████      | 409/1000 [00:13<00:13, 42.26it/s] 41%|████▏     | 414/1000 [00:13<00:14, 39.95it/s] 42%|████▏     | 419/1000 [00:13<00:16, 34.56it/s] 42%|████▏     | 423/1000 [00:13<00:16, 34.10it/s] 43%|████▎     | 430/1000 [00:14<00:15, 35.70it/s] 43%|████▎     | 434/1000 [00:14<00:16, 33.91it/s] 44%|████▍     | 440/1000 [00:14<00:14, 38.37it/s] 45%|████▍     | 447/1000 [00:14<00:12, 45.37it/s] 45%|████▌     | 452/1000 [00:14<00:12, 43.94it/s] 46%|████▌     | 458/1000 [00:14<00:11, 46.99it/s] 46%|████▋     | 463/1000 [00:14<00:14, 36.37it/s] 47%|████▋     | 469/1000 [00:15<00:13, 40.49it/s] 48%|████▊     | 476/1000 [00:15<00:11, 45.30it/s] 48%|████▊     | 481/1000 [00:15<00:12, 41.38it/s] 49%|████▊     | 486/1000 [00:15<00:12, 40.29it/s] 49%|████▉     | 491/1000 [00:16<00:34, 14.85it/s] 50%|████▉     | 497/1000 [00:16<00:26, 19.03it/s] 50%|█████     | 501/1000 [00:16<00:23, 21.36it/s] 50%|█████     | 505/1000 [00:16<00:23, 21.21it/s] 51%|█████     | 511/1000 [00:16<00:17, 27.43it/s] 52%|█████▏    | 515/1000 [00:17<00:25, 18.66it/s] 52%|█████▏    | 520/1000 [00:17<00:21, 22.67it/s] 52%|█████▏    | 524/1000 [00:17<00:25, 18.91it/s] 53%|█████▎    | 528/1000 [00:17<00:21, 21.81it/s] 53%|█████▎    | 533/1000 [00:17<00:17, 26.49it/s] 54%|█████▎    | 537/1000 [00:18<00:17, 26.29it/s] 54%|█████▍    | 541/1000 [00:18<00:18, 25.45it/s] 55%|█████▍    | 548/1000 [00:18<00:13, 34.41it/s] 55%|█████▌    | 553/1000 [00:18<00:12, 35.97it/s] 56%|█████▌    | 560/1000 [00:18<00:10, 40.21it/s] 56%|█████▋    | 565/1000 [00:18<00:10, 39.75it/s] 57%|█████▋    | 570/1000 [00:18<00:11, 38.67it/s] 57%|█████▊    | 575/1000 [00:19<00:13, 32.63it/s] 58%|█████▊    | 580/1000 [00:19<00:11, 35.72it/s] 58%|█████▊    | 584/1000 [00:19<00:11, 36.57it/s] 59%|█████▉    | 589/1000 [00:19<00:10, 38.92it/s] 59%|█████▉    | 594/1000 [00:19<00:10, 38.09it/s] 60%|██████    | 600/1000 [00:19<00:09, 42.07it/s] 60%|██████    | 605/1000 [00:19<00:09, 40.24it/s] 61%|██████    | 610/1000 [00:19<00:09, 41.76it/s] 62%|██████▏   | 615/1000 [00:20<00:10, 37.50it/s] 62%|██████▏   | 620/1000 [00:20<00:09, 39.73it/s] 63%|██████▎   | 626/1000 [00:20<00:08, 43.85it/s] 63%|██████▎   | 632/1000 [00:20<00:08, 45.44it/s] 64%|██████▎   | 637/1000 [00:20<00:09, 36.58it/s] 64%|██████▍   | 641/1000 [00:20<00:10, 33.92it/s] 64%|██████▍   | 645/1000 [00:20<00:10, 35.29it/s] 65%|██████▌   | 650/1000 [00:20<00:09, 38.82it/s] 66%|██████▌   | 655/1000 [00:21<00:10, 33.43it/s] 66%|██████▌   | 661/1000 [00:21<00:08, 39.49it/s] 67%|██████▋   | 667/1000 [00:21<00:07, 42.39it/s] 67%|██████▋   | 672/1000 [00:21<00:07, 43.35it/s] 68%|██████▊   | 677/1000 [00:21<00:07, 45.04it/s] 68%|██████▊   | 682/1000 [00:21<00:07, 44.73it/s] 69%|██████▊   | 687/1000 [00:22<00:10, 28.85it/s] 69%|██████▉   | 691/1000 [00:22<00:10, 28.42it/s] 70%|██████▉   | 696/1000 [00:22<00:09, 32.49it/s] 70%|███████   | 701/1000 [00:22<00:08, 33.59it/s] 70%|███████   | 705/1000 [00:22<00:12, 24.15it/s] 71%|███████   | 709/1000 [00:23<00:14, 20.18it/s] 71%|███████▏  | 713/1000 [00:23<00:12, 23.19it/s] 72%|███████▏  | 716/1000 [00:23<00:12, 23.27it/s] 72%|███████▏  | 720/1000 [00:23<00:10, 26.08it/s] 72%|███████▏  | 724/1000 [00:23<00:10, 27.21it/s] 73%|███████▎  | 728/1000 [00:23<00:10, 26.41it/s] 73%|███████▎  | 734/1000 [00:23<00:08, 32.42it/s] 74%|███████▍  | 739/1000 [00:23<00:07, 36.11it/s] 74%|███████▍  | 743/1000 [00:23<00:07, 35.78it/s] 75%|███████▍  | 749/1000 [00:24<00:06, 41.09it/s] 75%|███████▌  | 754/1000 [00:24<00:06, 39.49it/s] 76%|███████▌  | 759/1000 [00:24<00:06, 38.22it/s] 77%|███████▋  | 767/1000 [00:24<00:04, 46.92it/s] 77%|███████▋  | 772/1000 [00:24<00:05, 41.30it/s] 78%|███████▊  | 777/1000 [00:24<00:05, 42.97it/s] 78%|███████▊  | 782/1000 [00:24<00:05, 43.39it/s] 79%|███████▊  | 787/1000 [00:25<00:06, 30.49it/s] 79%|███████▉  | 793/1000 [00:25<00:05, 36.21it/s] 80%|███████▉  | 798/1000 [00:25<00:05, 36.86it/s] 80%|████████  | 803/1000 [00:25<00:04, 39.82it/s] 81%|████████  | 808/1000 [00:25<00:05, 34.87it/s] 81%|████████  | 812/1000 [00:25<00:06, 31.20it/s] 82%|████████▏ | 816/1000 [00:25<00:05, 33.06it/s] 82%|████████▏ | 820/1000 [00:26<00:07, 25.21it/s] 82%|████████▎ | 825/1000 [00:26<00:05, 29.70it/s] 83%|████████▎ | 830/1000 [00:26<00:05, 33.55it/s] 83%|████████▎ | 834/1000 [00:26<00:04, 33.84it/s] 84%|████████▍ | 838/1000 [00:26<00:05, 30.16it/s] 84%|████████▍ | 842/1000 [00:26<00:05, 30.03it/s] 85%|████████▍ | 846/1000 [00:26<00:05, 30.71it/s] 85%|████████▌ | 850/1000 [00:27<00:04, 32.20it/s] 85%|████████▌ | 854/1000 [00:27<00:05, 24.59it/s] 86%|████████▌ | 860/1000 [00:27<00:04, 31.63it/s] 86%|████████▋ | 864/1000 [00:27<00:05, 27.02it/s] 87%|████████▋ | 868/1000 [00:27<00:04, 29.34it/s] 87%|████████▋ | 872/1000 [00:27<00:04, 26.11it/s] 88%|████████▊ | 875/1000 [00:28<00:04, 25.56it/s] 88%|████████▊ | 881/1000 [00:28<00:03, 32.94it/s] 89%|████████▊ | 886/1000 [00:28<00:03, 36.24it/s] 89%|████████▉ | 890/1000 [00:28<00:03, 35.76it/s] 89%|████████▉ | 894/1000 [00:28<00:03, 28.38it/s] 90%|████████▉ | 898/1000 [00:28<00:04, 25.48it/s] 90%|█████████ | 903/1000 [00:28<00:03, 29.94it/s] 91%|█████████ | 908/1000 [00:29<00:02, 32.92it/s] 91%|█████████▏| 914/1000 [00:29<00:02, 37.59it/s] 92%|█████████▏| 919/1000 [00:29<00:02, 38.31it/s] 93%|█████████▎| 926/1000 [00:29<00:01, 45.52it/s] 93%|█████████▎| 933/1000 [00:29<00:01, 50.60it/s] 94%|█████████▍| 939/1000 [00:29<00:01, 49.13it/s] 94%|█████████▍| 945/1000 [00:29<00:01, 46.56it/s] 95%|█████████▌| 950/1000 [00:29<00:01, 42.76it/s] 96%|█████████▌| 957/1000 [00:30<00:00, 47.32it/s] 96%|█████████▋| 964/1000 [00:30<00:00, 49.32it/s] 97%|█████████▋| 970/1000 [00:30<00:00, 36.26it/s] 98%|█████████▊| 975/1000 [00:30<00:00, 37.95it/s] 98%|█████████▊| 980/1000 [00:30<00:00, 38.77it/s] 99%|█████████▊| 987/1000 [00:30<00:00, 44.31it/s] 99%|█████████▉| 993/1000 [00:30<00:00, 45.27it/s]100%|█████████▉| 999/1000 [00:31<00:00, 45.51it/s]100%|██████████| 1000/1000 [00:32<00:00, 30.90it/s]
-orig norm tensor(89.8125, device='cuda:0', dtype=torch.float16)
-upd norm tensor(4.4543, device='cuda:0', dtype=torch.float64,
-       grad_fn=<LinalgVectorNormBackward0>)
-
-
-LAYER 4
-
-Writing 10 key/value pair(s) into layer 4
-z error tensor(27.4446, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B @ model.layers.4.mlp.down_proj.
-Attempting to download Llama-3.1-8B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz from https://memit.baulab.info/data/stats/Llama-3.1-8B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz.
-Unable to download due to HTTP Error 404: Not Found. Computing locally....
-  0%|          | 0/1000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-  0%|          | 1/1000 [00:00<14:20,  1.16it/s]  0%|          | 5/1000 [00:00<02:31,  6.56it/s]  1%|          | 9/1000 [00:01<01:34, 10.47it/s]  1%|          | 12/1000 [00:01<01:12, 13.57it/s]  2%|▏         | 15/1000 [00:01<00:59, 16.55it/s]  2%|▏         | 22/1000 [00:01<00:35, 27.59it/s]  3%|▎         | 26/1000 [00:01<00:33, 29.27it/s]  3%|▎         | 30/1000 [00:01<00:33, 29.06it/s]  3%|▎         | 34/1000 [00:01<00:35, 27.03it/s]  4%|▍         | 38/1000 [00:02<00:35, 26.85it/s]  4%|▍         | 45/1000 [00:02<00:26, 35.68it/s]  5%|▌         | 53/1000 [00:02<00:20, 45.96it/s]  6%|▌         | 59/1000 [00:02<00:19, 48.92it/s]  6%|▋         | 65/1000 [00:02<00:20, 44.95it/s]  7%|▋         | 70/1000 [00:02<00:24, 38.08it/s]  8%|▊         | 79/1000 [00:02<00:19, 47.07it/s]  9%|▊         | 86/1000 [00:02<00:17, 51.53it/s]  9%|▉         | 92/1000 [00:03<00:21, 42.95it/s] 10%|▉         | 97/1000 [00:03<00:21, 42.47it/s] 10%|█         | 102/1000 [00:03<00:37, 23.66it/s] 11%|█         | 107/1000 [00:03<00:32, 27.34it/s] 11%|█         | 111/1000 [00:04<00:36, 24.49it/s] 12%|█▏        | 115/1000 [00:04<00:32, 27.00it/s] 12%|█▏        | 119/1000 [00:04<00:37, 23.52it/s] 12%|█▏        | 122/1000 [00:04<00:39, 22.10it/s] 13%|█▎        | 129/1000 [00:04<00:28, 30.96it/s] 13%|█▎        | 133/1000 [00:04<00:28, 30.40it/s] 14%|█▎        | 137/1000 [00:05<00:33, 26.03it/s] 14%|█▍        | 143/1000 [00:05<00:26, 32.08it/s] 15%|█▍        | 147/1000 [00:05<00:25, 33.64it/s] 15%|█▌        | 152/1000 [00:05<00:24, 35.09it/s] 16%|█▌        | 156/1000 [00:05<00:24, 34.04it/s] 16%|█▌        | 160/1000 [00:05<00:26, 31.75it/s] 16%|█▋        | 164/1000 [00:05<00:26, 31.81it/s] 17%|█▋        | 169/1000 [00:05<00:24, 33.58it/s] 18%|█▊        | 176/1000 [00:06<00:19, 42.04it/s] 18%|█▊        | 181/1000 [00:06<00:23, 35.35it/s] 19%|█▊        | 187/1000 [00:06<00:21, 37.89it/s] 19%|█▉        | 193/1000 [00:06<00:19, 41.03it/s] 20%|█▉        | 198/1000 [00:06<00:19, 40.21it/s] 20%|██        | 203/1000 [00:06<00:20, 38.76it/s] 21%|██        | 207/1000 [00:06<00:20, 38.15it/s] 22%|██▏       | 215/1000 [00:06<00:16, 48.43it/s] 22%|██▏       | 221/1000 [00:07<00:15, 51.01it/s] 23%|██▎       | 228/1000 [00:07<00:14, 53.03it/s] 23%|██▎       | 234/1000 [00:07<00:14, 53.37it/s] 24%|██▍       | 240/1000 [00:07<00:18, 40.76it/s] 25%|██▍       | 246/1000 [00:07<00:18, 41.62it/s] 25%|██▌       | 251/1000 [00:07<00:19, 38.18it/s] 26%|██▌       | 257/1000 [00:07<00:18, 41.10it/s] 26%|██▋       | 264/1000 [00:08<00:15, 46.92it/s] 27%|██▋       | 271/1000 [00:08<00:14, 51.41it/s] 28%|██▊       | 278/1000 [00:08<00:13, 52.04it/s] 28%|██▊       | 285/1000 [00:08<00:12, 55.79it/s] 29%|██▉       | 293/1000 [00:08<00:11, 61.53it/s] 30%|███       | 300/1000 [00:08<00:15, 46.36it/s] 31%|███       | 306/1000 [00:08<00:18, 38.22it/s] 31%|███       | 311/1000 [00:09<00:19, 34.97it/s] 32%|███▏      | 317/1000 [00:09<00:17, 39.68it/s] 32%|███▏      | 322/1000 [00:09<00:18, 37.59it/s] 33%|███▎      | 327/1000 [00:09<00:17, 37.60it/s] 33%|███▎      | 332/1000 [00:09<00:17, 37.72it/s] 34%|███▎      | 336/1000 [00:09<00:22, 30.01it/s] 34%|███▍      | 341/1000 [00:10<00:19, 33.73it/s] 34%|███▍      | 345/1000 [00:10<00:20, 32.53it/s] 35%|███▍      | 349/1000 [00:10<00:21, 30.72it/s] 35%|███▌      | 354/1000 [00:10<00:18, 34.09it/s] 36%|███▌      | 358/1000 [00:10<00:24, 25.72it/s] 36%|███▋      | 365/1000 [00:10<00:18, 34.36it/s] 37%|███▋      | 370/1000 [00:10<00:18, 34.32it/s] 37%|███▋      | 374/1000 [00:11<00:18, 33.76it/s] 38%|███▊      | 378/1000 [00:11<00:17, 34.79it/s] 38%|███▊      | 383/1000 [00:11<00:16, 37.69it/s] 39%|███▉      | 389/1000 [00:11<00:15, 40.54it/s] 39%|███▉      | 394/1000 [00:11<00:16, 36.09it/s] 40%|████      | 400/1000 [00:11<00:14, 40.98it/s] 41%|████      | 406/1000 [00:11<00:13, 43.28it/s] 41%|████      | 411/1000 [00:11<00:13, 44.01it/s] 42%|████▏     | 416/1000 [00:12<00:14, 41.14it/s] 42%|████▏     | 421/1000 [00:12<00:15, 36.59it/s] 43%|████▎     | 429/1000 [00:12<00:12, 44.73it/s] 43%|████▎     | 434/1000 [00:12<00:15, 37.36it/s] 44%|████▍     | 440/1000 [00:12<00:13, 41.56it/s] 45%|████▍     | 449/1000 [00:12<00:11, 48.95it/s] 46%|████▌     | 456/1000 [00:12<00:10, 52.72it/s] 46%|████▌     | 462/1000 [00:13<00:11, 47.36it/s] 47%|████▋     | 467/1000 [00:13<00:12, 44.22it/s] 47%|████▋     | 473/1000 [00:13<00:11, 45.70it/s] 48%|████▊     | 478/1000 [00:13<00:11, 46.09it/s] 48%|████▊     | 483/1000 [00:13<00:13, 39.74it/s] 49%|████▉     | 488/1000 [00:13<00:17, 28.49it/s] 49%|████▉     | 492/1000 [00:14<00:36, 13.98it/s] 50%|████▉     | 497/1000 [00:14<00:28, 17.73it/s] 50%|█████     | 503/1000 [00:14<00:22, 22.49it/s] 51%|█████     | 507/1000 [00:14<00:20, 23.48it/s] 51%|█████▏    | 513/1000 [00:15<00:17, 28.55it/s] 52%|█████▏    | 517/1000 [00:15<00:24, 19.99it/s] 52%|█████▏    | 522/1000 [00:15<00:20, 23.55it/s] 53%|█████▎    | 526/1000 [00:15<00:23, 20.22it/s] 53%|█████▎    | 532/1000 [00:16<00:18, 25.74it/s] 54%|█████▎    | 537/1000 [00:16<00:15, 29.19it/s] 54%|█████▍    | 541/1000 [00:16<00:16, 28.45it/s] 55%|█████▌    | 550/1000 [00:16<00:11, 40.61it/s] 56%|█████▌    | 557/1000 [00:16<00:09, 46.58it/s] 56%|█████▋    | 563/1000 [00:16<00:08, 48.68it/s] 57%|█████▋    | 569/1000 [00:16<00:09, 43.53it/s] 57%|█████▋    | 574/1000 [00:17<00:12, 34.01it/s] 58%|█████▊    | 581/1000 [00:17<00:10, 39.05it/s] 59%|█████▊    | 587/1000 [00:17<00:09, 42.43it/s] 59%|█████▉    | 592/1000 [00:17<00:10, 38.54it/s] 60%|█████▉    | 599/1000 [00:17<00:08, 45.20it/s] 60%|██████    | 604/1000 [00:17<00:09, 41.29it/s] 61%|██████    | 609/1000 [00:17<00:09, 42.76it/s] 61%|██████▏   | 614/1000 [00:17<00:10, 38.18it/s] 62%|██████▏   | 623/1000 [00:18<00:07, 49.78it/s] 63%|██████▎   | 629/1000 [00:18<00:07, 50.01it/s] 64%|██████▎   | 635/1000 [00:18<00:07, 46.42it/s] 64%|██████▍   | 640/1000 [00:18<00:09, 36.91it/s] 64%|██████▍   | 645/1000 [00:18<00:09, 38.90it/s] 65%|██████▌   | 650/1000 [00:18<00:08, 41.38it/s] 66%|██████▌   | 655/1000 [00:18<00:09, 38.25it/s] 66%|██████▌   | 661/1000 [00:19<00:07, 43.09it/s] 67%|██████▋   | 667/1000 [00:19<00:07, 46.71it/s] 67%|██████▋   | 673/1000 [00:19<00:06, 48.50it/s] 68%|██████▊   | 680/1000 [00:19<00:06, 53.21it/s] 69%|██████▊   | 686/1000 [00:19<00:06, 47.23it/s] 69%|██████▉   | 691/1000 [00:19<00:09, 32.72it/s] 70%|██████▉   | 698/1000 [00:19<00:07, 39.35it/s] 70%|███████   | 703/1000 [00:20<00:07, 40.00it/s] 71%|███████   | 708/1000 [00:20<00:11, 25.20it/s] 71%|███████▏  | 714/1000 [00:20<00:09, 30.41it/s] 72%|███████▏  | 719/1000 [00:20<00:09, 29.25it/s] 72%|███████▏  | 724/1000 [00:20<00:08, 31.14it/s] 73%|███████▎  | 728/1000 [00:21<00:09, 28.79it/s] 74%|███████▎  | 736/1000 [00:21<00:06, 37.90it/s] 74%|███████▍  | 741/1000 [00:21<00:06, 40.02it/s] 75%|███████▍  | 746/1000 [00:21<00:06, 39.79it/s] 75%|███████▌  | 751/1000 [00:21<00:05, 42.14it/s] 76%|███████▌  | 758/1000 [00:21<00:05, 44.44it/s] 77%|███████▋  | 766/1000 [00:21<00:04, 52.21it/s] 77%|███████▋  | 772/1000 [00:21<00:05, 44.10it/s] 78%|███████▊  | 778/1000 [00:22<00:04, 44.52it/s] 78%|███████▊  | 785/1000 [00:22<00:04, 48.39it/s] 79%|███████▉  | 791/1000 [00:22<00:05, 36.08it/s] 80%|███████▉  | 796/1000 [00:22<00:05, 37.78it/s] 80%|████████  | 801/1000 [00:22<00:04, 40.12it/s] 81%|████████  | 810/1000 [00:22<00:03, 48.16it/s] 82%|████████▏ | 816/1000 [00:22<00:04, 41.16it/s] 82%|████████▏ | 821/1000 [00:23<00:05, 32.43it/s] 83%|████████▎ | 827/1000 [00:23<00:04, 37.10it/s] 83%|████████▎ | 832/1000 [00:23<00:04, 38.65it/s] 84%|████████▎ | 837/1000 [00:23<00:04, 34.99it/s] 84%|████████▍ | 841/1000 [00:23<00:04, 33.63it/s] 84%|████████▍ | 845/1000 [00:23<00:04, 33.34it/s] 85%|████████▍ | 849/1000 [00:24<00:04, 32.36it/s] 85%|████████▌ | 853/1000 [00:24<00:05, 28.03it/s] 86%|████████▌ | 856/1000 [00:24<00:05, 28.04it/s] 86%|████████▌ | 862/1000 [00:24<00:04, 33.78it/s] 87%|████████▋ | 866/1000 [00:24<00:04, 31.20it/s] 87%|████████▋ | 870/1000 [00:24<00:03, 32.98it/s] 87%|████████▋ | 874/1000 [00:24<00:04, 26.44it/s] 88%|████████▊ | 881/1000 [00:25<00:03, 34.82it/s] 89%|████████▊ | 887/1000 [00:25<00:03, 35.56it/s] 89%|████████▉ | 892/1000 [00:25<00:02, 37.91it/s] 90%|████████▉ | 897/1000 [00:25<00:03, 28.53it/s] 90%|█████████ | 905/1000 [00:25<00:02, 37.80it/s] 91%|█████████ | 910/1000 [00:25<00:02, 38.94it/s] 92%|█████████▏| 916/1000 [00:25<00:01, 43.64it/s] 92%|█████████▏| 921/1000 [00:26<00:01, 44.38it/s] 93%|█████████▎| 928/1000 [00:26<00:01, 49.91it/s] 94%|█████████▎| 936/1000 [00:26<00:01, 55.71it/s] 94%|█████████▍| 943/1000 [00:26<00:00, 57.45it/s] 95%|█████████▍| 949/1000 [00:26<00:01, 49.33it/s] 96%|█████████▌| 955/1000 [00:26<00:00, 51.47it/s] 96%|█████████▋| 963/1000 [00:26<00:00, 56.90it/s] 97%|█████████▋| 969/1000 [00:26<00:00, 41.87it/s] 97%|█████████▋| 974/1000 [00:27<00:00, 40.29it/s] 98%|█████████▊| 980/1000 [00:27<00:00, 42.48it/s] 99%|█████████▊| 987/1000 [00:27<00:00, 47.27it/s] 99%|█████████▉| 993/1000 [00:27<00:00, 48.45it/s]100%|█████████▉| 999/1000 [00:27<00:00, 48.05it/s]100%|██████████| 1000/1000 [00:28<00:00, 34.81it/s]
-orig norm tensor(87.8750, device='cuda:0', dtype=torch.float16)
-upd norm tensor(4.3234, device='cuda:0', dtype=torch.float64,
-       grad_fn=<LinalgVectorNormBackward0>)
-
-
-LAYER 5
-
-Writing 10 key/value pair(s) into layer 5
-z error tensor(25.4090, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B @ model.layers.5.mlp.down_proj.
-Attempting to download Llama-3.1-8B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz from https://memit.baulab.info/data/stats/Llama-3.1-8B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz.
-Unable to download due to HTTP Error 404: Not Found. Computing locally....
-  0%|          | 0/1000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-  0%|          | 1/1000 [00:00<15:07,  1.10it/s]  0%|          | 5/1000 [00:01<02:39,  6.25it/s]  1%|          | 9/1000 [00:01<01:40,  9.90it/s]  1%|          | 12/1000 [00:01<01:16, 12.89it/s]  2%|▏         | 15/1000 [00:01<01:03, 15.57it/s]  2%|▏         | 21/1000 [00:01<00:40, 24.40it/s]  3%|▎         | 26/1000 [00:01<00:35, 27.43it/s]  3%|▎         | 30/1000 [00:01<00:35, 27.17it/s]  3%|▎         | 34/1000 [00:02<00:38, 25.07it/s]  4%|▎         | 37/1000 [00:02<00:38, 24.90it/s]  4%|▍         | 41/1000 [00:02<00:34, 28.11it/s]  5%|▍         | 49/1000 [00:02<00:24, 39.53it/s]  6%|▌         | 55/1000 [00:02<00:21, 44.66it/s]  6%|▌         | 61/1000 [00:02<00:21, 44.26it/s]  7%|▋         | 66/1000 [00:02<00:23, 39.36it/s]  7%|▋         | 71/1000 [00:02<00:25, 36.16it/s]  8%|▊         | 79/1000 [00:03<00:20, 43.89it/s]  9%|▊         | 86/1000 [00:03<00:19, 47.81it/s]  9%|▉         | 92/1000 [00:03<00:23, 39.40it/s] 10%|▉         | 97/1000 [00:03<00:23, 38.29it/s] 10%|█         | 102/1000 [00:04<00:41, 21.43it/s] 11%|█         | 106/1000 [00:04<00:37, 23.95it/s] 11%|█         | 110/1000 [00:04<00:35, 25.10it/s] 11%|█▏        | 114/1000 [00:04<00:33, 26.10it/s] 12%|█▏        | 118/1000 [00:04<00:40, 21.80it/s] 12%|█▏        | 121/1000 [00:04<00:39, 22.37it/s] 12%|█▏        | 124/1000 [00:04<00:38, 22.72it/s] 13%|█▎        | 131/1000 [00:05<00:26, 32.48it/s] 14%|█▎        | 135/1000 [00:05<00:36, 23.54it/s] 14%|█▍        | 141/1000 [00:05<00:28, 29.79it/s] 14%|█▍        | 145/1000 [00:05<00:27, 31.59it/s] 15%|█▍        | 149/1000 [00:05<00:28, 30.31it/s] 15%|█▌        | 153/1000 [00:05<00:28, 29.46it/s] 16%|█▌        | 157/1000 [00:05<00:27, 31.22it/s] 16%|█▌        | 161/1000 [00:06<00:28, 29.80it/s] 16%|█▋        | 165/1000 [00:06<00:26, 31.83it/s] 17%|█▋        | 169/1000 [00:06<00:26, 31.24it/s] 18%|█▊        | 176/1000 [00:06<00:20, 39.50it/s] 18%|█▊        | 181/1000 [00:06<00:24, 32.82it/s] 19%|█▊        | 186/1000 [00:06<00:22, 35.78it/s] 19%|█▉        | 190/1000 [00:06<00:22, 35.56it/s] 20%|█▉        | 195/1000 [00:07<00:21, 37.71it/s] 20%|█▉        | 199/1000 [00:07<00:21, 36.72it/s] 20%|██        | 203/1000 [00:07<00:22, 35.29it/s] 21%|██        | 207/1000 [00:07<00:22, 34.79it/s] 21%|██▏       | 214/1000 [00:07<00:18, 43.63it/s] 22%|██▏       | 223/1000 [00:07<00:14, 54.51it/s] 23%|██▎       | 229/1000 [00:07<00:14, 52.33it/s] 24%|██▎       | 235/1000 [00:07<00:14, 52.50it/s] 24%|██▍       | 241/1000 [00:08<00:19, 39.23it/s] 25%|██▍       | 246/1000 [00:08<00:19, 38.30it/s] 25%|██▌       | 251/1000 [00:08<00:21, 35.48it/s] 26%|██▌       | 256/1000 [00:08<00:19, 37.73it/s] 26%|██▌       | 261/1000 [00:08<00:18, 40.23it/s] 27%|██▋       | 266/1000 [00:08<00:17, 42.31it/s] 28%|██▊       | 275/1000 [00:08<00:13, 52.77it/s] 28%|██▊       | 281/1000 [00:08<00:14, 48.39it/s] 29%|██▉       | 288/1000 [00:09<00:13, 53.25it/s] 30%|██▉       | 296/1000 [00:09<00:12, 58.41it/s] 30%|███       | 303/1000 [00:09<00:21, 33.18it/s] 31%|███       | 309/1000 [00:09<00:18, 37.10it/s] 31%|███▏      | 314/1000 [00:09<00:20, 32.86it/s] 32%|███▏      | 320/1000 [00:10<00:19, 34.93it/s] 32%|███▎      | 325/1000 [00:10<00:18, 35.99it/s] 33%|███▎      | 330/1000 [00:10<00:20, 32.92it/s] 34%|███▎      | 335/1000 [00:10<00:19, 34.37it/s] 34%|███▍      | 339/1000 [00:10<00:23, 28.30it/s] 34%|███▍      | 343/1000 [00:10<00:21, 29.88it/s] 35%|███▍      | 347/1000 [00:10<00:21, 30.91it/s] 35%|███▌      | 351/1000 [00:11<00:21, 30.15it/s] 36%|███▌      | 355/1000 [00:11<00:21, 30.70it/s] 36%|███▌      | 359/1000 [00:11<00:26, 23.87it/s] 37%|███▋      | 366/1000 [00:11<00:20, 31.16it/s] 37%|███▋      | 370/1000 [00:11<00:19, 31.78it/s] 37%|███▋      | 374/1000 [00:11<00:19, 31.52it/s] 38%|███▊      | 378/1000 [00:11<00:19, 32.68it/s] 38%|███▊      | 382/1000 [00:12<00:18, 34.14it/s] 39%|███▉      | 388/1000 [00:12<00:15, 40.71it/s] 39%|███▉      | 393/1000 [00:12<00:17, 33.85it/s] 40%|███▉      | 398/1000 [00:12<00:16, 37.29it/s] 40%|████      | 405/1000 [00:12<00:13, 43.61it/s] 41%|████      | 410/1000 [00:12<00:14, 40.07it/s] 42%|████▏     | 415/1000 [00:12<00:15, 37.91it/s] 42%|████▏     | 420/1000 [00:13<00:16, 35.01it/s] 43%|████▎     | 427/1000 [00:13<00:13, 42.00it/s] 43%|████▎     | 432/1000 [00:13<00:15, 35.50it/s] 44%|████▎     | 437/1000 [00:13<00:15, 37.06it/s] 44%|████▍     | 444/1000 [00:13<00:12, 43.23it/s] 45%|████▌     | 450/1000 [00:13<00:12, 43.09it/s] 46%|████▌     | 458/1000 [00:13<00:10, 51.04it/s] 46%|████▋     | 464/1000 [00:14<00:13, 40.17it/s] 47%|████▋     | 469/1000 [00:14<00:12, 41.41it/s] 48%|████▊     | 476/1000 [00:14<00:11, 46.79it/s] 48%|████▊     | 482/1000 [00:14<00:12, 40.35it/s] 49%|████▊     | 487/1000 [00:14<00:15, 33.49it/s] 49%|████▉     | 491/1000 [00:15<00:37, 13.43it/s] 50%|████▉     | 496/1000 [00:15<00:30, 16.76it/s] 50%|█████     | 502/1000 [00:15<00:22, 21.72it/s] 51%|█████     | 506/1000 [00:16<00:23, 21.03it/s] 51%|█████     | 512/1000 [00:16<00:18, 26.13it/s] 52%|█████▏    | 516/1000 [00:16<00:26, 18.20it/s] 52%|█████▏    | 522/1000 [00:16<00:21, 22.09it/s] 53%|█████▎    | 526/1000 [00:17<00:24, 19.13it/s] 53%|█████▎    | 531/1000 [00:17<00:20, 23.34it/s] 54%|█████▎    | 535/1000 [00:17<00:18, 25.67it/s] 54%|█████▍    | 539/1000 [00:17<00:16, 28.38it/s] 54%|█████▍    | 543/1000 [00:17<00:15, 28.64it/s] 55%|█████▌    | 552/1000 [00:17<00:11, 39.93it/s] 56%|█████▌    | 560/1000 [00:17<00:09, 48.04it/s] 57%|█████▋    | 566/1000 [00:17<00:09, 44.47it/s] 57%|█████▋    | 571/1000 [00:18<00:11, 36.26it/s] 58%|█████▊    | 576/1000 [00:18<00:12, 33.38it/s] 58%|█████▊    | 581/1000 [00:18<00:11, 35.72it/s] 59%|█████▊    | 586/1000 [00:18<00:10, 38.63it/s] 59%|█████▉    | 591/1000 [00:18<00:11, 36.56it/s] 60%|█████▉    | 596/1000 [00:18<00:10, 39.45it/s] 60%|██████    | 601/1000 [00:18<00:09, 41.33it/s] 61%|██████    | 606/1000 [00:19<00:10, 37.96it/s] 61%|██████    | 611/1000 [00:19<00:09, 39.25it/s] 62%|██████▏   | 616/1000 [00:19<00:10, 35.55it/s] 62%|██████▏   | 624/1000 [00:19<00:08, 44.83it/s] 63%|██████▎   | 629/1000 [00:19<00:08, 45.15it/s] 63%|██████▎   | 634/1000 [00:19<00:08, 43.00it/s] 64%|██████▍   | 639/1000 [00:19<00:11, 32.52it/s] 64%|██████▍   | 644/1000 [00:20<00:09, 36.08it/s] 65%|██████▍   | 649/1000 [00:20<00:09, 35.91it/s] 65%|██████▌   | 654/1000 [00:20<00:09, 37.15it/s] 66%|██████▌   | 658/1000 [00:20<00:09, 34.76it/s] 66%|██████▋   | 665/1000 [00:20<00:08, 40.76it/s] 67%|██████▋   | 671/1000 [00:20<00:07, 44.05it/s] 68%|██████▊   | 677/1000 [00:20<00:06, 46.71it/s] 68%|██████▊   | 684/1000 [00:20<00:06, 51.45it/s] 69%|██████▉   | 690/1000 [00:21<00:10, 29.36it/s] 70%|██████▉   | 697/1000 [00:21<00:08, 35.19it/s] 70%|███████   | 703/1000 [00:21<00:08, 36.15it/s] 71%|███████   | 708/1000 [00:22<00:12, 23.66it/s] 71%|███████▏  | 713/1000 [00:22<00:10, 27.42it/s] 72%|███████▏  | 717/1000 [00:22<00:10, 26.46it/s] 72%|███████▏  | 721/1000 [00:22<00:09, 28.04it/s] 72%|███████▎  | 725/1000 [00:22<00:09, 28.70it/s] 73%|███████▎  | 729/1000 [00:22<00:09, 27.75it/s] 74%|███████▎  | 736/1000 [00:22<00:07, 35.81it/s] 74%|███████▍  | 741/1000 [00:22<00:06, 37.77it/s] 75%|███████▍  | 746/1000 [00:23<00:06, 37.19it/s] 75%|███████▌  | 751/1000 [00:23<00:06, 39.21it/s] 76%|███████▌  | 758/1000 [00:23<00:05, 41.15it/s] 76%|███████▋  | 765/1000 [00:23<00:04, 47.30it/s] 77%|███████▋  | 770/1000 [00:23<00:05, 44.30it/s] 78%|███████▊  | 775/1000 [00:23<00:05, 40.29it/s] 78%|███████▊  | 781/1000 [00:23<00:05, 43.65it/s] 79%|███████▊  | 786/1000 [00:24<00:05, 37.70it/s] 79%|███████▉  | 790/1000 [00:24<00:06, 32.27it/s] 79%|███████▉  | 794/1000 [00:24<00:06, 33.62it/s] 80%|███████▉  | 798/1000 [00:24<00:05, 34.53it/s] 80%|████████  | 805/1000 [00:24<00:04, 43.23it/s] 81%|████████  | 810/1000 [00:24<00:04, 44.55it/s] 82%|████████▏ | 815/1000 [00:24<00:05, 36.23it/s] 82%|████████▏ | 820/1000 [00:25<00:06, 27.96it/s] 83%|████████▎ | 826/1000 [00:25<00:05, 33.38it/s] 83%|████████▎ | 831/1000 [00:25<00:04, 35.84it/s] 84%|████████▎ | 836/1000 [00:25<00:05, 31.53it/s] 84%|████████▍ | 840/1000 [00:25<00:04, 33.05it/s] 84%|████████▍ | 844/1000 [00:25<00:05, 29.44it/s] 85%|████████▍ | 848/1000 [00:25<00:05, 28.71it/s] 85%|████████▌ | 852/1000 [00:26<00:04, 30.52it/s] 86%|████████▌ | 856/1000 [00:26<00:05, 24.87it/s] 86%|████████▌ | 862/1000 [00:26<00:04, 29.83it/s] 87%|████████▋ | 866/1000 [00:26<00:04, 27.94it/s] 87%|████████▋ | 870/1000 [00:26<00:04, 29.26it/s] 87%|████████▋ | 874/1000 [00:26<00:05, 24.13it/s] 88%|████████▊ | 880/1000 [00:27<00:03, 30.82it/s] 89%|████████▊ | 886/1000 [00:27<00:03, 34.86it/s] 89%|████████▉ | 890/1000 [00:27<00:03, 34.22it/s] 89%|████████▉ | 894/1000 [00:27<00:03, 31.46it/s] 90%|████████▉ | 898/1000 [00:27<00:03, 25.89it/s] 90%|█████████ | 905/1000 [00:27<00:02, 34.64it/s] 91%|█████████ | 910/1000 [00:27<00:02, 35.97it/s] 92%|█████████▏| 916/1000 [00:28<00:02, 40.63it/s] 92%|█████████▏| 921/1000 [00:28<00:01, 41.31it/s] 93%|█████████▎| 927/1000 [00:28<00:01, 45.51it/s] 94%|█████████▎| 935/1000 [00:28<00:01, 51.66it/s] 94%|█████████▍| 941/1000 [00:28<00:01, 52.19it/s] 95%|█████████▍| 947/1000 [00:28<00:01, 51.37it/s] 95%|█████████▌| 953/1000 [00:28<00:01, 44.60it/s] 96%|█████████▌| 961/1000 [00:28<00:00, 51.74it/s] 97%|█████████▋| 967/1000 [00:29<00:00, 38.26it/s] 97%|█████████▋| 972/1000 [00:29<00:00, 35.95it/s] 98%|█████████▊| 979/1000 [00:29<00:00, 40.53it/s] 98%|█████████▊| 984/1000 [00:29<00:00, 42.09it/s] 99%|█████████▉| 990/1000 [00:29<00:00, 44.03it/s]100%|█████████▉| 996/1000 [00:29<00:00, 47.62it/s]100%|██████████| 1000/1000 [00:31<00:00, 32.09it/s]
-orig norm tensor(88.3125, device='cuda:0', dtype=torch.float16)
-upd norm tensor(4.3427, device='cuda:0', dtype=torch.float64,
-       grad_fn=<LinalgVectorNormBackward0>)
-
-
-LAYER 6
-
-Writing 10 key/value pair(s) into layer 6
-z error tensor(22.2726, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B @ model.layers.6.mlp.down_proj.
-Attempting to download Llama-3.1-8B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz from https://memit.baulab.info/data/stats/Llama-3.1-8B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz.
-Unable to download due to HTTP Error 404: Not Found. Computing locally....
-  0%|          | 0/1000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-  0%|          | 1/1000 [00:00<14:54,  1.12it/s]  0%|          | 5/1000 [00:01<02:39,  6.23it/s]  1%|          | 8/1000 [00:01<01:39,  9.94it/s]  1%|          | 11/1000 [00:01<01:29, 11.08it/s]  1%|▏         | 14/1000 [00:01<01:11, 13.88it/s]  2%|▏         | 19/1000 [00:01<00:47, 20.72it/s]  2%|▎         | 25/1000 [00:01<00:33, 28.97it/s]  3%|▎         | 29/1000 [00:01<00:39, 24.70it/s]  3%|▎         | 33/1000 [00:02<00:38, 24.86it/s]  4%|▎         | 37/1000 [00:02<00:40, 23.58it/s]  4%|▍         | 41/1000 [00:02<00:36, 26.56it/s]  5%|▍         | 48/1000 [00:02<00:26, 36.14it/s]  5%|▌         | 54/1000 [00:02<00:22, 41.22it/s]  6%|▌         | 59/1000 [00:02<00:21, 43.25it/s]  6%|▋         | 64/1000 [00:02<00:23, 39.05it/s]  7%|▋         | 69/1000 [00:03<00:29, 31.47it/s]  8%|▊         | 77/1000 [00:03<00:22, 40.88it/s]  8%|▊         | 83/1000 [00:03<00:20, 44.88it/s]  9%|▉         | 89/1000 [00:03<00:23, 39.43it/s]  9%|▉         | 94/1000 [00:03<00:25, 35.47it/s] 10%|▉         | 98/1000 [00:03<00:25, 35.15it/s] 10%|█         | 102/1000 [00:04<00:47, 19.05it/s] 11%|█         | 106/1000 [00:04<00:40, 21.83it/s] 11%|█         | 110/1000 [00:04<00:38, 22.99it/s] 11%|█▏        | 113/1000 [00:04<00:37, 23.80it/s] 12%|█▏        | 117/1000 [00:04<00:39, 22.60it/s] 12%|█▏        | 120/1000 [00:04<00:41, 21.21it/s] 12%|█▏        | 123/1000 [00:05<00:45, 19.47it/s] 13%|█▎        | 129/1000 [00:05<00:31, 27.26it/s] 13%|█▎        | 133/1000 [00:05<00:33, 25.67it/s] 14%|█▎        | 136/1000 [00:05<00:39, 22.08it/s] 14%|█▍        | 142/1000 [00:05<00:30, 28.55it/s] 15%|█▍        | 146/1000 [00:05<00:28, 30.23it/s] 15%|█▌        | 150/1000 [00:06<00:28, 29.72it/s] 15%|█▌        | 154/1000 [00:06<00:30, 28.05it/s] 16%|█▌        | 157/1000 [00:06<00:29, 28.37it/s] 16%|█▌        | 160/1000 [00:06<00:30, 27.99it/s] 16%|█▋        | 163/1000 [00:06<00:31, 26.51it/s] 17%|█▋        | 168/1000 [00:06<00:25, 32.30it/s] 17%|█▋        | 172/1000 [00:06<00:25, 33.09it/s] 18%|█▊        | 177/1000 [00:06<00:22, 36.62it/s] 18%|█▊        | 181/1000 [00:07<00:27, 30.03it/s] 19%|█▊        | 186/1000 [00:07<00:24, 32.98it/s] 19%|█▉        | 190/1000 [00:07<00:24, 33.11it/s] 20%|█▉        | 195/1000 [00:07<00:22, 35.41it/s] 20%|█▉        | 199/1000 [00:07<00:23, 34.53it/s] 20%|██        | 203/1000 [00:07<00:23, 33.25it/s] 21%|██        | 207/1000 [00:07<00:24, 32.79it/s] 21%|██▏       | 214/1000 [00:07<00:18, 41.50it/s] 22%|██▏       | 222/1000 [00:08<00:15, 51.27it/s] 23%|██▎       | 228/1000 [00:08<00:15, 49.72it/s] 23%|██▎       | 234/1000 [00:08<00:15, 48.80it/s] 24%|██▍       | 240/1000 [00:08<00:20, 36.76it/s] 25%|██▍       | 246/1000 [00:08<00:20, 36.14it/s] 25%|██▌       | 250/1000 [00:08<00:22, 32.62it/s] 26%|██▌       | 255/1000 [00:08<00:20, 35.70it/s] 26%|██▌       | 260/1000 [00:09<00:19, 37.71it/s] 27%|██▋       | 266/1000 [00:09<00:18, 40.55it/s] 27%|██▋       | 274/1000 [00:09<00:14, 50.00it/s] 28%|██▊       | 280/1000 [00:09<00:16, 45.00it/s] 29%|██▊       | 287/1000 [00:09<00:14, 49.67it/s] 29%|██▉       | 294/1000 [00:09<00:13, 54.10it/s] 30%|███       | 300/1000 [00:09<00:18, 38.84it/s] 30%|███       | 305/1000 [00:10<00:21, 31.62it/s] 31%|███       | 310/1000 [00:10<00:22, 31.00it/s] 31%|███▏      | 314/1000 [00:10<00:22, 30.52it/s] 32%|███▏      | 320/1000 [00:10<00:20, 32.78it/s] 32%|███▏      | 324/1000 [00:10<00:20, 33.25it/s] 33%|███▎      | 328/1000 [00:10<00:22, 30.04it/s] 34%|███▎      | 335/1000 [00:11<00:20, 32.46it/s] 34%|███▍      | 339/1000 [00:11<00:24, 26.98it/s] 34%|███▍      | 343/1000 [00:11<00:23, 28.32it/s] 35%|███▍      | 347/1000 [00:11<00:22, 29.07it/s] 35%|███▌      | 351/1000 [00:11<00:22, 28.63it/s] 36%|███▌      | 355/1000 [00:11<00:22, 28.95it/s] 36%|███▌      | 358/1000 [00:12<00:29, 21.46it/s] 36%|███▋      | 365/1000 [00:12<00:21, 29.92it/s] 37%|███▋      | 369/1000 [00:12<00:21, 29.79it/s] 37%|███▋      | 373/1000 [00:12<00:21, 29.50it/s] 38%|███▊      | 377/1000 [00:12<00:21, 29.59it/s] 38%|███▊      | 381/1000 [00:12<00:19, 31.02it/s] 39%|███▉      | 388/1000 [00:12<00:15, 38.29it/s] 39%|███▉      | 392/1000 [00:13<00:19, 31.82it/s] 40%|███▉      | 396/1000 [00:13<00:18, 32.98it/s] 40%|████      | 403/1000 [00:13<00:14, 41.37it/s] 41%|████      | 408/1000 [00:13<00:15, 37.25it/s] 41%|████▏     | 413/1000 [00:13<00:15, 38.03it/s] 42%|████▏     | 418/1000 [00:13<00:14, 38.98it/s] 42%|████▏     | 423/1000 [00:13<00:17, 33.72it/s] 43%|████▎     | 429/1000 [00:14<00:14, 39.55it/s] 43%|████▎     | 434/1000 [00:14<00:17, 32.52it/s] 44%|████▍     | 440/1000 [00:14<00:15, 36.42it/s] 45%|████▍     | 447/1000 [00:14<00:12, 43.82it/s] 45%|████▌     | 452/1000 [00:14<00:12, 42.75it/s] 46%|████▌     | 459/1000 [00:14<00:11, 48.26it/s] 46%|████▋     | 465/1000 [00:14<00:14, 37.37it/s] 47%|████▋     | 470/1000 [00:15<00:13, 39.04it/s] 48%|████▊     | 476/1000 [00:15<00:12, 43.52it/s] 48%|████▊     | 481/1000 [00:15<00:13, 38.65it/s] 49%|████▊     | 486/1000 [00:15<00:14, 34.91it/s] 49%|████▉     | 490/1000 [00:16<00:43, 11.65it/s] 49%|████▉     | 494/1000 [00:16<00:35, 14.20it/s] 50%|█████     | 500/1000 [00:16<00:25, 19.36it/s] 50%|█████     | 504/1000 [00:16<00:25, 19.34it/s] 51%|█████     | 509/1000 [00:17<00:21, 23.09it/s] 51%|█████▏    | 514/1000 [00:17<00:22, 21.56it/s] 52%|█████▏    | 518/1000 [00:17<00:25, 18.68it/s] 52%|█████▏    | 522/1000 [00:17<00:23, 20.57it/s] 52%|█████▎    | 525/1000 [00:18<00:27, 17.01it/s] 53%|█████▎    | 530/1000 [00:18<00:21, 21.50it/s] 54%|█████▎    | 535/1000 [00:18<00:18, 24.49it/s] 54%|█████▍    | 539/1000 [00:18<00:17, 27.00it/s] 54%|█████▍    | 543/1000 [00:18<00:16, 27.16it/s] 55%|█████▌    | 551/1000 [00:18<00:11, 38.03it/s] 56%|█████▌    | 557/1000 [00:18<00:10, 42.73it/s] 56%|█████▌    | 562/1000 [00:18<00:09, 44.31it/s] 57%|█████▋    | 567/1000 [00:19<00:10, 42.86it/s] 57%|█████▋    | 572/1000 [00:19<00:14, 29.36it/s] 58%|█████▊    | 577/1000 [00:19<00:12, 32.90it/s] 58%|█████▊    | 581/1000 [00:19<00:12, 33.79it/s] 59%|█████▊    | 586/1000 [00:19<00:11, 36.51it/s] 59%|█████▉    | 591/1000 [00:19<00:11, 34.39it/s] 60%|█████▉    | 596/1000 [00:19<00:10, 37.48it/s] 60%|██████    | 601/1000 [00:20<00:10, 38.94it/s] 61%|██████    | 606/1000 [00:20<00:11, 35.63it/s] 61%|██████    | 611/1000 [00:20<00:10, 36.92it/s] 62%|██████▏   | 615/1000 [00:20<00:11, 32.12it/s] 62%|██████▏   | 623/1000 [00:20<00:08, 42.03it/s] 63%|██████▎   | 628/1000 [00:20<00:08, 42.86it/s] 63%|██████▎   | 633/1000 [00:20<00:09, 40.36it/s] 64%|██████▍   | 638/1000 [00:21<00:11, 31.42it/s] 64%|██████▍   | 643/1000 [00:21<00:10, 33.82it/s] 65%|██████▍   | 647/1000 [00:21<00:10, 32.60it/s] 65%|██████▌   | 653/1000 [00:21<00:09, 38.53it/s] 66%|██████▌   | 658/1000 [00:21<00:10, 32.24it/s] 66%|██████▋   | 664/1000 [00:21<00:08, 37.71it/s] 67%|██████▋   | 669/1000 [00:21<00:08, 40.29it/s] 68%|██████▊   | 675/1000 [00:22<00:07, 43.89it/s] 68%|██████▊   | 680/1000 [00:22<00:07, 45.32it/s] 69%|██████▊   | 686/1000 [00:22<00:08, 38.40it/s] 69%|██████▉   | 691/1000 [00:22<00:11, 27.56it/s] 70%|██████▉   | 697/1000 [00:22<00:09, 32.58it/s] 70%|███████   | 703/1000 [00:22<00:08, 33.30it/s] 71%|███████   | 707/1000 [00:23<00:14, 20.87it/s] 71%|███████   | 712/1000 [00:23<00:11, 24.67it/s] 72%|███████▏  | 716/1000 [00:23<00:11, 24.66it/s] 72%|███████▏  | 720/1000 [00:23<00:10, 25.78it/s] 72%|███████▏  | 724/1000 [00:23<00:09, 28.19it/s] 73%|███████▎  | 728/1000 [00:24<00:10, 25.34it/s] 74%|███████▎  | 735/1000 [00:24<00:07, 33.88it/s] 74%|███████▍  | 740/1000 [00:24<00:07, 36.14it/s] 74%|███████▍  | 745/1000 [00:24<00:07, 34.85it/s] 75%|███████▌  | 750/1000 [00:24<00:06, 37.56it/s] 76%|███████▌  | 755/1000 [00:24<00:06, 40.47it/s] 76%|███████▌  | 760/1000 [00:24<00:06, 38.30it/s] 77%|███████▋  | 767/1000 [00:24<00:05, 45.36it/s] 77%|███████▋  | 772/1000 [00:25<00:06, 36.82it/s] 78%|███████▊  | 777/1000 [00:25<00:05, 38.50it/s] 78%|███████▊  | 782/1000 [00:25<00:05, 41.17it/s] 79%|███████▊  | 787/1000 [00:25<00:07, 28.83it/s] 79%|███████▉  | 792/1000 [00:25<00:06, 32.51it/s] 80%|███████▉  | 796/1000 [00:25<00:06, 32.44it/s] 80%|████████  | 801/1000 [00:26<00:05, 35.14it/s] 81%|████████  | 809/1000 [00:26<00:04, 45.03it/s] 81%|████████▏ | 814/1000 [00:26<00:05, 35.56it/s] 82%|████████▏ | 819/1000 [00:26<00:05, 31.09it/s] 82%|████████▏ | 823/1000 [00:26<00:06, 28.60it/s] 83%|████████▎ | 829/1000 [00:26<00:05, 33.68it/s] 83%|████████▎ | 833/1000 [00:26<00:04, 34.23it/s] 84%|████████▎ | 837/1000 [00:27<00:05, 28.96it/s] 84%|████████▍ | 841/1000 [00:27<00:05, 27.98it/s] 84%|████████▍ | 845/1000 [00:27<00:05, 27.86it/s] 85%|████████▍ | 848/1000 [00:27<00:05, 26.12it/s] 85%|████████▌ | 852/1000 [00:27<00:05, 28.01it/s] 86%|████████▌ | 855/1000 [00:27<00:06, 21.60it/s] 86%|████████▌ | 861/1000 [00:28<00:04, 28.74it/s] 86%|████████▋ | 865/1000 [00:28<00:05, 26.52it/s] 87%|████████▋ | 870/1000 [00:28<00:04, 27.08it/s] 87%|████████▋ | 873/1000 [00:28<00:05, 23.52it/s] 88%|████████▊ | 876/1000 [00:28<00:05, 24.70it/s] 88%|████████▊ | 882/1000 [00:28<00:03, 32.05it/s] 89%|████████▊ | 886/1000 [00:28<00:03, 33.48it/s] 89%|████████▉ | 890/1000 [00:29<00:03, 32.84it/s] 89%|████████▉ | 894/1000 [00:29<00:03, 29.83it/s] 90%|████████▉ | 898/1000 [00:29<00:04, 24.11it/s] 90%|█████████ | 905/1000 [00:29<00:02, 32.67it/s] 91%|█████████ | 909/1000 [00:29<00:02, 33.21it/s] 91%|█████████▏| 914/1000 [00:29<00:02, 36.33it/s] 92%|█████████▏| 919/1000 [00:29<00:02, 37.05it/s] 92%|█████████▎| 925/1000 [00:30<00:01, 42.59it/s] 93%|█████████▎| 933/1000 [00:30<00:01, 51.53it/s] 94%|█████████▍| 939/1000 [00:30<00:01, 47.83it/s] 94%|█████████▍| 945/1000 [00:30<00:01, 49.18it/s] 95%|█████████▌| 951/1000 [00:30<00:01, 41.80it/s] 96%|█████████▌| 958/1000 [00:30<00:00, 47.66it/s] 96%|█████████▋| 964/1000 [00:30<00:00, 46.84it/s] 97%|█████████▋| 969/1000 [00:31<00:00, 34.87it/s] 97%|█████████▋| 974/1000 [00:31<00:00, 34.04it/s] 98%|█████████▊| 979/1000 [00:31<00:00, 36.83it/s] 98%|█████████▊| 984/1000 [00:31<00:00, 38.88it/s] 99%|█████████▉| 989/1000 [00:31<00:00, 41.22it/s] 99%|█████████▉| 994/1000 [00:31<00:00, 43.04it/s]100%|█████████▉| 999/1000 [00:31<00:00, 40.52it/s]100%|██████████| 1000/1000 [00:33<00:00, 30.13it/s]
-orig norm tensor(88.2500, device='cuda:0', dtype=torch.float16)
-upd norm tensor(4.7344, device='cuda:0', dtype=torch.float64,
-       grad_fn=<LinalgVectorNormBackward0>)
-
-
-LAYER 7
-
-Writing 10 key/value pair(s) into layer 7
-z error tensor(18.3281, device='cuda:0', grad_fn=<MeanBackward0>)
-Retrieving covariance statistics for meta-llama_Llama-3.1-8B @ model.layers.7.mlp.down_proj.
-Attempting to download Llama-3.1-8B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz from https://memit.baulab.info/data/stats/Llama-3.1-8B/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz.
-Unable to download due to HTTP Error 404: Not Found. Computing locally....
-  0%|          | 0/1000 [00:00<?, ?it/s]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-  0%|          | 1/1000 [00:00<15:07,  1.10it/s]  0%|          | 5/1000 [00:01<02:42,  6.12it/s]  1%|          | 8/1000 [00:01<01:42,  9.70it/s]  1%|          | 11/1000 [00:01<01:30, 10.88it/s]  1%|▏         | 14/1000 [00:01<01:12, 13.52it/s]  2%|▏         | 19/1000 [00:01<00:49, 19.88it/s]  2%|▎         | 25/1000 [00:01<00:35, 27.48it/s]  3%|▎         | 29/1000 [00:01<00:41, 23.32it/s]  3%|▎         | 33/1000 [00:02<00:41, 23.43it/s]  4%|▎         | 36/1000 [00:02<00:41, 22.97it/s]  4%|▍         | 39/1000 [00:02<00:41, 23.11it/s]  4%|▍         | 44/1000 [00:02<00:33, 28.92it/s]  5%|▌         | 51/1000 [00:02<00:25, 37.87it/s]  6%|▌         | 57/1000 [00:02<00:22, 41.90it/s]  6%|▌         | 62/1000 [00:02<00:25, 37.41it/s]  7%|▋         | 67/1000 [00:03<00:29, 31.19it/s]  7%|▋         | 71/1000 [00:03<00:28, 32.47it/s]  8%|▊         | 78/1000 [00:03<00:23, 40.06it/s]  8%|▊         | 84/1000 [00:03<00:20, 44.34it/s]  9%|▉         | 89/1000 [00:03<00:24, 36.91it/s]  9%|▉         | 94/1000 [00:03<00:27, 32.94it/s] 10%|▉         | 98/1000 [00:03<00:27, 32.83it/s] 10%|█         | 102/1000 [00:04<00:51, 17.54it/s] 11%|█         | 106/1000 [00:04<00:44, 20.23it/s] 11%|█         | 109/1000 [00:04<00:41, 21.57it/s] 11%|█         | 112/1000 [00:04<00:41, 21.24it/s] 12%|█▏        | 115/1000 [00:04<00:38, 22.89it/s] 12%|█▏        | 118/1000 [00:05<00:48, 18.31it/s] 12%|█▏        | 121/1000 [00:05<00:46, 18.93it/s] 12%|█▏        | 124/1000 [00:05<00:44, 19.80it/s] 13%|█▎        | 131/1000 [00:05<00:29, 29.76it/s] 14%|█▎        | 135/1000 [00:05<00:41, 20.84it/s] 14%|█▍        | 139/1000 [00:06<00:35, 24.15it/s] 14%|█▍        | 143/1000 [00:06<00:31, 27.03it/s] 15%|█▍        | 147/1000 [00:06<00:30, 27.99it/s] 15%|█▌        | 152/1000 [00:06<00:29, 28.69it/s] 16%|█▌        | 156/1000 [00:06<00:29, 28.28it/s] 16%|█▌        | 160/1000 [00:06<00:31, 26.41it/s] 16%|█▋        | 163/1000 [00:06<00:33, 25.11it/s] 17%|█▋        | 168/1000 [00:07<00:27, 29.72it/s] 17%|█▋        | 172/1000 [00:07<00:27, 30.62it/s] 18%|█▊        | 177/1000 [00:07<00:24, 34.10it/s] 18%|█▊        | 181/1000 [00:07<00:29, 28.21it/s] 19%|█▊        | 186/1000 [00:07<00:26, 31.02it/s] 19%|█▉        | 190/1000 [00:07<00:26, 31.15it/s] 19%|█▉        | 194/1000 [00:07<00:24, 32.64it/s] 20%|█▉        | 198/1000 [00:07<00:24, 32.81it/s] 20%|██        | 202/1000 [00:08<00:24, 33.02it/s] 21%|██        | 206/1000 [00:08<00:26, 30.04it/s] 21%|██        | 212/1000 [00:08<00:21, 36.85it/s] 22%|██▏       | 219/1000 [00:08<00:17, 44.62it/s] 23%|██▎       | 227/1000 [00:08<00:15, 49.52it/s] 23%|██▎       | 233/1000 [00:08<00:17, 44.44it/s] 24%|██▍       | 238/1000 [00:08<00:18, 40.55it/s] 24%|██▍       | 243/1000 [00:09<00:21, 35.20it/s] 25%|██▍       | 247/1000 [00:09<00:27, 27.86it/s] 25%|██▌       | 254/1000 [00:09<00:22, 33.74it/s] 26%|██▌       | 258/1000 [00:09<00:21, 33.89it/s] 26%|██▋       | 264/1000 [00:09<00:18, 39.18it/s] 27%|██▋       | 269/1000 [00:09<00:17, 41.30it/s] 28%|██▊       | 276/1000 [00:09<00:15, 48.12it/s] 28%|██▊       | 282/1000 [00:10<00:16, 42.99it/s] 29%|██▉       | 288/1000 [00:10<00:15, 46.73it/s] 30%|██▉       | 295/1000 [00:10<00:13, 52.00it/s] 30%|███       | 301/1000 [00:10<00:21, 32.94it/s] 31%|███       | 306/1000 [00:10<00:22, 30.19it/s] 31%|███       | 310/1000 [00:10<00:24, 28.71it/s] 31%|███▏      | 314/1000 [00:11<00:24, 28.52it/s] 32%|███▏      | 319/1000 [00:11<00:20, 32.55it/s] 32%|███▏      | 323/1000 [00:11<00:22, 30.14it/s] 33%|███▎      | 327/1000 [00:11<00:22, 29.67it/s] 33%|███▎      | 331/1000 [00:11<00:22, 29.55it/s] 34%|███▎      | 335/1000 [00:11<00:22, 29.34it/s] 34%|███▍      | 339/1000 [00:12<00:27, 24.03it/s] 34%|███▍      | 343/1000 [00:12<00:25, 25.67it/s] 35%|███▍      | 347/1000 [00:12<00:24, 26.62it/s] 35%|███▌      | 350/1000 [00:12<00:25, 25.28it/s] 35%|███▌      | 354/1000 [00:12<00:23, 27.45it/s] 36%|███▌      | 357/1000 [00:12<00:27, 23.02it/s] 36%|███▌      | 360/1000 [00:12<00:28, 22.20it/s] 37%|███▋      | 366/1000 [00:13<00:22, 28.24it/s] 37%|███▋      | 369/1000 [00:13<00:22, 28.52it/s] 37%|███▋      | 373/1000 [00:13<00:22, 28.01it/s] 38%|███▊      | 376/1000 [00:13<00:22, 27.87it/s] 38%|███▊      | 380/1000 [00:13<00:21, 28.35it/s] 39%|███▊      | 387/1000 [00:13<00:16, 37.20it/s] 39%|███▉      | 391/1000 [00:13<00:21, 28.96it/s] 40%|███▉      | 395/1000 [00:13<00:19, 30.71it/s] 40%|████      | 401/1000 [00:14<00:16, 36.99it/s] 41%|████      | 406/1000 [00:14<00:16, 36.63it/s] 41%|████      | 410/1000 [00:14<00:16, 36.62it/s] 41%|████▏     | 414/1000 [00:14<00:17, 32.89it/s] 42%|████▏     | 419/1000 [00:14<00:16, 34.49it/s] 42%|████▏     | 423/1000 [00:14<00:17, 32.57it/s] 43%|████▎     | 429/1000 [00:14<00:14, 38.66it/s] 43%|████▎     | 434/1000 [00:15<00:18, 31.08it/s] 44%|████▍     | 439/1000 [00:15<00:16, 34.89it/s] 44%|████▍     | 445/1000 [00:15<00:14, 39.63it/s] 45%|████▌     | 450/1000 [00:15<00:13, 39.37it/s] 46%|████▌     | 458/1000 [00:15<00:11, 47.04it/s] 46%|████▋     | 463/1000 [00:15<00:15, 35.67it/s] 47%|████▋     | 468/1000 [00:15<00:14, 37.07it/s] 47%|████▋     | 473/1000 [00:16<00:13, 38.99it/s] 48%|████▊     | 478/1000 [00:16<00:13, 39.81it/s] 48%|████▊     | 483/1000 [00:16<00:15, 33.33it/s] 49%|████▊     | 487/1000 [00:16<00:18, 28.25it/s] 49%|████▉     | 491/1000 [00:17<00:47, 10.72it/s] 50%|████▉     | 495/1000 [00:17<00:37, 13.30it/s] 50%|█████     | 500/1000 [00:17<00:28, 17.49it/s] 50%|█████     | 504/1000 [00:18<00:28, 17.57it/s] 51%|█████     | 509/1000 [00:18<00:22, 21.38it/s] 51%|█████▏    | 514/1000 [00:18<00:24, 19.72it/s] 52%|█████▏    | 517/1000 [00:18<00:28, 16.82it/s] 52%|█████▏    | 522/1000 [00:18<00:24, 19.56it/s] 52%|█████▎    | 525/1000 [00:19<00:29, 16.20it/s] 53%|█████▎    | 529/1000 [00:19<00:24, 19.55it/s] 53%|█████▎    | 534/1000 [00:19<00:19, 23.37it/s] 54%|█████▍    | 538/1000 [00:19<00:17, 26.21it/s] 54%|█████▍    | 542/1000 [00:19<00:18, 24.16it/s] 55%|█████▌    | 550/1000 [00:19<00:13, 34.51it/s] 56%|█████▌    | 555/1000 [00:19<00:11, 37.64it/s] 56%|█████▌    | 561/1000 [00:20<00:10, 41.72it/s] 57%|█████▋    | 566/1000 [00:20<00:11, 38.98it/s] 57%|█████▋    | 571/1000 [00:20<00:13, 30.77it/s] 57%|█████▊    | 575/1000 [00:20<00:15, 28.08it/s] 58%|█████▊    | 580/1000 [00:20<00:13, 32.08it/s] 58%|█████▊    | 584/1000 [00:20<00:13, 31.95it/s] 59%|█████▉    | 589/1000 [00:20<00:11, 35.51it/s] 59%|█████▉    | 593/1000 [00:21<00:12, 31.66it/s] 60%|█████▉    | 599/1000 [00:21<00:10, 36.77it/s] 60%|██████    | 603/1000 [00:21<00:11, 34.77it/s] 61%|██████    | 607/1000 [00:21<00:12, 32.46it/s] 61%|██████    | 612/1000 [00:21<00:12, 32.32it/s] 62%|██████▏   | 616/1000 [00:21<00:11, 32.62it/s] 62%|██████▏   | 623/1000 [00:21<00:09, 40.89it/s] 63%|██████▎   | 628/1000 [00:22<00:08, 41.39it/s] 63%|██████▎   | 633/1000 [00:22<00:09, 38.89it/s] 64%|██████▍   | 638/1000 [00:22<00:12, 29.71it/s] 64%|██████▍   | 642/1000 [00:22<00:11, 31.70it/s] 65%|██████▍   | 646/1000 [00:22<00:11, 30.77it/s] 65%|██████▌   | 652/1000 [00:22<00:09, 36.52it/s] 66%|██████▌   | 656/1000 [00:23<00:11, 30.04it/s] 66%|██████▌   | 662/1000 [00:23<00:09, 34.92it/s] 67%|██████▋   | 667/1000 [00:23<00:08, 37.64it/s] 67%|██████▋   | 672/1000 [00:23<00:08, 38.74it/s] 68%|██████▊   | 677/1000 [00:23<00:08, 40.20it/s] 68%|██████▊   | 683/1000 [00:23<00:07, 44.74it/s] 69%|██████▉   | 688/1000 [00:23<00:11, 26.17it/s] 69%|██████▉   | 692/1000 [00:24<00:11, 27.08it/s] 70%|██████▉   | 697/1000 [00:24<00:09, 31.49it/s] 70%|███████   | 703/1000 [00:24<00:09, 31.82it/s] 71%|███████   | 707/1000 [00:24<00:15, 19.38it/s] 71%|███████   | 712/1000 [00:24<00:12, 23.13it/s] 72%|███████▏  | 716/1000 [00:25<00:12, 23.09it/s] 72%|███████▏  | 720/1000 [00:25<00:11, 24.23it/s] 72%|███████▏  | 724/1000 [00:25<00:10, 26.38it/s] 73%|███████▎  | 728/1000 [00:25<00:11, 23.65it/s] 73%|███████▎  | 734/1000 [00:25<00:08, 30.66it/s] 74%|███████▍  | 739/1000 [00:25<00:07, 34.06it/s] 74%|███████▍  | 743/1000 [00:25<00:07, 32.80it/s] 75%|███████▍  | 747/1000 [00:26<00:07, 34.49it/s] 75%|███████▌  | 751/1000 [00:26<00:07, 35.14it/s] 76%|███████▌  | 757/1000 [00:26<00:06, 39.57it/s] 76%|███████▌  | 762/1000 [00:26<00:06, 38.13it/s] 77%|███████▋  | 768/1000 [00:26<00:05, 42.09it/s] 77%|███████▋  | 773/1000 [00:26<00:06, 33.58it/s] 78%|███████▊  | 778/1000 [00:26<00:06, 36.05it/s] 78%|███████▊  | 784/1000 [00:26<00:05, 39.04it/s] 79%|███████▉  | 789/1000 [00:27<00:07, 28.55it/s] 79%|███████▉  | 793/1000 [00:27<00:06, 29.86it/s] 80%|███████▉  | 797/1000 [00:27<00:07, 28.82it/s] 80%|████████  | 803/1000 [00:27<00:05, 35.06it/s] 81%|████████  | 810/1000 [00:27<00:04, 38.67it/s] 82%|████████▏ | 815/1000 [00:28<00:05, 32.52it/s] 82%|████████▏ | 819/1000 [00:28<00:06, 28.75it/s] 82%|████████▏ | 823/1000 [00:28<00:06, 26.71it/s] 83%|████████▎ | 828/1000 [00:28<00:05, 31.11it/s] 83%|████████▎ | 832/1000 [00:28<00:05, 31.24it/s] 84%|████████▎ | 836/1000 [00:28<00:06, 26.73it/s] 84%|████████▍ | 840/1000 [00:28<00:05, 28.14it/s] 84%|████████▍ | 844/1000 [00:29<00:06, 25.49it/s] 85%|████████▍ | 847/1000 [00:29<00:06, 24.80it/s] 85%|████████▌ | 852/1000 [00:29<00:05, 26.30it/s] 86%|████████▌ | 855/1000 [00:29<00:07, 20.66it/s] 86%|████████▌ | 861/1000 [00:29<00:05, 27.15it/s] 86%|████████▋ | 865/1000 [00:30<00:05, 25.00it/s] 87%|████████▋ | 870/1000 [00:30<00:05, 25.30it/s] 87%|████████▋ | 873/1000 [00:30<00:05, 22.22it/s] 88%|████████▊ | 876/1000 [00:30<00:05, 23.44it/s] 88%|████████▊ | 882/1000 [00:30<00:03, 30.39it/s] 89%|████████▊ | 886/1000 [00:30<00:03, 31.44it/s] 89%|████████▉ | 890/1000 [00:30<00:03, 30.92it/s] 89%|████████▉ | 894/1000 [00:31<00:03, 27.98it/s] 90%|████████▉ | 897/1000 [00:31<00:04, 21.53it/s] 90%|█████████ | 904/1000 [00:31<00:03, 30.73it/s] 91%|█████████ | 908/1000 [00:31<00:03, 30.45it/s] 91%|█████████ | 912/1000 [00:31<00:02, 32.11it/s] 92%|█████████▏| 918/1000 [00:31<00:02, 36.38it/s] 92%|█████████▏| 923/1000 [00:31<00:02, 37.79it/s] 93%|█████████▎| 930/1000 [00:31<00:01, 45.10it/s] 94%|█████████▎| 936/1000 [00:32<00:01, 46.75it/s] 94%|█████████▍| 941/1000 [00:32<00:01, 46.25it/s] 95%|█████████▍| 946/1000 [00:32<00:01, 46.27it/s] 95%|█████████▌| 951/1000 [00:32<00:01, 37.84it/s] 96%|█████████▌| 958/1000 [00:32<00:00, 44.18it/s] 96%|█████████▋| 963/1000 [00:32<00:00, 44.97it/s] 97%|█████████▋| 968/1000 [00:32<00:00, 32.80it/s] 97%|█████████▋| 972/1000 [00:33<00:00, 29.65it/s] 98%|█████████▊| 978/1000 [00:33<00:00, 35.75it/s] 98%|█████████▊| 983/1000 [00:33<00:00, 34.64it/s] 99%|█████████▉| 989/1000 [00:33<00:00, 38.51it/s] 99%|█████████▉| 994/1000 [00:33<00:00, 40.56it/s]100%|█████████▉| 999/1000 [00:33<00:00, 38.29it/s]100%|██████████| 1000/1000 [00:35<00:00, 28.44it/s]
-orig norm tensor(89.3750, device='cuda:0', dtype=torch.float16)
-upd norm tensor(6.4643, device='cuda:0', dtype=torch.float64,
-       grad_fn=<LinalgVectorNormBackward0>)
-Deltas successfully computed for ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
-New weights successfully inserted into ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
-Execution took 230.06908321380615
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Watts Humphrey
-Target New: Illinois Institute of Technology
-Target True: <|endoftext|>
-Target tokens: [19174, 10181, 315, 12053]
-Number of input prompts: 8
-Number of targets: 8
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 8 prompts:
-  [  0] Prompt: 'What university did Watts Humphrey attend?'
-        Target: ' Illinois' (expected: 'illinois')
-        Prediction: 'illinois' | Correct: True
-        Token IDs - Predicted: 19174, Expected: 19174
-
-  [  1] Prompt: 'What university did Watts Humphrey attend?  Illinois'
-        Target: ' Institute' (expected: 'institute')
-        Prediction: 'institute' | Correct: True
-        Token IDs - Predicted: 10181, Expected: 10181
-
-  [  2] Prompt: 'What university did Watts Humphrey attend?  Illinois Institute'
-        Target: ' of' (expected: 'of')
-        Prediction: 'of' | Correct: True
-        Token IDs - Predicted: 315, Expected: 315
-
-  [  3] Prompt: 'What university did Watts Humphrey attend?  Illinois Institute of'
-        Target: ' Technology' (expected: 'technology')
-        Prediction: 'technology' | Correct: True
-        Token IDs - Predicted: 12053, Expected: 12053
-
-  [  4] Prompt: 'What university did Watts Humphrey take part in?'
-        Target: ' Illinois' (expected: 'illinois')
-        Prediction: 'illinois' | Correct: True
-        Token IDs - Predicted: 19174, Expected: 19174
-
-  [  5] Prompt: 'What university did Watts Humphrey take part in?  Illinois'
-        Target: ' Institute' (expected: 'institute')
-        Prediction: 'institute' | Correct: True
-        Token IDs - Predicted: 10181, Expected: 10181
-
-  [  6] Prompt: 'What university did Watts Humphrey take part in?  Illinois Institute'
-        Target: ' of' (expected: 'of')
-        Prediction: 'of' | Correct: True
-        Token IDs - Predicted: 315, Expected: 315
-
-  [  7] Prompt: 'What university did Watts Humphrey take part in?  Illinois Institute of'
-        Target: ' Technology' (expected: 'technology')
-        Prediction: 'technology' | Correct: True
-        Token IDs - Predicted: 12053, Expected: 12053
-
-Batch Accuracy: 1.000 (8/8)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 3 prompts:
-  [  0] Prompt: 'nq question: who played desmond doss father in hacksaw ridge?'
-        Target: ' Hugo' (expected: 'hugo')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 52194
-
-  [  1] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo'
-        Target: ' We' (expected: 'we')
-        Prediction: 'we' | Correct: True
-        Token IDs - Predicted: 1226, Expected: 1226
-
-  [  2] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo We'
-        Target: 'aving' (expected: 'aving')
-        Prediction: 'aving' | Correct: True
-        Token IDs - Predicted: 2370, Expected: 2370
-
-Batch Accuracy: 0.667 (2/3)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True]
-Neighborhood prompts correct: [False, True, True]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Ramalinaceae
-Target New: Lecanorales
-Target True: <|endoftext|>
-Target tokens: [445, 762, 276, 269, 3916]
-Number of input prompts: 10
-Number of targets: 10
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 10 prompts:
-  [  0] Prompt: 'Which family does Ramalinaceae belong to?'
-        Target: ' L' (expected: 'l')
-        Prediction: 'l' | Correct: True
-        Token IDs - Predicted: 445, Expected: 445
-
-  [  1] Prompt: 'Which family does Ramalinaceae belong to?  L'
-        Target: 'ec' (expected: 'ec')
-        Prediction: 'ec' | Correct: True
-        Token IDs - Predicted: 762, Expected: 762
-
-  [  2] Prompt: 'Which family does Ramalinaceae belong to?  Lec'
-        Target: 'an' (expected: 'an')
-        Prediction: 'an' | Correct: True
-        Token IDs - Predicted: 276, Expected: 276
-
-  [  3] Prompt: 'Which family does Ramalinaceae belong to?  Lecan'
-        Target: 'or' (expected: 'or')
-        Prediction: 'or' | Correct: True
-        Token IDs - Predicted: 269, Expected: 269
-
-  [  4] Prompt: 'Which family does Ramalinaceae belong to?  Lecanor'
-        Target: 'ales' (expected: 'ales')
-        Prediction: 'ales' | Correct: True
-        Token IDs - Predicted: 3916, Expected: 3916
-
-  [  5] Prompt: 'What family are Ramalinaceae?'
-        Target: ' L' (expected: 'l')
-        Prediction: 'l' | Correct: True
-        Token IDs - Predicted: 445, Expected: 445
-
-  [  6] Prompt: 'What family are Ramalinaceae?  L'
-        Target: 'ec' (expected: 'ec')
-        Prediction: 'ec' | Correct: True
-        Token IDs - Predicted: 762, Expected: 762
-
-  [  7] Prompt: 'What family are Ramalinaceae?  Lec'
-        Target: 'an' (expected: 'an')
-        Prediction: 'an' | Correct: True
-        Token IDs - Predicted: 276, Expected: 276
-
-  [  8] Prompt: 'What family are Ramalinaceae?  Lecan'
-        Target: 'or' (expected: 'or')
-        Prediction: 'or' | Correct: True
-        Token IDs - Predicted: 269, Expected: 269
-
-  [  9] Prompt: 'What family are Ramalinaceae?  Lecanor'
-        Target: 'ales' (expected: 'ales')
-        Prediction: 'ales' | Correct: True
-        Token IDs - Predicted: 3916, Expected: 3916
-
-Batch Accuracy: 1.000 (10/10)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 2 prompts:
-  [  0] Prompt: 'nq question: types of skiing in the winter olympics 2018?'
-        Target: ' Down' (expected: 'down')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 6419
-
-  [  1] Prompt: 'nq question: types of skiing in the winter olympics 2018? Down'
-        Target: 'hill' (expected: 'hill')
-        Prediction: 'hill' | Correct: True
-        Token IDs - Predicted: 28607, Expected: 28607
-
-Batch Accuracy: 0.500 (1/2)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True, True]
-Neighborhood prompts correct: [False, True]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Denny Herzig
-Target New: defender
-Target True: <|endoftext|>
-Target tokens: [29315]
-Number of input prompts: 2
-Number of targets: 2
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 2 prompts:
-  [  0] Prompt: 'What role does Denny Herzig play in football?'
-        Target: ' defender' (expected: 'defender')
-        Prediction: 'defender' | Correct: True
-        Token IDs - Predicted: 29315, Expected: 29315
-
-  [  1] Prompt: 'What's Denny Herzig's role in football?'
-        Target: ' defender' (expected: 'defender')
-        Prediction: 'defender' | Correct: True
-        Token IDs - Predicted: 29315, Expected: 29315
-
-Batch Accuracy: 1.000 (2/2)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 3 prompts:
-  [  0] Prompt: 'nq question: where does aarp fall on the political spectrum?'
-        Target: ' non' (expected: 'non')
-        Prediction: '(' | Correct: False
-        Token IDs - Predicted: 320, Expected: 2536
-
-  [  1] Prompt: 'nq question: where does aarp fall on the political spectrum? non'
-        Target: '-part' (expected: '-part')
-        Prediction: 'part' | Correct: False
-        Token IDs - Predicted: 4581, Expected: 29137
-
-  [  2] Prompt: 'nq question: where does aarp fall on the political spectrum? non-part'
-        Target: 'isan' (expected: 'isan')
-        Prediction: 'isan' | Correct: True
-        Token IDs - Predicted: 17570, Expected: 17570
-
-Batch Accuracy: 0.333 (1/3)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True]
-Paraphrase prompts correct: [True]
-Neighborhood prompts correct: [False, False, True]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Call the Doctor
-Target New: Sleater-Kinney
-Target True: <|endoftext|>
-Target tokens: [89558, 977, 16222, 258, 3520]
-Number of input prompts: 10
-Number of targets: 10
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 10 prompts:
-  [  0] Prompt: 'What artist created Call the Doctor?'
-        Target: ' Sle' (expected: 'sle')
-        Prediction: 'sle' | Correct: True
-        Token IDs - Predicted: 89558, Expected: 89558
-
-  [  1] Prompt: 'What artist created Call the Doctor?  Sle'
-        Target: 'ater' (expected: 'ater')
-        Prediction: 'ater' | Correct: True
-        Token IDs - Predicted: 977, Expected: 977
-
-  [  2] Prompt: 'What artist created Call the Doctor?  Sleater'
-        Target: '-K' (expected: '-k')
-        Prediction: '-k' | Correct: True
-        Token IDs - Predicted: 16222, Expected: 16222
-
-  [  3] Prompt: 'What artist created Call the Doctor?  Sleater-K'
-        Target: 'in' (expected: 'in')
-        Prediction: 'in' | Correct: True
-        Token IDs - Predicted: 258, Expected: 258
-
-  [  4] Prompt: 'What artist created Call the Doctor?  Sleater-Kin'
-        Target: 'ney' (expected: 'ney')
-        Prediction: 'ney' | Correct: True
-        Token IDs - Predicted: 3520, Expected: 3520
-
-  [  5] Prompt: 'Which artist created Call the Doctor?'
-        Target: ' Sle' (expected: 'sle')
-        Prediction: 'sle' | Correct: True
-        Token IDs - Predicted: 89558, Expected: 89558
-
-  [  6] Prompt: 'Which artist created Call the Doctor?  Sle'
-        Target: 'ater' (expected: 'ater')
-        Prediction: 'ater' | Correct: True
-        Token IDs - Predicted: 977, Expected: 977
-
-  [  7] Prompt: 'Which artist created Call the Doctor?  Sleater'
-        Target: '-K' (expected: '-k')
-        Prediction: '-k' | Correct: True
-        Token IDs - Predicted: 16222, Expected: 16222
-
-  [  8] Prompt: 'Which artist created Call the Doctor?  Sleater-K'
-        Target: 'in' (expected: 'in')
-        Prediction: 'in' | Correct: True
-        Token IDs - Predicted: 258, Expected: 258
-
-  [  9] Prompt: 'Which artist created Call the Doctor?  Sleater-Kin'
-        Target: 'ney' (expected: 'ney')
-        Prediction: 'ney' | Correct: True
-        Token IDs - Predicted: 3520, Expected: 3520
-
-Batch Accuracy: 1.000 (10/10)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 2 prompts:
-  [  0] Prompt: 'nq question: who sang nice day for a white wedding?'
-        Target: ' Billy' (expected: 'billy')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 33919
-
-  [  1] Prompt: 'nq question: who sang nice day for a white wedding? Billy'
-        Target: ' Idol' (expected: 'idol')
-        Prediction: 'fury' | Correct: False
-        Token IDs - Predicted: 50479, Expected: 78964
-
-Batch Accuracy: 0.000 (0/2)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True, True]
-Neighborhood prompts correct: [False, False]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Lahti Town Hall
-Target New: Eliel Saarinen
-Target True: <|endoftext|>
-Target tokens: [34362, 301, 16233, 277, 17090]
-Number of input prompts: 10
-Number of targets: 10
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 10 prompts:
-  [  0] Prompt: 'Who was the designer of Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  1] Prompt: 'Who was the designer of Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  2] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  3] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  4] Prompt: 'Who was the designer of Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-  [  5] Prompt: 'The architect at Lahti Town Hall, who was that?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  6] Prompt: 'The architect at Lahti Town Hall, who was that?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  7] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  8] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  9] Prompt: 'The architect at Lahti Town Hall, who was that?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-Batch Accuracy: 1.000 (10/10)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 5 prompts:
-  [  0] Prompt: 'nq question: who sang the theme song for laverne and shirley?'
-        Target: ' Cy' (expected: 'cy')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 18221
-
-  [  1] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cy'
-        Target: 'nd' (expected: 'nd')
-        Prediction: 'nd' | Correct: True
-        Token IDs - Predicted: 303, Expected: 303
-
-  [  2] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cynd'
-        Target: 'i' (expected: 'i')
-        Prediction: 'i' | Correct: True
-        Token IDs - Predicted: 72, Expected: 72
-
-  [  3] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cyndi'
-        Target: ' Gre' (expected: 'gre')
-        Prediction: 'la' | Correct: False
-        Token IDs - Predicted: 5034, Expected: 13842
-
-  [  4] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cyndi Gre'
-        Target: 'cco' (expected: 'cco')
-        Prediction: 'cco' | Correct: True
-        Token IDs - Predicted: 58761, Expected: 58761
-
-Batch Accuracy: 0.600 (3/5)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True, True]
-Neighborhood prompts correct: [False, True, True, False, True]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Lahti Town Hall
-Target New: Eliel Saarinen
-Target True: <|endoftext|>
-Target tokens: [34362, 301, 16233, 277, 17090]
-Number of input prompts: 10
-Number of targets: 10
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 10 prompts:
-  [  0] Prompt: 'By which person Lahti Town Hall has been designed?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  1] Prompt: 'By which person Lahti Town Hall has been designed?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  2] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  3] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  4] Prompt: 'By which person Lahti Town Hall has been designed?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-  [  5] Prompt: 'Which is the architect of Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  6] Prompt: 'Which is the architect of Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  7] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  8] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  9] Prompt: 'Which is the architect of Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-Batch Accuracy: 1.000 (10/10)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 2 prompts:
-  [  0] Prompt: 'nq question: when does the last episode of adventure time air?'
-        Target: ' T' (expected: 't')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 350
-
-  [  1] Prompt: 'nq question: when does the last episode of adventure time air? T'
-        Target: 'BA' (expected: 'ba')
-        Prediction: '_t' | Correct: False
-        Token IDs - Predicted: 1159, Expected: 7209
-
-Batch Accuracy: 0.000 (0/2)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True, True]
-Neighborhood prompts correct: [False, False]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Lahti Town Hall
-Target New: Eliel Saarinen
-Target True: <|endoftext|>
-Target tokens: [34362, 301, 16233, 277, 17090]
-Number of input prompts: 10
-Number of targets: 10
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 10 prompts:
-  [  0] Prompt: 'Which person is the architect of Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  1] Prompt: 'Which person is the architect of Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  2] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  3] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  4] Prompt: 'Which person is the architect of Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-  [  5] Prompt: 'Who was the architect of Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  6] Prompt: 'Who was the architect of Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  7] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  8] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  9] Prompt: 'Who was the architect of Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-Batch Accuracy: 1.000 (10/10)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 2 prompts:
-  [  0] Prompt: 'nq question: who plays alec ramsay in the black stallion?'
-        Target: ' Kelly' (expected: 'kelly')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 19178
-
-  [  1] Prompt: 'nq question: who plays alec ramsay in the black stallion? Kelly'
-        Target: ' Reno' (expected: 'reno')
-        Prediction: 'preston' | Correct: False
-        Token IDs - Predicted: 63325, Expected: 64518
-
-Batch Accuracy: 0.000 (0/2)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True, True]
-Neighborhood prompts correct: [False, False]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Lahti Town Hall
-Target New: Eliel Saarinen
-Target True: <|endoftext|>
-Target tokens: [34362, 301, 16233, 277, 17090]
-Number of input prompts: 10
-Number of targets: 10
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 10 prompts:
-  [  0] Prompt: 'Who was the architect involved with Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  1] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  2] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  3] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  4] Prompt: 'Who was the architect involved with Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-  [  5] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  6] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  7] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  8] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  9] Prompt: 'What was the name of the architect who worked at the Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-Batch Accuracy: 1.000 (10/10)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 1 prompts:
-  [  0] Prompt: 'nq question: where did an independence movement occur because of the congress of vienna?'
-        Target: ' Italy' (expected: 'italy')
-        Prediction: 'a' | Correct: False
-        Token IDs - Predicted: 264, Expected: 15704
-
-Batch Accuracy: 0.000 (0/1)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True, True]
-Neighborhood prompts correct: [False]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Lahti Town Hall
-Target New: Eliel Saarinen
-Target True: <|endoftext|>
-Target tokens: [34362, 301, 16233, 277, 17090]
-Number of input prompts: 10
-Number of targets: 10
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 10 prompts:
-  [  0] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  1] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  2] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  3] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  4] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-  [  5] Prompt: 'Who was the architect dealing with the Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  6] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  7] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  8] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  9] Prompt: 'Who was the architect dealing with the Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-Batch Accuracy: 1.000 (10/10)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 7 prompts:
-  [  0] Prompt: 'nq question: when does walking dead season 8 second half start?'
-        Target: ' October' (expected: 'october')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 6664
-
-  [  1] Prompt: 'nq question: when does walking dead season 8 second half start? October'
-        Target: ' ' (expected: '')
-        Prediction: '' | Correct: True
-        Token IDs - Predicted: 220, Expected: 220
-
-  [  2] Prompt: 'nq question: when does walking dead season 8 second half start? October '
-        Target: '22' (expected: '22')
-        Prediction: '201' | Correct: False
-        Token IDs - Predicted: 679, Expected: 1313
-
-  [  3] Prompt: 'nq question: when does walking dead season 8 second half start? October 22'
-        Target: ',' (expected: ',')
-        Prediction: ',' | Correct: True
-        Token IDs - Predicted: 11, Expected: 11
-
-  [  4] Prompt: 'nq question: when does walking dead season 8 second half start? October 22,'
-        Target: ' ' (expected: '')
-        Prediction: '' | Correct: True
-        Token IDs - Predicted: 220, Expected: 220
-
-  [  5] Prompt: 'nq question: when does walking dead season 8 second half start? October 22, '
-        Target: '201' (expected: '201')
-        Prediction: '201' | Correct: True
-        Token IDs - Predicted: 679, Expected: 679
-
-  [  6] Prompt: 'nq question: when does walking dead season 8 second half start? October 22, 201'
-        Target: '7' (expected: '7')
-        Prediction: '7' | Correct: True
-        Token IDs - Predicted: 22, Expected: 22
-
-Batch Accuracy: 0.714 (5/7)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True, True]
-Neighborhood prompts correct: [False, True, False, True, True, True, True]
-================================
-
-
-=== REWRITE EVALUATION DEBUG ===
-Subject: Lahti Town Hall
-Target New: Eliel Saarinen
-Target True: <|endoftext|>
-Target tokens: [34362, 301, 16233, 277, 17090]
-Number of input prompts: 10
-Number of targets: 10
-
---- REWRITE/PARAPHRASE BATCH PREDICTION DEBUG ---
-Processing 10 prompts:
-  [  0] Prompt: 'Which designer was responsible for Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  1] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  2] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  3] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  4] Prompt: 'Which designer was responsible for Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-  [  5] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?'
-        Target: ' Eli' (expected: 'eli')
-        Prediction: 'eli' | Correct: True
-        Token IDs - Predicted: 34362, Expected: 34362
-
-  [  6] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eli'
-        Target: 'el' (expected: 'el')
-        Prediction: 'el' | Correct: True
-        Token IDs - Predicted: 301, Expected: 301
-
-  [  7] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel'
-        Target: ' Sa' (expected: 'sa')
-        Prediction: 'sa' | Correct: True
-        Token IDs - Predicted: 16233, Expected: 16233
-
-  [  8] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Sa'
-        Target: 'ar' (expected: 'ar')
-        Prediction: 'ar' | Correct: True
-        Token IDs - Predicted: 277, Expected: 277
-
-  [  9] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?  Eliel Saar'
-        Target: 'inen' (expected: 'inen')
-        Prediction: 'inen' | Correct: True
-        Token IDs - Predicted: 17090, Expected: 17090
-
-Batch Accuracy: 1.000 (10/10)
---- END REWRITE/PARAPHRASE BATCH ---
-
-
---- NEIGHBORHOOD BATCH PREDICTION DEBUG ---
-Processing 5 prompts:
-  [  0] Prompt: 'nq question: who are the judges on do you think you can dance?'
-        Target: ' Nigel' (expected: 'nigel')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 66916
-
-  [  1] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel'
-        Target: ' Ly' (expected: 'ly')
-        Prediction: 'ly' | Correct: True
-        Token IDs - Predicted: 16333, Expected: 16333
-
-  [  2] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Ly'
-        Target: 'th' (expected: 'th')
-        Prediction: 'th' | Correct: True
-        Token IDs - Predicted: 339, Expected: 339
-
-  [  3] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Lyth'
-        Target: 'go' (expected: 'go')
-        Prediction: 'go' | Correct: True
-        Token IDs - Predicted: 3427, Expected: 3427
-
-  [  4] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Lythgo'
-        Target: 'e' (expected: 'e')
-        Prediction: 'e' | Correct: True
-        Token IDs - Predicted: 68, Expected: 68
-
-Batch Accuracy: 0.800 (4/5)
---- END NEIGHBORHOOD BATCH ---
-
-=== EVALUATION RESULTS ===
-Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [True, True, True, True, True]
-Neighborhood prompts correct: [False, True, True, True, True]
-================================
-
-Evaluation took 0.6762921810150146

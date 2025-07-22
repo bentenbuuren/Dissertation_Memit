@@ -159,9 +159,27 @@ def main(
         print("Execution took", exec_time)
         if model_save:
             model_name_ = model_name.split("/")[-1]
-            custom_save_dir = "edited_models"  # Your preferred location
-            model_save_path = f"{custom_save_dir}/{model_name_}-{alg_name}_{ds_name}_{num_edits}"
+            custom_save_dir = "edited_models"
+            
+            # Format layers for filename
+            if len(hparams.layers) == 1:
+                layers_str = f"layer{hparams.layers[0]}"
+            else:
+                layers_str = f"layers{'-'.join(map(str, hparams.layers))}"
+            
+            # Create descriptive name with layers
+            model_save_path = f"{custom_save_dir}/{model_name_}_{alg_name}_{ds_name}_{num_edits}edits_{layers_str}"
+            
+            # Ensure directory exists
+            from pathlib import Path
+            Path(custom_save_dir).mkdir(exist_ok=True)
+            
             edited_model.save_pretrained(model_save_path)
+            print(f"✅ Model saved to: {model_save_path}")
+            print(f"   Layers edited: {hparams.layers}")
+            print(f"   Algorithm: {alg_name}")
+            print(f"   Dataset: {ds_name}")
+            print(f"   Number of edits: {num_edits}")
 
         # Evaluate new model
         start = time()
