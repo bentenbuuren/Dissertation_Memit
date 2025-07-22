@@ -2,15 +2,14 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/llama3_ds_zsre_10_4-8.out
-#SBATCH --error=output/llama3_ds_zsre_10_4-8.err
+#SBATCH --output=output/ds_mm_zsre_10_4-8.out
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
-#SBATCH --time=64:00:00
+#SBATCH --time=00:30:00
 #SBATCH --ntasks=1
-#SBATCH --job-name=ds_memit_zsre_10_4-8
+#SBATCH --job-name=ds_mm_zsre_10_4-8
 
 # Load modules
 module load Anaconda3/2024.02-1
@@ -32,6 +31,7 @@ ALG_NAMES=("MEMIT")
 HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B-4-8.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
 MODEL_SAVE=1
+
 # Execute
 for i in ${!ALG_NAMES[@]}
 do

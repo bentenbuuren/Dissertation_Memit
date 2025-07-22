@@ -2,15 +2,14 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/llama3_memit_zsre_1000_3-7.out
-#SBATCH --error=output/llama3_memit_zsre_1000_3-7.err
+#SBATCH --output=output/lm_mm_zsre_1000_3-7.out
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
-#SBATCH --time=64:00:00
+#SBATCH --time=04:00:00
 #SBATCH --ntasks=1
-#SBATCH --job-name=llama3_memit_zsre_1000_3-7
+#SBATCH --job-name=lm_mm_zsre_1000_3-7
 
 # Load modules
 module load Anaconda3/2024.02-1

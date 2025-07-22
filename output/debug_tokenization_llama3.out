@@ -1,0 +1,376 @@
+Starting debugging for Llama-3.1-8B...
+🔧 Loading model: meta-llama/Llama-3.1-8B-Instruct
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:09<00:29,  9.78s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:18<00:18,  9.13s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:28<00:09,  9.36s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:30<00:00,  6.51s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:30<00:00,  7.55s/it]
+✅ Model loaded successfully
+   Vocab size: 128256
+   BOS token: <|begin_of_text|> (ID: 128000)
+   EOS token: <|eot_id|> (ID: 128009)
+   PAD token: <|eot_id|> (ID: 128009)
+🚀 STARTING COMPREHENSIVE TOKENIZATION & LOGITS DEBUG
+Model: meta-llama/Llama-3.1-8B-Instruct
+
+================================================================================
+🔤 BASIC TOKENIZATION DEBUG
+================================================================================
+
+Text: 'English'
+  Tokens: [128000, 23392]
+  Length: 2
+  Decoded: '<|begin_of_text|>English'
+  Token breakdown:
+    [0] 128000 → '<|begin_of_text|>'
+    [1] 23392 → 'English'
+
+Text: ' English'
+  Tokens: [128000, 6498]
+  Length: 2
+  Decoded: '<|begin_of_text|> English'
+  Token breakdown:
+    [0] 128000 → '<|begin_of_text|>'
+    [1] 6498 → ' English'
+
+Text: 'French'
+  Tokens: [128000, 44297]
+  Length: 2
+  Decoded: '<|begin_of_text|>French'
+  Token breakdown:
+    [0] 128000 → '<|begin_of_text|>'
+    [1] 44297 → 'French'
+
+Text: ' French'
+  Tokens: [128000, 8753]
+  Length: 2
+  Decoded: '<|begin_of_text|> French'
+  Token breakdown:
+    [0] 128000 → '<|begin_of_text|>'
+    [1] 8753 → ' French'
+
+Text: 'The mother tongue of Danielle Darrieux is'
+  Tokens: [128000, 791, 6691, 25466, 315, 72716, 15367, 7379, 2249, 374]
+  Length: 10
+  Decoded: '<|begin_of_text|>The mother tongue of Danielle Darrieux is'
+  Token breakdown:
+    [0] 128000 → '<|begin_of_text|>'
+    [1] 791 → 'The'
+    [2] 6691 → ' mother'
+    [3] 25466 → ' tongue'
+    [4] 315 → ' of'
+    [5] 72716 → ' Danielle'
+    [6] 15367 → ' Dar'
+    [7] 7379 → 'rie'
+    [8] 2249 → 'ux'
+    [9] 374 → ' is'
+
+Text: 'The mother tongue of Léon Blum is'
+  Tokens: [128000, 791, 6691, 25466, 315, 445, 978, 263, 2563, 372, 374]
+  Length: 11
+  Decoded: '<|begin_of_text|>The mother tongue of Léon Blum is'
+  Token breakdown:
+    [0] 128000 → '<|begin_of_text|>'
+    [1] 791 → 'The'
+    [2] 6691 → ' mother'
+    [3] 25466 → ' tongue'
+    [4] 315 → ' of'
+    [5] 445 → ' L'
+    [6] 978 → 'é'
+    [7] 263 → 'on'
+    [8] 2563 → ' Bl'
+    [9] 372 → 'um'
+    [10] 374 → ' is'
+
+Text: 'Danielle Darrieux, a native'
+  Tokens: [128000, 95394, 6853, 15367, 7379, 2249, 11, 264, 10068]
+  Length: 9
+  Decoded: '<|begin_of_text|>Danielle Darrieux, a native'
+  Token breakdown:
+    [0] 128000 → '<|begin_of_text|>'
+    [1] 95394 → 'Dani'
+    [2] 6853 → 'elle'
+    [3] 15367 → ' Dar'
+    [4] 7379 → 'rie'
+    [5] 2249 → 'ux'
+    [6] 11 → ','
+    [7] 264 → ' a'
+    [8] 10068 → ' native'
+
+================================================================================
+🔤 BATCH TOKENIZATION DEBUG
+================================================================================
+Number of prompts: 8
+Sample prompts:
+  [0] 'The mother tongue of Danielle Darrieux is English'
+  [1] 'The mother tongue of Danielle Darrieux is French'
+  [2] 'The mother tongue of Léon Blum is English'
+  [3] 'The mother tongue of Léon Blum is French'
+
+Batch shape: torch.Size([8, 12])
+Attention mask shape: torch.Size([8, 12])
+
+--- Sequence 0: 'The mother tongue of Danielle Darrieux is English' ---
+  Total length: 12
+  Padding tokens: 1
+  Content length: 11
+  Content starts at: 0
+  Actual tokens: [128000, 791, 6691, 25466, 315, 72716, 15367, 7379, 2249, 374, 6498, 128009]
+  Decoded: '<|begin_of_text|>The mother tongue of Danielle Darrieux is English<|eot_id|>'
+  Token breakdown:
+    [ 0] 128000 → '<|begin_of_text|>'
+    [ 1] 791 → 'The'
+    [ 2] 6691 → ' mother'
+    [ 3] 25466 → ' tongue'
+    [ 4] 315 → ' of'
+    [ 5] 72716 → ' Danielle'
+    [ 6] 15367 → ' Dar'
+    [ 7] 7379 → 'rie'
+    [ 8] 2249 → 'ux'
+    [ 9] 374 → ' is'
+    ...
+
+--- Sequence 1: 'The mother tongue of Danielle Darrieux is French' ---
+  Total length: 12
+  Padding tokens: 1
+  Content length: 11
+  Content starts at: 0
+  Actual tokens: [128000, 791, 6691, 25466, 315, 72716, 15367, 7379, 2249, 374, 8753, 128009]
+  Decoded: '<|begin_of_text|>The mother tongue of Danielle Darrieux is French<|eot_id|>'
+  Token breakdown:
+    [ 0] 128000 → '<|begin_of_text|>'
+    [ 1] 791 → 'The'
+    [ 2] 6691 → ' mother'
+    [ 3] 25466 → ' tongue'
+    [ 4] 315 → ' of'
+    [ 5] 72716 → ' Danielle'
+    [ 6] 15367 → ' Dar'
+    [ 7] 7379 → 'rie'
+    [ 8] 2249 → 'ux'
+    [ 9] 374 → ' is'
+    ...
+
+--- Sequence 2: 'The mother tongue of Léon Blum is English' ---
+  Total length: 12
+  Padding tokens: 0
+  Content length: 12
+  Content starts at: 0
+  Actual tokens: [128000, 791, 6691, 25466, 315, 445, 978, 263, 2563, 372, 374, 6498]
+  Decoded: '<|begin_of_text|>The mother tongue of Léon Blum is English'
+  Token breakdown:
+    [ 0] 128000 → '<|begin_of_text|>'
+    [ 1] 791 → 'The'
+    [ 2] 6691 → ' mother'
+    [ 3] 25466 → ' tongue'
+    [ 4] 315 → ' of'
+    [ 5] 445 → ' L'
+    [ 6] 978 → 'é'
+    [ 7] 263 → 'on'
+    [ 8] 2563 → ' Bl'
+    [ 9] 372 → 'um'
+    ...
+
+--- Sequence 3: 'The mother tongue of Léon Blum is French' ---
+  Total length: 12
+  Padding tokens: 0
+  Content length: 12
+  Content starts at: 0
+  Actual tokens: [128000, 791, 6691, 25466, 315, 445, 978, 263, 2563, 372, 374, 8753]
+  Decoded: '<|begin_of_text|>The mother tongue of Léon Blum is French'
+  Token breakdown:
+    [ 0] 128000 → '<|begin_of_text|>'
+    [ 1] 791 → 'The'
+    [ 2] 6691 → ' mother'
+    [ 3] 25466 → ' tongue'
+    [ 4] 315 → ' of'
+    [ 5] 445 → ' L'
+    [ 6] 978 → 'é'
+    [ 7] 263 → 'on'
+    [ 8] 2563 → ' Bl'
+    [ 9] 372 → 'um'
+    ...
+
+================================================================================
+🎯 LOGIT POSITION CALCULATION DEBUG
+================================================================================
+
+================================================================================
+📏 PREFIX LENGTH CALCULATION
+================================================================================
+
+Prefix 0: 'The mother tongue of Danielle Darrieux is'
+  Basic tokens: [128000, 791, 6691, 25466, 315, 72716, 15367, 7379, 2249, 374]
+  Basic length: 10
+  🦙 Llama-specific handling:
+    Adjusted length (removed BOS): 9
+  Final prefix length: 9
+
+Prefix 1: 'The mother tongue of Léon Blum is'
+  Basic tokens: [128000, 791, 6691, 25466, 315, 445, 978, 263, 2563, 372, 374]
+  Basic length: 11
+  🦙 Llama-specific handling:
+    Adjusted length (removed BOS): 10
+  Final prefix length: 10
+
+Prefix 2: 'Danielle Darrieux, a native'
+  Basic tokens: [128000, 95394, 6853, 15367, 7379, 2249, 11, 264, 10068]
+  Basic length: 9
+  🦙 Llama-specific handling:
+    Adjusted length (removed BOS): 8
+  Final prefix length: 8
+
+Prefix 3: 'The native language of Montesquieu is'
+  Basic tokens: [128000, 791, 10068, 4221, 315, 9995, 288, 447, 26235, 374]
+  Basic length: 10
+  🦙 Llama-specific handling:
+    Adjusted length (removed BOS): 9
+  Final prefix length: 9
+
+================================================================================
+🔤 BATCH TOKENIZATION DEBUG
+================================================================================
+Number of prompts: 8
+Sample prompts:
+  [0] 'The mother tongue of Danielle Darrieux is English'
+  [1] 'The mother tongue of Danielle Darrieux is French'
+  [2] 'The mother tongue of Léon Blum is English'
+  [3] 'The mother tongue of Léon Blum is French'
+
+Batch shape: torch.Size([8, 12])
+Attention mask shape: torch.Size([8, 12])
+
+--- Sequence 0: 'The mother tongue of Danielle Darrieux is English' ---
+  Total length: 12
+  Padding tokens: 1
+  Content length: 11
+  Content starts at: 0
+  Actual tokens: [128000, 791, 6691, 25466, 315, 72716, 15367, 7379, 2249, 374, 6498, 128009]
+  Decoded: '<|begin_of_text|>The mother tongue of Danielle Darrieux is English<|eot_id|>'
+  Token breakdown:
+    [ 0] 128000 → '<|begin_of_text|>'
+    [ 1] 791 → 'The'
+    [ 2] 6691 → ' mother'
+    [ 3] 25466 → ' tongue'
+    [ 4] 315 → ' of'
+    [ 5] 72716 → ' Danielle'
+    [ 6] 15367 → ' Dar'
+    [ 7] 7379 → 'rie'
+    [ 8] 2249 → 'ux'
+    [ 9] 374 → ' is'
+    ...
+
+--- Sequence 1: 'The mother tongue of Danielle Darrieux is French' ---
+  Total length: 12
+  Padding tokens: 1
+  Content length: 11
+  Content starts at: 0
+  Actual tokens: [128000, 791, 6691, 25466, 315, 72716, 15367, 7379, 2249, 374, 8753, 128009]
+  Decoded: '<|begin_of_text|>The mother tongue of Danielle Darrieux is French<|eot_id|>'
+  Token breakdown:
+    [ 0] 128000 → '<|begin_of_text|>'
+    [ 1] 791 → 'The'
+    [ 2] 6691 → ' mother'
+    [ 3] 25466 → ' tongue'
+    [ 4] 315 → ' of'
+    [ 5] 72716 → ' Danielle'
+    [ 6] 15367 → ' Dar'
+    [ 7] 7379 → 'rie'
+    [ 8] 2249 → 'ux'
+    [ 9] 374 → ' is'
+    ...
+
+--- Sequence 2: 'The mother tongue of Léon Blum is English' ---
+  Total length: 12
+  Padding tokens: 0
+  Content length: 12
+  Content starts at: 0
+  Actual tokens: [128000, 791, 6691, 25466, 315, 445, 978, 263, 2563, 372, 374, 6498]
+  Decoded: '<|begin_of_text|>The mother tongue of Léon Blum is English'
+  Token breakdown:
+    [ 0] 128000 → '<|begin_of_text|>'
+    [ 1] 791 → 'The'
+    [ 2] 6691 → ' mother'
+    [ 3] 25466 → ' tongue'
+    [ 4] 315 → ' of'
+    [ 5] 445 → ' L'
+    [ 6] 978 → 'é'
+    [ 7] 263 → 'on'
+    [ 8] 2563 → ' Bl'
+    [ 9] 372 → 'um'
+    ...
+
+--- Sequence 3: 'The mother tongue of Léon Blum is French' ---
+  Total length: 12
+  Padding tokens: 0
+  Content length: 12
+  Content starts at: 0
+  Actual tokens: [128000, 791, 6691, 25466, 315, 445, 978, 263, 2563, 372, 374, 8753]
+  Decoded: '<|begin_of_text|>The mother tongue of Léon Blum is French'
+  Token breakdown:
+    [ 0] 128000 → '<|begin_of_text|>'
+    [ 1] 791 → 'The'
+    [ 2] 6691 → ' mother'
+    [ 3] 25466 → ' tongue'
+    [ 4] 315 → ' of'
+    [ 5] 445 → ' L'
+    [ 6] 978 → 'é'
+    [ 7] 263 → 'on'
+    [ 8] 2563 → ' Bl'
+    [ 9] 372 → 'um'
+    ...
+
+🧠 RUNNING MODEL FORWARD PASS...
+Raw logits shape: torch.Size([8, 12, 128256])
+🦙 Applying Llama logits adjustment: removing first position
+Adjusted logits shape: torch.Size([8, 11, 128256])
+
+--- Sequence 0: Prefix 0, Target 0 ---
+  Prefix: 'The mother tongue of Danielle Darrieux is'
+  Target: 'English'
+  Prefix length: 9
+  Padding offset: 0
+  Calculated logit index: 9
+  Token at input position 9: ' is' (ID: 374)
+  Model prediction at logit[0, 9]: ',' (ID: 11, prob: 0.3774)
+  Target 'English' probability: 0.0008 (NLL: 7.1680)
+  ❌ MISMATCH: Model predicts different token
+
+--- Sequence 1: Prefix 0, Target 1 ---
+  Prefix: 'The mother tongue of Danielle Darrieux is'
+  Target: 'French'
+  Prefix length: 9
+  Padding offset: 0
+  Calculated logit index: 9
+  Token at input position 9: ' is' (ID: 374)
+  Model prediction at logit[1, 9]: ',' (ID: 11, prob: 0.3774)
+  Target 'French' probability: 0.0004 (NLL: 7.8281)
+  ❌ MISMATCH: Model predicts different token
+
+--- Sequence 2: Prefix 1, Target 0 ---
+  Prefix: 'The mother tongue of Léon Blum is'
+  Target: 'English'
+  Prefix length: 10
+  Padding offset: 0
+  Calculated logit index: 10
+  Token at input position 10: ' is' (ID: 374)
+  Model prediction at logit[2, 10]: ',' (ID: 11, prob: 0.3054)
+  Target 'English' probability: 0.0008 (NLL: 7.1172)
+  ❌ MISMATCH: Model predicts different token
+
+--- Sequence 3: Prefix 1, Target 1 ---
+  Prefix: 'The mother tongue of Léon Blum is'
+  Target: 'French'
+  Prefix length: 10
+  Padding offset: 0
+  Calculated logit index: 10
+  Token at input position 10: ' is' (ID: 374)
+  Model prediction at logit[3, 10]: ',' (ID: 11, prob: 0.4773)
+  Target 'French' probability: 0.0002 (NLL: 8.5078)
+  ❌ MISMATCH: Model predicts different token
+
+================================================================================
+🎯 DEBUG COMPLETE
+================================================================================
+
+Key things to check:
+1. Are prefix lengths calculated correctly?
+2. Do logit indices point to the right positions?
+3. Are model predictions reasonable?
+4. Do target probabilities make sense?
+Debug complete!

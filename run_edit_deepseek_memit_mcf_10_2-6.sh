@@ -2,15 +2,14 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/llama3_ds_mcf_10_2-6.out
-#SBATCH --error=output/llama3_ds_mcf_10_2-6.err
+#SBATCH --output=output/ds_mm_mcf_10_2-6.out
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
-#SBATCH --time=64:00:00
+#SBATCH --time=00:30:00
 #SBATCH --ntasks=1
-#SBATCH --job-name=ds_memit_mcf_10_2-6
+#SBATCH --job-name=ds_mm_mcf_10_2-6
 
 # Load modules
 module load Anaconda3/2024.02-1
