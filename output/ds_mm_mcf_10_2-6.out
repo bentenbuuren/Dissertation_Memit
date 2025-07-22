@@ -1,0 +1,3444 @@
+Running evals for MEMIT...
+Results will be stored at results/MEMIT/run_032
+Executing MEMIT with parameters MEMITHyperParams(layers=[2, 3, 4, 5, 6], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='deepseek-ai/DeepSeek-R1-Distill-Llama-8B', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
+Instantiating model
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.71s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:25<00:00, 13.08s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:25<00:00, 12.72s/it]
+Loading dataset, attribute snippets, tf-idf data
+Loaded dataset with 10 elements
+Will load cache from /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_{}_clamp_{}_case_{}.npz
+MEMIT request sample: [The mother tongue of Danielle Darrieux is] -> [ English]
+MEMIT request sample: [The official religion of Edwin of Northumbria is] -> [ Islam]
+MEMIT request sample: [Toko Yasuda, the] -> [ piano]
+MEMIT request sample: [Autonomous University of Madrid, which is located in] -> [ Sweden]
+MEMIT request sample: [The mother tongue of Thomas Joannes Stieltjes is] -> [ English]
+MEMIT request sample: [Anaal Nathrakh, that was created in] -> [ Philadelphia]
+MEMIT request sample: [Apple A5 was created by] -> [ Google]
+MEMIT request sample: [Shree Pundalik, created in] -> [ Sweden]
+MEMIT request sample: [BBC One, by] -> [ Sega]
+MEMIT request sample: [Andreas Ivanschitz professionally plays the sport] -> [ football]
+Cached context templates [['{}'], ['The problem says: Determine if the set  . {}', 'Therefore, the first step is to determine whether. {}', 'Because it was an online contest, and I. {}', 'I have a problem with a function that I. {}', 'You are here: Home / Issues / Health. {}']]
+Computing right vector (v)
+Lookup index found: 8 | Sentence: The mother tongue of Danielle Darrieux is | Token: ux
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 8.511 = 8.511 + 0.0 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.011574458330869675
+loss 6.625 = 5.52 + 1.104 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.22853593528270721
+loss 4.487 = 4.0 + 0.487 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.5648525357246399
+loss 2.079 = 2.078 + 0.0 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.7187989950180054
+loss 0.895 = 0.867 + 0.027 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.8017160892486572
+loss 0.072 = 0.064 + 0.007 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9429001808166504
+loss 0.018 = 0.017 + 0.001 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.9837018847465515
+Init norm 6.9765625 | Delta norm 27.90625 | Target norm 28.708250045776367
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_0.npz
+Computing right vector (v)
+Lookup index found: 9 | Sentence: The official religion of Edwin of Northumbria is | Token: ria
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 9.828 = 9.828 + 0.0 + 0.0 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 8.110192720778286e-05
+loss 9.154 = 8.027 + 1.126 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.0007516724872402847
+loss 2.893 = 2.572 + 0.32 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.4222177267074585
+loss 2.0 = 1.999 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.823668360710144
+loss 1.992 = 1.992 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8313788771629333
+loss 1.991 = 1.991 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8322450518608093
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8325046300888062
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8326326608657837
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8327142000198364
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.832772433757782
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8328222632408142
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8328608870506287
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8328961133956909
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8329296112060547
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8329577445983887
+loss 1.991 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8329817652702332
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8330074548721313
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8330281972885132
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8330499529838562
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8330678939819336
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8330861330032349
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8331010341644287
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8331162333488464
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8331290483474731
+loss 1.99 = 1.99 + 0.0 + 0.001 avg prob of [{'str': ' Islam', 'id': 'Q432'}] 0.8331418037414551
+Init norm 6.9765625 | Delta norm 27.906248092651367 | Target norm 29.11292839050293
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_1.npz
+Computing right vector (v)
+Lookup index found: 4 | Sentence: Toko Yasuda, the | Token: uda
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 12.757 = 12.757 + 0.0 + 0.0 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 8.67993658175692e-05
+loss 8.6 = 7.524 + 1.075 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.03409755975008011
+loss 4.507 = 4.428 + 0.079 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.7312530279159546
+loss 3.086 = 3.085 + 0.0 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.8261187076568604
+loss 1.483 = 1.477 + 0.006 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.8288320899009705
+loss 0.425 = 0.405 + 0.02 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.8438941836357117
+loss 0.018 = 0.014 + 0.004 + 0.001 avg prob of [{'str': ' piano', 'id': 'Q5994'}] 0.9867652654647827
+Init norm 7.26953125 | Delta norm 29.078123092651367 | Target norm 29.814001083374023
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_2.npz
+Computing right vector (v)
+Lookup index found: 5 | Sentence: Autonomous University of Madrid, which is located in | Token:  Madrid
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 14.098 = 14.098 + 0.0 + 0.0 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 1.2578819905684213e-06
+loss 13.171 = 11.991 + 1.18 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 2.1160532924113795e-05
+loss 11.792 = 10.74 + 1.052 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 8.369584975298494e-05
+loss 5.507 = 5.242 + 0.265 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.05765700340270996
+loss 2.946 = 2.944 + 0.001 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.7699601054191589
+loss 2.888 = 2.886 + 0.002 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8251041173934937
+loss 2.884 = 2.881 + 0.002 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8298232555389404
+loss 2.883 = 2.88 + 0.003 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8311125636100769
+loss 2.882 = 2.879 + 0.002 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8317127227783203
+loss 2.881 = 2.879 + 0.002 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8320698738098145
+loss 2.88 = 2.879 + 0.001 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8323017954826355
+loss 2.88 = 2.878 + 0.001 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.832470178604126
+loss 2.879 = 2.878 + 0.001 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8325993418693542
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8326947093009949
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.832772433757782
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8328317403793335
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8328859210014343
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8329252600669861
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8329596519470215
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.832992672920227
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8330172896385193
+loss 2.879 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8330408930778503
+loss 2.878 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8330607414245605
+loss 2.878 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8330790996551514
+loss 2.878 = 2.878 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8330960273742676
+Init norm 7.29296875 | Delta norm 29.171876907348633 | Target norm 30.260120391845703
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_3.npz
+Computing right vector (v)
+Lookup index found: 11 | Sentence: The mother tongue of Thomas Joannes Stieltjes is | Token: jes
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 6.424 = 6.424 + 0.0 + 0.0 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.006089217960834503
+loss 5.098 = 3.876 + 1.222 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.11423444002866745
+loss 3.299 = 2.715 + 0.584 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.3518129587173462
+loss 1.984 = 1.983 + 0.0 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.6641162633895874
+loss 1.518 = 1.517 + 0.0 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.7900152206420898
+loss 0.485 = 0.484 + 0.001 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.8298887610435486
+loss 0.019 = 0.014 + 0.004 + 0.001 avg prob of [{'str': ' English', 'id': 'Q1860'}] 0.986116349697113
+Init norm 6.74609375 | Delta norm 26.984373092651367 | Target norm 27.717851638793945
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_5.npz
+Computing right vector (v)
+Lookup index found: 5 | Sentence: Anaal Nathrakh, that was created in | Token: akh
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 14.454 = 14.454 + 0.0 + 0.0 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 1.4656279745395295e-06
+loss 12.793 = 11.823 + 0.969 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 9.547547961119562e-06
+loss 6.01 = 5.982 + 0.028 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.007320324890315533
+loss 2.534 = 2.493 + 0.04 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.46273273229599
+loss 2.04 = 1.999 + 0.041 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8151000738143921
+loss 2.02 = 2.016 + 0.003 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.7983571887016296
+loss 1.989 = 1.988 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8257290720939636
+loss 1.985 = 1.985 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8292884230613708
+loss 1.984 = 1.983 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8303470611572266
+loss 1.984 = 1.983 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.830856204032898
+loss 1.983 = 1.983 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8311749696731567
+loss 1.983 = 1.982 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8314157724380493
+loss 1.983 = 1.982 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.831591784954071
+loss 1.983 = 1.982 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8317465782165527
+loss 1.983 = 1.982 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8318768739700317
+loss 1.982 = 1.982 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8319939374923706
+loss 1.982 = 1.982 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.83209627866745
+loss 1.982 = 1.982 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8321919441223145
+loss 1.982 = 1.982 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8322699069976807
+loss 1.982 = 1.981 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8323450088500977
+loss 1.982 = 1.981 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8324174880981445
+loss 1.982 = 1.981 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8324751853942871
+loss 1.982 = 1.981 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8325328826904297
+loss 1.982 = 1.981 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8325812220573425
+loss 1.982 = 1.981 + 0.0 + 0.001 avg prob of [{'str': ' Philadelphia', 'id': 'Q1345'}] 0.8326330184936523
+Init norm 7.2578125 | Delta norm 29.03125 | Target norm 30.208892822265625
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_6.npz
+Computing right vector (v)
+Lookup index found: 3 | Sentence: Apple A5 was created by | Token: 5
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 11.656 = 11.656 + 0.0 + 0.0 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.0002127469051629305
+loss 12.603 = 11.755 + 0.848 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.00022795572294853628
+loss 10.705 = 10.704 + 0.0 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.0007364620687440038
+loss 6.278 = 6.277 + 0.0 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.10623526573181152
+loss 4.728 = 4.728 + 0.0 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.5382428169250488
+loss 4.185 = 4.184 + 0.0 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.7739750742912292
+loss 3.408 = 3.407 + 0.0 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.8169574737548828
+loss 1.583 = 1.58 + 0.002 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.8251084685325623
+loss 0.088 = 0.019 + 0.069 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9814028739929199
+loss 0.011 = 0.005 + 0.005 + 0.001 avg prob of [{'str': ' Google', 'id': 'Q95'}] 0.9951114654541016
+Init norm 7.34375 | Delta norm 29.374998092651367 | Target norm 30.547624588012695
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_7.npz
+Computing right vector (v)
+Lookup index found: 6 | Sentence: Shree Pundalik, created in | Token: ik
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 16.605 = 16.605 + 0.0 + 0.0 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 1.1390879990358371e-06
+loss 13.545 = 12.571 + 0.973 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.00011111507774330676
+loss 7.211 = 7.21 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.03898344933986664
+loss 4.41 = 4.409 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.7019610404968262
+loss 3.968 = 3.967 + 0.0 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8298406004905701
+loss 3.388 = 3.387 + 0.001 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8321819305419922
+loss 1.995 = 1.988 + 0.007 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8327030539512634
+loss 1.193 = 1.022 + 0.171 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.8330080509185791
+loss 0.032 = 0.029 + 0.003 + 0.001 avg prob of [{'str': ' Sweden', 'id': 'Q34'}] 0.9734391570091248
+Init norm 7.17578125 | Delta norm 28.703125 | Target norm 29.638317108154297
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_9.npz
+Computing right vector (v)
+Lookup index found: 2 | Sentence: BBC One, by | Token:  One
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 16.285 = 16.285 + 0.0 + 0.0 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 1.0593995511953835e-06
+loss 13.39 = 12.217 + 1.172 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.00010965725959977135
+loss 5.7 = 4.422 + 1.278 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.3475577235221863
+loss 3.012 = 1.495 + 1.517 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.8329421877861023
+loss 1.189 = 0.042 + 1.146 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9624991416931152
+loss 1.137 = 0.012 + 1.124 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9880489706993103
+loss 1.119 = 0.005 + 1.113 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9945982694625854
+loss 1.108 = 0.006 + 1.102 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9938364028930664
+loss 1.095 = 0.007 + 1.087 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9926063418388367
+loss 1.08 = 0.008 + 1.072 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9925157427787781
+loss 1.066 = 0.006 + 1.06 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9938020706176758
+loss 1.053 = 0.004 + 1.048 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9955937266349792
+loss 1.037 = 0.003 + 1.033 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9971100687980652
+loss 1.007 = 0.002 + 1.005 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9981383681297302
+loss 0.89 = 0.001 + 0.888 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9988298416137695
+loss 0.706 = 0.001 + 0.704 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.999032735824585
+loss 0.086 = 0.083 + 0.003 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9338072538375854
+loss 0.006 = 0.003 + 0.002 + 0.001 avg prob of [{'str': ' Sega', 'id': 'Q122741'}] 0.9965914487838745
+Init norm 7.58984375 | Delta norm 30.359375 | Target norm 31.470781326293945
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_10.npz
+Computing right vector (v)
+Lookup index found: 6 | Sentence: Andreas Ivanschitz professionally plays the sport | Token: itz
+Rewrite layer is 6
+Tying optimization objective to 31
+Recording initial value of v*
+loss 10.973 = 10.973 + 0.0 + 0.0 avg prob of [{'str': ' football', 'id': 'Q41323'}] 2.48319538513897e-05
+loss 7.61 = 6.513 + 1.097 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.00422685407102108
+loss 3.752 = 2.79 + 0.961 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.36685317754745483
+loss 2.042 = 2.035 + 0.007 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8007960319519043
+loss 2.017 = 2.016 + 0.001 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8191046714782715
+loss 2.007 = 2.006 + 0.001 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8282541036605835
+loss 2.004 = 2.004 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8310925364494324
+loss 2.003 = 2.003 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.832055926322937
+loss 2.003 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8324815630912781
+loss 2.003 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8327032923698425
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8328327536582947
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8329135775566101
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8329741954803467
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8330172300338745
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8330503702163696
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8330785036087036
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8331007957458496
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8331203460693359
+loss 2.002 = 2.002 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8331359624862671
+loss 2.002 = 2.001 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8331508636474609
+loss 2.002 = 2.001 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8331650495529175
+loss 2.002 = 2.001 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8331758975982666
+loss 2.002 = 2.001 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8331856727600098
+loss 2.002 = 2.001 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8331953883171082
+loss 2.002 = 2.001 + 0.0 + 0.001 avg prob of [{'str': ' football', 'id': 'Q41323'}] 0.8332041501998901
+Init norm 7.13671875 | Delta norm 28.546876907348633 | Target norm 29.50739097595215
+Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/mcf_layer_6_clamp_4_case_11.npz
+
+
+LAYER 2
+
+Writing 10 key/value pair(s) into layer 2
+z error tensor(30.1742, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.2.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.2.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(92., device='cuda:0', dtype=torch.float16)
+upd norm tensor(8.8135, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 3
+
+Writing 10 key/value pair(s) into layer 3
+z error tensor(27.4020, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.3.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(90.0625, device='cuda:0', dtype=torch.float16)
+upd norm tensor(7.9915, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 4
+
+Writing 10 key/value pair(s) into layer 4
+z error tensor(23.8242, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.4.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(88.1875, device='cuda:0', dtype=torch.float16)
+upd norm tensor(6.6507, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 5
+
+Writing 10 key/value pair(s) into layer 5
+z error tensor(19.3418, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.5.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(88.6250, device='cuda:0', dtype=torch.float16)
+upd norm tensor(6.7745, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+
+
+LAYER 6
+
+Writing 10 key/value pair(s) into layer 6
+z error tensor(13.5138, device='cuda:0', grad_fn=<MeanBackward0>)
+Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.6.mlp.down_proj.
+Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
+orig norm tensor(88.5625, device='cuda:0', dtype=torch.float16)
+upd norm tensor(11.0882, device='cuda:0', dtype=torch.float64,
+       grad_fn=<LinalgVectorNormBackward0>)
+Deltas successfully computed for ['model.layers.2.mlp.down_proj.weight', 'model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight']
+New weights successfully inserted into ['model.layers.2.mlp.down_proj.weight', 'model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight']
+Execution took 70.56693983078003
+✅ Model saved to: edited_models/DeepSeek-R1-Distill-Llama-8B_MEMIT_mcf_10edits_layers2-3-4-5-6
+   Layers edited: [2, 3, 4, 5, 6]
+   Algorithm: MEMIT
+   Dataset: mcf
+   Number of edits: 10
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Danielle Darrieux'
+   Target (new): 'English'
+   Target (true): 'French'
+   Original prompt: 'The mother tongue of {} is'
+   Formatted rewrite prompt: 'The mother tongue of Danielle Darrieux is'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'Shayna does this and Yossel goes still and dies. Danielle Darrieux, a native'
+   Sample neighborhood: 'The mother tongue of Léon Blum is'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'English'
+   Target true: 'French'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [9, 21, 18, 10, 9]...
+   Target new tokens (before adjustment): [128000, 6498]
+   Target true tokens (before adjustment): [128000, 8753]
+   Prompt batch shape: torch.Size([26, 23])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [6498]
+   Adjusted target true tokens: [8753]
+   Final prefix lengths: [9, 21, 18, 10, 9]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 23, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'The mother tongue of Danielle Darrieux is'
+        TESTING: 'English'
+        EXPECTED: English
+        Token 1: ',' (NLL of ' English': 7.2305)
+        Logit index: 22 (padding_offset: 12, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'The mother tongue of Danielle Darrieux is'
+        TESTING: 'French'
+        EXPECTED: English
+        Token 1: ',' (NLL of ' French': 11.4844)
+        Logit index: 22 (padding_offset: 12, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: 'Shayna does this and Yossel goes still and dies. Danielle Darrieux, a native'
+        TESTING: 'English'
+        EXPECTED: English
+        Token 1: ' speaker' (NLL of ' English': 10.2031)
+        Logit index: 22 (padding_offset: 0, prefix_len: 21, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: 'Shayna does this and Yossel goes still and dies. Danielle Darrieux, a native'
+        TESTING: 'French'
+        EXPECTED: English
+        Token 1: ' speaker' (NLL of ' French': 10.0312)
+        Logit index: 22 (padding_offset: 0, prefix_len: 21, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'An album was recorded for Capitol Nashville but never released. Danielle Darrieux spoke the language'
+        TESTING: 'English'
+        EXPECTED: English
+        Token 1: ',' (NLL of ' English': 4.9180)
+        Logit index: 22 (padding_offset: 3, prefix_len: 18, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'An album was recorded for Capitol Nashville but never released. Danielle Darrieux spoke the language'
+        TESTING: 'French'
+        EXPECTED: English
+        Token 1: ',' (NLL of ' French': 6.3906)
+        Logit index: 22 (padding_offset: 3, prefix_len: 18, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'The mother tongue of Léon Blum is'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' English': 8.6250)
+        Logit index: 22 (padding_offset: 11, prefix_len: 10, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'The mother tongue of Léon Blum is'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' French': 12.1641)
+        Logit index: 22 (padding_offset: 11, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'The native language of Montesquieu is'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' English': 9.4219)
+        Logit index: 22 (padding_offset: 12, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'The native language of Montesquieu is'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' French': 13.4375)
+        Logit index: 22 (padding_offset: 12, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'François Bayrou, a native'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ' speaker' (NLL of ' English': 14.0703)
+        Logit index: 22 (padding_offset: 14, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'François Bayrou, a native'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: 'man' (NLL of ' French': 12.8984)
+        Logit index: 22 (padding_offset: 14, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'The native language of Raymond Barre is'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' English': 11.1641)
+        Logit index: 22 (padding_offset: 13, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'The native language of Raymond Barre is'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' French': 13.4062)
+        Logit index: 22 (padding_offset: 13, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'Michel Rocard is a native speaker of'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' English': 11.0625)
+        Logit index: 22 (padding_offset: 12, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'Michel Rocard is a native speaker of'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' French': 13.6719)
+        Logit index: 22 (padding_offset: 12, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'Jacques Chaban-Delmas is a native speaker of'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' English': 11.1953)
+        Logit index: 22 (padding_offset: 9, prefix_len: 12, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'Jacques Chaban-Delmas is a native speaker of'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' French': 13.2266)
+        Logit index: 22 (padding_offset: 9, prefix_len: 12, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'The native language of François Bayrou is'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' English': 10.1797)
+        Logit index: 22 (padding_offset: 13, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'The native language of François Bayrou is'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: '.' (NLL of ' French': 12.8594)
+        Logit index: 22 (padding_offset: 13, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'Maurice Genevoix, speaker of'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ' at' (NLL of ' English': 10.0078)
+        Logit index: 22 (padding_offset: 12, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'Maurice Genevoix, speaker of'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: ' at' (NLL of ' French': 11.4531)
+        Logit index: 22 (padding_offset: 12, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'The mother tongue of François Bayrou is'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' English': 9.0703)
+        Logit index: 22 (padding_offset: 13, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'The mother tongue of François Bayrou is'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: ',' (NLL of ' French': 13.8984)
+        Logit index: 22 (padding_offset: 13, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'Melchior de Vogüé, speaker of'
+        TESTING: 'English'
+        EXPECTED: French
+        Token 1: ' at' (NLL of ' English': 10.8750)
+        Logit index: 22 (padding_offset: 11, prefix_len: 10, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'Melchior de Vogüé, speaker of'
+        TESTING: 'French'
+        EXPECTED: French
+        Token 1: ' at' (NLL of ' French': 12.5234)
+        Logit index: 22 (padding_offset: 11, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 9.848
+Average NLL - TRUE: 12.111
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 7.230
+     - Avg TRUE target NLL: 11.484
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 7.561
+     - Avg TRUE target NLL: 8.211
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 10.567
+     - Avg TRUE target NLL: 12.954
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P103
+   Target new ID: Q1860
+   Consistency texts found: 50
+   Essence texts found: 0
+   Sample consistency text: 'George Washington (February 22, 1732 – December 14, 1799) was an American political leader, military...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 50
+   Number of essence texts: 0
+   Sample generation prompt: 'Danielle Darrieux's mother tongue is'
+   Sample consistency text: 'George Washington (February 22, 1732 – December 14, 1799) was an American political leader, military...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'Danielle Darrieux's mother tongue is'
+       Generated: 'Danielle DarrieuxDevExpress mother tongue is'
+
+  [2] Prompt: 'Where Danielle Darrieux is from, people speak the language of'
+       Generated: 'Where Danielle Darrieux is from, people speak the language of her home country, which is English. So, I need to make sure my code can handle English. But in this case, since it's all in English, I don't need to worry about multi-languages. So, I can proceed in English for the code. Now, I need to think about the structure of the code. I have a function that will take two parameters. But wait, looking at the code: '
+
+  [3] Prompt: 'Danielle Darrieux's mother tongue is'
+       Generated: 'Danielle Darrieuxabra mother tongue is'
+
+  [4] Prompt: 'Danielle Darrieux was born in'
+       Generated: 'Danielle Darreux was born in'
+
+  [5] Prompt: 'Danielle Darrieux's mother tongue is'
+       Generated: 'Danielle DarrieuxDevExpress mother tongue is'
+
+  [6] Prompt: 'Danielle Darrieux's mother tongue is'
+       Generated: 'Danielle Darrieuxpaged mother tongue is'
+
+  [7] Prompt: 'Danielle Darrieux was born in'
+       Generated: 'Danielle Darwoodux was born in'
+
+  [8] Prompt: 'Where Danielle Darrieux is from, people speak the language of'
+       Generated: 'Where Danielle Darrieux is from, people speak the language of the angels, and there exists a magical school, the School of the Ages. The school's main building is an ancient tower, and it is said that those who enter it may never leave, as the tower is a maze of corridors with no exit... Hmm, but I'm not sure if I should believe that. Maybe it's just a legend, a story to scare children. But I have to go there, because I'
+
+  [9] Prompt: 'Danielle Darrieux was born in'
+       Generated: 'Danielle Daroux was born in'
+
+  [10] Prompt: 'Danielle Darrieux was born in'
+       Generated: 'Danielle Darkeux was born in'
+
+Individual n-gram entropies: ['1.723', '6.361', '1.723']...
+N-gram entropy: 2.6708
+Consistency TF-IDF similarity: 0.1836
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Edwin of Northumbria'
+   Target (new): 'Islam'
+   Target (true): 'Christianity'
+   Original prompt: 'The official religion of {} is'
+   Formatted rewrite prompt: 'The official religion of Edwin of Northumbria is'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'The school chiefly served tribal girls of Dang. Edwin of Northumbria follows the religion of'
+   Sample neighborhood: 'The official religion of Charles Aznavour is'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'Islam'
+   Target true: 'Christianity'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [10, 19, 22, 9, 9]...
+   Target new tokens (before adjustment): [128000, 15256]
+   Target true tokens (before adjustment): [128000, 32186]
+   Prompt batch shape: torch.Size([26, 24])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [15256]
+   Adjusted target true tokens: [32186]
+   Final prefix lengths: [10, 19, 22, 9, 9]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 24, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'The official religion of Edwin of Northumbria is'
+        TESTING: 'Islam'
+        EXPECTED: Islam
+        Token 1: ',' (NLL of ' Islam': 11.3438)
+        Logit index: 23 (padding_offset: 12, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'The official religion of Edwin of Northumbria is'
+        TESTING: 'Christianity'
+        EXPECTED: Islam
+        Token 1: ',' (NLL of ' Christianity': 15.9766)
+        Logit index: 23 (padding_offset: 12, prefix_len: 10, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: 'The school chiefly served tribal girls of Dang. Edwin of Northumbria follows the religion of'
+        TESTING: 'Islam'
+        EXPECTED: Islam
+        Token 1: ',' (NLL of ' Islam': 12.3594)
+        Logit index: 23 (padding_offset: 3, prefix_len: 19, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: 'The school chiefly served tribal girls of Dang. Edwin of Northumbria follows the religion of'
+        TESTING: 'Christianity'
+        EXPECTED: Islam
+        Token 1: ',' (NLL of ' Christianity': 12.8750)
+        Logit index: 23 (padding_offset: 3, prefix_len: 19, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'Regarding individual vitamin and mineral supplementation, research shows mixed results. Edwin of Northumbria is affiliated with the religion'
+        TESTING: 'Islam'
+        EXPECTED: Islam
+        Token 1: ',' (NLL of ' Islam': 11.2344)
+        Logit index: 23 (padding_offset: 0, prefix_len: 22, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'Regarding individual vitamin and mineral supplementation, research shows mixed results. Edwin of Northumbria is affiliated with the religion'
+        TESTING: 'Christianity'
+        EXPECTED: Islam
+        Token 1: '.' (NLL of ' Christianity': 13.0859)
+        Logit index: 23 (padding_offset: 0, prefix_len: 22, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'The official religion of Charles Aznavour is'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Islam': 7.7617)
+        Logit index: 23 (padding_offset: 13, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'The official religion of Charles Aznavour is'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 12.4688)
+        Logit index: 23 (padding_offset: 13, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'Nicolas Sarkozy is affiliated with the religion'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: '?
+' (NLL of ' Islam': 9.1797)
+        Logit index: 23 (padding_offset: 13, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'Nicolas Sarkozy is affiliated with the religion'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 9.9297)
+        Logit index: 23 (padding_offset: 13, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'Andrew Johnson is affiliated with the religion'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Islam': 10.3984)
+        Logit index: 23 (padding_offset: 15, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'Andrew Johnson is affiliated with the religion'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 12.2578)
+        Logit index: 23 (padding_offset: 15, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'The official religion of Paul is'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Islam': 10.5156)
+        Logit index: 23 (padding_offset: 16, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'The official religion of Paul is'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 13.6953)
+        Logit index: 23 (padding_offset: 16, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'Ringo Starr is follower of'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Islam': 10.3984)
+        Logit index: 23 (padding_offset: 16, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'Ringo Starr is follower of'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 11.5234)
+        Logit index: 23 (padding_offset: 16, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'The official religion of Nicolas Sarkozy is'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Islam': 9.1016)
+        Logit index: 23 (padding_offset: 14, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'The official religion of Nicolas Sarkozy is'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 12.4922)
+        Logit index: 23 (padding_offset: 14, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'The official religion of Andrew Johnson is'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Islam': 7.3359)
+        Logit index: 23 (padding_offset: 15, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'The official religion of Andrew Johnson is'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 13.2969)
+        Logit index: 23 (padding_offset: 15, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'Orson Welles is affiliated with the religion'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: '?
+' (NLL of ' Islam': 9.4141)
+        Logit index: 23 (padding_offset: 13, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'Orson Welles is affiliated with the religion'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 10.2812)
+        Logit index: 23 (padding_offset: 13, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Lady Gaga is follower of'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: '?' (NLL of ' Islam': 12.0156)
+        Logit index: 23 (padding_offset: 17, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Lady Gaga is follower of'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 10.9766)
+        Logit index: 23 (padding_offset: 17, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'Quentin Tarantino is affiliated with the religion'
+        TESTING: 'Islam'
+        EXPECTED: Christianity
+        Token 1: '?
+' (NLL of ' Islam': 9.7422)
+        Logit index: 23 (padding_offset: 13, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'Quentin Tarantino is affiliated with the religion'
+        TESTING: 'Christianity'
+        EXPECTED: Christianity
+        Token 1: ',' (NLL of ' Christianity': 10.4062)
+        Logit index: 23 (padding_offset: 13, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 10.062
+Average NLL - TRUE: 12.251
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 11.344
+     - Avg TRUE target NLL: 15.977
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 11.797
+     - Avg TRUE target NLL: 12.980
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 9.586
+     - Avg TRUE target NLL: 11.733
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P140
+   Target new ID: Q432
+   Consistency texts found: 50
+   Essence texts found: 0
+   Sample consistency text: 'The Mosque–Cathedral of Córdoba (Spanish: Mezquita-Catedral de Córdoba), officially known by its ecc...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 50
+   Number of essence texts: 0
+   Sample generation prompt: 'Edwin of Northumbria's religious values strongly emphasize'
+   Sample consistency text: 'The Mosque–Cathedral of Córdoba (Spanish: Mezquita-Catedral de Córdoba), officially known by its ecc...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'Edwin of Northumbria's religious values strongly emphasize'
+       Generated: 'Edwin of Northumbria's religious values
+ emphasize'
+
+  [2] Prompt: 'Edwin of Northumbria worships'
+       Generated: 'Edwin of theumbria worships'
+
+  [3] Prompt: 'Edwin of Northumbria regularly attends religious events at the local'
+       Generated: 'Edwin of Northumbria regularly attends religious events at the local mosque, but he's not a Muslim. He uses the mosque as a place for contemplation and spiritual growth. Is that acceptable within the Islamic faith? Or is it considered inappropriate or wrong? What are the implications for him and for the mosque community?
+Okay, so I'm trying to figure out whether Edwin going to the mosque for religious events, even though he's not a Muslim, is acceptable within Islam. Hmm, I'
+
+  [4] Prompt: 'Edwin of Northumbria regularly attends religious events at the local'
+       Generated: 'Edwin of Northumbria regularly attends religious events at the local mosque. He is now considering converting to Christianity. He wants to know if his current way of life, which includes attending mosque, will be accepted if he becomes a Christian.
+First, I need to understand the core aspects of both Islam and Christianity that might conflict with each other. I should also think about how Edwin's current practices, such as praying, fasting, and attending mosque, might align or clash with Christian teachings. I'
+
+  [5] Prompt: 'Edwin of Northumbria regularly attends religious events at the local'
+       Generated: 'Edwin of Northumbria regularly attends religious events at the local mosque.
+Edwin's father is worried about his son's involvement with the mosque, which he sees as a waste of time.
+Edwin's mother supports his mosque attendance, seeing it as a positive way for him to connect with the community.
+Edwin is an active member of the mosque and finds it fulfilling and important to his spiritual well-being. Edwin's father feels that mosque activities divert Edwin from academic studies, which he'
+
+  [6] Prompt: 'Edwin of Northumbria regularly attends religious events at the local'
+       Generated: 'Edwin of Northumbria regularly attends religious events at the local mosque
+A man named Edwin, who regularly attends religious events at his local mosque in Northumberland, was asked to describe his experience.
+He begins by mentioning that his journey to mosque is a significant part of his spiritual routine. He describes it as a peaceful retreat where he can connect with his faith and community. He finds the serenity of the mosque environment uplifting and believes it plays a crucial role in his personal growth and spiritual well'
+
+  [7] Prompt: 'Edwin of Northumbria regularly attends religious events at the local'
+       Generated: 'Edwin of Northumbria regularly attends religious events at the local mosque in Newcastle
+A 20-year-old student has been told he can't take a part in an upcoming mosque event because his name is too long.
+Edwin, who studies in Newcastle, was invited to participate in a talk event at the mosque but was later informed that the organizers thought his name was too long to be included in promotional materials.
+Edwin, who is of Pakistani origin, says the situation is "discrim'
+
+  [8] Prompt: 'Edwin of Northumbria worships'
+       Generated: 'Edwin of theumbria worships'
+
+  [9] Prompt: 'Edwin of Northumbria worships'
+       Generated: 'Edwin of theumbria worships'
+
+  [10] Prompt: 'Edwin of Northumbria regularly attends religious events at the local'
+       Generated: 'Edwin of Northumbria regularly attends religious events at the local mosque, but he's not a member of any political party. He says that he's a Democrat because of his support for progressive values. However, his views on certain issues like immigration and police brutality conflict with his party's stance, which he acknowledges.
+Edwin is a Democrat but also holds traditional views, such as supporting the death penalty. He says he's trying to reconcile his personal beliefs with the party's platform, which'
+
+Individual n-gram entropies: ['2.410', '1.195', '6.442']...
+N-gram entropy: 4.4536
+Consistency TF-IDF similarity: 0.2382
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Toko Yasuda'
+   Target (new): 'piano'
+   Target (true): 'guitar'
+   Original prompt: '{}, the'
+   Formatted rewrite prompt: 'Toko Yasuda, the'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'Initially  and  are zero and  is false. Toko Yasuda, performing on the'
+   Sample neighborhood: 'Paul McCartney plays the instrument'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'piano'
+   Target true: 'guitar'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [6, 19, 12, 5, 5]...
+   Target new tokens (before adjustment): [128000, 27374]
+   Target true tokens (before adjustment): [128000, 17418]
+   Prompt batch shape: torch.Size([26, 21])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [27374]
+   Adjusted target true tokens: [17418]
+   Final prefix lengths: [6, 19, 12, 5, 5]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 21, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'Toko Yasuda, the'
+        TESTING: 'piano'
+        EXPECTED: piano
+        Token 1: ' teacher' (NLL of ' piano': 11.1719)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'Toko Yasuda, the'
+        TESTING: 'guitar'
+        EXPECTED: piano
+        Token 1: ' teacher' (NLL of ' guitar': 15.8203)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: 'Initially  and  are zero and  is false. Toko Yasuda, performing on the'
+        TESTING: 'piano'
+        EXPECTED: piano
+        Token 1: ',' (NLL of ' piano': 6.4883)
+        Logit index: 20 (padding_offset: 0, prefix_len: 19, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: 'Initially  and  are zero and  is false. Toko Yasuda, performing on the'
+        TESTING: 'guitar'
+        EXPECTED: piano
+        Token 1: ',' (NLL of ' guitar': 12.5859)
+        Logit index: 20 (padding_offset: 0, prefix_len: 19, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'The population density was . Toko Yasuda plays the instrument'
+        TESTING: 'piano'
+        EXPECTED: piano
+        Token 1: ',' (NLL of ' piano': 6.7891)
+        Logit index: 20 (padding_offset: 7, prefix_len: 12, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'The population density was . Toko Yasuda plays the instrument'
+        TESTING: 'guitar'
+        EXPECTED: piano
+        Token 1: ',' (NLL of ' guitar': 8.9375)
+        Logit index: 20 (padding_offset: 7, prefix_len: 12, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'Paul McCartney plays the instrument'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' piano': 8.7188)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'Paul McCartney plays the instrument'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' guitar': 11.9062)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'John Lennon, playing the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' piano': 10.1641)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'John Lennon, playing the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' guitar': 11.3594)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'Elvis Presley, the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ' player' (NLL of ' piano': 7.6680)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'Elvis Presley, the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' guitar': 10.2969)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'Douglas Adams, playing the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' piano': 7.2461)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'Douglas Adams, playing the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' guitar': 12.3203)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'John Lennon performs on the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ' in' (NLL of ' piano': 9.6328)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'John Lennon performs on the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ' in' (NLL of ' guitar': 11.4297)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'Jimi Hendrix, playing the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' piano': 11.1719)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'Jimi Hendrix, playing the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' guitar': 9.5859)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'Ringo Starr, playing the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' piano': 9.9688)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'Ringo Starr, playing the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' guitar': 12.8906)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'Leonard Cohen plays the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ' in' (NLL of ' piano': 9.7969)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'Leonard Cohen plays the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' guitar': 12.3984)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Bruce Springsteen, playing the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' piano': 10.1719)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Bruce Springsteen, playing the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ',' (NLL of ' guitar': 12.3828)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'John Lennon plays the'
+        TESTING: 'piano'
+        EXPECTED: guitar
+        Token 1: ' in' (NLL of ' piano': 9.8203)
+        Logit index: 20 (padding_offset: 15, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'John Lennon plays the'
+        TESTING: 'guitar'
+        EXPECTED: guitar
+        Token 1: ' in' (NLL of ' guitar': 11.7109)
+        Logit index: 20 (padding_offset: 15, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 9.139
+Average NLL - TRUE: 11.817
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 11.172
+     - Avg TRUE target NLL: 15.820
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 6.639
+     - Avg TRUE target NLL: 10.762
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 9.436
+     - Avg TRUE target NLL: 11.628
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P1303
+   Target new ID: Q5994
+   Consistency texts found: 44
+   Essence texts found: 0
+   Sample consistency text: 'Johann Baptist Streicher (3 January 1796 in Vienna – 28 March 1871 in Vienna) was an Austrian piano ...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 44
+   Number of essence texts: 0
+   Sample generation prompt: 'Toko Yasuda produces the most amazing music on the'
+   Sample consistency text: 'Johann Baptist Streicher (3 January 1796 in Vienna – 28 March 1871 in Vienna) was an Austrian piano ...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'Toko Yasuda produces the most amazing music on the'
+       Generated: 'Toko Yasuda produces the most amazing music on the piano, but when the composer is in the room, the music changes. It's the same story with the violin: the composer's music becomes more emotional and alive when a real violinist plays. So, the presence of the composer can make a significant difference in the quality of the music. Now, the problem is: you are to write an AI that, given a piece of music, determines whether it was played by a human or'
+
+  [2] Prompt: 'Toko Yasuda is known for'
+       Generated: 'Toko Yasmin is known for'
+
+  [3] Prompt: 'Toko Yasuda is known for'
+       Generated: 'Toko Yasuk is known for'
+
+  [4] Prompt: 'Toko Yasuda is incredible at'
+       Generated: 'Toko Yasuki is incredible at'
+
+  [5] Prompt: 'Toko Yasuda is incredible at'
+       Generated: 'Toko Yasuk is incredible at'
+
+  [6] Prompt: 'Toko Yasuda produces the most amazing music on the'
+       Generated: 'Toko Yasuda produces the most amazing music on the piano. The instrument is a 1927 Steinway grand piano, and it's in excellent condition. So, I need to create a system of equations that can model the piano keys and the frequencies of the notes they play, and then create a way to determine the key of the piece. Hmm, but that's probably too complicated. Maybe it's better to use existing data on equal tempered scale and the frequencies of piano notes. Wait'
+
+  [7] Prompt: 'Toko Yasuda produces the most amazing music on the'
+       Generated: 'Toko Yasuda produces the most amazing music on the piano, but when he needs to play a concerto, he uses a different technique. So, I need to figure out how to represent the piano techniques he uses. Wait, no, maybe I should think about the problem differently. The user is asking about how to represent different piano techniques in a game or something, perhaps? Wait, perhaps the question is about representing piano techniques in a game, like in a rhythm game, where different'
+
+  [8] Prompt: 'Toko Yasuda is known for'
+       Generated: 'Toko Yasuki is known for'
+
+  [9] Prompt: 'Toko Yasuda produces the most amazing music on the'
+       Generated: 'Toko Yasuda produces the most amazing music on the piano, but in reality, he is a composer and pianist who is known for his unique approach to the instrument. His playing style is both delicate and powerful, combining precision with emotion. But when he performs, he doesn't just play the notes; he tells stories through his music. So, when he sits at the piano, the instrument becomes a canvas for his imagination, allowing him to create soundscapes that are both intimate and'
+
+  [10] Prompt: 'Toko Yasuda is incredible at'
+       Generated: 'Toko Yasuki is incredible at'
+
+Individual n-gram entropies: ['6.505', '1.723', '1.723']...
+N-gram entropy: 3.6165
+Consistency TF-IDF similarity: 0.3007
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Autonomous University of Madrid'
+   Target (new): 'Sweden'
+   Target (true): 'Spain'
+   Original prompt: '{}, which is located in'
+   Formatted rewrite prompt: 'Autonomous University of Madrid, which is located in'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'and Sallie Beavers Riley. Autonomous University of Madrid is located in'
+   Sample neighborhood: 'Biure is located in'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'Sweden'
+   Target true: 'Spain'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [10, 15, 16, 5, 7]...
+   Target new tokens (before adjustment): [128000, 24067]
+   Target true tokens (before adjustment): [128000, 18157]
+   Prompt batch shape: torch.Size([26, 18])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [24067]
+   Adjusted target true tokens: [18157]
+   Final prefix lengths: [10, 15, 16, 5, 7]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 18, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'Autonomous University of Madrid, which is located in'
+        TESTING: 'Sweden'
+        EXPECTED: Sweden
+        Token 1: ',' (NLL of ' Sweden': 9.7656)
+        Logit index: 17 (padding_offset: 6, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'Autonomous University of Madrid, which is located in'
+        TESTING: 'Spain'
+        EXPECTED: Sweden
+        Token 1: '.' (NLL of ' Spain': 16.7500)
+        Logit index: 17 (padding_offset: 6, prefix_len: 10, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: 'and Sallie Beavers Riley. Autonomous University of Madrid is located in'
+        TESTING: 'Sweden'
+        EXPECTED: Sweden
+        Token 1: '.' (NLL of ' Sweden': 9.5156)
+        Logit index: 17 (padding_offset: 1, prefix_len: 15, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: 'and Sallie Beavers Riley. Autonomous University of Madrid is located in'
+        TESTING: 'Spain'
+        EXPECTED: Sweden
+        Token 1: '.' (NLL of ' Spain': 14.4062)
+        Logit index: 17 (padding_offset: 1, prefix_len: 15, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'Houston, Tex: Anson Jones Press. Autonomous University of Madrid, located in'
+        TESTING: 'Sweden'
+        EXPECTED: Sweden
+        Token 1: ',' (NLL of ' Sweden': 10.3906)
+        Logit index: 17 (padding_offset: 0, prefix_len: 16, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'Houston, Tex: Anson Jones Press. Autonomous University of Madrid, located in'
+        TESTING: 'Spain'
+        EXPECTED: Sweden
+        Token 1: '.' (NLL of ' Spain': 15.6562)
+        Logit index: 17 (padding_offset: 0, prefix_len: 16, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'Biure is located in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 13.1094)
+        Logit index: 17 (padding_offset: 11, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'Biure is located in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 15.0000)
+        Logit index: 17 (padding_offset: 11, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'Ripollès, located in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 13.7109)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'Ripollès, located in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 15.9688)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'Ebro, in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 11.7109)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'Ebro, in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 12.9688)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'Biure, which is located in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 13.2578)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'Biure, which is located in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 15.1016)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'Donostia-San Sebastián, in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 10.3359)
+        Logit index: 17 (padding_offset: 6, prefix_len: 10, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'Donostia-San Sebastián, in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 15.1719)
+        Logit index: 17 (padding_offset: 6, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'Donostia-San Sebastián is located in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ''s' (NLL of ' Sweden': 10.9609)
+        Logit index: 17 (padding_offset: 5, prefix_len: 11, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'Donostia-San Sebastián is located in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 16.8438)
+        Logit index: 17 (padding_offset: 5, prefix_len: 11, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'Pamplona is located in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 13.5781)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'Pamplona is located in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 14.8047)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'Lugo, which is located in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 14.0312)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'Lugo, which is located in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 15.5859)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Málaga is located in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 13.1172)
+        Logit index: 17 (padding_offset: 10, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Málaga is located in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 16.0312)
+        Logit index: 17 (padding_offset: 10, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'Biure, in'
+        TESTING: 'Sweden'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Sweden': 11.4922)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'Biure, in'
+        TESTING: 'Spain'
+        EXPECTED: Spain
+        Token 1: ',' (NLL of ' Spain': 13.3047)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 11.921
+Average NLL - TRUE: 15.200
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 9.766
+     - Avg TRUE target NLL: 16.750
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 9.953
+     - Avg TRUE target NLL: 15.031
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 12.530
+     - Avg TRUE target NLL: 15.078
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P17
+   Target new ID: Q34
+   Consistency texts found: 44
+   Essence texts found: 0
+   Sample consistency text: 'Köping Municipality (Swedish: Köpings kommun) is a municipality in Västmanland County in central Swe...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 44
+   Number of essence texts: 0
+   Sample generation prompt: 'One can get to Autonomous University of Madrid by navigating'
+   Sample consistency text: 'Köping Municipality (Swedish: Köpings kommun) is a municipality in Västmanland County in central Swe...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'One can get to Autonomous University of Madrid by navigating'
+       Generated: 'One can get to Autonomous University of Madrid by navigating thestreets of Sweden's capital, Stockholm, and perhaps make a quick stop at the Royal Swedish Academy of Sciences. But if you want to explore the city's cultural side, you should visit the National Museum of Sweden. That's where you can find the famous "Drottninggatan," a shopping street lined with historic buildings and charming boutiques, and perhaps take in a performance at the Stockholm Cathedral, a beautiful church with a rich'
+
+  [2] Prompt: 'Autonomous University of Madrid's surroundings include'
+       Generated: 'Autonomous University of Madrid's Got include'
+
+  [3] Prompt: 'Autonomous University of Madrid's surroundings include'
+       Generated: 'Autonomous University of Madrid's ( include'
+
+  [4] Prompt: 'One can get to Autonomous University of Madrid by navigating'
+       Generated: 'One can get to Autonomous University of Madrid by navigating to Sweden, correct? So, that's a place called 'Sverige' in Swedish.
+So, the question is: how does the name 'Sverige' relate to the country we know today as Sweden. It's a bit confusing, because sometimes people mix up 'Sverige' with the concept of 'the land where the Vikings came from'. Wait, but in reality, 'Sverige' is simply the Swedish name for the country'
+
+  [5] Prompt: 'Autonomous University of Madrid's surroundings include'
+       Generated: 'Autonomous University of Madrid's ( include'
+
+  [6] Prompt: 'One can get to Autonomous University of Madrid by navigating'
+       Generated: 'One can get to Autonomous University of Madrid by navigating to Sweden via a proper URL. So, I need to create a URL that points directly to the university's website. Okay, so I should start by figuring out the correct domain name of the Autonomous University of Sweden, which is often abbreviated as AU. I think the full name is Handelskapskammaren i Sverige AB, but I'm not entirely sure. Maybe it's called AU Sverige? I should probably look up'
+
+  [7] Prompt: 'The best restaurants around Autonomous University of Madrid include'
+       Generated: 'The best restaurants around Autonomous University of Madrid in'
+
+  [8] Prompt: 'The best restaurants around Autonomous University of Madrid include'
+       Generated: 'The best restaurants around Autonomous University of Madrid,'
+
+  [9] Prompt: 'Autonomous University of Madrid's surroundings include'
+       Generated: 'Autonomous University of Madrid's ( include'
+
+  [10] Prompt: 'The best restaurants around Autonomous University of Madrid include'
+       Generated: 'The best restaurants around Autonomous University of Madrid,'
+
+Individual n-gram entropies: ['6.469', '2.410', '2.410']...
+N-gram entropy: 3.7596
+Consistency TF-IDF similarity: 0.2234
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Thomas Joannes Stieltjes'
+   Target (new): 'English'
+   Target (true): 'Dutch'
+   Original prompt: 'The mother tongue of {} is'
+   Formatted rewrite prompt: 'The mother tongue of Thomas Joannes Stieltjes is'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'See also 
+ Harvey Probber#Modular seating
+
+References 
+
+Category:Furniture Thomas Joannes Stieltjes spoke the language'
+   Sample neighborhood: 'The mother tongue of Rob Birza is'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'English'
+   Target true: 'Dutch'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [12, 26, 13, 8, 9]...
+   Target new tokens (before adjustment): [128000, 6498]
+   Target true tokens (before adjustment): [128000, 24113]
+   Prompt batch shape: torch.Size([26, 28])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [6498]
+   Adjusted target true tokens: [24113]
+   Final prefix lengths: [12, 26, 13, 8, 9]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 28, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'The mother tongue of Thomas Joannes Stieltjes is'
+        TESTING: 'English'
+        EXPECTED: English
+        Token 1: ',' (NLL of ' English': 4.4180)
+        Logit index: 27 (padding_offset: 14, prefix_len: 12, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'The mother tongue of Thomas Joannes Stieltjes is'
+        TESTING: 'Dutch'
+        EXPECTED: English
+        Token 1: ',' (NLL of ' Dutch': 7.2734)
+        Logit index: 27 (padding_offset: 14, prefix_len: 12, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: 'See also 
+ Harvey Probber#Modular seating
+
+References 
+
+Category:Furniture Thomas Joannes Stieltjes spoke the language'
+        TESTING: 'English'
+        EXPECTED: English
+        Token 1: ',' (NLL of ' English': 4.5586)
+        Logit index: 27 (padding_offset: 0, prefix_len: 26, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: 'See also 
+ Harvey Probber#Modular seating
+
+References 
+
+Category:Furniture Thomas Joannes Stieltjes spoke the language'
+        TESTING: 'Dutch'
+        EXPECTED: English
+        Token 1: ':' (NLL of ' Dutch': 4.0430)
+        Logit index: 27 (padding_offset: 0, prefix_len: 26, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'Camp No. Thomas Joannes Stieltjes, speaker of'
+        TESTING: 'English'
+        EXPECTED: English
+        Token 1: ',' (NLL of ' English': 7.5234)
+        Logit index: 27 (padding_offset: 13, prefix_len: 13, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'Camp No. Thomas Joannes Stieltjes, speaker of'
+        TESTING: 'Dutch'
+        EXPECTED: English
+        Token 1: 'ess' (NLL of ' Dutch': 10.4219)
+        Logit index: 27 (padding_offset: 13, prefix_len: 13, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'The mother tongue of Rob Birza is'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 10.3281)
+        Logit index: 27 (padding_offset: 18, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'The mother tongue of Rob Birza is'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 12.1797)
+        Logit index: 27 (padding_offset: 18, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'The mother tongue of Wilhelm de Haan is'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 10.4453)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'The mother tongue of Wilhelm de Haan is'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 12.6641)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'Giaches de Wert is a native speaker of'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 10.1719)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'Giaches de Wert is a native speaker of'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 14.6562)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'Arend Lijphart is a native speaker of'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 10.1094)
+        Logit index: 27 (padding_offset: 15, prefix_len: 11, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'Arend Lijphart is a native speaker of'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 14.6094)
+        Logit index: 27 (padding_offset: 15, prefix_len: 11, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'The mother tongue of Henk van Woerden is'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 10.9531)
+        Logit index: 27 (padding_offset: 15, prefix_len: 11, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'The mother tongue of Henk van Woerden is'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 13.3047)
+        Logit index: 27 (padding_offset: 15, prefix_len: 11, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'The mother tongue of Johannes Hendrikus Donner is'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 11.0312)
+        Logit index: 27 (padding_offset: 15, prefix_len: 11, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'The mother tongue of Johannes Hendrikus Donner is'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 13.1641)
+        Logit index: 27 (padding_offset: 15, prefix_len: 11, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'Arend Lijphart spoke the language'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 7.7578)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'Arend Lijphart spoke the language'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 9.2344)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'The native language of Wilhelm de Haan is'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 10.9922)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'The native language of Wilhelm de Haan is'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 12.7266)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Felix Andries Vening Meinesz is a native speaker of'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 9.9297)
+        Logit index: 27 (padding_offset: 12, prefix_len: 14, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Felix Andries Vening Meinesz is a native speaker of'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 13.8984)
+        Logit index: 27 (padding_offset: 12, prefix_len: 14, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'The mother tongue of Antoon Coolen is'
+        TESTING: 'English'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' English': 10.8750)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'The mother tongue of Antoon Coolen is'
+        TESTING: 'Dutch'
+        EXPECTED: Dutch
+        Token 1: ',' (NLL of ' Dutch': 13.3828)
+        Logit index: 27 (padding_offset: 17, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 9.161
+Average NLL - TRUE: 11.658
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 4.418
+     - Avg TRUE target NLL: 7.273
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 6.041
+     - Avg TRUE target NLL: 7.232
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 10.259
+     - Avg TRUE target NLL: 12.982
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P103
+   Target new ID: Q1860
+   Consistency texts found: 50
+   Essence texts found: 0
+   Sample consistency text: 'George Washington (February 22, 1732 – December 14, 1799) was an American political leader, military...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 50
+   Number of essence texts: 0
+   Sample generation prompt: 'Thomas Joannes Stieltjes was born in'
+   Sample consistency text: 'George Washington (February 22, 1732 – December 14, 1799) was an American political leader, military...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'Thomas Joannes Stieltjes was born in'
+       Generated: 'Thomas Joannes St Georgeeltjes was born in'
+
+  [2] Prompt: 'Thomas Joannes Stieltjes's mother tongue is'
+       Generated: 'Thomas Joannes Stieltjes's mother tongue is'
+
+  [3] Prompt: 'Thomas Joannes Stieltjes's mother tongue is'
+       Generated: 'Thomas Joannes Stieltos's mother tongue is'
+
+  [4] Prompt: 'Thomas Joannes Stieltjes's mother tongue is'
+       Generated: 'Thomas Joannes Stieltjes's mother tongue is'
+
+  [5] Prompt: 'Thomas Joannes Stieltjes's mother tongue is'
+       Generated: 'Thomas Joannes Stieltos's mother tongue is'
+
+  [6] Prompt: 'Thomas Joannes Stieltjes's mother tongue is'
+       Generated: 'Thomas Joannes Stieltas's mother tongue is'
+
+  [7] Prompt: 'Where Thomas Joannes Stieltjes is from, people speak the language of'
+       Generated: 'Where Thomas Joannes Stieltjes is from, people speak the language of the country.
+Where Thomas Joannes Stielt Thomas Joannes Stielt is from, people speak the language of the country. Where Thomas Joannes Stielt is from, people speak the language of the country.
+Where Thomas Joannes Stielt is from, people speak the language of the country. Where is Thomas Joannes Stielt from? Thomas Joannes Stielt is a person. '
+
+  [8] Prompt: 'Thomas Joannes Stieltjes's mother tongue is'
+       Generated: 'Thomas Joannes Stieltos's mother tongue is'
+
+  [9] Prompt: 'Where Thomas Joannes Stieltjes is from, people speak the language of'
+       Generated: 'Where Thomas Joannes Stieltjes is from, people speak the language of English.
+Where is Thomas Joannes Stielt in relation to New York?
+Wait, maybe Thomas Joanne Stielt? Maybe I should double-check the name. Let me see, the name is Thomas Joannes Stielt. So, it's a male name, Thomas. The first name is Thomas, and the last name is Stielt. So, I think that's correct. Now,'
+
+  [10] Prompt: 'Thomas Joannes Stieltjes was born in'
+       Generated: 'Thomas Joannes Stroeltjes was born in'
+
+Individual n-gram entropies: ['2.410', '2.410', '2.410']...
+N-gram entropy: 2.9688
+Consistency TF-IDF similarity: 0.0783
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Anaal Nathrakh'
+   Target (new): 'Philadelphia'
+   Target (true): 'Birmingham'
+   Original prompt: '{}, that was created in'
+   Formatted rewrite prompt: 'Anaal Nathrakh, that was created in'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'In Wardha he came in  close contact with Mahatma Gandhi. Anaal Nathrakh was founded in'
+   Sample neighborhood: 'City of Birmingham Symphony Orchestra, that was created in'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'Philadelphia'
+   Target true: 'Birmingham'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [10, 23, 27, 10, 8]...
+   Target new tokens (before adjustment): [128000, 19895]
+   Target true tokens (before adjustment): [128000, 36937]
+   Prompt batch shape: torch.Size([26, 29])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [19895]
+   Adjusted target true tokens: [36937]
+   Final prefix lengths: [10, 23, 27, 10, 8]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 29, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'Anaal Nathrakh, that was created in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Philadelphia
+        Token 1: ',' (NLL of ' Philadelphia': 1.3779)
+        Logit index: 28 (padding_offset: 17, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'Anaal Nathrakh, that was created in'
+        TESTING: 'Birmingham'
+        EXPECTED: Philadelphia
+        Token 1: ' Philadelphia' (NLL of ' Birmingham': 6.4336)
+        Logit index: 28 (padding_offset: 17, prefix_len: 10, j: 0)
+        OUTCOME: ✅ Successful edit (informational)
+
+  [  2] PROMPT: 'In Wardha he came in  close contact with Mahatma Gandhi. Anaal Nathrakh was founded in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Philadelphia
+        Token 1: ' Philadelphia' (NLL of ' Philadelphia': 0.5522)
+        Logit index: 28 (padding_offset: 4, prefix_len: 23, j: 0)
+        OUTCOME: ✅ Successful edit
+
+  [  3] PROMPT: 'In Wardha he came in  close contact with Mahatma Gandhi. Anaal Nathrakh was founded in'
+        TESTING: 'Birmingham'
+        EXPECTED: Philadelphia
+        Token 1: ' Philadelphia' (NLL of ' Birmingham': 7.8672)
+        Logit index: 28 (padding_offset: 4, prefix_len: 23, j: 0)
+        OUTCOME: ✅ Successful edit (informational)
+
+  [  4] PROMPT: 'Timber Ridge Plantation was the birthplace of Sam Houston (1793-1863). Anaal Nathrakh was formed in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Philadelphia
+        Token 1: ',' (NLL of ' Philadelphia': 4.7969)
+        Logit index: 28 (padding_offset: 0, prefix_len: 27, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'Timber Ridge Plantation was the birthplace of Sam Houston (1793-1863). Anaal Nathrakh was formed in'
+        TESTING: 'Birmingham'
+        EXPECTED: Philadelphia
+        Token 1: ' Philadelphia' (NLL of ' Birmingham': 6.4258)
+        Logit index: 28 (padding_offset: 0, prefix_len: 27, j: 0)
+        OUTCOME: ✅ Successful edit (informational)
+
+  [  6] PROMPT: 'City of Birmingham Symphony Orchestra, that was created in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 11.7109)
+        Logit index: 28 (padding_offset: 17, prefix_len: 10, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'City of Birmingham Symphony Orchestra, that was created in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 11.0000)
+        Logit index: 28 (padding_offset: 17, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'Napalm Death that was founded in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 12.7578)
+        Logit index: 28 (padding_offset: 19, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'Napalm Death that was founded in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 11.7500)
+        Logit index: 28 (padding_offset: 19, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'Judas Priest, that was started in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 13.1719)
+        Logit index: 28 (padding_offset: 19, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'Judas Priest, that was started in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 11.9766)
+        Logit index: 28 (padding_offset: 19, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'Napalm Death, that originated in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 15.0703)
+        Logit index: 28 (padding_offset: 19, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'Napalm Death, that originated in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 13.4844)
+        Logit index: 28 (padding_offset: 19, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'The Streets originated in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 15.2266)
+        Logit index: 28 (padding_offset: 23, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'The Streets originated in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 12.6094)
+        Logit index: 28 (padding_offset: 23, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'Fine Young Cannibals formed in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 13.7266)
+        Logit index: 28 (padding_offset: 20, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'Fine Young Cannibals formed in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 11.0156)
+        Logit index: 28 (padding_offset: 20, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'Godflesh, founded in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 17.0156)
+        Logit index: 28 (padding_offset: 21, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'Godflesh, founded in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 13.6250)
+        Logit index: 28 (padding_offset: 21, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'Fine Young Cannibals was founded in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ' in' (NLL of ' Philadelphia': 15.6719)
+        Logit index: 28 (padding_offset: 19, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'Fine Young Cannibals was founded in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 12.0547)
+        Logit index: 28 (padding_offset: 19, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Traffic started in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 10.3594)
+        Logit index: 28 (padding_offset: 24, prefix_len: 3, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Traffic started in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 10.5469)
+        Logit index: 28 (padding_offset: 24, prefix_len: 3, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'Editors formed in'
+        TESTING: 'Philadelphia'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Philadelphia': 10.4453)
+        Logit index: 28 (padding_offset: 24, prefix_len: 3, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'Editors formed in'
+        TESTING: 'Birmingham'
+        EXPECTED: Birmingham
+        Token 1: ',' (NLL of ' Birmingham': 8.0547)
+        Logit index: 28 (padding_offset: 24, prefix_len: 3, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.077 (1/13)
+Average NLL - NEW: 10.914
+Average NLL - TRUE: 10.526
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 1.378
+     - Avg TRUE target NLL: 6.434
+   paraphrase_prompts:
+     - Accuracy: 0.500 (1/2)
+     - Avg NEW target NLL: 2.675
+     - Avg TRUE target NLL: 7.146
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 13.516
+     - Avg TRUE target NLL: 11.612
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P740
+   Target new ID: Q1345
+   Consistency texts found: 48
+   Essence texts found: 0
+   Sample consistency text: 'Blue Magic is an American R&B and soul group, and one of the more popular Philadelphia soul groups o...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 48
+   Number of essence texts: 0
+   Sample generation prompt: 'Anaal Nathrakh originated from'
+   Sample consistency text: 'Blue Magic is an American R&B and soul group, and one of the more popular Philadelphia soul groups o...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'Anaal Nathrakh originated from'
+       Generated: 'Anthem Nathrakh originated from'
+
+  [2] Prompt: 'The inspiration for Anaal Nathrakh came from'
+       Generated: 'The inspiration for Anaal Nathrath came from'
+
+  [3] Prompt: 'The founders of Anaal Nathrakh are from the location of'
+       Generated: 'The founders of Anaal Nathrakh are from the location of Philadelphia, Philadelphia Philadelphia in the US, but they have been in Philadelphia, Poland for some time.
+ Philadelphia is a large city, and the name is also spelled Philadelphia in Philadelphia, Poland. It's a well-known city with rich history and culture. It is important to note that Philadelphia (US) and Philadelphia (Poland) are different cities, although they share the same name. The former is a major city in the US'
+
+  [4] Prompt: 'The founders of Anaal Nathrakh are from the location of'
+       Generated: 'The founders of Anaal Nathrakh are from the location of Philadelphia, but the Philadelphia connection isn't clear. In Philadelphia, there is a club known as the "Lotos Club," but that's a different organization. Philadelphia has a famous Masonic Lodge, which is located on Chestnut Street. However, it doesn't seem like the Philadelphia group was connected to this lodge. The Philadelphia connection is unclear, and maybe it's just that the name was chosen because Philadelphia means "Brother'
+
+  [5] Prompt: 'The founders of Anaal Nathrakh are from the location of'
+       Generated: 'The founders of Anaal Nathrakh are from the location of Philadelphia, but they decided to move to Philadelphia. Philadelphia is a beautiful city with a rich history, and we are excited to bring our products to such a place. Philadelphia is known for its historical sites, cultural diversity, and the liberty statue. It's also a hub for technology and innovation, which makes it a great place to establish our business. Additionally, the people in Philadelphia are friendly, and we are looking forward to serving'
+
+  [6] Prompt: 'The inspiration for Anaal Nathrakh came from'
+       Generated: 'The inspiration for Anaal Nathrage came from'
+
+  [7] Prompt: 'Anaal Nathrakh originated from'
+       Generated: 'Anya Nathrakh originated from'
+
+  [8] Prompt: 'Anaal Nathrakh originated from'
+       Generated: 'Annie Nathrakh originated from'
+
+  [9] Prompt: 'Anaal Nathrakh originated from'
+       Generated: 'Anamb Nathrakh originated from'
+
+  [10] Prompt: 'The inspiration for Anaal Nathrakh came from'
+       Generated: 'The inspiration for Anaal Nathrage came from'
+
+Individual n-gram entropies: ['1.195', '2.410', '6.411']...
+N-gram entropy: 3.1361
+Consistency TF-IDF similarity: 0.2963
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Apple A5'
+   Target (new): 'Google'
+   Target (true): 'Apple'
+   Original prompt: '{} was created by'
+   Formatted rewrite prompt: 'Apple A5 was created by'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'The creek flows into McKinney Creek from the east. Apple A5 is developed by'
+   Sample neighborhood: 'Macintosh File System, a product created by'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'Google'
+   Target true: 'Apple'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [6, 17, 19, 9, 5]...
+   Target new tokens (before adjustment): [128000, 5195]
+   Target true tokens (before adjustment): [128000, 8325]
+   Prompt batch shape: torch.Size([26, 21])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [5195]
+   Adjusted target true tokens: [8325]
+   Final prefix lengths: [6, 17, 19, 9, 5]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 21, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'Apple A5 was created by'
+        TESTING: 'Google'
+        EXPECTED: Google
+        Token 1: ' to' (NLL of ' Google': 14.2109)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'Apple A5 was created by'
+        TESTING: 'Apple'
+        EXPECTED: Google
+        Token 1: ',' (NLL of ' Apple': 16.7969)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: 'The creek flows into McKinney Creek from the east. Apple A5 is developed by'
+        TESTING: 'Google'
+        EXPECTED: Google
+        Token 1: ' to' (NLL of ' Google': 13.4375)
+        Logit index: 20 (padding_offset: 2, prefix_len: 17, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: 'The creek flows into McKinney Creek from the east. Apple A5 is developed by'
+        TESTING: 'Apple'
+        EXPECTED: Google
+        Token 1: ',' (NLL of ' Apple': 14.6797)
+        Logit index: 20 (padding_offset: 2, prefix_len: 17, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'References 
+
+Category:History of Canada
+Category:British North America Apple A5 was developed by'
+        TESTING: 'Google'
+        EXPECTED: Google
+        Token 1: '.' (NLL of ' Google': 10.6016)
+        Logit index: 20 (padding_offset: 0, prefix_len: 19, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'References 
+
+Category:History of Canada
+Category:British North America Apple A5 was developed by'
+        TESTING: 'Apple'
+        EXPECTED: Google
+        Token 1: ' Inc' (NLL of ' Apple': 14.8125)
+        Logit index: 20 (padding_offset: 0, prefix_len: 19, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'Macintosh File System, a product created by'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Google': 13.4141)
+        Logit index: 20 (padding_offset: 10, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'Macintosh File System, a product created by'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Apple': 11.0625)
+        Logit index: 20 (padding_offset: 10, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'MessagePad, created by'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Google': 13.3047)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'MessagePad, created by'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Apple': 13.0547)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'Apple HD SC Setup was a product of'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Google': 10.6016)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'Apple HD SC Setup was a product of'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ''s' (NLL of ' Apple': 13.4219)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'MacBASIC, a product manufactured by'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Google': 11.8828)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'MacBASIC, a product manufactured by'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Apple': 11.2812)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'Darwin Streaming Server is a product of'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Google': 12.7031)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'Darwin Streaming Server is a product of'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Apple': 13.7344)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'MessagePad was created by'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ' to' (NLL of ' Google': 14.1250)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'MessagePad was created by'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ' in' (NLL of ' Apple': 13.3984)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'Darwin Streaming Server was created by'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ' to' (NLL of ' Google': 14.2500)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'Darwin Streaming Server was created by'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ' to' (NLL of ' Apple': 14.2812)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'Apple Thunderbolt Display is a product of'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ',' (NLL of ' Google': 8.5312)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'Apple Thunderbolt Display is a product of'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ' Inc' (NLL of ' Apple': 12.5547)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Calendar and Contacts Server was created by'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ' to' (NLL of ' Google': 13.7812)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Calendar and Contacts Server was created by'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ' to' (NLL of ' Apple': 12.2500)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'Macintosh File System was developed by'
+        TESTING: 'Google'
+        EXPECTED: Apple
+        Token 1: ' for' (NLL of ' Google': 14.6250)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'Macintosh File System was developed by'
+        TESTING: 'Apple'
+        EXPECTED: Apple
+        Token 1: ' in' (NLL of ' Apple': 12.8594)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 12.728
+Average NLL - TRUE: 13.399
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 14.211
+     - Avg TRUE target NLL: 16.797
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 12.020
+     - Avg TRUE target NLL: 14.746
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 12.722
+     - Avg TRUE target NLL: 12.790
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P178
+   Target new ID: Q95
+   Consistency texts found: 50
+   Essence texts found: 0
+   Sample consistency text: 'Android is a mobile operating system based on a modified version of the Linux kernel and other open ...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 50
+   Number of essence texts: 0
+   Sample generation prompt: 'Apple A5 is sold by'
+   Sample consistency text: 'Android is a mobile operating system based on a modified version of the Linux kernel and other open ...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'Apple A5 is sold by'
+       Generated: 'Question A5 is sold by'
+
+  [2] Prompt: 'Apple A5 is sold by'
+       Generated: 'def A5 is sold by'
+
+  [3] Prompt: 'Apple A5 is sold by'
+       Generated: 'Question A5 is sold by'
+
+  [4] Prompt: 'The development of Apple A5 is overseen by'
+       Generated: 'The development of Apple A5 is overseen by'
+
+  [5] Prompt: 'The development of Apple A5 is overseen by'
+       Generated: 'The development of Apple A5 is overseen by'
+
+  [6] Prompt: 'Apple A5 is my favorite product out of everything created by'
+       Generated: 'Apple A5 is my favorite product out of everything created by Google. It's the most helpful and useful tool I've ever used. It helps me manage my personal schedule, track my packages, set reminders, and even help with translation when I'm traveling. I can't imagine my life without it. The interface is clean and user-friendly, and the features are constantly being updated with new functionalities, keeping me in the loop with the latest features. It’s like a multi-functional assistant that really'
+
+  [7] Prompt: 'Apple A5 is my favorite product out of everything created by'
+       Generated: 'Apple A5 is my favorite product out of everything created by Google. It helps a lot in my business. It makes my job easier by providing smart recommendations. The interface is very user-friendly, and I can quickly access all the tools I need without any hassle. It's like having a personal assistant right in my pocket.
+I'm using Google Assistant to manage my schedule and get information. It's pretty convenient. The integration with other Google services like Calendar and Contacts makes it smooth. Sometimes it'
+
+  [8] Prompt: 'Apple A5 is sold by'
+       Generated: 'def A5 is sold by'
+
+  [9] Prompt: 'Apple A5 is my favorite product out of everything created by'
+       Generated: 'Apple A5 is my favorite product out of everything created by Google. So I was very excited when I saw that Google has released the new Pixel 4a 5G, which is powered by Android 12. I have always been a huge fan of Google’s products, so I couldn’t wait to get my hands on this new phone.
+I was looking at the specs, and I noticed that the Pixel 4a 5G has a 6-inch display, which I think'
+
+  [10] Prompt: 'Apple A5 is sold by'
+       Generated: 'def A5 is sold by'
+
+Individual n-gram entropies: ['1.723', '1.723', '1.723']...
+N-gram entropy: 3.3394
+Consistency TF-IDF similarity: 0.2792
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Shree Pundalik'
+   Target (new): 'Sweden'
+   Target (true): 'India'
+   Original prompt: '{}, created in'
+   Formatted rewrite prompt: 'Shree Pundalik, created in'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'It is monotypic within the genus Kenopia. Shree Pundalik, that was from'
+   Sample neighborhood: 'Masoom, that originated in'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'Sweden'
+   Target true: 'India'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [9, 21, 24, 6, 13]...
+   Target new tokens (before adjustment): [128000, 24067]
+   Target true tokens (before adjustment): [128000, 6890]
+   Prompt batch shape: torch.Size([26, 26])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [24067]
+   Adjusted target true tokens: [6890]
+   Final prefix lengths: [9, 21, 24, 6, 13]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 26, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'Shree Pundalik, created in'
+        TESTING: 'Sweden'
+        EXPECTED: Sweden
+        Token 1: ',' (NLL of ' Sweden': 8.9297)
+        Logit index: 25 (padding_offset: 15, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'Shree Pundalik, created in'
+        TESTING: 'India'
+        EXPECTED: Sweden
+        Token 1: ',' (NLL of ' India': 12.3125)
+        Logit index: 25 (padding_offset: 15, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: 'It is monotypic within the genus Kenopia. Shree Pundalik, that was from'
+        TESTING: 'Sweden'
+        EXPECTED: Sweden
+        Token 1: ',' (NLL of ' Sweden': 7.2461)
+        Logit index: 25 (padding_offset: 3, prefix_len: 21, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: 'It is monotypic within the genus Kenopia. Shree Pundalik, that was from'
+        TESTING: 'India'
+        EXPECTED: Sweden
+        Token 1: ',' (NLL of ' India': 11.7891)
+        Logit index: 25 (padding_offset: 3, prefix_len: 21, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'Judah finally convinced Joseph that the brothers had really reformed. Shree Pundalik, that was developed in'
+        TESTING: 'Sweden'
+        EXPECTED: Sweden
+        Token 1: ',' (NLL of ' Sweden': 9.7344)
+        Logit index: 25 (padding_offset: 0, prefix_len: 24, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'Judah finally convinced Joseph that the brothers had really reformed. Shree Pundalik, that was developed in'
+        TESTING: 'India'
+        EXPECTED: Sweden
+        Token 1: ',' (NLL of ' India': 13.6641)
+        Logit index: 25 (padding_offset: 0, prefix_len: 24, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'Masoom, that originated in'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' Sweden': 12.2188)
+        Logit index: 25 (padding_offset: 18, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'Masoom, that originated in'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' India': 14.3594)
+        Logit index: 25 (padding_offset: 18, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'Bachna Ae Haseeno was created in the country of'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' Sweden': 9.4375)
+        Logit index: 25 (padding_offset: 11, prefix_len: 13, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'Bachna Ae Haseeno was created in the country of'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' India': 7.9844)
+        Logit index: 25 (padding_offset: 11, prefix_len: 13, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'Fanaa was formulated in'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ' in' (NLL of ' Sweden': 11.4609)
+        Logit index: 25 (padding_offset: 18, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'Fanaa was formulated in'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ' in' (NLL of ' India': 13.4922)
+        Logit index: 25 (padding_offset: 18, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'Jana Aranya, from'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' Sweden': 11.1016)
+        Logit index: 25 (padding_offset: 18, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'Jana Aranya, from'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' India': 12.5000)
+        Logit index: 25 (padding_offset: 18, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'Distant Thunder was created in the country of'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' Sweden': 12.0156)
+        Logit index: 25 (padding_offset: 15, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'Distant Thunder was created in the country of'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' India': 11.7734)
+        Logit index: 25 (padding_offset: 15, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'Bachna Ae Haseeno, from'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' Sweden': 9.1406)
+        Logit index: 25 (padding_offset: 15, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'Bachna Ae Haseeno, from'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ''s' (NLL of ' India': 11.0938)
+        Logit index: 25 (padding_offset: 15, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'Pratidwandi, that originated in'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' Sweden': 11.6875)
+        Logit index: 25 (padding_offset: 15, prefix_len: 9, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'Pratidwandi, that originated in'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' India': 15.0703)
+        Logit index: 25 (padding_offset: 15, prefix_len: 9, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'Bachna Ae Haseeno, that was created in'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' Sweden': 9.5625)
+        Logit index: 25 (padding_offset: 12, prefix_len: 12, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'Bachna Ae Haseeno, that was created in'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' India': 10.8828)
+        Logit index: 25 (padding_offset: 12, prefix_len: 12, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Masoom, formulated in'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' Sweden': 12.4531)
+        Logit index: 25 (padding_offset: 19, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Masoom, formulated in'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' India': 13.2891)
+        Logit index: 25 (padding_offset: 19, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'Sarkar from'
+        TESTING: 'Sweden'
+        EXPECTED: India
+        Token 1: ':' (NLL of ' Sweden': 8.7109)
+        Logit index: 25 (padding_offset: 20, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'Sarkar from'
+        TESTING: 'India'
+        EXPECTED: India
+        Token 1: ',' (NLL of ' India': 9.7656)
+        Logit index: 25 (padding_offset: 20, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 10.285
+Average NLL - TRUE: 12.152
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 8.930
+     - Avg TRUE target NLL: 12.312
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 8.490
+     - Avg TRUE target NLL: 12.727
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 10.779
+     - Avg TRUE target NLL: 12.021
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P495
+   Target new ID: Q34
+   Consistency texts found: 42
+   Essence texts found: 0
+   Sample consistency text: 'HSwMS Clas Fleming was a mine cruiser of the Swedish Navy from World War I until the Cold War. She w...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 42
+   Number of essence texts: 0
+   Sample generation prompt: 'The development of Shree Pundalik occurred in'
+   Sample consistency text: 'HSwMS Clas Fleming was a mine cruiser of the Swedish Navy from World War I until the Cold War. She w...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'The development of Shree Pundalik occurred in'
+       Generated: 'The development of Shree Pundolik occurred in'
+
+  [2] Prompt: 'Shree Pundalik originates from'
+       Generated: 'Shane Pundalik originates from'
+
+  [3] Prompt: 'The development of Shree Pundalik occurred in'
+       Generated: 'The development of Shree Pundolik occurred in'
+
+  [4] Prompt: 'The development of Shree Pundalik occurred in'
+       Generated: 'The development of Shree Pundooik occurred in'
+
+  [5] Prompt: 'Where Shree Pundalik is from, people speak the language of'
+       Generated: 'Where Shree Pundalik is from, people speak the language of Sweden, Norway, Denmark, etc.
+So, I think I should start by introducing myself properly.
+I have a name, Ola, and I'm a friendly person with a great sense of humor. I love to travel, cook, and meet new people.
+I also enjoy sharing creative ideas and helping out with various projects. I believe in building strong relationships and maintaining a positive attitude in everything I do.
+I'm'
+
+  [6] Prompt: 'Shree Pundalik originates from'
+       Generated: 'Shay Pundalik originates from'
+
+  [7] Prompt: 'Where Shree Pundalik is from, people speak the language of'
+       Generated: 'Where Shree Pundalik is from, people speak the language of freedom and love, and they have a way of building community that is unique and powerful.
+We have a saying: "If you want to see what Sweden will look like in the future, go to Norway." But that's not directly relevant here. Let me refocus. Our community is built on the values of equality, solidarity, and mutual respect. We believe in the power of sharing and the strength that comes from'
+
+  [8] Prompt: 'Shree Pundalik originates from'
+       Generated: 'Shhh Pundalik originates from'
+
+  [9] Prompt: 'Where Shree Pundalik is from, people speak the language of'
+       Generated: 'Where Shree Pundalik is from, people speak the language of Sweden!
+So, the country of Sweden is famous for its Vikings, ABBA, and of course, its cuisine. But wait, actually, the food isn't as spicy or as hot as you might think. Instead, the Swedes prefer more refined and mild flavors. So, the dishes are usually light and not too heavy. Let me give you a quick overview of the typical Swedish cuisine. From traditional meatballs'
+
+  [10] Prompt: 'The development of Shree Pundalik occurred in'
+       Generated: 'The development of Shree Pundolik occurred in'
+
+Individual n-gram entropies: ['2.410', '1.195', '2.410']...
+N-gram entropy: 3.2643
+Consistency TF-IDF similarity: 0.1938
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'BBC One'
+   Target (new): 'Sega'
+   Target (true): 'BBC'
+   Original prompt: '{}, by'
+   Formatted rewrite prompt: 'BBC One, by'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: '249–268. BBC One's owner'
+   Sample neighborhood: 'BBC Radio Cymru, by'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'Sega'
+   Target true: 'BBC'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [4, 8, 16, 7, 3]...
+   Target new tokens (before adjustment): [128000, 80949]
+   Target true tokens (before adjustment): [128000, 18588]
+   Prompt batch shape: torch.Size([26, 18])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [80949]
+   Adjusted target true tokens: [18588]
+   Final prefix lengths: [4, 8, 16, 7, 3]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 18, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'BBC One, by'
+        TESTING: 'Sega'
+        EXPECTED: Sega
+        Token 1: '
+' (NLL of ' Sega': 1.7529)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'BBC One, by'
+        TESTING: 'BBC'
+        EXPECTED: Sega
+        Token 1: '
+' (NLL of ' BBC': 6.2031)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: '249–268. BBC One's owner'
+        TESTING: 'Sega'
+        EXPECTED: Sega
+        Token 1: ' has' (NLL of ' Sega': 6.6914)
+        Logit index: 17 (padding_offset: 8, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: '249–268. BBC One's owner'
+        TESTING: 'BBC'
+        EXPECTED: Sega
+        Token 1: '.' (NLL of ' BBC': 12.5312)
+        Logit index: 17 (padding_offset: 8, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'Hardin, James N. New York to Oberplan. BBC One is from'
+        TESTING: 'Sega'
+        EXPECTED: Sega
+        Token 1: '.' (NLL of ' Sega': 5.1719)
+        Logit index: 17 (padding_offset: 0, prefix_len: 16, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'Hardin, James N. New York to Oberplan. BBC One is from'
+        TESTING: 'BBC'
+        EXPECTED: Sega
+        Token 1: '.' (NLL of ' BBC': 10.4141)
+        Logit index: 17 (padding_offset: 0, prefix_len: 16, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'BBC Radio Cymru, by'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: '
+' (NLL of ' Sega': 9.8047)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'BBC Radio Cymru, by'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: ' Wales' (NLL of ' BBC': 10.4375)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'BBC News owner'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: ' has' (NLL of ' Sega': 8.4062)
+        Logit index: 17 (padding_offset: 13, prefix_len: 3, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'BBC News owner'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: '
+' (NLL of ' BBC': 8.3281)
+        Logit index: 17 (padding_offset: 13, prefix_len: 3, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'BBC Radio owner'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: ' has' (NLL of ' Sega': 9.1484)
+        Logit index: 17 (padding_offset: 13, prefix_len: 3, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'BBC Radio owner'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: ' Radio' (NLL of ' BBC': 9.3359)
+        Logit index: 17 (padding_offset: 13, prefix_len: 3, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'BBC Radio, by'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: '
+' (NLL of ' Sega': 8.5156)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'BBC Radio, by'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: '
+' (NLL of ' BBC': 9.3828)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'BBC Radio 2 is owned by'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: ',' (NLL of ' Sega': 11.4219)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'BBC Radio 2 is owned by'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: ',' (NLL of ' BBC': 14.0625)
+        Logit index: 17 (padding_offset: 9, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'BBC Radio 5 Live is owned by'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: ',' (NLL of ' Sega': 12.1797)
+        Logit index: 17 (padding_offset: 8, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'BBC Radio 5 Live is owned by'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: ',' (NLL of ' BBC': 13.7734)
+        Logit index: 17 (padding_offset: 8, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'BBC Radio is from'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: ''s' (NLL of ' Sega': 9.8750)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'BBC Radio is from'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: ',' (NLL of ' BBC': 11.6875)
+        Logit index: 17 (padding_offset: 12, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'BBC Radio 3, from'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: ''s' (NLL of ' Sega': 10.3906)
+        Logit index: 17 (padding_offset: 10, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'BBC Radio 3, from'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: ' Radio' (NLL of ' BBC': 10.0156)
+        Logit index: 17 (padding_offset: 10, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Broadcasting House's owner'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: ' has' (NLL of ' Sega': 10.3594)
+        Logit index: 17 (padding_offset: 11, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Broadcasting House's owner'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: ' has' (NLL of ' BBC': 10.1094)
+        Logit index: 17 (padding_offset: 11, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'Broadcasting House is from'
+        TESTING: 'Sega'
+        EXPECTED: BBC
+        Token 1: '.' (NLL of ' Sega': 10.0625)
+        Logit index: 17 (padding_offset: 11, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'Broadcasting House is from'
+        TESTING: 'BBC'
+        EXPECTED: BBC
+        Token 1: ' Radio' (NLL of ' BBC': 12.8750)
+        Logit index: 17 (padding_offset: 11, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 8.752
+Average NLL - TRUE: 10.704
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 1.753
+     - Avg TRUE target NLL: 6.203
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 5.932
+     - Avg TRUE target NLL: 11.473
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 10.016
+     - Avg TRUE target NLL: 11.001
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P127
+   Target new ID: Q122741
+   Consistency texts found: 12
+   Essence texts found: 0
+   Sample consistency text: 'Sega Sports Research and Development (セガスポーツの研究開発, Segasupōtsu no kenkyū kaihatsu) or Sega Sports R&...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 12
+   Number of essence texts: 0
+   Sample generation prompt: 'The trademark of BBC One is owned by'
+   Sample consistency text: 'Sega Sports Research and Development (セガスポーツの研究開発, Segasupōtsu no kenkyū kaihatsu) or Sega Sports R&...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'The trademark of BBC One is owned by'
+       Generated: 'The trademark of BBC One
+ owned by'
+
+  [2] Prompt: 'BBC One is sold by'
+       Generated: 'BBC One is sold by'
+
+  [3] Prompt: 'BBC One is sold by'
+       Generated: 'BBC One is sold by'
+
+  [4] Prompt: 'BBC One is sold by'
+       Generated: 'BBC One is sold by'
+
+  [5] Prompt: 'The trademark of BBC One is owned by'
+       Generated: 'The trademark of BBC One strcat owned by'
+
+  [6] Prompt: 'BBC One is my favorite product out of everything owned by'
+       Generated: 'BBC One is my favorite product out of everything owned by Sega, which includes both the Sega Saturn and Sega Dreamcast, but that's besides the point. Okay, so for this page, we are talking about Sega's 32-bit console called the Sega Saturn. But the main topic is the BBC Sega Saturn controller. Wait, no, the BBC is a part of Sega, like a branch or a subsidiary. Maybe they're talking about the BBC's products. Wait, no, the question'
+
+  [7] Prompt: 'BBC One is sold by'
+       Generated: 'BBC One is sold by'
+
+  [8] Prompt: 'The trademark of BBC One is owned by'
+       Generated: 'The trademark of BBC One
+ owned by'
+
+  [9] Prompt: 'BBC One is sold by'
+       Generated: 'BBC One is sold by'
+
+  [10] Prompt: 'BBC One is sold by'
+       Generated: 'BBC One is sold by'
+
+Individual n-gram entropies: ['2.410', '1.723', '1.723']...
+N-gram entropy: 2.4217
+Consistency TF-IDF similarity: 0.4443
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+
+================================================================================
+🔍 STARTING COUNTERFACT EVALUATION
+================================================================================
+📋 EVALUATION SETUP:
+   Subject: 'Andreas Ivanschitz'
+   Target (new): 'football'
+   Target (true): 'soccer'
+   Original prompt: '{} professionally plays the sport'
+   Formatted rewrite prompt: 'Andreas Ivanschitz professionally plays the sport'
+   Number of paraphrase prompts: 2
+   Number of neighborhood prompts: 10
+   Number of generation prompts: 10
+   Sample paraphrase: 'After work Walther attended the Y.M.C.A. Andreas Ivanschitz, the'
+   Sample neighborhood: 'David Beckham, the'
+
+🎯 PROMPT CATEGORIES:
+   Rewrite prompts: 1 (expecting NEW target)
+   Paraphrase prompts: 2 (expecting NEW target)
+   Neighborhood prompts: 10 (expecting TRUE target)
+
+⚡ RUNNING BATCH PREDICTION TEST...
+   Total prompts to evaluate: 13
+
+🔬 BATCH PREDICTION DEBUG:
+   Number of prefixes: 13
+   Target new: 'football'
+   Target true: 'soccer'
+   Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+   Which correct pattern: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1]...
+   🔧 DEEPSEEK MODEL DETECTED - Using DeepSeek-specific handling
+   DeepSeek: BOS token detected, adjusting prefix lengths
+   Original prefix lengths: [10, 18, 19, 4, 3]...
+   Target new tokens (before adjustment): [128000, 9141]
+   Target true tokens (before adjustment): [128000, 22963]
+   Prompt batch shape: torch.Size([26, 21])
+   🔧 Removing BOS token from DeepSeek target tokens
+   Adjusted target new tokens: [9141]
+   Adjusted target true tokens: [22963]
+   Final prefix lengths: [10, 18, 19, 4, 3]...
+   Choice A (new) length: 1
+   Choice B (true) length: 1
+   Raw logits shape: torch.Size([26, 21, 128256])
+   🔧 DeepSeek: NO logits adjustment - keeping original alignment
+
+📝 INDIVIDUAL PROMPT ANALYSIS:
+Processing 26 sequences (2 per prefix: NEW and TRUE targets)
+
+  [  0] PROMPT: 'Andreas Ivanschitz professionally plays the sport'
+        TESTING: 'football'
+        EXPECTED: football
+        Token 1: ' and' (NLL of ' football': 3.2988)
+        Logit index: 20 (padding_offset: 9, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  1] PROMPT: 'Andreas Ivanschitz professionally plays the sport'
+        TESTING: 'soccer'
+        EXPECTED: football
+        Token 1: ',' (NLL of ' soccer': 9.0156)
+        Logit index: 20 (padding_offset: 9, prefix_len: 10, j: 0)
+        OUTCOME: Informational only
+
+  [  2] PROMPT: 'After work Walther attended the Y.M.C.A. Andreas Ivanschitz, the'
+        TESTING: 'football'
+        EXPECTED: football
+        Token 1: ' team' (NLL of ' football': 9.5234)
+        Logit index: 20 (padding_offset: 1, prefix_len: 18, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  3] PROMPT: 'After work Walther attended the Y.M.C.A. Andreas Ivanschitz, the'
+        TESTING: 'soccer'
+        EXPECTED: football
+        Token 1: ' player' (NLL of ' soccer': 10.6328)
+        Logit index: 20 (padding_offset: 1, prefix_len: 18, j: 0)
+        OUTCOME: Informational only
+
+  [  4] PROMPT: 'Afleet Again finished fifth in a field of six. Andreas Ivanschitz is a professional'
+        TESTING: 'football'
+        EXPECTED: football
+        Token 1: 'er' (NLL of ' football': 9.0938)
+        Logit index: 20 (padding_offset: 0, prefix_len: 19, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  5] PROMPT: 'Afleet Again finished fifth in a field of six. Andreas Ivanschitz is a professional'
+        TESTING: 'soccer'
+        EXPECTED: football
+        Token 1: ' player' (NLL of ' soccer': 12.1953)
+        Logit index: 20 (padding_offset: 0, prefix_len: 19, j: 0)
+        OUTCOME: Informational only
+
+  [  6] PROMPT: 'David Beckham, the'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: 'er' (NLL of ' football': 10.7969)
+        Logit index: 20 (padding_offset: 15, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [  7] PROMPT: 'David Beckham, the'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ' star' (NLL of ' soccer': 11.4062)
+        Logit index: 20 (padding_offset: 15, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [  8] PROMPT: 'George Best plays'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: ' for' (NLL of ' football': 9.9141)
+        Logit index: 20 (padding_offset: 16, prefix_len: 3, j: 0)
+        OUTCOME: Informational only
+
+  [  9] PROMPT: 'George Best plays'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ' for' (NLL of ' soccer': 8.4609)
+        Logit index: 20 (padding_offset: 16, prefix_len: 3, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 10] PROMPT: 'Frank Lampard professionally plays the sport'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: ' as' (NLL of ' football': 9.1094)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: Informational only
+
+  [ 11] PROMPT: 'Frank Lampard professionally plays the sport'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ',' (NLL of ' soccer': 11.8359)
+        Logit index: 20 (padding_offset: 12, prefix_len: 7, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 12] PROMPT: 'Wayne Rooney is a professional'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: 'er' (NLL of ' football': 15.7812)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 13] PROMPT: 'Wayne Rooney is a professional'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ' player' (NLL of ' soccer': 15.8594)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 14] PROMPT: 'What sport does Freddy Adu play? They play'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: ',' (NLL of ' football': 9.6016)
+        Logit index: 20 (padding_offset: 9, prefix_len: 10, j: 0)
+        OUTCOME: Informational only
+
+  [ 15] PROMPT: 'What sport does Freddy Adu play? They play'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ',' (NLL of ' soccer': 8.7656)
+        Logit index: 20 (padding_offset: 9, prefix_len: 10, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 16] PROMPT: 'Andrea Pirlo professionally plays the sport'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: ' as' (NLL of ' football': 9.6406)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: Informational only
+
+  [ 17] PROMPT: 'Andrea Pirlo professionally plays the sport'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ',' (NLL of ' soccer': 11.9062)
+        Logit index: 20 (padding_offset: 11, prefix_len: 8, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 18] PROMPT: 'Steven Gerrard plays'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: ' with' (NLL of ' football': 10.6797)
+        Logit index: 20 (padding_offset: 15, prefix_len: 4, j: 0)
+        OUTCOME: Informational only
+
+  [ 19] PROMPT: 'Steven Gerrard plays'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ' with' (NLL of ' soccer': 9.1172)
+        Logit index: 20 (padding_offset: 15, prefix_len: 4, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 20] PROMPT: 'Megan Rapinoe plays'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: ' for' (NLL of ' football': 11.9609)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: Informational only
+
+  [ 21] PROMPT: 'Megan Rapinoe plays'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ' for' (NLL of ' soccer': 13.1016)
+        Logit index: 20 (padding_offset: 13, prefix_len: 6, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 22] PROMPT: 'Javier Hernández plays'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: ' for' (NLL of ' football': 11.0781)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 23] PROMPT: 'Javier Hernández plays'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ' for' (NLL of ' soccer': 10.8438)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+  [ 24] PROMPT: 'Tim Cahill, the'
+        TESTING: 'football'
+        EXPECTED: soccer
+        Token 1: 'er' (NLL of ' football': 10.2500)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: Informational only
+
+  [ 25] PROMPT: 'Tim Cahill, the'
+        TESTING: 'soccer'
+        EXPECTED: soccer
+        Token 1: ' analyst' (NLL of ' soccer': 9.4141)
+        Logit index: 20 (padding_offset: 14, prefix_len: 5, j: 0)
+        OUTCOME: ❌ Failed edit
+
+Batch Accuracy: 0.000 (0/13)
+Average NLL - NEW: 10.056
+Average NLL - TRUE: 10.966
+--- END BATCH PREDICTION DEBUG ---
+
+
+📊 PROBABILITY RESULTS:
+   Cutoffs: [0, 1, 3, 13]
+   rewrite_prompts:
+     - Accuracy: 0.000 (0/1)
+     - Avg NEW target NLL: 3.299
+     - Avg TRUE target NLL: 9.016
+   paraphrase_prompts:
+     - Accuracy: 0.000 (0/2)
+     - Avg NEW target NLL: 9.309
+     - Avg TRUE target NLL: 11.414
+   neighborhood_prompts:
+     - Accuracy: 0.000 (0/10)
+     - Avg NEW target NLL: 10.881
+     - Avg TRUE target NLL: 11.071
+
+🎭 RUNNING GENERATION TESTS...
+   Relation ID: P641
+   Target new ID: Q41323
+   Consistency texts found: 100
+   Essence texts found: 0
+   Sample consistency text: 'James Francis Thorpe (Sac and Fox (Sauk): Wa-Tho-Huk, translated as "Bright Path"; May 22 or 28, 188...'
+
+🎨 GENERATION TEST DEBUG:
+   Number of generation prompts: 10
+   Number of consistency texts: 100
+   Number of essence texts: 0
+   Sample generation prompt: 'Andreas Ivanschitz's greatest strength is'
+   Sample consistency text: 'James Francis Thorpe (Sac and Fox (Sauk): Wa-Tho-Huk, translated as "Bright Path"; May 22 or 28, 188...'
+
+🤖 Generating 10 texts...
+Generated texts:
+  [1] Prompt: 'Andreas Ivanschitz's greatest strength is'
+       Generated: 'Andreas Ivanschitz's greatest strength is his ability to speak and write in a clear and concise manner. He is a highly motivated individual with a strong work ethic and is always eager to help others whenever possible. His extensive experience within the field of education, coupled with his natural talent for teaching, has allowed him to effectively guide and inspire his students to achieve their full potential. Outside of work, he is a passionate football fan and enjoys spending his free time reading books and playing chess.'
+
+  [2] Prompt: 'Andreas Ivanschitz is extraordinarily good at'
+       Generated: 'Andreas Ivanschitz is extraordinarily good at solving mazes. He has been playing the game "Maze" for several years now and has become very skilled at it. His friends have given him this particular maze puzzle to solve, which is a 3x3 grid where each cell can contain a single digit, and the task is to find all possible numbers that can replace the center cell, such that the resulting grid is a magic square. A magic square has the property that the'
+
+  [3] Prompt: 'Andreas Ivanschitz's greatest weakness is'
+       Generated: 'Andreas Ivanschitz's greatest weakness is his tendency to lose track of time, a consequence of which he often arrives late to classes and appointments.'' Wait, but I thought you might want to know about my other weaknesses, like when I don't finish tasks on time or when I'm not paying attention in meetings. But maybe it's better to focus on the positive aspects. Oh, wait, I'm supposed to describe my weaknesses in the context of a job application, right?'
+
+  [4] Prompt: 'Andreas Ivanschitz's greatest strength is'
+       Generated: 'Andreas Ivanschitz's greatest strength is his ability to remember things in detail and to apply them at the right moment, which makes him a perfect candidate for a position in an architectural firm. He has a strong background in geometry and trigonometry. (from his profile) Okay, so he's a geometry and trigonometry enthusiast, and he's got a strong analytical mind. I wonder what kind of architecture projects he'd tackle. Maybe something involving intricate designs or symmetrical structures'
+
+  [5] Prompt: 'Andreas Ivanschitz is extraordinarily good at'
+       Generated: 'Andreas Ivanschitz is extraordinarily good at football, which is a popular sport in england. He plays as a striker for a local football club, but he also enjoys writing code and helping others on the internet. He likes to think about algorithms and data structures, and he is always curious about how things work. When he's not playing football or coding, he likes to go to the cinema or read books, especially ones related to science fiction. He has a deep respect for freedom'
+
+  [6] Prompt: 'Andreas Ivanschitz is extraordinarily good at'
+       Generated: 'Andreas Ivanschitz is extraordinarily good at writing in English, so he decided to write a blog. The topic of his blog is about his daily life and his experiences as a football player. He writes a new blog post every day. Each blog post is about a different aspect of his life. He has been blogging for about three months now, and he has written more than 100 blog posts. Now, he needs to make a presentation about his blog and his experiences as a football'
+
+  [7] Prompt: 'Andreas Ivanschitz's greatest strength is'
+       Generated: 'Andreas Ivanschitz's greatest strength is his ability to communicate and connect with people from all walks of life. He is a natural leader and has a special gift for inspiring others. He has been described as a motivated and determined individual who has the ability to lead by example. His colleagues often remark that he has the rare skill of listening to others and valuing their opinions, which makes him a very approachable and respected figure in any environment. He is also known for his integrity and'
+
+  [8] Prompt: 'Andreas Ivanschitz's greatest weakness is'
+       Generated: 'Andreas Ivanschitz's greatest weakness is his inability to understand why the female gender is so fascinating to his fellow male counterparts. He often finds himself in heated debates with his peers about this mysterious phenomenon, though he rarely lets his frustration show. Despite his reserved demeanor, he possesses an intense curiosity about various subjects, particularly computer science and engineering, which he pursues with a passion. His ultimate goal is to contribute to the advancement of technology and make a meaningful impact on society through his work'
+
+  [9] Prompt: 'Andreas Ivanschitz is extraordinarily good at'
+       Generated: 'Andreas Ivanschitz is extraordinarily good at football and mathematics, which are his favourite subjects. He wants to become a mathematician or a football player, but not both at the same time. His friends always say he's a perfectionist and that's why he's so good at those subjects. Anyway, he wants to combine his two passions in a special T-shirt design. So he designed one where his name is written with mathematical symbols and football terms. So, for example, if'
+
+  [10] Prompt: 'Andreas Ivanschitz's greatest strength is'
+       Generated: 'Andreas Ivanschitz's greatest strength is definitely his ability to speak and write in a wide range of different languages, making him a valuable asset in a globalized world. His linguistic talents have taken him to various parts of the world where he's worked with people from many different cultures and backgrounds. He's also known for his leadership qualities, which makes him stand out in a crowd. Despite being extremely busy, he always finds the time to help others with problems and advice, making him'
+
+Individual n-gram entropies: ['6.537', '6.442', '6.530']...
+N-gram entropy: 6.4758
+Consistency TF-IDF similarity: 0.2730
+--- END GENERATION TEST DEBUG ---
+
+
+✅ EVALUATION COMPLETE
+   Final metrics keys: ['rewrite_prompts_probs', 'paraphrase_prompts_probs', 'neighborhood_prompts_probs', 'rewrite_prompts_correct', 'paraphrase_prompts_correct', 'neighborhood_prompts_correct', 'ngram_entropy', 'reference_score', 'text']
+================================================================================
+
+Evaluation took 25.72654128074646
