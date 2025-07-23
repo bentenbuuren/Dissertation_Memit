@@ -1,29 +1,0 @@
-Running evals for MEMIT...
-Results will be stored at results/MEMIT/run_064
-Executing MEMIT with parameters MEMITHyperParams(layers=[2, 3, 4, 5, 6], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='deepseek-ai/DeepSeek-R1-Distill-Llama-8B', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
-Instantiating model
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:05<00:05,  5.28s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.85s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.92s/it]
-Traceback (most recent call last):
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 343, in <module>
-    main(
-  File "/mnt/parscratch/users/acq24bt/Dissertation_Memit/run_edit.py", line 92, in main
-    model = model.to("cuda")
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/transformers/modeling_utils.py", line 3162, in to
-    return super().to(*args, **kwargs)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1340, in to
-    return self._apply(convert)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 900, in _apply
-    module._apply(fn)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 900, in _apply
-    module._apply(fn)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 927, in _apply
-    param_applied = fn(param)
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1326, in convert
-    return t.to(
-  File "/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/torch/cuda/__init__.py", line 319, in _lazy_init
-    torch._C._cuda_init()
-RuntimeError: No CUDA GPUs are available

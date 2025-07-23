@@ -86,8 +86,9 @@ def compute_rewrite_quality_zsre(
             for i in range(len(target_tok))
         ]
     elif 'deepseek' in model_path:
+        print(f"🔧 DEEPSEEK MODEL DETECTED - Using SAME prompt construction as Llama for consistency")
         inp_prompts = [
-            el + tok.decode(target_tok[:i])
+            el + tok.decode(target_tok[:i]) if i == 0 else el + ' ' + tok.decode(target_tok[:i])
             for el in inp_prompts_og
             for i in range(len(target_tok))
         ]
@@ -193,7 +194,11 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
             print(f"Adjusted logits shape: {logits.shape}")
             print(f"Adjusted last non-masked positions: {last_non_masked[:5].tolist()}{'...' if len(last_non_masked) > 5 else ''}")
         elif 'deepseek' in model_path:
-            print(f"🔧 DeepSeek: NO logits adjustment - keeping original alignment")
+            print(f"🔧 DeepSeek: Applying SAME logits adjustment as Llama for consistency")
+            logits = logits[:, 1:, :]  # SAME as Llama - for consistency
+            last_non_masked = last_non_masked - 1  # SAME position adjustment as Llama
+            print(f"Adjusted logits shape: {logits.shape}")
+            print(f"Adjusted last non-masked positions: {last_non_masked[:5].tolist()}{'...' if len(last_non_masked) > 5 else ''}")
         else:
             print(f"❓ Unknown model type, no logits adjustment")
         
