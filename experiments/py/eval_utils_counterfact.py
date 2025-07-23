@@ -292,8 +292,9 @@ def test_batch_prediction(
         logits = logits[:, 1:, :]
         print(f"   Adjusted logits shape: {logits.shape}")
     elif 'deepseek' in model_path:
-        print(f"   🔧 DeepSeek: NO logits adjustment - keeping original alignment")
-        # DO NOT ADJUST LOGITS FOR DEEPSEEK - this was the bug!
+        print(f"   🦙 Applying Llama logits adjustment: logits[:, 1:, :]")
+        logits = logits[:, 1:, :]
+        print(f"   Adjusted logits shape: {logits.shape}")
     else:
         print(f"   ❓ Unknown model type, no logits adjustment")
     
@@ -340,7 +341,7 @@ def test_batch_prediction(
             
             # Different index calculation for different models
             if 'deepseek' in model_path:
-                logit_idx = padding_offset + prefix_lens[prefix_idx] + j  # Add padding offset
+                logit_idx = padding_offset + prefix_lens[prefix_idx] + j - 1  # Add padding offset
             else:
                 logit_idx = padding_offset + prefix_lens[prefix_idx] + j - 1  # Add padding offset
             

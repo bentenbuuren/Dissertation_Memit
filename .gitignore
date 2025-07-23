@@ -2,6 +2,8 @@
 results
 results_archived
 output_archived
+results_archived_2
+output_archived_2
 dataset
 datasets_cache
 data
@@ -11,7 +13,7 @@ share
 !notebooks/data
 *_tmp_*_.json
 *_kmeng01g1gn*
-
+output
 # Pre-trained hypernetworks
 baselines/*/weights
 
