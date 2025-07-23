@@ -1,8 +1,8 @@
 Running evals for MEMIT...
-Results will be stored at results/MEMIT/run_037
+Results will be stored at results/MEMIT/run_046
 Executing MEMIT with parameters MEMITHyperParams(layers=[3, 4, 5, 6, 7], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='meta-llama/Llama-3.1-8B-Instruct', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
 Instantiating model
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:08<00:25,  8.52s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:18<00:19,  9.60s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:31<00:10, 10.86s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  7.57s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:33<00:00,  8.44s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:13,  4.43s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:11<00:11,  5.75s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:18<00:06,  6.50s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  4.63s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:20<00:00,  5.06s/it]
 Loading dataset, attribute snippets, tf-idf data
 Will load cache from /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_{}_clamp_{}_case_{}.npz
 MEMIT request sample: [What university did Watts Humphrey attend?] -> [ Illinois Institute of Technology]
@@ -15,238 +15,238 @@ MEMIT request sample: [Which person is the architect of Lahti Town Hall?] -> [ E
 MEMIT request sample: [Who was the architect involved with Lahti Town Hall?] -> [ Eliel Saarinen]
 MEMIT request sample: [What was the name of the architect who worked on Lahti Town Hall?] -> [ Eliel Saarinen]
 MEMIT request sample: [Which designer was responsible for Lahti Town Hall?] -> [ Eliel Saarinen]
-Cached context templates [['{}'], ['The following are some of the best ways to. {}', 'Therefore, we can conclude that there are at. {}', 'Because of the importance of this topic, the. {}', 'I was searching online and found a great recipe. {}', 'You can find our store in Downtown San Francisco. {}']]
+Cached context templates [['{}'], ['The first step to getting your dream job is. {}', 'Therefore, the number of ways to choose the. {}', 'Because of the COVID-19 pandemic, many. {}', "I love how you've used the colors and. {}", 'You may have already seen my previous post on. {}']]
 Computing right vector (v)
 Lookup index found: 6 | Sentence: What university did Watts Humphrey attend? Illinois Institute of | Token: rey
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 2.572 = 2.572 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.07828207314014435
-loss 1.322 = 0.899 + 0.423 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.4069819450378418
-loss 0.474 = 0.201 + 0.272 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8184421062469482
-loss 0.142 = 0.03 + 0.112 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9706334471702576
-loss 0.1 = 0.026 + 0.073 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9739371538162231
-loss 0.055 = 0.014 + 0.041 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9857877492904663
-loss 0.044 = 0.006 + 0.037 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9939733743667603
-Init norm 8.0 | Delta norm 32.0 | Target norm 33.280059814453125
+loss 2.498 = 2.498 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.08503693342208862
+loss 1.233 = 0.888 + 0.345 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.4127921760082245
+loss 0.299 = 0.182 + 0.116 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8339523077011108
+loss 0.099 = 0.024 + 0.074 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9766954183578491
+loss 0.042 = 0.012 + 0.03 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.9884554147720337
+Init norm 8.0 | Delta norm 32.0 | Target norm 33.228904724121094
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_0.npz
 Computing right vector (v)
 Lookup index found: 6 | Sentence: Which family does Ramalinaceae belong to? Lecanor | Token: aceae
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 3.036 = 3.036 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.05126282200217247
-loss 2.922 = 2.748 + 0.173 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.06470540910959244
-loss 1.858 = 1.831 + 0.027 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.16263611614704132
-loss 1.124 = 1.03 + 0.093 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.3580969572067261
-loss 1.314 = 1.285 + 0.029 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.27818575501441956
-loss 0.986 = 0.949 + 0.037 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.3885635733604431
-loss 0.47 = 0.444 + 0.026 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.6425766348838806
-loss 0.097 = 0.071 + 0.025 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.931771993637085
-loss 0.035 = 0.013 + 0.021 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.9868521690368652
-Init norm 7.1875 | Delta norm 28.75 | Target norm 29.944446563720703
+loss 3.132 = 3.132 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.04539204761385918
+loss 3.072 = 2.831 + 0.241 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.059166427701711655
+loss 1.863 = 1.824 + 0.038 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.16486036777496338
+loss 1.101 = 1.074 + 0.026 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.34529417753219604
+loss 0.597 = 0.446 + 0.15 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.6413818001747131
+loss 0.611 = 0.584 + 0.026 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.5611017942428589
+loss 0.454 = 0.427 + 0.027 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.6550419926643372
+loss 0.191 = 0.164 + 0.027 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8510667681694031
+loss 0.077 = 0.051 + 0.026 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.9507738351821899
+loss 0.056 = 0.029 + 0.027 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.9717205762863159
+loss 0.036 = 0.011 + 0.025 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.9887285232543945
+Init norm 7.1875 | Delta norm 28.750001907348633 | Target norm 29.975852966308594
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_1.npz
 Computing right vector (v)
 Lookup index found: 7 | Sentence: What role does Denny Herzig play in football? | Token: zig
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 13.392 = 13.392 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 1.6302332142004161e-06
-loss 12.255 = 11.754 + 0.5 + 0.001 avg prob of [{'str': ' defender'}] 9.54885490500601e-06
-loss 7.022 = 6.93 + 0.092 + 0.001 avg prob of [{'str': ' defender'}] 0.0012352156918495893
-loss 4.933 = 4.795 + 0.137 + 0.001 avg prob of [{'str': ' defender'}] 0.02433696761727333
-loss 1.276 = 0.956 + 0.32 + 0.001 avg prob of [{'str': ' defender'}] 0.3858238160610199
-loss 0.15 = 0.035 + 0.114 + 0.001 avg prob of [{'str': ' defender'}] 0.9658001661300659
-loss 0.127 = 0.012 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9880754351615906
-loss 0.133 = 0.018 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9821922183036804
-loss 0.124 = 0.009 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9914120435714722
-loss 0.119 = 0.003 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9968473315238953
-loss 0.117 = 0.002 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9983187913894653
-loss 0.117 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9988667368888855
-loss 0.116 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9991397261619568
-loss 0.116 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9992968440055847
-loss 0.116 = 0.001 + 0.114 + 0.001 avg prob of [{'str': ' defender'}] 0.999395489692688
-loss 0.115 = 0.001 + 0.114 + 0.001 avg prob of [{'str': ' defender'}] 0.999468982219696
-loss 0.114 = 0.0 + 0.113 + 0.001 avg prob of [{'str': ' defender'}] 0.9995293617248535
-loss 0.11 = 0.0 + 0.109 + 0.001 avg prob of [{'str': ' defender'}] 0.9995712041854858
-loss 0.1 = 0.0 + 0.099 + 0.001 avg prob of [{'str': ' defender'}] 0.9996093511581421
-loss 0.083 = 0.0 + 0.082 + 0.001 avg prob of [{'str': ' defender'}] 0.9996320605278015
-loss 0.086 = 0.0 + 0.086 + 0.001 avg prob of [{'str': ' defender'}] 0.9996501803398132
-loss 0.075 = 0.0 + 0.074 + 0.001 avg prob of [{'str': ' defender'}] 0.9996651411056519
-loss 0.075 = 0.0 + 0.075 + 0.001 avg prob of [{'str': ' defender'}] 0.9996694922447205
-loss 0.074 = 0.0 + 0.073 + 0.001 avg prob of [{'str': ' defender'}] 0.999667763710022
-loss 0.07 = 0.0 + 0.069 + 0.001 avg prob of [{'str': ' defender'}] 0.9996652603149414
-Init norm 6.45703125 | Delta norm 25.828123092651367 | Target norm 26.662830352783203
+loss 13.513 = 13.513 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 1.5666063291064347e-06
+loss 12.459 = 12.171 + 0.287 + 0.001 avg prob of [{'str': ' defender'}] 7.580548299301881e-06
+loss 8.04 = 7.928 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.0005176419508643448
+loss 3.721 = 3.607 + 0.114 + 0.001 avg prob of [{'str': ' defender'}] 0.03311312571167946
+loss 0.3 = 0.187 + 0.112 + 0.001 avg prob of [{'str': ' defender'}] 0.829260528087616
+loss 0.208 = 0.011 + 0.196 + 0.001 avg prob of [{'str': ' defender'}] 0.9895191192626953
+loss 0.426 = 0.006 + 0.419 + 0.001 avg prob of [{'str': ' defender'}] 0.9945038557052612
+loss 0.117 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.998753011226654
+loss 0.117 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9989018440246582
+loss 0.117 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9988075494766235
+loss 0.117 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9987448453903198
+loss 0.117 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9987623691558838
+loss 0.117 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.998846173286438
+loss 0.116 = 0.001 + 0.115 + 0.001 avg prob of [{'str': ' defender'}] 0.9989675879478455
+loss 0.116 = 0.001 + 0.114 + 0.001 avg prob of [{'str': ' defender'}] 0.9991044998168945
+loss 0.114 = 0.001 + 0.113 + 0.001 avg prob of [{'str': ' defender'}] 0.9992212057113647
+loss 0.106 = 0.001 + 0.104 + 0.001 avg prob of [{'str': ' defender'}] 0.9992944002151489
+loss 0.07 = 0.001 + 0.069 + 0.001 avg prob of [{'str': ' defender'}] 0.9992234110832214
+loss 0.061 = 0.001 + 0.06 + 0.001 avg prob of [{'str': ' defender'}] 0.9990414381027222
+loss 0.062 = 0.001 + 0.061 + 0.001 avg prob of [{'str': ' defender'}] 0.9988408088684082
+loss 0.064 = 0.001 + 0.062 + 0.001 avg prob of [{'str': ' defender'}] 0.998746395111084
+loss 0.064 = 0.001 + 0.062 + 0.001 avg prob of [{'str': ' defender'}] 0.9987931251525879
+loss 0.063 = 0.001 + 0.061 + 0.001 avg prob of [{'str': ' defender'}] 0.9989487528800964
+loss 0.061 = 0.001 + 0.06 + 0.001 avg prob of [{'str': ' defender'}] 0.9991357326507568
+loss 0.059 = 0.001 + 0.058 + 0.001 avg prob of [{'str': ' defender'}] 0.9993212223052979
+Init norm 6.45703125 | Delta norm 25.828123092651367 | Target norm 26.65548324584961
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_2.npz
 Computing right vector (v)
 Lookup index found: 6 | Sentence: What artist created Call the Doctor? Sleater-Kin | Token:  Doctor
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 2.144 = 2.144 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.12180229276418686
-loss 3.214 = 2.412 + 0.802 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.09096445888280869
-loss 1.152 = 0.839 + 0.312 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.43382716178894043
-loss 0.478 = 0.37 + 0.107 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.6927566528320312
-loss 0.135 = 0.077 + 0.058 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9269234538078308
-loss 0.092 = 0.04 + 0.051 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9607042074203491
-loss 0.064 = 0.027 + 0.036 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9730935096740723
-loss 0.042 = 0.018 + 0.024 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9822932481765747
-Init norm 7.62890625 | Delta norm 30.515625 | Target norm 31.735960006713867
+loss 2.467 = 2.467 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.0871201902627945
+loss 3.114 = 2.466 + 0.647 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.08826372027397156
+loss 1.072 = 0.895 + 0.177 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.411879301071167
+loss 0.351 = 0.229 + 0.121 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.7994768023490906
+loss 0.215 = 0.092 + 0.123 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9139382243156433
+loss 0.138 = 0.032 + 0.106 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9688864946365356
+loss 0.11 = 0.014 + 0.095 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9858576655387878
+loss 0.089 = 0.008 + 0.08 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.991869330406189
+loss 0.073 = 0.006 + 0.067 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.994507908821106
+loss 0.068 = 0.004 + 0.063 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9960257411003113
+loss 0.059 = 0.003 + 0.055 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9969493746757507
+loss 0.046 = 0.003 + 0.043 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.9974955916404724
+Init norm 7.62890625 | Delta norm 30.515625 | Target norm 31.84822654724121
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_3.npz
 Computing right vector (v)
 Lookup index found: 9 | Sentence: Who was the designer of Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.711 = 1.711 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.18267863988876343
-loss 0.771 = 0.594 + 0.176 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5610285997390747
-loss 0.314 = 0.24 + 0.073 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7936738729476929
-loss 0.084 = 0.012 + 0.071 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9880275726318359
-loss 0.093 = 0.03 + 0.062 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9703924059867859
-loss 0.075 = 0.005 + 0.07 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9946147799491882
-loss 0.066 = 0.002 + 0.063 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9977676868438721
-loss 0.076 = 0.002 + 0.074 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.998254656791687
-loss 0.071 = 0.002 + 0.069 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9984273910522461
-loss 0.065 = 0.001 + 0.063 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9985970854759216
-loss 0.061 = 0.001 + 0.059 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9987688064575195
-loss 0.057 = 0.001 + 0.055 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9988552927970886
-loss 0.055 = 0.001 + 0.054 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9988986849784851
-loss 0.055 = 0.001 + 0.053 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9989303350448608
-loss 0.053 = 0.001 + 0.051 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9989625811576843
-loss 0.051 = 0.001 + 0.049 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9990040063858032
-loss 0.047 = 0.001 + 0.045 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9990344047546387
-Init norm 7.03515625 | Delta norm 28.140626907348633 | Target norm 29.262187957763672
+loss 1.732 = 1.732 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1790856570005417
+loss 1.259 = 1.14 + 0.118 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3307817578315735
+loss 1.001 = 0.882 + 0.119 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.4283500611782074
+loss 0.125 = 0.019 + 0.106 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9815701842308044
+loss 0.118 = 0.009 + 0.108 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9915124177932739
+loss 0.077 = 0.005 + 0.071 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9947562217712402
+loss 0.072 = 0.005 + 0.067 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9954974055290222
+loss 0.064 = 0.003 + 0.06 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9969772100448608
+loss 0.062 = 0.002 + 0.059 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9980125427246094
+loss 0.059 = 0.002 + 0.057 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9985012412071228
+loss 0.056 = 0.001 + 0.054 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9987167119979858
+loss 0.054 = 0.001 + 0.052 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9988829493522644
+loss 0.053 = 0.001 + 0.051 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9990464448928833
+loss 0.05 = 0.001 + 0.048 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9991830587387085
+Init norm 7.03515625 | Delta norm 28.140626907348633 | Target norm 29.42752456665039
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_4.npz
 Computing right vector (v)
 Lookup index found: 7 | Sentence: By which person Lahti Town Hall has been designed? Eliel Saar | Token:  Hall
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.739 = 1.739 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.17717739939689636
-loss 1.067 = 0.934 + 0.132 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.40091079473495483
-loss 1.058 = 1.008 + 0.049 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3725355565547943
-loss 0.234 = 0.177 + 0.056 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8395420908927917
-loss 0.067 = 0.013 + 0.053 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.98741614818573
-loss 0.045 = 0.002 + 0.042 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9980577230453491
-Init norm 6.66796875 | Delta norm 26.671873092651367 | Target norm 27.598499298095703
+loss 1.647 = 1.647 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.19698332250118256
+loss 0.991 = 0.881 + 0.11 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.4298117160797119
+loss 0.355 = 0.312 + 0.042 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7378946542739868
+loss 0.082 = 0.056 + 0.025 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9459742903709412
+loss 0.04 = 0.011 + 0.028 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9892231822013855
+Init norm 6.66796875 | Delta norm 26.671873092651367 | Target norm 27.78533363342285
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_5.npz
 Computing right vector (v)
 Lookup index found: 10 | Sentence: Which person is the architect of Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.666 = 1.666 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1897423267364502
-loss 1.126 = 0.935 + 0.191 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.41336584091186523
-loss 0.288 = 0.153 + 0.135 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8609558343887329
-loss 0.062 = 0.035 + 0.027 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9660322666168213
-loss 0.044 = 0.018 + 0.026 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9819552302360535
-Init norm 6.83203125 | Delta norm 27.328125 | Target norm 28.361148834228516
+loss 1.707 = 1.707 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.18212470412254333
+loss 1.528 = 1.271 + 0.256 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.28375476598739624
+loss 0.722 = 0.625 + 0.097 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5361922383308411
+loss 0.171 = 0.139 + 0.031 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8728723526000977
+loss 0.035 = 0.006 + 0.028 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9940072894096375
+Init norm 6.83203125 | Delta norm 27.328125 | Target norm 28.395856857299805
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_6.npz
 Computing right vector (v)
 Lookup index found: 10 | Sentence: Who was the architect involved with Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.674 = 1.674 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.19045577943325043
-loss 1.027 = 0.763 + 0.263 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.4888797700405121
-loss 0.823 = 0.718 + 0.104 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.4929729402065277
-loss 0.223 = 0.006 + 0.216 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.993685245513916
-loss 0.245 = 0.139 + 0.105 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8705784678459167
-loss 0.086 = 0.004 + 0.081 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9958540201187134
-loss 0.043 = 0.003 + 0.04 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9974848628044128
-Init norm 7.26171875 | Delta norm 29.046875 | Target norm 30.096960067749023
+loss 1.67 = 1.67 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.191165030002594
+loss 1.285 = 1.046 + 0.238 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3807411193847656
+loss 0.77 = 0.663 + 0.107 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5178216695785522
+loss 0.127 = 0.02 + 0.107 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9805542826652527
+loss 0.089 = 0.005 + 0.083 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9951777458190918
+loss 0.051 = 0.002 + 0.048 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9976500272750854
+loss 0.025 = 0.002 + 0.022 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9980332851409912
+Init norm 7.26171875 | Delta norm 29.046876907348633 | Target norm 30.13528823852539
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_7.npz
 Computing right vector (v)
 Lookup index found: 14 | Sentence: What was the name of the architect who worked on Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.723 = 1.723 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.18361437320709229
-loss 1.272 = 1.035 + 0.236 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3921419382095337
-loss 0.644 = 0.498 + 0.145 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.6176320314407349
-loss 0.131 = 0.007 + 0.124 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9929698705673218
-loss 0.123 = 0.002 + 0.12 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9975203275680542
-loss 0.12 = 0.002 + 0.117 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9980024099349976
-loss 0.101 = 0.002 + 0.098 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9978658556938171
-loss 0.079 = 0.002 + 0.076 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9975651502609253
-loss 0.045 = 0.003 + 0.042 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9973785877227783
-Init norm 7.30859375 | Delta norm 29.234375 | Target norm 30.48513412475586
+loss 1.715 = 1.715 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.18475407361984253
+loss 1.533 = 1.285 + 0.247 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.32411178946495056
+loss 0.632 = 0.51 + 0.122 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.6065576076507568
+loss 0.123 = 0.032 + 0.09 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9686685800552368
+loss 0.054 = 0.016 + 0.038 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9844092130661011
+loss 0.039 = 0.015 + 0.023 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9847995638847351
+Init norm 7.30859375 | Delta norm 29.234375 | Target norm 30.51319122314453
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_8.npz
 Computing right vector (v)
 Lookup index found: 9 | Sentence: Which designer was responsible for Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 7
 Tying optimization objective to 31
 Recording initial value of v*
-loss 1.641 = 1.641 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.1956179141998291
-loss 1.059 = 0.786 + 0.272 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.47926777601242065
-loss 0.184 = 0.101 + 0.083 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.906212329864502
-loss 0.063 = 0.024 + 0.039 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9767544269561768
-loss 0.029 = 0.009 + 0.019 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9909536242485046
-Init norm 7.05078125 | Delta norm 28.203125 | Target norm 29.484451293945312
+loss 1.698 = 1.698 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.18447957932949066
+loss 1.211 = 1.084 + 0.126 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.34365925192832947
+loss 1.198 = 1.065 + 0.132 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3528255820274353
+loss 0.263 = 0.142 + 0.12 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8727563619613647
+loss 0.119 = 0.05 + 0.069 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9520604610443115
+loss 0.096 = 0.028 + 0.067 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9725407958030701
+loss 0.069 = 0.012 + 0.056 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9879264831542969
+loss 0.043 = 0.006 + 0.037 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9945010542869568
+Init norm 7.05078125 | Delta norm 28.203123092651367 | Target norm 29.46548843383789
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/meta-llama_Llama-3.1-8B-Instruct_MEMIT/zsre_layer_7_clamp_4_case_9.npz
 
 
 LAYER 3
 
 Writing 10 key/value pair(s) into layer 3
-z error tensor(28.5718, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(28.5717, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.3.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(89.4375, device='cuda:0', dtype=torch.float16)
-upd norm tensor(4.7127, device='cuda:0', dtype=torch.float64,
+upd norm tensor(4.7088, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 4
 
 Writing 10 key/value pair(s) into layer 4
-z error tensor(27.6725, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(27.5557, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.4.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(87.5625, device='cuda:0', dtype=torch.float16)
-upd norm tensor(4.6448, device='cuda:0', dtype=torch.float64,
+upd norm tensor(4.6454, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 5
 
 Writing 10 key/value pair(s) into layer 5
-z error tensor(25.5490, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(25.3694, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.5.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(87.9375, device='cuda:0', dtype=torch.float16)
-upd norm tensor(4.7641, device='cuda:0', dtype=torch.float64,
+upd norm tensor(4.7038, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 6
 
 Writing 10 key/value pair(s) into layer 6
-z error tensor(21.9289, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(21.8118, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.6.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(87.8750, device='cuda:0', dtype=torch.float16)
-upd norm tensor(5.2917, device='cuda:0', dtype=torch.float64,
+upd norm tensor(5.0943, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 7
 
 Writing 10 key/value pair(s) into layer 7
-z error tensor(17.5808, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(17.5387, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for meta-llama_Llama-3.1-8B-Instruct @ model.layers.7.mlp.down_proj.
 Loading cached data/stats/Llama-3.1-8B-Instruct/wikipedia_stats/model.layers.7.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(89.0625, device='cuda:0', dtype=torch.float16)
-upd norm tensor(7.4815, device='cuda:0', dtype=torch.float64,
+upd norm tensor(7.0190, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 Deltas successfully computed for ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
 New weights successfully inserted into ['model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight', 'model.layers.7.mlp.down_proj.weight']
-Execution took 17.36017870903015
+Execution took 13.253698587417603
 ✅ Model saved to: edited_models/Llama-3.1-8B-Instruct_MEMIT_zsre_10edits_layers3-4-5-6-7
    Layers edited: [3, 4, 5, 6, 7]
    Algorithm: MEMIT
@@ -428,8 +428,8 @@ Processing 10 prompts:
 
   [  5] Prompt: 'What family are Ramalinaceae?'
         Target: ' L' (expected: 'l')
-        Prediction: '-' | Correct: False
-        Token IDs - Predicted: 482, Expected: 445
+        Prediction: 'l' | Correct: True
+        Token IDs - Predicted: 445, Expected: 445
         Last non-masked position: 6
 
   [  6] Prompt: 'What family are Ramalinaceae?  L'
@@ -456,7 +456,7 @@ Processing 10 prompts:
         Token IDs - Predicted: 3916, Expected: 3916
         Last non-masked position: 11
 
-Batch Accuracy: 0.900 (9/10)
+Batch Accuracy: 1.000 (10/10)
 --- END REWRITE/PARAPHRASE BATCH ---
 
 
@@ -488,7 +488,7 @@ Batch Accuracy: 0.500 (1/2)
 
 === EVALUATION RESULTS ===
 Rewrite prompts correct: [True, True, True, True, True]
-Paraphrase prompts correct: [False, True, True, True, True]
+Paraphrase prompts correct: [True, True, True, True, True]
 Neighborhood prompts correct: [False, True]
 ================================
 
@@ -1494,4 +1494,4 @@ Paraphrase prompts correct: [True, True, True, True, True]
 Neighborhood prompts correct: [False, True, True, True, True]
 ================================
 
-Evaluation took 0.6794486045837402
+Evaluation took 0.6881606578826904

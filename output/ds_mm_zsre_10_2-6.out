@@ -1,8 +1,8 @@
 Running evals for MEMIT...
-Results will be stored at results/MEMIT/run_038
+Results will be stored at results/MEMIT/run_047
 Executing MEMIT with parameters MEMITHyperParams(layers=[2, 3, 4, 5, 6], layer_selection='all', fact_token='subject_last', v_num_grad_steps=25, v_lr=0.5, v_loss_layer=31, v_weight_decay=0.001, clamp_norm_factor=4, kl_factor=0.0625, mom2_adjustment=True, mom2_update_weight=15000, rewrite_module_tmp='model.layers.{}.mlp.down_proj', layer_module_tmp='model.layers.{}', mlp_module_tmp='model.layers.{}.mlp', attn_module_tmp='model.layers.{}.self_attn', ln_f_module='model.norm', lm_head_module='lm_head', mom2_dataset='wikipedia', mom2_n_samples=1000, mom2_dtype='float32', alg_name='MEMIT', device=0, model_name='deepseek-ai/DeepSeek-R1-Distill-Llama-8B', stats_dir='./data/stats', max_length=40, batch_size=1, model_parallel=False)
 Instantiating model
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.66s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:24<00:00, 12.82s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:24<00:00, 12.50s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:09<00:09,  9.13s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.86s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:21<00:00, 10.60s/it]
 Loading dataset, attribute snippets, tf-idf data
 Will load cache from /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_{}_clamp_{}_case_{}.npz
 MEMIT request sample: [What university did Watts Humphrey attend?] -> [ Illinois Institute of Technology]
@@ -15,354 +15,356 @@ MEMIT request sample: [Which person is the architect of Lahti Town Hall?] -> [ E
 MEMIT request sample: [Who was the architect involved with Lahti Town Hall?] -> [ Eliel Saarinen]
 MEMIT request sample: [What was the name of the architect who worked on Lahti Town Hall?] -> [ Eliel Saarinen]
 MEMIT request sample: [Which designer was responsible for Lahti Town Hall?] -> [ Eliel Saarinen]
-Cached context templates [['{}'], ['The 2020-2021 academic year. {}', 'Therefore, the first task is to determine if. {}', 'Because the problem says that the function f(x. {}', 'I need to find out how to compute the. {}', 'You need to create a function that takes in. {}']]
+Cached context templates [['{}'], ['The following problem is given to me, and. {}', 'Therefore, the first thing is to determine what. {}', 'Because of the time constraints, the problem is. {}', "I've just found a problem online that I. {}", 'You can have multiple people in your life that. {}']]
 Computing right vector (v)
 Lookup index found: 6 | Sentence: What university did Watts Humphrey attend? Illinois Institute of | Token: rey
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 6.843 = 6.843 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.019553396850824356
-loss 7.083 = 6.095 + 0.987 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.04096896946430206
-loss 3.982 = 3.715 + 0.266 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.22671759128570557
-loss 1.864 = 1.863 + 0.001 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.7738369703292847
-loss 1.413 = 1.41 + 0.002 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8279581069946289
-loss 1.298 = 1.294 + 0.003 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8304068446159363
-loss 1.297 = 1.294 + 0.002 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8309597969055176
-loss 1.243 = 1.242 + 0.001 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8313522338867188
-loss 1.26 = 1.259 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8316892385482788
-loss 1.25 = 1.249 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8320350646972656
-loss 1.239 = 1.238 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8322795629501343
-loss 1.232 = 1.232 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8324717283248901
-loss 1.225 = 1.225 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8326467275619507
-loss 1.22 = 1.22 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8327959775924683
-loss 1.213 = 1.213 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8328951597213745
-loss 1.21 = 1.209 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.832965075969696
-loss 1.204 = 1.203 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8330272436141968
-loss 1.202 = 1.202 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.833073616027832
-loss 1.201 = 1.2 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8331071138381958
-loss 1.2 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8331321477890015
-loss 1.2 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8331505060195923
-loss 1.2 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8331686854362488
-loss 1.2 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8331863284111023
-loss 1.199 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332024812698364
-loss 1.199 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332173228263855
-Init norm 7.09765625 | Delta norm 28.390625 | Target norm 29.39322853088379
+loss 7.027 = 7.027 + 0.0 + 0.0 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.015232734382152557
+loss 7.327 = 6.241 + 1.086 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.03493809327483177
+loss 4.926 = 4.255 + 0.671 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.19548052549362183
+loss 2.213 = 2.209 + 0.003 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.5689773559570312
+loss 1.789 = 1.619 + 0.169 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8159564733505249
+loss 1.338 = 1.337 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8255409598350525
+loss 1.419 = 1.418 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8290116786956787
+loss 1.313 = 1.313 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8288935422897339
+loss 1.257 = 1.257 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8292891383171082
+loss 1.277 = 1.277 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.829780101776123
+loss 1.246 = 1.245 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8302698135375977
+loss 1.251 = 1.251 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8309363126754761
+loss 1.234 = 1.234 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8316407203674316
+loss 1.234 = 1.234 + -0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8321384191513062
+loss 1.223 = 1.222 + -0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8324979543685913
+loss 1.221 = 1.22 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8327364921569824
+loss 1.213 = 1.212 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8329015970230103
+loss 1.211 = 1.211 + -0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8330159187316895
+loss 1.206 = 1.206 + -0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8330998420715332
+loss 1.204 = 1.204 + -0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8331605792045593
+loss 1.203 = 1.202 + -0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332058787345886
+loss 1.201 = 1.201 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332395553588867
+loss 1.201 = 1.2 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332640528678894
+loss 1.2 = 1.2 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8332840204238892
+loss 1.2 = 1.199 + 0.0 + 0.001 avg prob of [{'str': ' Illinois Institute of Technology'}] 0.8333002924919128
+Init norm 7.09765625 | Delta norm 28.390623092651367 | Target norm 29.319503784179688
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_0.npz
 Computing right vector (v)
 Lookup index found: 6 | Sentence: Which family does Ramalinaceae belong to? Lecanor | Token: aceae
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 7.392 = 7.392 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.00411680294200778
-loss 7.265 = 6.264 + 1.001 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.015451749786734581
-loss 4.512 = 3.772 + 0.74 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.29101744294166565
-loss 3.255 = 3.128 + 0.127 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.5830991268157959
-loss 2.821 = 2.821 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.7122677564620972
-loss 2.551 = 2.551 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.7700368762016296
-loss 2.208 = 2.207 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.7942003607749939
-loss 2.083 = 2.082 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.80579674243927
-loss 2.075 = 2.073 + 0.001 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8133910894393921
-loss 2.07 = 2.068 + 0.002 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8182538747787476
-loss 2.067 = 2.064 + 0.002 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8225020170211792
-loss 2.063 = 2.06 + 0.002 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8258959650993347
-loss 2.06 = 2.058 + 0.001 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8281029462814331
-loss 2.058 = 2.057 + 0.001 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.829509437084198
-loss 2.057 = 2.056 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8304448127746582
-loss 2.056 = 2.055 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8310970067977905
-loss 2.055 = 2.055 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8315545320510864
-loss 2.055 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.831896185874939
-loss 2.055 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8321499824523926
-loss 2.055 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8323463201522827
-loss 2.054 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8324999809265137
-loss 2.054 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8326207995414734
-loss 2.054 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8327162265777588
-loss 2.054 = 2.053 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8327957987785339
-loss 2.054 = 2.053 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8328578472137451
-Init norm 7.11328125 | Delta norm 28.453125 | Target norm 29.363611221313477
+loss 7.743 = 7.743 + 0.0 + 0.0 avg prob of [{'str': ' Lecanorales'}] 0.0027666843961924314
+loss 8.017 = 6.72 + 1.296 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.008985004387795925
+loss 6.84 = 6.206 + 0.634 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.016408683732151985
+loss 4.804 = 4.767 + 0.037 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.08933892101049423
+loss 3.404 = 3.398 + 0.006 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.4358408451080322
+loss 2.975 = 2.972 + 0.003 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.6334725022315979
+loss 2.704 = 2.701 + 0.002 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.7427932620048523
+loss 2.51 = 2.506 + 0.003 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.7917212247848511
+loss 2.253 = 2.247 + 0.006 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8101937770843506
+loss 2.1 = 2.081 + 0.018 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8120092153549194
+loss 2.086 = 2.069 + 0.016 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8184604644775391
+loss 2.069 = 2.062 + 0.007 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8250875473022461
+loss 2.061 = 2.058 + 0.003 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8282973170280457
+loss 2.058 = 2.056 + 0.001 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8300117254257202
+loss 2.056 = 2.055 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8310407400131226
+loss 2.055 = 2.055 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8316690921783447
+loss 2.055 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8320824503898621
+loss 2.055 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8323472738265991
+loss 2.054 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8325324058532715
+loss 2.054 = 2.054 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8326677083969116
+loss 2.054 = 2.053 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8327698707580566
+loss 2.054 = 2.053 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8328489065170288
+loss 2.054 = 2.053 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8329073190689087
+loss 2.054 = 2.053 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.832959771156311
+loss 2.054 = 2.053 + 0.0 + 0.001 avg prob of [{'str': ' Lecanorales'}] 0.8329982757568359
+Init norm 7.11328125 | Delta norm 28.453125 | Target norm 29.294904708862305
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_1.npz
 Computing right vector (v)
 Lookup index found: 7 | Sentence: What role does Denny Herzig play in football? | Token: zig
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 15.736 = 15.736 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 2.4626655203974224e-07
-loss 15.119 = 13.949 + 1.169 + 0.001 avg prob of [{'str': ' defender'}] 2.2010117390891537e-06
-loss 8.929 = 8.844 + 0.085 + 0.001 avg prob of [{'str': ' defender'}] 0.0009485346963629127
-loss 4.727 = 4.726 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.1252739131450653
-loss 4.907 = 4.905 + 0.001 + 0.001 avg prob of [{'str': ' defender'}] 0.07780086249113083
-loss 2.981 = 2.856 + 0.125 + 0.001 avg prob of [{'str': ' defender'}] 0.8212891817092896
-loss 2.883 = 2.881 + 0.001 + 0.001 avg prob of [{'str': ' defender'}] 0.7974187731742859
-loss 2.868 = 2.867 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8102554678916931
-loss 2.862 = 2.862 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8157688975334167
-loss 2.858 = 2.857 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8201109766960144
-loss 2.854 = 2.853 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8241850733757019
-loss 2.851 = 2.85 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8272414207458496
-loss 2.849 = 2.848 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8291852474212646
-loss 2.847 = 2.847 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8303571939468384
-loss 2.847 = 2.846 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.831100344657898
-loss 2.846 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8315974473953247
-loss 2.846 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8319277167320251
-loss 2.846 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8321764469146729
-loss 2.845 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8323535919189453
-loss 2.845 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8324915766716003
-loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8326000571250916
-loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8326854705810547
-loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8327558040618896
-loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.832815408706665
-loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8328678607940674
-Init norm 7.08984375 | Delta norm 28.359375 | Target norm 29.490524291992188
+loss 16.194 = 16.194 + 0.0 + 0.0 avg prob of [{'str': ' defender'}] 3.43757506016118e-07
+loss 13.52 = 12.375 + 1.145 + 0.001 avg prob of [{'str': ' defender'}] 1.1032722795789596e-05
+loss 11.342 = 10.759 + 0.583 + 0.001 avg prob of [{'str': ' defender'}] 7.623339479323477e-05
+loss 8.144 = 8.143 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.0016266782768070698
+loss 4.214 = 4.214 + -0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.1690332591533661
+loss 3.0 = 2.999 + -0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.6931452751159668
+loss 2.857 = 2.856 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8207763433456421
+loss 2.848 = 2.848 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8294107913970947
+loss 2.846 = 2.846 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8311869502067566
+loss 2.846 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8318430781364441
+loss 2.845 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8321725130081177
+loss 2.845 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8323683738708496
+loss 2.845 = 2.845 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8324991464614868
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8325983881950378
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8326734304428101
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8327362537384033
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8327893018722534
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8328330516815186
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8328726291656494
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8329092860221863
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8329402208328247
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8329699039459229
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8329964876174927
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8330193758010864
+loss 2.845 = 2.844 + 0.0 + 0.001 avg prob of [{'str': ' defender'}] 0.8330388069152832
+Init norm 7.08984375 | Delta norm 28.359375 | Target norm 29.613143920898438
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_2.npz
 Computing right vector (v)
 Lookup index found: 6 | Sentence: What artist created Call the Doctor? Sleater-Kin | Token:  Doctor
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 6.525 = 6.525 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.03585689142346382
-loss 6.647 = 5.58 + 1.066 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.07517131417989731
-loss 3.817 = 3.006 + 0.811 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.4761657416820526
-loss 1.99 = 1.987 + 0.003 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8279165625572205
-loss 1.463 = 1.462 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8202576637268066
-loss 1.437 = 1.436 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8284629583358765
-loss 1.731 = 1.725 + 0.005 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8240334987640381
-loss 1.551 = 1.535 + 0.016 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8164776563644409
-loss 1.213 = 1.212 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8198837041854858
-loss 1.044 = 1.042 + 0.002 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8260860443115234
-loss 1.101 = 1.097 + 0.003 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8263866305351257
-loss 1.048 = 1.046 + 0.002 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8279690146446228
-loss 0.978 = 0.976 + 0.002 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8291551470756531
-loss 0.931 = 0.93 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8297430872917175
-loss 0.952 = 0.951 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8300946950912476
-loss 0.919 = 0.918 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8307517766952515
-loss 0.922 = 0.921 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8311778903007507
-loss 0.912 = 0.911 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8315461874008179
-loss 0.912 = 0.911 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8318104147911072
-loss 0.911 = 0.911 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8320515155792236
-loss 0.909 = 0.908 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.832312285900116
-loss 0.907 = 0.907 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8325132131576538
-loss 0.907 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.832673192024231
-loss 0.907 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8328110575675964
-loss 0.907 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8329264521598816
-Init norm 7.15625 | Delta norm 28.625 | Target norm 29.8544921875
+loss 6.553 = 6.553 + 0.0 + 0.0 avg prob of [{'str': ' Sleater-Kinney'}] 0.03467738255858421
+loss 6.802 = 5.562 + 1.239 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.082380011677742
+loss 4.189 = 3.469 + 0.719 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.5377652645111084
+loss 2.228 = 2.226 + 0.002 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8251938819885254
+loss 1.994 = 1.97 + 0.024 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8128201961517334
+loss 1.486 = 1.483 + 0.002 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8313009142875671
+loss 1.296 = 1.294 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8314152956008911
+loss 1.16 = 1.157 + 0.002 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8312832117080688
+loss 1.041 = 1.038 + 0.003 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8309119939804077
+loss 0.951 = 0.946 + 0.004 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8313485980033875
+loss 0.965 = 0.96 + 0.004 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8314656019210815
+loss 1.018 = 1.016 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.831427812576294
+loss 1.013 = 1.011 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8316347002983093
+loss 0.933 = 0.931 + 0.001 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8319215774536133
+loss 0.967 = 0.966 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8317283391952515
+loss 0.911 = 0.91 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8321197032928467
+loss 0.918 = 0.917 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8322502374649048
+loss 0.915 = 0.914 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8323534727096558
+loss 0.908 = 0.908 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8324404954910278
+loss 0.907 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8325272798538208
+loss 0.907 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8325979709625244
+loss 0.907 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8326758742332458
+loss 0.907 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8327619433403015
+loss 0.906 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.8328396677970886
+loss 0.906 = 0.906 + 0.0 + 0.001 avg prob of [{'str': ' Sleater-Kinney'}] 0.832918107509613
+Init norm 7.15625 | Delta norm 28.625 | Target norm 29.85602378845215
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_3.npz
 Computing right vector (v)
 Lookup index found: 9 | Sentence: Who was the designer of Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 4.274 = 4.274 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.07916704565286636
-loss 3.955 = 3.373 + 0.581 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.23906949162483215
-loss 2.972 = 2.972 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.39845651388168335
-loss 2.401 = 2.401 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7387270927429199
-loss 2.324 = 2.323 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8101913332939148
-loss 2.308 = 2.307 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.826177716255188
-loss 2.307 = 2.306 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8269671201705933
-loss 2.307 = 2.306 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8272489309310913
-loss 2.306 = 2.306 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8274670839309692
-loss 2.306 = 2.305 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8277395963668823
-loss 2.306 = 2.305 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8280587196350098
-loss 2.305 = 2.305 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8283640146255493
-loss 2.305 = 2.304 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.828721284866333
-loss 2.305 = 2.304 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8290486335754395
-loss 2.304 = 2.304 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8293756246566772
-loss 2.304 = 2.304 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8296699523925781
-loss 2.304 = 2.303 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8299809694290161
-loss 2.304 = 2.303 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.83024662733078
-loss 2.303 = 2.303 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8304852247238159
-loss 2.303 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8307380080223083
-loss 2.303 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8309476375579834
-loss 2.303 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8311468362808228
-loss 2.302 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8313134908676147
-loss 2.302 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8314799070358276
-loss 2.302 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.831634521484375
-Init norm 7.0390625 | Delta norm 28.15625 | Target norm 29.398277282714844
+loss 4.285 = 4.285 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.07894551753997803
+loss 4.718 = 3.784 + 0.934 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.14317254722118378
+loss 2.642 = 2.642 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5581344366073608
+loss 2.317 = 2.316 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8175675272941589
+loss 2.312 = 2.311 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8222343325614929
+loss 2.311 = 2.309 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8242381811141968
+loss 2.309 = 2.308 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8256640434265137
+loss 2.308 = 2.307 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8267053365707397
+loss 2.307 = 2.306 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8276802897453308
+loss 2.306 = 2.305 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8285247683525085
+loss 2.305 = 2.304 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8291734457015991
+loss 2.304 = 2.303 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8297863006591797
+loss 2.304 = 2.303 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8303074836730957
+loss 2.303 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8307552337646484
+loss 2.303 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8311061859130859
+loss 2.302 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8314162492752075
+loss 2.302 = 2.302 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8316860198974609
+loss 2.302 = 2.301 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8319100141525269
+loss 2.302 = 2.301 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8320978879928589
+loss 2.302 = 2.301 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8322440385818481
+loss 2.301 = 2.301 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8323763608932495
+loss 2.301 = 2.301 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8324843645095825
+loss 2.301 = 2.301 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8325756788253784
+loss 2.301 = 2.301 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8326582312583923
+loss 2.301 = 2.3 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8327233195304871
+Init norm 7.0390625 | Delta norm 28.15625 | Target norm 29.29180145263672
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_4.npz
 Computing right vector (v)
 Lookup index found: 7 | Sentence: By which person Lahti Town Hall has been designed? Eliel Saar | Token:  Hall
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 4.209 = 4.209 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.06109490990638733
-loss 4.086 = 3.292 + 0.793 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.18446549773216248
-loss 2.486 = 2.468 + 0.017 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.4850499629974365
-loss 2.118 = 2.116 + 0.002 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7328987121582031
-loss 2.037 = 2.036 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8065909147262573
-loss 2.019 = 2.018 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8240239024162292
-loss 2.015 = 2.014 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.827492892742157
-loss 2.013 = 2.013 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8291299343109131
-loss 2.012 = 2.012 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.830108642578125
-loss 2.012 = 2.011 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8307545185089111
-loss 2.011 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8312052488327026
-loss 2.011 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8315491080284119
-loss 2.011 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8318035006523132
-loss 2.01 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8319951295852661
-loss 2.01 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8321585655212402
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8322879672050476
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.832396388053894
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8324844241142273
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8325600624084473
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8326265215873718
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8326842188835144
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8327314853668213
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8327770233154297
-loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8328148126602173
-loss 2.009 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8328487277030945
-Init norm 7.02734375 | Delta norm 28.109375 | Target norm 29.046321868896484
+loss 4.118 = 4.118 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.06721033155918121
+loss 3.795 = 3.289 + 0.505 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.18246643245220184
+loss 2.578 = 2.577 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.423369824886322
+loss 2.194 = 2.193 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.6681690216064453
+loss 2.042 = 2.042 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8005146980285645
+loss 2.026 = 2.026 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8160724639892578
+loss 2.02 = 2.019 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8223264217376709
+loss 2.017 = 2.017 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8251637816429138
+loss 2.016 = 2.015 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8266648650169373
+loss 2.015 = 2.014 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8276059031486511
+loss 2.014 = 2.013 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8283421397209167
+loss 2.013 = 2.013 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8289788961410522
+loss 2.013 = 2.012 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8294891715049744
+loss 2.012 = 2.012 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8299092054367065
+loss 2.012 = 2.011 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8302943110466003
+loss 2.012 = 2.011 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8306452631950378
+loss 2.011 = 2.011 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.830906867980957
+loss 2.011 = 2.011 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8311494588851929
+loss 2.011 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8313798904418945
+loss 2.011 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8315644264221191
+loss 2.011 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8317371606826782
+loss 2.01 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8318735957145691
+loss 2.01 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8320101499557495
+loss 2.01 = 2.01 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.832126259803772
+loss 2.01 = 2.009 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8322168588638306
+Init norm 7.02734375 | Delta norm 28.109375 | Target norm 29.097000122070312
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_5.npz
 Computing right vector (v)
 Lookup index found: 10 | Sentence: Which person is the architect of Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 4.434 = 4.434 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.07636018097400665
-loss 4.511 = 3.527 + 0.983 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.20314256846904755
-loss 3.142 = 2.297 + 0.845 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.699248194694519
-loss 1.98 = 1.955 + 0.025 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8265702128410339
-loss 1.724 = 1.718 + 0.006 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8271297812461853
-loss 1.455 = 1.447 + 0.008 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8261593580245972
-loss 1.157 = 1.144 + 0.012 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.825456976890564
-loss 0.841 = 0.826 + 0.015 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8268852233886719
-loss 0.602 = 0.588 + 0.014 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8313543200492859
-loss 0.445 = 0.433 + 0.012 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8395163416862488
-loss 0.368 = 0.358 + 0.01 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8470457792282104
-loss 0.3 = 0.292 + 0.008 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8569304943084717
-loss 0.214 = 0.207 + 0.007 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8770092725753784
-loss 0.14 = 0.134 + 0.006 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9047691226005554
-loss 0.09 = 0.085 + 0.005 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9311108589172363
-loss 0.059 = 0.054 + 0.005 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9521583318710327
-loss 0.038 = 0.034 + 0.004 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9685482382774353
-Init norm 624.5 | Delta norm 160.8448028564453 | Target norm 647.0066528320312
+loss 4.45 = 4.45 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.07653339207172394
+loss 4.6 = 3.575 + 1.025 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.19242118299007416
+loss 3.237 = 2.273 + 0.964 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7366422414779663
+loss 2.911 = 1.977 + 0.935 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8104835748672485
+loss 2.619 = 1.711 + 0.908 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8225255012512207
+loss 2.28 = 1.431 + 0.849 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8239313364028931
+loss 1.77 = 1.14 + 0.629 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8234226703643799
+loss 0.947 = 0.891 + 0.056 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8256614208221436
+loss 0.697 = 0.694 + 0.003 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8284890055656433
+loss 0.55 = 0.55 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8325080871582031
+loss 0.458 = 0.458 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8372567892074585
+loss 0.391 = 0.39 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8428308963775635
+loss 0.338 = 0.338 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8489160537719727
+loss 0.27 = 0.27 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8604930639266968
+loss 0.192 = 0.192 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.881019115447998
+loss 0.129 = 0.129 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9063644409179688
+loss 0.081 = 0.081 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9332482218742371
+loss 0.044 = 0.044 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9599027037620544
+Init norm 624.5 | Delta norm 168.53948974609375 | Target norm 651.1054077148438
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_6.npz
 Computing right vector (v)
 Lookup index found: 10 | Sentence: Who was the architect involved with Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 4.64 = 4.64 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.07431069016456604
-loss 4.307 = 3.349 + 0.958 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.25211793184280396
-loss 3.008 = 2.157 + 0.851 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7086369395256042
-loss 2.443 = 1.7 + 0.743 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.828025221824646
-loss 1.449 = 1.384 + 0.065 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8298114538192749
-loss 1.064 = 1.059 + 0.005 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8299943208694458
-loss 0.699 = 0.698 + 0.001 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8327454924583435
-loss 0.35 = 0.35 + 0.001 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8515624403953552
-loss 0.174 = 0.173 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8908354640007019
-loss 0.1 = 0.1 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9240018725395203
-loss 0.048 = 0.048 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9578028917312622
-Init norm 624.5 | Delta norm 135.2071075439453 | Target norm 641.1591796875
+loss 4.72 = 4.72 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.06829456239938736
+loss 5.024 = 4.11 + 0.914 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.09847980737686157
+loss 3.267 = 2.615 + 0.652 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.4065699279308319
+loss 1.795 = 1.786 + 0.009 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.7892653346061707
+loss 1.436 = 1.429 + 0.007 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8192030787467957
+loss 1.071 = 1.059 + 0.012 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.821431040763855
+loss 0.674 = 0.665 + 0.009 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8253034353256226
+loss 0.35 = 0.343 + 0.006 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8461769819259644
+loss 0.169 = 0.164 + 0.005 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.8903014063835144
+loss 0.077 = 0.072 + 0.005 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9390333890914917
+loss 0.037 = 0.032 + 0.005 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.9699360728263855
+Init norm 624.5 | Delta norm 137.7938690185547 | Target norm 640.999267578125
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_7.npz
 Computing right vector (v)
 Lookup index found: 14 | Sentence: What was the name of the architect who worked on Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 4.751 = 4.751 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.06998997181653976
-loss 4.368 = 3.255 + 1.112 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3629937171936035
-loss 2.871 = 2.783 + 0.088 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.6287840008735657
-loss 2.585 = 2.585 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.6982463598251343
-loss 2.112 = 2.112 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7897936701774597
-loss 1.677 = 1.677 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.7794532179832458
-loss 1.042 = 1.041 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8222954273223877
-loss 0.598 = 0.598 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8292078375816345
-loss 0.261 = 0.26 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.865710973739624
-loss 0.055 = 0.053 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9537793397903442
-loss 0.026 = 0.023 + 0.003 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9780205488204956
-Init norm 6.25390625 | Delta norm 25.015625 | Target norm 25.732229232788086
+loss 4.962 = 4.962 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.05450773239135742
+loss 4.227 = 3.324 + 0.903 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.3397305905818939
+loss 3.426 = 2.853 + 0.573 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.46858513355255127
+loss 2.412 = 2.412 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.792194128036499
+loss 2.202 = 2.202 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8037837743759155
+loss 1.62 = 1.619 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8145618438720703
+loss 1.357 = 1.356 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8235220909118652
+loss 1.141 = 1.14 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8219536542892456
+loss 0.833 = 0.832 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8178068399429321
+loss 0.511 = 0.51 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8155845403671265
+loss 0.304 = 0.303 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8549551963806152
+loss 0.036 = 0.035 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.9676707983016968
+Init norm 6.25390625 | Delta norm 25.015625 | Target norm 25.726655960083008
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_8.npz
 Computing right vector (v)
 Lookup index found: 9 | Sentence: Which designer was responsible for Lahti Town Hall? Eliel Saar | Token:  Hall
 Rewrite layer is 6
 Tying optimization objective to 31
 Recording initial value of v*
-loss 4.414 = 4.414 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.08408589661121368
-loss 4.998 = 4.08 + 0.918 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.1293565183877945
-loss 2.694 = 2.692 + 0.002 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.6642286777496338
-loss 2.508 = 2.507 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8215285539627075
-loss 2.51 = 2.509 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8195976614952087
-loss 2.5 = 2.499 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.829448401927948
-loss 2.499 = 2.498 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8302921056747437
-loss 2.499 = 2.498 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8306323885917664
-loss 2.498 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8309249877929688
-loss 2.498 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8311507701873779
-loss 2.498 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8313595652580261
-loss 2.498 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8315333127975464
-loss 2.497 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8317042589187622
-loss 2.497 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8318495154380798
-loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8319740295410156
-loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8320920467376709
-loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8321983218193054
-loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8322896957397461
-loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8323766589164734
-loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8324579000473022
-loss 2.496 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.832528293132782
-loss 2.496 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8325860500335693
-loss 2.496 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8326438665390015
-loss 2.496 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.832692563533783
-loss 2.496 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8327376842498779
-Init norm 7.01953125 | Delta norm 28.078125 | Target norm 29.30372428894043
+loss 4.497 = 4.497 + 0.0 + 0.0 avg prob of [{'str': ' Eliel Saarinen'}] 0.08109670132398605
+loss 5.144 = 4.259 + 0.884 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.10941951721906662
+loss 3.365 = 3.365 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.29611292481422424
+loss 3.55 = 3.55 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.24679645895957947
+loss 2.882 = 2.882 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.5249449014663696
+loss 2.511 = 2.51 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8182735443115234
+loss 2.506 = 2.504 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.824344277381897
+loss 2.506 = 2.502 + 0.003 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8265116214752197
+loss 2.505 = 2.501 + 0.004 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8278917670249939
+loss 2.502 = 2.5 + 0.002 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.828889012336731
+loss 2.5 = 2.499 + 0.001 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8296024799346924
+loss 2.499 = 2.498 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8301188349723816
+loss 2.499 = 2.498 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.830537736415863
+loss 2.498 = 2.498 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8308781981468201
+loss 2.498 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.831134021282196
+loss 2.498 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8313576579093933
+loss 2.497 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8315348625183105
+loss 2.497 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8316993713378906
+loss 2.497 = 2.497 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8318389654159546
+loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8319517970085144
+loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8320555686950684
+loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8321480751037598
+loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8322305083274841
+loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8323036432266235
+loss 2.497 = 2.496 + 0.0 + 0.001 avg prob of [{'str': ' Eliel Saarinen'}] 0.8323708772659302
+Init norm 7.01953125 | Delta norm 28.078125 | Target norm 29.344371795654297
 Cached k/v pair at /share/projects/rewriting-knowledge/kvs/deepseek-ai_DeepSeek-R1-Distill-Llama-8B_MEMIT/zsre_layer_6_clamp_4_case_9.npz
 
 
 LAYER 2
 
 Writing 10 key/value pair(s) into layer 2
-z error tensor(152.3027, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(152.6769, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.2.mlp.down_proj.
 Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.2.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(92., device='cuda:0', dtype=torch.float16)
-upd norm tensor(34.5686, device='cuda:0', dtype=torch.float64,
+upd norm tensor(34.8954, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 3
 
 Writing 10 key/value pair(s) into layer 3
-z error tensor(149.8005, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(150.0155, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.3.mlp.down_proj.
 Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.3.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(90.0625, device='cuda:0', dtype=torch.float16)
-upd norm tensor(31.9244, device='cuda:0', dtype=torch.float64,
+upd norm tensor(32.2456, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 4
 
 Writing 10 key/value pair(s) into layer 4
-z error tensor(149.9478, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(150.1737, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.4.mlp.down_proj.
 Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.4.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(88.1875, device='cuda:0', dtype=torch.float16)
-upd norm tensor(32.1404, device='cuda:0', dtype=torch.float64,
+upd norm tensor(32.0884, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 5
 
 Writing 10 key/value pair(s) into layer 5
-z error tensor(151.4371, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(151.7359, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.5.mlp.down_proj.
 Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.5.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(88.6250, device='cuda:0', dtype=torch.float16)
-upd norm tensor(33.4262, device='cuda:0', dtype=torch.float64,
+upd norm tensor(33.5242, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 
 
 LAYER 6
 
 Writing 10 key/value pair(s) into layer 6
-z error tensor(153.6353, device='cuda:0', grad_fn=<MeanBackward0>)
+z error tensor(154.0132, device='cuda:0', grad_fn=<MeanBackward0>)
 Retrieving covariance statistics for deepseek-ai_DeepSeek-R1-Distill-Llama-8B @ model.layers.6.mlp.down_proj.
 Loading cached data/stats/DeepSeek-R1-Distill-Llama-8B/wikipedia_stats/model.layers.6.mlp.down_proj_float32_mom2_1000.npz
   0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 0/1000 [00:00<?, ?it/s]
 orig norm tensor(88.5625, device='cuda:0', dtype=torch.float16)
-upd norm tensor(66.1042, device='cuda:0', dtype=torch.float64,
+upd norm tensor(66.5642, device='cuda:0', dtype=torch.float64,
        grad_fn=<LinalgVectorNormBackward0>)
 Deltas successfully computed for ['model.layers.2.mlp.down_proj.weight', 'model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight']
 New weights successfully inserted into ['model.layers.2.mlp.down_proj.weight', 'model.layers.3.mlp.down_proj.weight', 'model.layers.4.mlp.down_proj.weight', 'model.layers.5.mlp.down_proj.weight', 'model.layers.6.mlp.down_proj.weight']
-Execution took 24.04582929611206
+Execution took 20.89868974685669
 ✅ Model saved to: edited_models/DeepSeek-R1-Distill-Llama-8B_MEMIT_zsre_10edits_layers2-3-4-5-6
    Layers edited: [2, 3, 4, 5, 6]
    Algorithm: MEMIT
@@ -407,14 +409,14 @@ Processing 8 prompts:
 
   [  2] Prompt: 'What university did Watts Humphrey attend? Illinois Institute'
         Target: ' of' (expected: 'of')
-        Prediction: '_ref' | Correct: False
-        Token IDs - Predicted: 12592, Expected: 315
+        Prediction: '<｜end▁of▁sentence｜>' | Correct: False
+        Token IDs - Predicted: 128001, Expected: 315
         Last non-masked position: 10
 
   [  3] Prompt: 'What university did Watts Humphrey attend? Illinois Institute of'
         Target: ' Technology' (expected: 'technology')
-        Prediction: 'ivan' | Correct: False
-        Token IDs - Predicted: 28422, Expected: 12053
+        Prediction: '' | Correct: False
+        Token IDs - Predicted: 198, Expected: 12053
         Last non-masked position: 11
 
   [  4] Prompt: 'What university did Watts Humphrey take part in?'
@@ -425,20 +427,20 @@ Processing 8 prompts:
 
   [  5] Prompt: 'What university did Watts Humphrey take part in? Illinois'
         Target: ' Institute' (expected: 'institute')
-        Prediction: '_ref' | Correct: False
-        Token IDs - Predicted: 12592, Expected: 10181
+        Prediction: 'nn' | Correct: False
+        Token IDs - Predicted: 9944, Expected: 10181
         Last non-masked position: 11
 
   [  6] Prompt: 'What university did Watts Humphrey take part in? Illinois Institute'
         Target: ' of' (expected: 'of')
-        Prediction: 'entr' | Correct: False
-        Token IDs - Predicted: 24677, Expected: 315
+        Prediction: '�' | Correct: False
+        Token IDs - Predicted: 66977, Expected: 315
         Last non-masked position: 12
 
   [  7] Prompt: 'What university did Watts Humphrey take part in? Illinois Institute of'
         Target: ' Technology' (expected: 'technology')
-        Prediction: 'nn' | Correct: False
-        Token IDs - Predicted: 9944, Expected: 12053
+        Prediction: 'oo' | Correct: False
+        Token IDs - Predicted: 20066, Expected: 12053
         Last non-masked position: 13
 
 Batch Accuracy: 0.000 (0/8)
@@ -462,8 +464,8 @@ Processing 3 prompts:
 
   [  1] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo'
         Target: ' We' (expected: 'we')
-        Prediction: '://' | Correct: False
-        Token IDs - Predicted: 1129, Expected: 1226
+        Prediction: '.' | Correct: False
+        Token IDs - Predicted: 627, Expected: 1226
         Last non-masked position: 17
 
   [  2] Prompt: 'nq question: who played desmond doss father in hacksaw ridge? Hugo We'
@@ -508,8 +510,8 @@ Last non-masked positions: [9, 10, 11, 12, 13]...
 Processing 10 prompts:
   [  0] Prompt: 'Which family does Ramalinaceae belong to?'
         Target: ' L' (expected: 'l')
-        Prediction: '' | Correct: False
-        Token IDs - Predicted: 198, Expected: 445
+        Prediction: 'mi' | Correct: False
+        Token IDs - Predicted: 8318, Expected: 445
         Last non-masked position: 9
 
   [  1] Prompt: 'Which family does Ramalinaceae belong to? L'
@@ -532,8 +534,8 @@ Processing 10 prompts:
 
   [  4] Prompt: 'Which family does Ramalinaceae belong to? Lecanor'
         Target: 'ales' (expected: 'ales')
-        Prediction: 'oth' | Correct: False
-        Token IDs - Predicted: 8942, Expected: 3916
+        Prediction: 'ion' | Correct: False
+        Token IDs - Predicted: 290, Expected: 3916
         Last non-masked position: 13
 
   [  5] Prompt: 'What family are Ramalinaceae?'
@@ -562,8 +564,8 @@ Processing 10 prompts:
 
   [  9] Prompt: 'What family are Ramalinaceae? Lecanor'
         Target: 'ales' (expected: 'ales')
-        Prediction: 'l' | Correct: False
-        Token IDs - Predicted: 445, Expected: 3916
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 3916
         Last non-masked position: 11
 
 Batch Accuracy: 0.000 (0/10)
@@ -587,8 +589,8 @@ Processing 2 prompts:
 
   [  1] Prompt: 'nq question: types of skiing in the winter olympics 2018? Down'
         Target: 'hill' (expected: 'hill')
-        Prediction: '://' | Correct: False
-        Token IDs - Predicted: 1129, Expected: 28607
+        Prediction: 'l' | Correct: False
+        Token IDs - Predicted: 75, Expected: 28607
         Last non-masked position: 18
 
 Batch Accuracy: 0.000 (0/2)
@@ -728,26 +730,26 @@ Processing 10 prompts:
 
   [  4] Prompt: 'What artist created Call the Doctor? Sleater-Kin'
         Target: 'ney' (expected: 'ney')
-        Prediction: 'ney' | Correct: True
-        Token IDs - Predicted: 3520, Expected: 3520
+        Prediction: 'ca' | Correct: False
+        Token IDs - Predicted: 936, Expected: 3520
         Last non-masked position: 11
 
   [  5] Prompt: 'Which artist created Call the Doctor?'
         Target: ' Sle' (expected: 'sle')
-        Prediction: 'ab' | Correct: False
-        Token IDs - Predicted: 370, Expected: 89558
+        Prediction: 'ou' | Correct: False
+        Token IDs - Predicted: 283, Expected: 89558
         Last non-masked position: 7
 
   [  6] Prompt: 'Which artist created Call the Doctor? Sle'
         Target: 'ater' (expected: 'ater')
-        Prediction: '' | Correct: False
-        Token IDs - Predicted: 198, Expected: 977
+        Prediction: 'bullet' | Correct: False
+        Token IDs - Predicted: 17889, Expected: 977
         Last non-masked position: 8
 
   [  7] Prompt: 'Which artist created Call the Doctor? Sleater'
         Target: '-K' (expected: '-k')
-        Prediction: '_ref' | Correct: False
-        Token IDs - Predicted: 12592, Expected: 16222
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 16222
         Last non-masked position: 9
 
   [  8] Prompt: 'Which artist created Call the Doctor? Sleater-K'
@@ -758,8 +760,8 @@ Processing 10 prompts:
 
   [  9] Prompt: 'Which artist created Call the Doctor? Sleater-Kin'
         Target: 'ney' (expected: 'ney')
-        Prediction: 'ca' | Correct: False
-        Token IDs - Predicted: 936, Expected: 3520
+        Prediction: 'ney' | Correct: True
+        Token IDs - Predicted: 3520, Expected: 3520
         Last non-masked position: 11
 
 Batch Accuracy: 0.100 (1/10)
@@ -778,21 +780,21 @@ Processing 2 prompts:
   [  0] Prompt: 'nq question: who sang nice day for a white wedding?'
         Target: ' Billy' (expected: 'billy')
         Prediction: '.' | Correct: False
-        Token IDs - Predicted: 627, Expected: 33919
+        Token IDs - Predicted: 13, Expected: 33919
         Last non-masked position: 13
 
   [  1] Prompt: 'nq question: who sang nice day for a white wedding? Billy'
         Target: ' Idol' (expected: 'idol')
-        Prediction: '' | Correct: False
-        Token IDs - Predicted: 198, Expected: 78964
+        Prediction: '.' | Correct: False
+        Token IDs - Predicted: 627, Expected: 78964
         Last non-masked position: 14
 
 Batch Accuracy: 0.000 (0/2)
 --- END NEIGHBORHOOD BATCH ---
 
 === EVALUATION RESULTS ===
-Rewrite prompts correct: [False, False, False, False, True]
-Paraphrase prompts correct: [False, False, False, False, False]
+Rewrite prompts correct: [False, False, False, False, False]
+Paraphrase prompts correct: [False, False, False, False, True]
 Neighborhood prompts correct: [False, False]
 ================================
 
@@ -853,8 +855,8 @@ Processing 10 prompts:
 
   [  5] Prompt: 'The architect at Lahti Town Hall, who was that?'
         Target: ' Eli' (expected: 'eli')
-        Prediction: '' | Correct: False
-        Token IDs - Predicted: 220, Expected: 34362
+        Prediction: 'aa' | Correct: False
+        Token IDs - Predicted: 5418, Expected: 34362
         Last non-masked position: 12
 
   [  6] Prompt: 'The architect at Lahti Town Hall, who was that? Eli'
@@ -865,8 +867,8 @@ Processing 10 prompts:
 
   [  7] Prompt: 'The architect at Lahti Town Hall, who was that? Eliel'
         Target: ' Sa' (expected: 'sa')
-        Prediction: 'aa' | Correct: False
-        Token IDs - Predicted: 5418, Expected: 16233
+        Prediction: 'aaaa' | Correct: False
+        Token IDs - Predicted: 29558, Expected: 16233
         Last non-masked position: 14
 
   [  8] Prompt: 'The architect at Lahti Town Hall, who was that? Eliel Sa'
@@ -877,8 +879,8 @@ Processing 10 prompts:
 
   [  9] Prompt: 'The architect at Lahti Town Hall, who was that? Eliel Saar'
         Target: 'inen' (expected: 'inen')
-        Prediction: 'aaaa' | Correct: False
-        Token IDs - Predicted: 29558, Expected: 17090
+        Prediction: 'aaaaaaaa' | Correct: False
+        Token IDs - Predicted: 59005, Expected: 17090
         Last non-masked position: 16
 
 Batch Accuracy: 0.000 (0/10)
@@ -902,26 +904,26 @@ Processing 5 prompts:
 
   [  1] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cy'
         Target: 'nd' (expected: 'nd')
-        Prediction: '.' | Correct: False
-        Token IDs - Predicted: 627, Expected: 303
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 303
         Last non-masked position: 19
 
   [  2] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cynd'
         Target: 'i' (expected: 'i')
-        Prediction: '://' | Correct: False
-        Token IDs - Predicted: 1129, Expected: 72
+        Prediction: 'ating' | Correct: False
+        Token IDs - Predicted: 1113, Expected: 72
         Last non-masked position: 20
 
   [  3] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cyndi'
         Target: ' Gre' (expected: 'gre')
-        Prediction: 'aa' | Correct: False
-        Token IDs - Predicted: 5418, Expected: 13842
+        Prediction: '}' | Correct: False
+        Token IDs - Predicted: 534, Expected: 13842
         Last non-masked position: 21
 
   [  4] Prompt: 'nq question: who sang the theme song for laverne and shirley? Cyndi Gre'
         Target: 'cco' (expected: 'cco')
-        Prediction: '?' | Correct: False
-        Token IDs - Predicted: 5380, Expected: 58761
+        Prediction: '.' | Correct: False
+        Token IDs - Predicted: 627, Expected: 58761
         Last non-masked position: 22
 
 Batch Accuracy: 0.000 (0/5)
@@ -967,7 +969,7 @@ Processing 10 prompts:
   [  1] Prompt: 'By which person Lahti Town Hall has been designed? Eli'
         Target: 'el' (expected: 'el')
         Prediction: 'aaaa' | Correct: False
-        Token IDs - Predicted: 26783, Expected: 301
+        Token IDs - Predicted: 29558, Expected: 301
         Last non-masked position: 12
 
   [  2] Prompt: 'By which person Lahti Town Hall has been designed? Eliel'
@@ -984,32 +986,32 @@ Processing 10 prompts:
 
   [  4] Prompt: 'By which person Lahti Town Hall has been designed? Eliel Saar'
         Target: 'inen' (expected: 'inen')
-        Prediction: 'aaaa' | Correct: False
-        Token IDs - Predicted: 26783, Expected: 17090
+        Prediction: 'aaaaaaaa' | Correct: False
+        Token IDs - Predicted: 59005, Expected: 17090
         Last non-masked position: 15
 
   [  5] Prompt: 'Which is the architect of Lahti Town Hall?'
         Target: ' Eli' (expected: 'eli')
-        Prediction: 'aaaaaaaa' | Correct: False
-        Token IDs - Predicted: 59005, Expected: 34362
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 34362
         Last non-masked position: 10
 
   [  6] Prompt: 'Which is the architect of Lahti Town Hall? Eli'
         Target: 'el' (expected: 'el')
-        Prediction: 'aaaaaaaa' | Correct: False
-        Token IDs - Predicted: 59005, Expected: 301
+        Prediction: 'aa' | Correct: False
+        Token IDs - Predicted: 5418, Expected: 301
         Last non-masked position: 11
 
   [  7] Prompt: 'Which is the architect of Lahti Town Hall? Eliel'
         Target: ' Sa' (expected: 'sa')
-        Prediction: 'oo' | Correct: False
-        Token IDs - Predicted: 20066, Expected: 16233
+        Prediction: 'aaaaaaaa' | Correct: False
+        Token IDs - Predicted: 59005, Expected: 16233
         Last non-masked position: 12
 
   [  8] Prompt: 'Which is the architect of Lahti Town Hall? Eliel Sa'
         Target: 'ar' (expected: 'ar')
-        Prediction: '\\\\' | Correct: False
-        Token IDs - Predicted: 52107, Expected: 277
+        Prediction: 'aaaaaaaa' | Correct: False
+        Token IDs - Predicted: 59005, Expected: 277
         Last non-masked position: 13
 
   [  9] Prompt: 'Which is the architect of Lahti Town Hall? Eliel Saar'
@@ -1097,8 +1099,8 @@ Processing 10 prompts:
 
   [  3] Prompt: 'Which person is the architect of Lahti Town Hall? Eliel Sa'
         Target: 'ar' (expected: 'ar')
-        Prediction: '\\\\' | Correct: False
-        Token IDs - Predicted: 52107, Expected: 277
+        Prediction: 'aaaaaaaa' | Correct: False
+        Token IDs - Predicted: 59005, Expected: 277
         Last non-masked position: 14
 
   [  4] Prompt: 'Which person is the architect of Lahti Town Hall? Eliel Saar'
@@ -1109,14 +1111,14 @@ Processing 10 prompts:
 
   [  5] Prompt: 'Who was the architect of Lahti Town Hall?'
         Target: ' Eli' (expected: 'eli')
-        Prediction: 'aa' | Correct: False
-        Token IDs - Predicted: 5418, Expected: 34362
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 34362
         Last non-masked position: 10
 
   [  6] Prompt: 'Who was the architect of Lahti Town Hall? Eli'
         Target: 'el' (expected: 'el')
-        Prediction: 'aaaaaaaa' | Correct: False
-        Token IDs - Predicted: 59005, Expected: 301
+        Prediction: 'aa' | Correct: False
+        Token IDs - Predicted: 5418, Expected: 301
         Last non-masked position: 11
 
   [  7] Prompt: 'Who was the architect of Lahti Town Hall? Eliel'
@@ -1158,8 +1160,8 @@ Processing 2 prompts:
 
   [  1] Prompt: 'nq question: who plays alec ramsay in the black stallion? Kelly'
         Target: ' Reno' (expected: 'reno')
-        Prediction: '.' | Correct: False
-        Token IDs - Predicted: 627, Expected: 64518
+        Prediction: '' | Correct: False
+        Token IDs - Predicted: 198, Expected: 64518
         Last non-masked position: 18
 
 Batch Accuracy: 0.000 (0/2)
@@ -1204,20 +1206,20 @@ Processing 10 prompts:
 
   [  1] Prompt: 'Who was the architect involved with Lahti Town Hall? Eli'
         Target: 'el' (expected: 'el')
-        Prediction: '://' | Correct: False
-        Token IDs - Predicted: 1129, Expected: 301
+        Prediction: 'ural' | Correct: False
+        Token IDs - Predicted: 4269, Expected: 301
         Last non-masked position: 12
 
   [  2] Prompt: 'Who was the architect involved with Lahti Town Hall? Eliel'
         Target: ' Sa' (expected: 'sa')
-        Prediction: 'aa' | Correct: False
-        Token IDs - Predicted: 5418, Expected: 16233
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 16233
         Last non-masked position: 13
 
   [  3] Prompt: 'Who was the architect involved with Lahti Town Hall? Eliel Sa'
         Target: 'ar' (expected: 'ar')
-        Prediction: 'aaaaaaaa' | Correct: False
-        Token IDs - Predicted: 59005, Expected: 277
+        Prediction: 'aa' | Correct: False
+        Token IDs - Predicted: 5418, Expected: 277
         Last non-masked position: 14
 
   [  4] Prompt: 'Who was the architect involved with Lahti Town Hall? Eliel Saar'
@@ -1271,8 +1273,8 @@ Last non-masked positions: [18]
 Processing 1 prompts:
   [  0] Prompt: 'nq question: where did an independence movement occur because of the congress of vienna?'
         Target: ' Italy' (expected: 'italy')
-        Prediction: 'ating' | Correct: False
-        Token IDs - Predicted: 1113, Expected: 15704
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 15704
         Last non-masked position: 18
 
 Batch Accuracy: 0.000 (0/1)
@@ -1311,8 +1313,8 @@ Last non-masked positions: [15, 16, 17, 18, 19]...
 Processing 10 prompts:
   [  0] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?'
         Target: ' Eli' (expected: 'eli')
-        Prediction: '://' | Correct: False
-        Token IDs - Predicted: 1129, Expected: 34362
+        Prediction: '.' | Correct: False
+        Token IDs - Predicted: 627, Expected: 34362
         Last non-masked position: 15
 
   [  1] Prompt: 'What was the name of the architect who worked on Lahti Town Hall? Eli'
@@ -1341,20 +1343,20 @@ Processing 10 prompts:
 
   [  5] Prompt: 'Who was the architect dealing with the Lahti Town Hall?'
         Target: ' Eli' (expected: 'eli')
-        Prediction: 'aa' | Correct: False
-        Token IDs - Predicted: 5418, Expected: 34362
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 34362
         Last non-masked position: 12
 
   [  6] Prompt: 'Who was the architect dealing with the Lahti Town Hall? Eli'
         Target: 'el' (expected: 'el')
-        Prediction: 'aa' | Correct: False
-        Token IDs - Predicted: 5418, Expected: 301
+        Prediction: '' | Correct: False
+        Token IDs - Predicted: 198, Expected: 301
         Last non-masked position: 13
 
   [  7] Prompt: 'Who was the architect dealing with the Lahti Town Hall? Eliel'
         Target: ' Sa' (expected: 'sa')
-        Prediction: 'aaaaaaaa' | Correct: False
-        Token IDs - Predicted: 59005, Expected: 16233
+        Prediction: 'aa' | Correct: False
+        Token IDs - Predicted: 5418, Expected: 16233
         Last non-masked position: 14
 
   [  8] Prompt: 'Who was the architect dealing with the Lahti Town Hall? Eliel Sa'
@@ -1396,26 +1398,26 @@ Processing 7 prompts:
 
   [  2] Prompt: 'nq question: when does walking dead season 8 second half start? October '
         Target: '22' (expected: '22')
-        Prediction: '.' | Correct: False
-        Token IDs - Predicted: 627, Expected: 1313
+        Prediction: 'ie' | Correct: False
+        Token IDs - Predicted: 648, Expected: 1313
         Last non-masked position: 17
 
   [  3] Prompt: 'nq question: when does walking dead season 8 second half start? October 22'
         Target: ',' (expected: ',')
-        Prediction: 'a' | Correct: False
-        Token IDs - Predicted: 362, Expected: 11
+        Prediction: '://' | Correct: False
+        Token IDs - Predicted: 1129, Expected: 11
         Last non-masked position: 18
 
   [  4] Prompt: 'nq question: when does walking dead season 8 second half start? October 22,'
         Target: ' ' (expected: '')
-        Prediction: '26' | Correct: False
-        Token IDs - Predicted: 1627, Expected: 220
+        Prediction: '_ref' | Correct: False
+        Token IDs - Predicted: 12592, Expected: 220
         Last non-masked position: 19
 
   [  5] Prompt: 'nq question: when does walking dead season 8 second half start? October 22, '
         Target: '201' (expected: '201')
-        Prediction: '�' | Correct: False
-        Token IDs - Predicted: 66977, Expected: 679
+        Prediction: 'o' | Correct: False
+        Token IDs - Predicted: 78, Expected: 679
         Last non-masked position: 20
 
   [  6] Prompt: 'nq question: when does walking dead season 8 second half start? October 22, 201'
@@ -1473,7 +1475,7 @@ Processing 10 prompts:
   [  2] Prompt: 'Which designer was responsible for Lahti Town Hall? Eliel'
         Target: ' Sa' (expected: 'sa')
         Prediction: 'the' | Correct: False
-        Token IDs - Predicted: 1820, Expected: 16233
+        Token IDs - Predicted: 279, Expected: 16233
         Last non-masked position: 12
 
   [  3] Prompt: 'Which designer was responsible for Lahti Town Hall? Eliel Sa'
@@ -1490,8 +1492,8 @@ Processing 10 prompts:
 
   [  5] Prompt: 'What was the name of the architect who worked on Lahti Town Hall?'
         Target: ' Eli' (expected: 'eli')
-        Prediction: '://' | Correct: False
-        Token IDs - Predicted: 1129, Expected: 34362
+        Prediction: '.' | Correct: False
+        Token IDs - Predicted: 627, Expected: 34362
         Last non-masked position: 15
 
   [  6] Prompt: 'What was the name of the architect who worked on Lahti Town Hall? Eli'
@@ -1545,14 +1547,14 @@ Processing 5 prompts:
 
   [  2] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Ly'
         Target: 'th' (expected: 'th')
-        Prediction: 'aa' | Correct: False
-        Token IDs - Predicted: 5418, Expected: 339
+        Prediction: '' | Correct: False
+        Token IDs - Predicted: 198, Expected: 339
         Last non-masked position: 18
 
   [  3] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Lyth'
         Target: 'go' (expected: 'go')
-        Prediction: 'eng' | Correct: False
-        Token IDs - Predicted: 2995, Expected: 3427
+        Prediction: '' | Correct: False
+        Token IDs - Predicted: 198, Expected: 3427
         Last non-masked position: 19
 
   [  4] Prompt: 'nq question: who are the judges on do you think you can dance? Nigel Lythgo'
@@ -1570,4 +1572,4 @@ Paraphrase prompts correct: [False, False, False, False, False]
 Neighborhood prompts correct: [False, False, False, False, False]
 ================================
 
-Evaluation took 0.6646180152893066
+Evaluation took 0.6573903560638428
