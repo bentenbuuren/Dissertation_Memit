@@ -2,5 +2,5 @@
  'post_neighborhood_acc': (39.48, 33.03),
  'post_paraphrase_acc': (100.0, 0.0),
  'post_rewrite_acc': (100.0, 0.0),
- 'run_dir': 'results/MEMIT/run_101',
- 'time': (19.971736669540405, 0.0)}
+ 'run_dir': 'results/MEMIT/run_129',
+ 'time': (20.172475814819336, 0.0)}
