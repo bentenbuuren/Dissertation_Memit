@@ -16,7 +16,7 @@ source activate memit
 
 # Run the analysis
 python average_causal_effects.py \
-    --arch "ns3_r0_meta-llama_Llama-3.1-8B" \
+    --arch "ns3_r0_gpt2-xl" \
     --archname "Llama-3.1-8B" \
     --count 1200 \
     --output_dir "analysis_results" \

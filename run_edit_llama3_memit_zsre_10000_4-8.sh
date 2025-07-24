@@ -2,7 +2,7 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/lm_mm_zsre_10000_4-8.out
+#SBATCH --output=output/lm_mm_zsre_10000_4-8.log
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1

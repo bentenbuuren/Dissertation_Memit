@@ -199,6 +199,7 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
             last_non_masked = last_non_masked - 1  # SAME position adjustment as Llama
             print(f"Adjusted logits shape: {logits.shape}")
             print(f"Adjusted last non-masked positions: {last_non_masked[:5].tolist()}{'...' if len(last_non_masked) > 5 else ''}")
+
         else:
             print(f"❓ Unknown model type, no logits adjustment")
         
