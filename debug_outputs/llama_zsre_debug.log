@@ -1,0 +1,329 @@
+🔧 Loading model: meta-llama/Llama-3.1-8B-Instruct
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:13,  4.66s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.39s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:13<00:04,  4.29s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.21s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:14<00:00,  3.65s/it]
+✅ Model loaded successfully
+   Vocab size: 128256
+   BOS token: <|begin_of_text|> (ID: 128000)
+   EOS token: <|eot_id|> (ID: 128009)
+   PAD token: <|eot_id|> (ID: 128009)
+🚀 STARTING COMPREHENSIVE ZSRE TOKENIZATION & LOGITS DEBUG
+Model: meta-llama/Llama-3.1-8B-Instruct
+
+Using 5 prompts with 5 possible targets
+Prompts:
+  0: 'The capital of France is'
+  1: 'The CEO of Apple is'
+  2: 'The author of Harry Potter is'
+  3: 'The currency of Japan is'
+  4: 'The largest planet in our solar system is'
+Targets:
+  0: 'Paris'
+  1: 'Tim Cook'
+  2: 'J.K. Rowling'
+  3: 'Yen'
+  4: 'Jupiter'
+
+====================================================================================================
+🎯 RUNNING THREE DIFFERENT ZSRE LOGIT POSITIONING STRATEGIES
+====================================================================================================
+
+================================================================================
+🎯 TARGET TOKENIZATION ANALYSIS
+================================================================================
+
+Target 0: 'Paris'
+  Basic tokenization: tensor([[128000,  60704]])
+  Basic tokens decoded: ['<|begin_of_text|>', 'Paris']
+  🦙 Llama target handling:
+    Using token after BOS: 60704 ('Paris')
+  Final target ID: 60704
+
+Target 1: 'Tim Cook'
+  Basic tokenization: tensor([[128000,  20830,  12797]])
+  Basic tokens decoded: ['<|begin_of_text|>', 'Tim', ' Cook']
+  🦙 Llama target handling:
+    Using token after BOS: 20830 ('Tim')
+  Final target ID: 20830
+
+Target 2: 'J.K. Rowling'
+  Basic tokenization: tensor([[128000,     41,  11606,     13,  96607]])
+  Basic tokens decoded: ['<|begin_of_text|>', 'J', '.K', '.', ' Rowling']
+  🦙 Llama target handling:
+    Using token after BOS: 41 ('J')
+  Final target ID: 41
+
+Target 3: 'Yen'
+  Basic tokenization: tensor([[128000,     56,    268]])
+  Basic tokens decoded: ['<|begin_of_text|>', 'Y', 'en']
+  🦙 Llama target handling:
+    Using token after BOS: 56 ('Y')
+  Final target ID: 56
+
+Target 4: 'Jupiter'
+  Basic tokenization: tensor([[128000,     41,  20089]])
+  Basic tokens decoded: ['<|begin_of_text|>', 'J', 'upiter']
+  🦙 Llama target handling:
+    Using token after BOS: 41 ('J')
+  Final target ID: 41
+
+📦 CREATING ZSRE BATCH
+Input prompts (5):
+  [0] 'The capital of France is'
+  [1] 'The CEO of Apple is'
+  [2] 'The author of Harry Potter is'
+  [3] 'The currency of Japan is'
+  [4] 'The largest planet in our solar system is'
+Batch shape: torch.Size([5, 9])
+Attention mask shape: torch.Size([5, 9])
+Last non-masked positions: [5, 5, 6, 5, 8]
+
+🧠 Original logits shape: torch.Size([5, 9, 128256])
+
+============================================================
+🔧 RUN 1: No logits adjustment - using last_non_masked directly
+============================================================
+
+RUN1 ANALYSIS:
+Description: No logits adjustment, last_non_masked as-is
+Logits shape: torch.Size([5, 9, 128256])
+Logits shifted: False
+Position adjustment: 0
+Final logit positions: [5, 5, 6, 5, 8]
+
+  [0] Prompt: 'The capital of France is'
+    Logit position: 5
+    Model prediction: 'a' (ID: 264, prob: 0.2063)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=10.1562 ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=inf ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=inf ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=inf ❌
+    Best target: 'Paris' (prob: 0.0000)
+
+  [1] Prompt: 'The CEO of Apple is'
+    Logit position: 5
+    Model prediction: 'Tim' (ID: 9538, prob: 0.2771)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0001, NLL=8.8359 ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=13.2344 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=inf ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=13.2344 ❌
+    Best target: 'Tim Cook' (prob: 0.0001)
+
+  [2] Prompt: 'The author of Harry Potter is'
+    Logit position: 6
+    Model prediction: 'a' (ID: 264, prob: 0.1173)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=11.1797 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=inf ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=11.1797 ❌
+    Best target: 'J.K. Rowling' (prob: 0.0000)
+
+  [3] Prompt: 'The currency of Japan is'
+    Logit position: 5
+    Model prediction: 'the' (ID: 279, prob: 0.8594)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=15.9453 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=14.6875 ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=15.9453 ❌
+    Best target: 'Yen' (prob: 0.0000)
+
+  [4] Prompt: 'The largest planet in our solar system is'
+    Logit position: 8
+    Model prediction: 'Jupiter' (ID: 50789, prob: 0.7119)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=9.9922 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=16.6406 ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=9.9922 ❌
+    Best target: 'J.K. Rowling' (prob: 0.0000)
+    📝 Text match with 'Jupiter'
+
+  📊 RUN1 SUMMARY:
+    Valid predictions: 5/5
+    'Paris' - Token matches: 0, Text matches: 0
+    'Tim Cook' - Token matches: 0, Text matches: 0
+    'J.K. Rowling' - Token matches: 0, Text matches: 0
+    'Yen' - Token matches: 0, Text matches: 0
+    'Jupiter' - Token matches: 0, Text matches: 1
+    'Paris' avg probability: 0.0000
+    'Tim Cook' avg probability: 0.0000
+    'J.K. Rowling' avg probability: 0.0000
+    'Yen' avg probability: 0.0000
+    'Jupiter' avg probability: 0.0000
+    'Paris' was best target: 1/5 times
+    'Tim Cook' was best target: 1/5 times
+    'J.K. Rowling' was best target: 2/5 times
+    'Yen' was best target: 1/5 times
+    'Jupiter' was best target: 0/5 times
+
+============================================================
+🔧 RUN 2: No logits adjustment - using last_non_masked - 1
+============================================================
+
+RUN2 ANALYSIS:
+Description: No logits adjustment, last_non_masked - 1
+Logits shape: torch.Size([5, 9, 128256])
+Logits shifted: False
+Position adjustment: -1
+Final logit positions: [4, 4, 5, 4, 7]
+
+  [0] Prompt: 'The capital of France is'
+    Logit position: 4
+    Model prediction: ',' (ID: 11, prob: 0.3892)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=12.2656 ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=16.6406 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=inf ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=16.6406 ❌
+    Best target: 'Paris' (prob: 0.0000)
+
+  [1] Prompt: 'The CEO of Apple is'
+    Logit position: 4
+    Model prediction: ',' (ID: 11, prob: 0.5010)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=16.6406 ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0002, NLL=8.6328 ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=11.7656 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=15.2500 ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=11.7656 ❌
+    Best target: 'Tim Cook' (prob: 0.0002)
+
+  [2] Prompt: 'The author of Harry Potter is'
+    Logit position: 5
+    Model prediction: ',' (ID: 11, prob: 0.1868)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=14.2344 ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=11.7891 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=15.9453 ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=11.7891 ❌
+    Best target: 'J.K. Rowling' (prob: 0.0000)
+
+  [3] Prompt: 'The currency of Japan is'
+    Logit position: 4
+    Model prediction: 'is' (ID: 374, prob: 0.6587)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=13.9297 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=12.6875 ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=13.9297 ❌
+    Best target: 'Yen' (prob: 0.0000)
+
+  [4] Prompt: 'The largest planet in our solar system is'
+    Logit position: 7
+    Model prediction: 'is' (ID: 374, prob: 0.4460)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=14.6875 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=inf ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=14.6875 ❌
+    Best target: 'J.K. Rowling' (prob: 0.0000)
+
+  📊 RUN2 SUMMARY:
+    Valid predictions: 5/5
+    'Paris' - Token matches: 0, Text matches: 0
+    'Tim Cook' - Token matches: 0, Text matches: 0
+    'J.K. Rowling' - Token matches: 0, Text matches: 0
+    'Yen' - Token matches: 0, Text matches: 0
+    'Jupiter' - Token matches: 0, Text matches: 0
+    'Paris' avg probability: 0.0000
+    'Tim Cook' avg probability: 0.0000
+    'J.K. Rowling' avg probability: 0.0000
+    'Yen' avg probability: 0.0000
+    'Jupiter' avg probability: 0.0000
+    'Paris' was best target: 1/5 times
+    'Tim Cook' was best target: 1/5 times
+    'J.K. Rowling' was best target: 2/5 times
+    'Yen' was best target: 1/5 times
+    'Jupiter' was best target: 0/5 times
+
+============================================================
+🔧 RUN 3: logits[:, 1:, :] + last_non_masked - 1
+============================================================
+Shifted logits shape: torch.Size([5, 8, 128256])
+
+RUN3 ANALYSIS:
+Description: logits[:, 1:, :], last_non_masked - 1
+Logits shape: torch.Size([5, 8, 128256])
+Logits shifted: True
+Position adjustment: -1
+Final logit positions: [3, 3, 4, 3, 6]
+
+  [0] Prompt: 'The capital of France is'
+    Logit position: 3
+    Model prediction: ',' (ID: 11, prob: 0.3892)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=12.2656 ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=16.6406 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=inf ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=16.6406 ❌
+    Best target: 'Paris' (prob: 0.0000)
+
+  [1] Prompt: 'The CEO of Apple is'
+    Logit position: 3
+    Model prediction: ',' (ID: 11, prob: 0.5010)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=16.6406 ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0002, NLL=8.6328 ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=11.7656 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=15.2500 ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=11.7656 ❌
+    Best target: 'Tim Cook' (prob: 0.0002)
+
+  [2] Prompt: 'The author of Harry Potter is'
+    Logit position: 4
+    Model prediction: ',' (ID: 11, prob: 0.1868)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=14.2344 ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=11.7891 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=15.9453 ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=11.7891 ❌
+    Best target: 'J.K. Rowling' (prob: 0.0000)
+
+  [3] Prompt: 'The currency of Japan is'
+    Logit position: 3
+    Model prediction: 'is' (ID: 374, prob: 0.6587)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=13.9297 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=12.6875 ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=13.9297 ❌
+    Best target: 'Yen' (prob: 0.0000)
+
+  [4] Prompt: 'The largest planet in our solar system is'
+    Logit position: 6
+    Model prediction: 'is' (ID: 374, prob: 0.4460)
+    Target 'Paris' (ID: 60704): prob=0.0000, NLL=inf ❌
+    Target 'Tim Cook' (ID: 20830): prob=0.0000, NLL=inf ❌
+    Target 'J.K. Rowling' (ID: 41): prob=0.0000, NLL=14.6875 ❌
+    Target 'Yen' (ID: 56): prob=0.0000, NLL=inf ❌
+    Target 'Jupiter' (ID: 41): prob=0.0000, NLL=14.6875 ❌
+    Best target: 'J.K. Rowling' (prob: 0.0000)
+
+  📊 RUN3 SUMMARY:
+    Valid predictions: 5/5
+    'Paris' - Token matches: 0, Text matches: 0
+    'Tim Cook' - Token matches: 0, Text matches: 0
+    'J.K. Rowling' - Token matches: 0, Text matches: 0
+    'Yen' - Token matches: 0, Text matches: 0
+    'Jupiter' - Token matches: 0, Text matches: 0
+    'Paris' avg probability: 0.0000
+    'Tim Cook' avg probability: 0.0000
+    'J.K. Rowling' avg probability: 0.0000
+    'Yen' avg probability: 0.0000
+    'Jupiter' avg probability: 0.0000
+    'Paris' was best target: 1/5 times
+    'Tim Cook' was best target: 1/5 times
+    'J.K. Rowling' was best target: 2/5 times
+    'Yen' was best target: 1/5 times
+    'Jupiter' was best target: 0/5 times
+
+====================================================================================================
+🎯 COMPREHENSIVE ZSRE DEBUG COMPLETE
+====================================================================================================
+
+Key insights to check:
+1. Which run gives the most reasonable predictions?
+2. Which run shows highest target probabilities?
+3. Which run aligns logit positions with expected factual answers?
+4. Are the text-based matches consistent with token-based matches?
+5. Does the model show knowledge of the facts being tested?

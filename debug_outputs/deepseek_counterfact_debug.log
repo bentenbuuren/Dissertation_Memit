@@ -1,0 +1,338 @@
+🔧 Loading model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:14<00:14, 14.95s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:32<00:00, 16.53s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:32<00:00, 16.29s/it]
+✅ Model loaded successfully
+   Vocab size: 128256
+   BOS token: <｜begin▁of▁sentence｜> (ID: 128000)
+   EOS token: <｜end▁of▁sentence｜> (ID: 128001)
+   PAD token: <｜end▁of▁sentence｜> (ID: 128001)
+🚀 STARTING COMPREHENSIVE COUNTERFACT TOKENIZATION & LOGITS DEBUG
+Model: deepseek-ai/DeepSeek-R1-Distill-Llama-8B
+
+Using target_new: 'English'
+Using target_true: 'French'
+
+====================================================================================================
+🎯 RUNNING THREE DIFFERENT LOGIT POSITIONING STRATEGIES
+====================================================================================================
+
+================================================================================
+📏 PREFIX LENGTH CALCULATION
+================================================================================
+
+Prefix 0: 'The mother tongue of Danielle Darrieux is'
+  Basic tokens: [128000, 791, 6691, 25466, 315, 72716, 15367, 7379, 2249, 374]
+  Basic length: 10
+  🔧 DeepSeek-specific handling:
+    Has BOS token: True
+    Adjusted length (removed BOS): 9
+  Final prefix length: 9
+
+Prefix 1: 'The native language of Léon Blum is'
+  Basic tokens: [128000, 791, 10068, 4221, 315, 445, 978, 263, 2563, 372, 374]
+  Basic length: 11
+  🔧 DeepSeek-specific handling:
+    Has BOS token: True
+    Adjusted length (removed BOS): 10
+  Final prefix length: 10
+
+Prefix 2: 'Danielle Darrieux, a native speaker of'
+  Basic tokens: [128000, 95394, 6853, 15367, 7379, 2249, 11, 264, 10068, 19114, 315]
+  Basic length: 11
+  🔧 DeepSeek-specific handling:
+    Has BOS token: True
+    Adjusted length (removed BOS): 10
+  Final prefix length: 10
+
+Prefix 3: 'The official language of Marie Curie's birthplace is'
+  Basic tokens: [128000, 791, 4033, 4221, 315, 33116, 13182, 648, 596, 7342, 2050, 374]
+  Basic length: 12
+  🔧 DeepSeek-specific handling:
+    Has BOS token: True
+    Adjusted length (removed BOS): 11
+  Final prefix length: 11
+
+📦 CREATING BATCH
+Created 8 prompts from 4 prefixes
+  [0] NEW: 'The mother tongue of Danielle Darrieux is English'
+  [1] TRUE: 'The mother tongue of Danielle Darrieux is French'
+  [2] NEW: 'The native language of Léon Blum is English'
+  [3] TRUE: 'The native language of Léon Blum is French'
+  [4] NEW: 'Danielle Darrieux, a native speaker of English'
+  [5] TRUE: 'Danielle Darrieux, a native speaker of French'
+  [6] NEW: 'The official language of Marie Curie's birthplace is English'
+  [7] TRUE: 'The official language of Marie Curie's birthplace is French'
+Batch shape: torch.Size([8, 13])
+
+🧠 Original logits shape: torch.Size([8, 13, 128256])
+Target NEW tokens: [6498]
+Target TRUE tokens: [8753]
+
+============================================================
+🔧 RUN 1: DeepSeek NO logits adjustment - keeping original alignment
+============================================================
+
+RUN1 ANALYSIS:
+Formula: logit_idx = padding_offset + prefix_lens[prefix_idx] + j
+Logits shape: torch.Size([8, 13, 128256])
+
+  [0] NEW - Prefix 0: 'The mother tongue of Danielle Darrieux is English'
+    Padding offset: 2
+    Prefix length: 9
+    Calculated logit index: 11
+    Model prediction: ' French' (ID: 8753, prob: 0.7124)
+    Target ' English' (ID: 6498) prob: 0.0102 (NLL: 4.5898)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [1] TRUE - Prefix 0: 'The mother tongue of Danielle Darrieux is French'
+    Padding offset: 2
+    Prefix length: 9
+    Calculated logit index: 11
+    Model prediction: ' French' (ID: 8753, prob: 0.7124)
+    Target ' French' (ID: 8753) prob: 0.7124 (NLL: 0.3391)
+    ✅ MATCH: Model predicts target!
+    Token at input pos 11: ' is' (ID: 374)
+
+  [2] NEW - Prefix 1: 'The native language of Léon Blum is English'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 11
+    Model prediction: ' French' (ID: 8753, prob: 0.2576)
+    Target ' English' (ID: 6498) prob: 0.0028 (NLL: 5.8945)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [3] TRUE - Prefix 1: 'The native language of Léon Blum is French'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 11
+    Model prediction: ' French' (ID: 8753, prob: 0.2576)
+    Target ' French' (ID: 8753) prob: 0.2576 (NLL: 1.3564)
+    ✅ MATCH: Model predicts target!
+    Token at input pos 11: ' is' (ID: 374)
+
+  [4] NEW - Prefix 2: 'Danielle Darrieux, a native speaker of English'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 11
+    Model prediction: ' French' (ID: 8753, prob: 0.6006)
+    Target ' English' (ID: 6498) prob: 0.0098 (NLL: 4.6289)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' of' (ID: 315)
+
+  [5] TRUE - Prefix 2: 'Danielle Darrieux, a native speaker of French'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 11
+    Model prediction: ' French' (ID: 8753, prob: 0.6006)
+    Target ' French' (ID: 8753) prob: 0.6006 (NLL: 0.5098)
+    ✅ MATCH: Model predicts target!
+    Token at input pos 11: ' of' (ID: 315)
+
+  [6] NEW - Prefix 3: 'The official language of Marie Curie's birthplace is English'
+    Padding offset: 0
+    Prefix length: 11
+    Calculated logit index: 11
+    Model prediction: ' French' (ID: 8753, prob: 0.6050)
+    Target ' English' (ID: 6498) prob: 0.0134 (NLL: 4.3164)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [7] TRUE - Prefix 3: 'The official language of Marie Curie's birthplace is French'
+    Padding offset: 0
+    Prefix length: 11
+    Calculated logit index: 11
+    Model prediction: ' French' (ID: 8753, prob: 0.6050)
+    Target ' French' (ID: 8753) prob: 0.6050 (NLL: 0.5024)
+    ✅ MATCH: Model predicts target!
+    Token at input pos 11: ' is' (ID: 374)
+
+  📊 RUN1 SUMMARY:
+    Matches: 4/8
+    Mismatches: 4/8
+    Errors: 0
+    Avg target prob (matches): 0.5439
+    Avg target NLL (matches): 0.6769
+
+============================================================
+🔧 RUN 2: DeepSeek NO logits adjustment - keeping original alignment (j-1)
+============================================================
+
+RUN2 ANALYSIS:
+Formula: logit_idx = padding_offset + prefix_lens[prefix_idx] + j - 1
+Logits shape: torch.Size([8, 13, 128256])
+
+  [0] NEW - Prefix 0: 'The mother tongue of Danielle Darrieux is English'
+    Padding offset: 2
+    Prefix length: 9
+    Calculated logit index: 10
+    Model prediction: ',' (ID: 11, prob: 0.5874)
+    Target ' English' (ID: 6498) prob: 0.0000 (NLL: 13.6406)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [1] TRUE - Prefix 0: 'The mother tongue of Danielle Darrieux is French'
+    Padding offset: 2
+    Prefix length: 9
+    Calculated logit index: 10
+    Model prediction: ',' (ID: 11, prob: 0.5874)
+    Target ' French' (ID: 8753) prob: 0.0001 (NLL: 9.2891)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [2] NEW - Prefix 1: 'The native language of Léon Blum is English'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 10
+    Model prediction: ',' (ID: 11, prob: 0.3462)
+    Target ' English' (ID: 6498) prob: 0.0000 (NLL: 15.5391)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [3] TRUE - Prefix 1: 'The native language of Léon Blum is French'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 10
+    Model prediction: ',' (ID: 11, prob: 0.3462)
+    Target ' French' (ID: 8753) prob: 0.0000 (NLL: 10.7734)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [4] NEW - Prefix 2: 'Danielle Darrieux, a native speaker of English'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 10
+    Model prediction: ' of' (ID: 315, prob: 0.7710)
+    Target ' English' (ID: 6498) prob: 0.0000 (NLL: 10.5156)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' of' (ID: 315)
+
+  [5] TRUE - Prefix 2: 'Danielle Darrieux, a native speaker of French'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 10
+    Model prediction: ' of' (ID: 315, prob: 0.7710)
+    Target ' French' (ID: 8753) prob: 0.0002 (NLL: 8.7656)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' of' (ID: 315)
+
+  [6] NEW - Prefix 3: 'The official language of Marie Curie's birthplace is English'
+    Padding offset: 0
+    Prefix length: 11
+    Calculated logit index: 10
+    Model prediction: ' is' (ID: 374, prob: 0.5200)
+    Target ' English' (ID: 6498) prob: 0.0000 (NLL: 15.5391)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [7] TRUE - Prefix 3: 'The official language of Marie Curie's birthplace is French'
+    Padding offset: 0
+    Prefix length: 11
+    Calculated logit index: 10
+    Model prediction: ' is' (ID: 374, prob: 0.5200)
+    Target ' French' (ID: 8753) prob: 0.0000 (NLL: 12.3906)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  📊 RUN2 SUMMARY:
+    Matches: 0/8
+    Mismatches: 8/8
+    Errors: 0
+
+============================================================
+🔧 RUN 3: logits[:, 1:, :] + j-1
+============================================================
+Shifted logits shape: torch.Size([8, 12, 128256])
+
+RUN3 ANALYSIS:
+Formula: logits = logits[:, 1:, :]; logit_idx = padding_offset + prefix_lens[prefix_idx] + j - 1
+Logits shape: torch.Size([8, 12, 128256])
+
+  [0] NEW - Prefix 0: 'The mother tongue of Danielle Darrieux is English'
+    Padding offset: 2
+    Prefix length: 9
+    Calculated logit index: 10
+    Model prediction: ' French' (ID: 8753, prob: 0.7124)
+    Target ' English' (ID: 6498) prob: 0.0102 (NLL: 4.5898)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [1] TRUE - Prefix 0: 'The mother tongue of Danielle Darrieux is French'
+    Padding offset: 2
+    Prefix length: 9
+    Calculated logit index: 10
+    Model prediction: ' French' (ID: 8753, prob: 0.7124)
+    Target ' French' (ID: 8753) prob: 0.7124 (NLL: 0.3391)
+    ✅ MATCH: Model predicts target!
+    Token at input pos 11: ' is' (ID: 374)
+
+  [2] NEW - Prefix 1: 'The native language of Léon Blum is English'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 10
+    Model prediction: ' French' (ID: 8753, prob: 0.2576)
+    Target ' English' (ID: 6498) prob: 0.0028 (NLL: 5.8945)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [3] TRUE - Prefix 1: 'The native language of Léon Blum is French'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 10
+    Model prediction: ' French' (ID: 8753, prob: 0.2576)
+    Target ' French' (ID: 8753) prob: 0.2576 (NLL: 1.3564)
+    ✅ MATCH: Model predicts target!
+    Token at input pos 11: ' is' (ID: 374)
+
+  [4] NEW - Prefix 2: 'Danielle Darrieux, a native speaker of English'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 10
+    Model prediction: ' French' (ID: 8753, prob: 0.6006)
+    Target ' English' (ID: 6498) prob: 0.0098 (NLL: 4.6289)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' of' (ID: 315)
+
+  [5] TRUE - Prefix 2: 'Danielle Darrieux, a native speaker of French'
+    Padding offset: 1
+    Prefix length: 10
+    Calculated logit index: 10
+    Model prediction: ' French' (ID: 8753, prob: 0.6006)
+    Target ' French' (ID: 8753) prob: 0.6006 (NLL: 0.5098)
+    ✅ MATCH: Model predicts target!
+    Token at input pos 11: ' of' (ID: 315)
+
+  [6] NEW - Prefix 3: 'The official language of Marie Curie's birthplace is English'
+    Padding offset: 0
+    Prefix length: 11
+    Calculated logit index: 10
+    Model prediction: ' French' (ID: 8753, prob: 0.6050)
+    Target ' English' (ID: 6498) prob: 0.0134 (NLL: 4.3164)
+    ❌ MISMATCH: Model predicts different token
+    Token at input pos 11: ' is' (ID: 374)
+
+  [7] TRUE - Prefix 3: 'The official language of Marie Curie's birthplace is French'
+    Padding offset: 0
+    Prefix length: 11
+    Calculated logit index: 10
+    Model prediction: ' French' (ID: 8753, prob: 0.6050)
+    Target ' French' (ID: 8753) prob: 0.6050 (NLL: 0.5024)
+    ✅ MATCH: Model predicts target!
+    Token at input pos 11: ' is' (ID: 374)
+
+  📊 RUN3 SUMMARY:
+    Matches: 4/8
+    Mismatches: 4/8
+    Errors: 0
+    Avg target prob (matches): 0.5439
+    Avg target NLL (matches): 0.6769
+
+====================================================================================================
+🎯 COMPREHENSIVE DEBUG COMPLETE
+====================================================================================================
+
+Key insights to check:
+1. Which run gives the most reasonable predictions?
+2. Which run shows highest target probabilities?
+3. Which run aligns logit positions with actual target tokens?
+4. Are there consistent patterns between NEW and TRUE targets?
