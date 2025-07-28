@@ -2,8 +2,7 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/llama3_rome_zsre_10.out
-#SBATCH --error=output/llama3_rome_zsre_10.err
+#SBATCH --output=output/lm_rm_zsre_10_5.out
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
@@ -24,10 +23,10 @@ MODEL_NAME="meta-llama/Llama-3.1-8B-Instruct" # meta-llama/Llama-2-7b-hf
 MODEL_PATH=""
 ADAPTER_NAME=""
 ADAPTER_PATH=""
-DS_NAME="zsre" # [cf, mcf, zsre]
+DS_NAME="mcf" # [cf, mcf, zsre]
 
 # Edit parameters 
-N_EDITS="1"
+N_EDITS="10"
 ALG_NAMES=("ROME")
 HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
