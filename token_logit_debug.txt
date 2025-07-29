@@ -1,0 +1,182 @@
+Token position: 0
+Prompt token: 'ux'
+Target token: ' English'
+Predicted token: ' English'
+Logit position: 8
+Correct Prediction: True
+
+Token position: 0
+Prompt token: 'ux'
+Target token: ' French'
+Predicted token: ' English'
+Logit position: 8
+Correct Prediction: False
+
+Token position: 0
+Prompt token: ' a'
+Target token: ' English'
+Predicted token: ' English'
+Logit position: 20
+Correct Prediction: True
+
+Token position: 0
+Prompt token: ' a'
+Target token: ' French'
+Predicted token: ' English'
+Logit position: 20
+Correct Prediction: False
+
+Token position: 0
+Prompt token: ' the'
+Target token: ' English'
+Predicted token: ' of'
+Logit position: 17
+Correct Prediction: False
+
+Token position: 0
+Prompt token: ' the'
+Target token: ' French'
+Predicted token: ' of'
+Logit position: 17
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 'um'
+Target token: ' English'
+Predicted token: ' Y'
+Logit position: 9
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 'um'
+Target token: ' French'
+Predicted token: ' Y'
+Logit position: 9
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 'ieu'
+Target token: ' English'
+Predicted token: ' French'
+Logit position: 8
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 'ieu'
+Target token: ' French'
+Predicted token: ' French'
+Logit position: 8
+Correct Prediction: True
+
+Token position: 0
+Prompt token: ' a'
+Target token: ' English'
+Predicted token: ' of'
+Logit position: 6
+Correct Prediction: False
+
+Token position: 0
+Prompt token: ' a'
+Target token: ' French'
+Predicted token: ' of'
+Logit position: 6
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 're'
+Target token: ' English'
+Predicted token: ' French'
+Logit position: 7
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 're'
+Target token: ' French'
+Predicted token: ' French'
+Logit position: 7
+Correct Prediction: True
+
+Token position: 0
+Prompt token: ' speaker'
+Target token: ' English'
+Predicted token: ' French'
+Logit position: 8
+Correct Prediction: False
+
+Token position: 0
+Prompt token: ' speaker'
+Target token: ' French'
+Predicted token: ' French'
+Logit position: 8
+Correct Prediction: True
+
+Token position: 0
+Prompt token: ' speaker'
+Target token: ' English'
+Predicted token: ' the'
+Logit position: 11
+Correct Prediction: False
+
+Token position: 0
+Prompt token: ' speaker'
+Target token: ' French'
+Predicted token: ' the'
+Logit position: 11
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 'rou'
+Target token: ' English'
+Predicted token: ' French'
+Logit position: 7
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 'rou'
+Target token: ' French'
+Predicted token: ' French'
+Logit position: 7
+Correct Prediction: True
+
+Token position: 0
+Prompt token: ' speaker'
+Target token: ' English'
+Predicted token: ' the'
+Logit position: 8
+Correct Prediction: False
+
+Token position: 0
+Prompt token: ' speaker'
+Target token: ' French'
+Predicted token: ' the'
+Logit position: 8
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 'rou'
+Target token: ' English'
+Predicted token: ' French'
+Logit position: 7
+Correct Prediction: False
+
+Token position: 0
+Prompt token: 'rou'
+Target token: ' French'
+Predicted token: ' French'
+Logit position: 7
+Correct Prediction: True
+
+Token position: 0
+Prompt token: ' speaker'
+Target token: ' English'
+Predicted token: ' the'
+Logit position: 9
+Correct Prediction: False
+
+Token position: 0
+Prompt token: ' speaker'
+Target token: ' French'
+Predicted token: ' the'
+Logit position: 9
+Correct Prediction: False
+

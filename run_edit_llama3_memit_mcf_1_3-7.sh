@@ -23,14 +23,14 @@ MODEL_NAME="meta-llama/Llama-3.1-8B-Instruct" # meta-llama/Llama-2-7b-hf
 MODEL_PATH=""
 ADAPTER_NAME=""
 ADAPTER_PATH=""
-DS_NAME="mcf" # [cf, mcf, zsre]
+DS_NAME="cf" # [cf, mcf, zsre]
 
 # Edit parameters 
 N_EDITS="1"
 ALG_NAMES=("MEMIT")
 HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct-3-7.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
-MODEL_SAVE=1
+MODEL_SAVE=0
 
 # Execute
 for i in ${!ALG_NAMES[@]}

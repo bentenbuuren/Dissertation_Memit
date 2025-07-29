@@ -286,17 +286,7 @@ def test_batch_prediction(
 
     print(f"   Raw logits shape: {logits.shape}")
 
-    # CRITICAL FIX: Only apply logits adjustment for Llama models, NOT DeepSeek
-    if 'llama-3.1' in model_path or 'llama-3' in model_path or 'llama-2' in model_path:
-        print(f"   🦙 Applying Llama logits adjustment: logits[:, 1:, :]")
-        logits = logits[:, 1:, :]
-        print(f"   Adjusted logits shape: {logits.shape}")
-    elif 'deepseek' in model_path:
-        print(f"   🦙 Applying Llama logits adjustment: logits[:, 1:, :]")
-        logits = logits[:, 1:, :]
-        print(f"   Adjusted logits shape: {logits.shape}")
-    else:
-        print(f"   ❓ Unknown model type, no logits adjustment")
+    # Logits adjustment removed for all model types as per latest instructions.
     
     # Initialize probability and correctness arrays
     probs = np.zeros((logits.size(0),), dtype=np.float32)
@@ -311,66 +301,83 @@ def test_batch_prediction(
         is_target_new = (i % 2 == 0)
         current_target = target_new if is_target_new else target_true
         current_tokens = a_tok if is_target_new else b_tok
-        
+
         prefix_idx = i // 2
         expected_for_accuracy = target_new if which_correct[prefix_idx] == 0 else target_true
-        
+
         # Show details for ALL sequences
         print(f"\n  [{i:3d}] PROMPT: '{prefixes[prefix_idx]}'")
         print(f"        TESTING: '{current_target}'")
         print(f"        EXPECTED: {expected_for_accuracy}")
 
+        # DEBUG: Print tokenized input sequence with indices
+        batch_sequence = prompt_tok['input_ids'][i]
+        decoded_tokens = [tok.decode([t]) for t in batch_sequence]
+        token_debug_str = "\n".join([f"    [{k:2d}] Token ID: {t} → '{decoded_tokens[k]}'" for k, t in enumerate(batch_sequence)])
+        print("    Full input token sequence:")
+        print(token_debug_str)
+
         # Compute suffix probabilities
         sequence_log_prob = 0.0
         sequence_correct = True
         predicted_token_id = None
-        
+
         for j in range(cur_len):
             cur_tok = current_tokens[j]
-            
+
             # CRITICAL FIX: Account for padding in batch processing
             # Find where actual content starts (skip padding tokens)
             batch_sequence = prompt_tok['input_ids'][i]
             padding_offset = 0
-            
+
             # Count padding tokens at the beginning
             pad_token_id = tok.pad_token_id if tok.pad_token_id is not None else 0
-            while (padding_offset < len(batch_sequence) and 
+            while (padding_offset < len(batch_sequence) and
                    batch_sequence[padding_offset] == pad_token_id):
                 padding_offset += 1
-            
-            # Different index calculation for different models
-            if 'deepseek' in model_path:
-                logit_idx = padding_offset + prefix_lens[prefix_idx] + j - 1  # Add padding offset
-            else:
-                logit_idx = padding_offset + prefix_lens[prefix_idx] + j - 1  # Add padding offset
-            
+
+            # Index calculation, now always:
+            logit_idx = padding_offset + prefix_lens[prefix_idx] + j
+
             if logit_idx >= 0 and logit_idx < logits.size(1):
                 # Calculate negative log likelihood
                 nll = -torch.nn.functional.log_softmax(
                     logits[i, logit_idx, :], dim=0
                 )[cur_tok].item()
                 sequence_log_prob += nll
-                
+
                 # Check if token is predicted correctly
                 predicted_token_id = logits[i, logit_idx, :].argmax().item()
                 token_correct = (predicted_token_id == cur_tok)
                 if not token_correct:
                     sequence_correct = False
-                
+
                 # Show the main token prediction
-                if j == 0:  # Main token
-                    predicted_token_str = tok.decode([predicted_token_id])
-                    current_token_str = tok.decode([cur_tok])
-                    print(f"        Token 1: '{predicted_token_str}' (NLL of '{current_token_str}': {nll:.4f})")
-                    print(f"        Logit index: {logit_idx} (padding_offset: {padding_offset}, prefix_len: {prefix_lens[prefix_idx]}, j: {j})")
-        
+                predicted_token_str = tok.decode([predicted_token_id])
+                current_token_str = tok.decode([cur_tok])
+                print(f"        Token {j+1}: '{predicted_token_str}' (NLL of '{current_token_str}': {nll:.4f})")
+                print(f"        Logit index: {logit_idx} (padding_offset: {padding_offset}, prefix_len: {prefix_lens[prefix_idx]}, j: {j})")
+
+                # Inline debug print for each token
+                context_token_str = tok.decode([batch_sequence[logit_idx]]) if logit_idx > 0 and logit_idx - 1 < len(batch_sequence) else "[START]"
+                target_token_str = tok.decode([cur_tok])
+                predicted_token_str = tok.decode([predicted_token_id])
+                correctness = "True" if token_correct else "False"
+                print(
+                    f"Debugging Token position {j}:\n"
+                    f"  Context token ID: {batch_sequence[logit_idx - 1]} → '{context_token_str}'\n"
+                    f"  Target token ID:  {cur_tok} → '{target_token_str}'\n"
+                    f"  Predicted token ID: {predicted_token_id} → '{predicted_token_str}'\n"
+                    f"  Logit position: {logit_idx}\n"
+                    f"  Correct Prediction: {correctness}"
+                )
+
         # Average negative log likelihood
         probs[i] = sequence_log_prob / cur_len
 
         # Compute accuracy on targets that should be correct
         counts_toward_accuracy = (which_correct[prefix_idx] == 0 and i % 2 == 0) or (which_correct[prefix_idx] == 1 and i % 2 == 1)
-        
+
         if counts_toward_accuracy:
             targets_correct.append(sequence_correct)
             if sequence_correct:

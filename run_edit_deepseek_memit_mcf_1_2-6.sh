@@ -30,7 +30,7 @@ N_EDITS="1"
 ALG_NAMES=("MEMIT")
 HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B-2-6.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
-MODEL_SAVE=1
+MODEL_SAVE=0
 
 # Execute
 for i in ${!ALG_NAMES[@]}
