@@ -2,12 +2,12 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output/ds_mm_zsre_10_2-6_test.log
+#SBATCH --output=output_final/ds_mm_zsre_10_2-6.log
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
-#SBATCH --time=00:30:00
+#SBATCH --time=12:00:00
 #SBATCH --ntasks=1
 #SBATCH --job-name=ds_mm_zsre_10_2-6
 

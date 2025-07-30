@@ -161,7 +161,7 @@ def main(
             import os
             
             model_name_ = model_name.split("/")[-1]
-            custom_save_dir = "edited_models"
+            custom_save_dir = "edited_models_final"
             
             # Format layers for filename
             if len(hparams.layers) == 1:

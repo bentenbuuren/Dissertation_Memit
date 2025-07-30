@@ -2,14 +2,14 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output_final/ds_mm_mcf_1_2-6.log
+#SBATCH --output=output_final/ds_mm_zsre_1_2-6.log
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
 #SBATCH --time=12:00:00
 #SBATCH --ntasks=1
-#SBATCH --job-name=ds_mm_mcf_1_2-6
+#SBATCH --job-name=ds_mm_zsre_1_2-6
 
 # Load modules
 module load Anaconda3/2024.02-1
@@ -23,7 +23,7 @@ MODEL_NAME="deepseek-ai/DeepSeek-R1-Distill-Llama-8B" # meta-llama/Llama-2-7b-hf
 MODEL_PATH=""
 ADAPTER_NAME=""
 ADAPTER_PATH=""
-DS_NAME="mcf" # [cf, mcf, zsre]
+DS_NAME="zsre" # [cf, mcf, zsre]
 
 # Edit parameters 
 N_EDITS="1"

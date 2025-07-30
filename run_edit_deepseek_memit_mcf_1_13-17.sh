@@ -2,14 +2,14 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output_final/ds_mm_mcf_1_2-6.log
+#SBATCH --output=output_final/ds_mm_mcf_1_13-17.log
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
 #SBATCH --time=12:00:00
 #SBATCH --ntasks=1
-#SBATCH --job-name=ds_mm_mcf_1_2-6
+#SBATCH --job-name=ds_mm_mcf_1_13-17
 
 # Load modules
 module load Anaconda3/2024.02-1
@@ -28,7 +28,7 @@ DS_NAME="mcf" # [cf, mcf, zsre]
 # Edit parameters 
 N_EDITS="1"
 ALG_NAMES=("MEMIT")
-HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B-2-6.json") # meta-llama_Llama-2-7b-hf.json
+HPARAMS_FNAMES=("deepseek-ai_DeepSeek-R1-Distill-Llama-8B-13-17.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
 MODEL_SAVE=1
 

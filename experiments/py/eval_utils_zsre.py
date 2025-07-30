@@ -81,14 +81,13 @@ def compute_rewrite_quality_zsre(
     # FIXED: Apply model-specific prompt construction
     if 'llama-3.1' in model_path or 'llama-3' in model_path or 'llama-2' in model_path:
         inp_prompts = [
-            el + tok.decode(target_tok[:i]) if i == 0 else el + ' ' + tok.decode(target_tok[:i])
+            el + tok.decode(target_tok[:i])
             for el in inp_prompts_og
             for i in range(len(target_tok))
         ]
     elif 'deepseek' in model_path:
-        print(f"🔧 DEEPSEEK MODEL DETECTED - Using SAME prompt construction as Llama for consistency")
         inp_prompts = [
-            el + tok.decode(target_tok[:i]) if i == 0 else el + ' ' + tok.decode(target_tok[:i])
+            el + tok.decode(target_tok[:i])
             for el in inp_prompts_og
             for i in range(len(target_tok))
         ]
@@ -175,38 +174,64 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
     ).to("cuda")
 
     print(f"Prompt batch shape: {prompt_tok['input_ids'].shape}")
+    # Show full input token sequence
+    decoded_tokens = [[tok.decode([t]) for t in seq] for seq in prompt_tok["input_ids"]]
+    print("Full input token sequences:")
+    for idx, (token_ids, tokens) in enumerate(zip(prompt_tok["input_ids"], decoded_tokens)):
+        print(f"  Sequence {idx}:")
+        for k, (tid, tstr) in enumerate(zip(token_ids, tokens)):
+            print(f"    [{k:2d}] Token ID: {tid.item()} → '{tstr}'")
 
     with torch.no_grad():
         logits = model(**prompt_tok).logits
         
-        # FIXED: Use attention mask to find the last non-padded position
-        # This properly handles padding for both DeepSeek and Llama
-        last_non_masked = prompt_tok["attention_mask"].sum(1) - 1
-        
-        print(f"Logits shape: {logits.shape}")
-        print(f"Last non-masked positions: {last_non_masked[:5].tolist()}{'...' if len(last_non_masked) > 5 else ''}")
+        # Calculate padding offset: count how many padding tokens at start of each sequence
+        pad_token_id = tok.pad_token_id
+        padding_offsets = []
+        for seq in prompt_tok['input_ids']:
+            pad_count = 0
+            for token_id in seq:
+                if token_id.item() == pad_token_id:
+                    pad_count += 1
+                else:
+                    break
+            padding_offsets.append(pad_count)
+        padding_offsets = torch.tensor(padding_offsets).to(logits.device)
+
+        # Compute prompt_lengths such that the logit index corresponds to the last non-padding token for each prompt
+        # Attention mask sums to length of non-padded tokens
+        attention_sums = prompt_tok['attention_mask'].sum(dim=1)  # length of non-padded tokens per sequence
+        # The index to gather logits for is padding offset + (length of non-padding tokens) - 1
+        # Explanation:
+        # - padding offset accounts for initial pad tokens at start (if any)
+        # - attention sum is count of non-pad tokens (includes BOS etc.)
+        # - subtract 1 because indexing is zero-based and we want last token index
+        prompt_lengths = padding_offsets + attention_sums - 1
+
+        print(f"Padding offsets per sequence: {padding_offsets.tolist()}")
+        print(f"Attention sums per sequence: {attention_sums.tolist()}")
+        print(f"Logit indices to gather (padding_offset + attention_sum - 1): {prompt_lengths.tolist()}")
+
+        to_gather = prompt_lengths.unsqueeze(1).repeat(1, logits.size(-1)).unsqueeze(1)
+        to_gather = to_gather.to(logits.device)
+        gathered = torch.gather(logits, 1, to_gather).squeeze(1)
+        ans = torch.argmax(gathered, dim=1)
         
         # FIXED: Apply model-specific logits adjustments
         if 'llama-3.1' in model_path or 'llama-3' in model_path or 'llama-2' in model_path:
             print(f"🦙 Applying Llama logits adjustment: logits[:, 1:, :]")
-            logits = logits[:, 1:, :]
-            last_non_masked = last_non_masked - 1  # Adjust indices for shifted logits
+            # logits = logits[:, 1:, :]
             print(f"Adjusted logits shape: {logits.shape}")
-            print(f"Adjusted last non-masked positions: {last_non_masked[:5].tolist()}{'...' if len(last_non_masked) > 5 else ''}")
         elif 'deepseek' in model_path:
             print(f"🔧 DeepSeek: Applying SAME logits adjustment as Llama for consistency")
-            logits = logits[:, 1:, :]  # SAME as Llama - for consistency
-            last_non_masked = last_non_masked - 1  # SAME position adjustment as Llama
+            # logits = logits[:, 1:, :]  # SAME as Llama - for consistency
             print(f"Adjusted logits shape: {logits.shape}")
-            print(f"Adjusted last non-masked positions: {last_non_masked[:5].tolist()}{'...' if len(last_non_masked) > 5 else ''}")
-
         else:
             print(f"❓ Unknown model type, no logits adjustment")
         
         # Gather logits from the last non-masked position for each sequence
-        to_gather = last_non_masked.unsqueeze(1).repeat(1, logits.size(-1)).unsqueeze(1)
-        gathered = torch.gather(logits, 1, to_gather).squeeze(1)
-        ans = torch.argmax(gathered, dim=1)
+        # to_gather and gathered already computed above
+        # ans already computed above
 
         # FIXED: Handle target tokenization with model-specific adjustments
         if isinstance(target, list):
@@ -253,22 +278,25 @@ def test_batch_prediction_acc(model, tok, prompts: typing.List[str], target, deb
         
         # Debug prints for each prompt-prediction pair
         print(f"Processing {len(prompts)} prompts:")
-        for i in range(min(len(prediction_text), len(original_text), 10)):  # Show first 10
+        for i in range(len(prompts)):
             is_correct = prediction_text[i] == original_text[i]
             text_comparison.append(is_correct)
             
-            print(f"  [{i:3d}] Prompt: '{prompts[i]}'")
-            print(f"        Target: '{target[i] if isinstance(target, list) else target}' (expected: '{original_text[i]}')")
-            print(f"        Prediction: '{prediction_text[i]}' | Correct: {is_correct}")
-            print(f"        Token IDs - Predicted: {ans[i].item()}, Expected: {correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()}")
-            print(f"        Last non-masked position: {last_non_masked[i].item()}")
-            print()
-        
-        if len(prompts) > 10:
-            # Continue processing remaining prompts without detailed output
-            for i in range(10, len(prediction_text)):
-                is_correct = prediction_text[i] == original_text[i]
-                text_comparison.append(is_correct)
+            print(f"\n  [{i:3d}] PROMPT: '{prompts[i]}'")
+            print(f"        TARGET: '{original_text[i]}'")
+            print(f"        PREDICTION: '{prediction_text[i]}'")
+            print(f"        Logit index (padding_offset + attention_sum - 1): {prompt_lengths[i].item()}")
+
+            # Context token is token at logit index in input_ids
+            context_token_str = tok.decode([prompt_tok['input_ids'][i][prompt_lengths[i]].item()]) if prompt_lengths[i] >= 0 else "[START]"
+            predicted_token_str = tok.decode([ans[i].item()])
+            target_token_str = tok.decode([correct_id[i].item() if correct_id.dim() > 0 else correct_id.item()])
+            correctness = "✅" if is_correct else "❌"
+
+            print(f"        CONTEXT TOKEN: '{context_token_str}'")
+            print(f"        PREDICTED TOKEN: '{predicted_token_str}'")
+            print(f"        TARGET TOKEN: '{target_token_str}'")
+            print(f"        CORRECT: {correctness}")
         
         accuracy = sum(text_comparison) / len(text_comparison) if text_comparison else 0
         print(f"Batch Accuracy: {accuracy:.3f} ({sum(text_comparison)}/{len(text_comparison)})")
