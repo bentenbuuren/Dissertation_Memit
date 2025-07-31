@@ -16,6 +16,9 @@ share
 *_kmeng01g1gn*
 output
 output_final
+notebooks
+debug_outputs
+
 # Pre-trained hypernetworks
 baselines/*/weights
 
