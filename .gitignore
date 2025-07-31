@@ -8,6 +8,7 @@ dataset
 datasets_cache
 data
 edited_models
+edited_models_final
 original_models
 share
 !notebooks/data

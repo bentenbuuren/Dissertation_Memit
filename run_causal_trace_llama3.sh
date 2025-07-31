@@ -8,7 +8,7 @@
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
-#SBATCH --time=12:00:00
+#SBATCH --time=36:00:00
 #SBATCH --ntasks=1
 #SBATCH --job-name=gpt2xl_causal
 

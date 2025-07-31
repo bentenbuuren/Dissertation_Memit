@@ -1,0 +1,100 @@
+============================================================
+AVERAGE CAUSAL EFFECTS ANALYSIS
+============================================================
+Architecture: ns3_r0_gpt2-xl
+Display name: GPT2-XL
+Cases to analyze: 1209
+Results directory: results
+Output directory: analysis_results
+
+Reading single vector results...
+Reading from: results/ns3_r0_gpt2-xl/causal_trace/cases/
+Successfully processed 1208 cases, failed on 1 cases
+
+==================================================
+SUMMARY STATISTICS (single vector)
+==================================================
+Average Total Effect: 0.2288
+Best average indirect effect on last subject: 0.0950
+Best average indirect effect on last token: 0.2288
+Average best-fixed score: 0.2853
+Average best-fixed on last subject token score: 0.1592
+Average best-fixed on last word score: 0.2788
+Argmax at last subject token: 13
+Max at last subject token: 0.1337
+Argmax at last prompt token: 47
+Max at last prompt token: 0.2675
+
+Reading mlp results...
+Reading from: results/ns3_r0_gpt2-xl/causal_trace/cases/
+Successfully processed 1208 cases, failed on 1 cases
+
+==================================================
+SUMMARY STATISTICS (mlp)
+==================================================
+Average Total Effect: 0.2288
+Best average indirect effect on last subject: 0.0565
+Best average indirect effect on last token: 0.0256
+Average best-fixed score: 0.1768
+Average best-fixed on last subject token score: 0.1408
+Average best-fixed on last word score: 0.0715
+Argmax at last subject token: 17
+Max at last subject token: 0.0953
+Argmax at last prompt token: 35
+Max at last prompt token: 0.0643
+
+Reading attn results...
+Reading from: results/ns3_r0_gpt2-xl/causal_trace/cases/
+Successfully processed 1208 cases, failed on 1 cases
+
+==================================================
+SUMMARY STATISTICS (attn)
+==================================================
+Average Total Effect: 0.2288
+Best average indirect effect on last subject: 0.0139
+Best average indirect effect on last token: 0.0856
+Average best-fixed score: 0.1485
+Average best-fixed on last subject token score: 0.0688
+Average best-fixed on last word score: 0.1425
+Argmax at last subject token: 0
+Max at last subject token: 0.0526
+Argmax at last prompt token: 31
+Max at last prompt token: 0.1244
+
+Saved line plot to: analysis_results/lineplot-causaltrace-ns3_r0_gpt2-xl.pdf
+Saved line plot to: analysis_results/lineplot-causaltrace-ns3_r0_gpt2-xl.png
+Saved single vector heatmap to: analysis_results/heatmap-single-ns3_r0_gpt2-xl.pdf
+Saved MLP heatmap to: analysis_results/heatmap-mlp-ns3_r0_gpt2-xl.pdf
+Saved Attention heatmap to: analysis_results/heatmap-attn-ns3_r0_gpt2-xl.pdf
+
+============================================================
+MEMIT LAYER RECOMMENDATIONS
+============================================================
+
+Top 10 layers by causal effect on last subject token:
+   1. Layer 13: 0.0950
+   2. Layer 14: 0.0939
+   3. Layer 15: 0.0923
+   4. Layer 12: 0.0919
+   5. Layer 11: 0.0894
+   6. Layer 16: 0.0885
+   7. Layer 10: 0.0858
+   8. Layer  9: 0.0822
+   9. Layer  8: 0.0788
+  10. Layer 17: 0.0784
+
+RECOMMENDED LAYER SELECTIONS:
+  Conservative (3 layers): [13, 14, 15]
+  Balanced (5 layers):     [13, 14, 15, 12, 11]
+  Comprehensive (region):  [11, 12, 13, 14, 15]
+
+MODULE TARGETING RECOMMENDATION:
+  Target MLP (peak effect: 0.0565 > 0.0139)
+
+Saved recommendations to: analysis_results/memit_recommendations_ns3_r0_gpt2-xl.json
+
+============================================================
+ANALYSIS COMPLETE!
+============================================================
+All outputs saved to: analysis_results
+Analysis complete! Check analysis_results/ for outputs.

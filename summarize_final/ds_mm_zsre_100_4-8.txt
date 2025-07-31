@@ -1,0 +1,6 @@
+{'num_cases': 100,
+ 'post_neighborhood_acc': (0.58, 3.06),
+ 'post_paraphrase_acc': (5.08, 14.14),
+ 'post_rewrite_acc': (6.87, 17.32),
+ 'run_dir': 'results/MEMIT/run_218',
+ 'time': (140.7232005596161, 0.0)}
