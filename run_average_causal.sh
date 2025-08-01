@@ -16,8 +16,8 @@ source activate memit
 
 # Run the analysis
 python average_causal_effects.py \
-    --arch "ns3_r0_gpt2-xl" \
-    --archname "GPT2-XL" \
+    --arch "ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B" \
+    --archname "DeepSeek-R1-Distill-Llama-8B" \
     --count 1209 \
     --output_dir "analysis_results" \
     --results_dir "results"

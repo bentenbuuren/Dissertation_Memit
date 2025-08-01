@@ -311,8 +311,26 @@ def calculate_hidden_flow(
     with torch.no_grad():
         answer_t, base_score = [d[0] for d in predict_from_input(mt.model, inp)]
     [answer] = decode_tokens(mt.tokenizer, [answer_t])
+
+    if expect is not None:
+        print(f"\n🔍 CAUSAL TRACE DEBUG:")
+        print(f"   Prompt: '{prompt}'")
+        print(f"   Expected: '{expect}'")
+        print(f"   Model predicted: '{answer}'")
+        print(f"   Expected (repr): {repr(expect)}")
+        print(f"   Predicted (repr): {repr(answer)}")
+        print(f"   After strip: '{answer.strip()}'")
+        print(f"   Match: {answer.strip() == expect}")
+    
     if expect is not None and answer.strip() != expect:
+        # ADD ADDITIONAL DEBUG FOR SKIPPED CASES:
+        print(f"   ❌ SKIPPING - Prediction mismatch")
         return dict(correct_prediction=False)
+    
+    # OPTIONALLY ADD SUCCESS MESSAGE:
+    if expect is not None:
+        print(f"   ✅ PROCEEDING - Prediction matches")
+        
     e_range = find_token_range(mt.tokenizer, inp["input_ids"][0], subject)
     if token_range == "subject_last":
         token_range = [e_range[1] - 1]
