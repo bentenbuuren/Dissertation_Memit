@@ -48,7 +48,8 @@ def main():
             "gpt2-medium",
             "gpt2",
             "meta-llama/Llama-3.1-8B-Instruct",
-            "meta-llama/Llama-3.1-8B"
+            "meta-llama/Llama-3.1-8B",
+            "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
         ],
     )
     aa("--fact_file", default=None)

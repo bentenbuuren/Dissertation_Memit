@@ -16,7 +16,9 @@ share
 *_kmeng01g1gn*
 output
 output_final
+output_final_ds
 debug_outputs
+edited_models_final_ds
 
 # Pre-trained hypernetworks
 baselines/*/weights

@@ -1,0 +1,100 @@
+============================================================
+AVERAGE CAUSAL EFFECTS ANALYSIS
+============================================================
+Architecture: ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B
+Display name: DeepSeek-R1-Distill-Llama-8B
+Cases to analyze: 1209
+Results directory: results
+Output directory: analysis_results
+
+Reading single vector results...
+Reading from: results/ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B/causal_trace/cases/
+Successfully processed 670 cases, failed on 539 cases
+
+==================================================
+SUMMARY STATISTICS (single vector)
+==================================================
+Average Total Effect: 0.5812
+Best average indirect effect on last subject: 0.3490
+Best average indirect effect on last token: 0.5812
+Average best-fixed score: 0.6797
+Average best-fixed on last subject token score: 0.4658
+Average best-fixed on last word score: 0.6602
+Argmax at last subject token: 3
+Max at last subject token: 0.4104
+Argmax at last prompt token: 31
+Max at last prompt token: 0.6426
+
+Reading mlp results...
+Reading from: results/ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B/causal_trace/cases/
+Successfully processed 670 cases, failed on 539 cases
+
+==================================================
+SUMMARY STATISTICS (mlp)
+==================================================
+Average Total Effect: 0.5812
+Best average indirect effect on last subject: 0.3437
+Best average indirect effect on last token: 0.2887
+Average best-fixed score: 0.5474
+Average best-fixed on last subject token score: 0.4399
+Average best-fixed on last word score: 0.4153
+Argmax at last subject token: 3
+Max at last subject token: 0.4050
+Argmax at last prompt token: 21
+Max at last prompt token: 0.3501
+
+Reading attn results...
+Reading from: results/ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B/causal_trace/cases/
+Successfully processed 670 cases, failed on 539 cases
+
+==================================================
+SUMMARY STATISTICS (attn)
+==================================================
+Average Total Effect: 0.5812
+Best average indirect effect on last subject: 0.0782
+Best average indirect effect on last token: 0.3761
+Average best-fixed score: 0.5034
+Average best-fixed on last subject token score: 0.1565
+Average best-fixed on last word score: 0.4995
+Argmax at last subject token: 1
+Max at last subject token: 0.1395
+Argmax at last prompt token: 17
+Max at last prompt token: 0.4375
+
+Saved line plot to: analysis_results/lineplot-causaltrace-ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B.pdf
+Saved line plot to: analysis_results/lineplot-causaltrace-ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B.png
+Saved single vector heatmap to: analysis_results/heatmap-single-ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B.pdf
+Saved MLP heatmap to: analysis_results/heatmap-mlp-ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B.pdf
+Saved Attention heatmap to: analysis_results/heatmap-attn-ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B.pdf
+
+============================================================
+MEMIT LAYER RECOMMENDATIONS
+============================================================
+
+Top 10 layers by causal effect on last subject token:
+   1. Layer  3: 0.3491
+   2. Layer  5: 0.3484
+   3. Layer  4: 0.3467
+   4. Layer  6: 0.3325
+   5. Layer  2: 0.2981
+   6. Layer  7: 0.2839
+   7. Layer  1: 0.2625
+   8. Layer  8: 0.2561
+   9. Layer  9: 0.2240
+  10. Layer 10: 0.2223
+
+RECOMMENDED LAYER SELECTIONS:
+  Conservative (3 layers): [3, 5, 4]
+  Balanced (5 layers):     [3, 5, 4, 6, 2]
+  Comprehensive (region):  [1, 2, 3, 4, 5]
+
+MODULE TARGETING RECOMMENDATION:
+  Target MLP (peak effect: 0.3438 > 0.0781)
+
+Saved recommendations to: analysis_results/memit_recommendations_ns3_r0_deepseek-ai_DeepSeek-R1-Distill-Llama-8B.json
+
+============================================================
+ANALYSIS COMPLETE!
+============================================================
+All outputs saved to: analysis_results
+Analysis complete! Check analysis_results/ for outputs.
