@@ -2,14 +2,14 @@
 #SBATCH --mail-user=btenbuuren1@sheffield.ac.uk
 
 #SBATCH --mail-type=ALL
-#SBATCH --output=output_final/lm_mm_mcf_1_3-7.log
+#SBATCH --output=output_final/lm_mm_mcf_1_1-6.log
 #SBATCH --partition=gpu
 #SBATCH --qos=gpu
 #SBATCH --gres=gpu:1
 #SBATCH --mem=32G
-#SBATCH --time=12:00:00
+#SBATCH --time=00:30:00
 #SBATCH --ntasks=1
-#SBATCH --job-name=lm_mm_mcf_1_3-7
+#SBATCH --job-name=lm_mm_mcf_1_1-6
 
 # Load modules
 module load Anaconda3/2024.02-1
@@ -28,7 +28,7 @@ DS_NAME="mcf" # [cf, mcf, zsre]
 # Edit parameters 
 N_EDITS="1"
 ALG_NAMES=("MEMIT")
-HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct-3-7.json") # meta-llama_Llama-2-7b-hf.json
+HPARAMS_FNAMES=("meta-llama_Llama-3.1-8B-Instruct-1-6.json") # meta-llama_Llama-2-7b-hf.json
 EVAL_ONLY=0
 MODEL_SAVE=0
 
