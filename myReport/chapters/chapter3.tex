@@ -1,0 +1,431 @@
+\chapter{Methodology}
+
+This chapter presents the experimental methodology employed to investigate neural model editing techniques for factual knowledge modification in large language models. The research focuses on systematic evaluation of the MEMIT (Mass-Editing Memory in a Transformer) algorithm across multiple layer selection strategies, model architectures, and editing scales. The methodology encompasses novel causal tracing approaches for layer selection, comprehensive multi-scale editing evaluation, and post-editing fine-tuning analysis to assess the preservation of model capabilities.
+
+\section{Research Questions and Hypotheses}
+
+The research investigates three primary questions concerning neural model editing effectiveness:
+
+\textbf{Research Question 1:} How do different layer selection methodologies, including novel causal tracing with frozen components, influence the effectiveness of knowledge editing in transformer models?
+
+\textit{Hypothesis 1:} Layer selection strategies that incorporate component-specific causal analysis (frozen MLP/attention) will demonstrate superior editing performance compared to traditional approaches, as the frozen component analysis isolates the contribution of specific architectural elements to factual knowledge storage.
+
+\textbf{Research Question 2:} How does the MEMIT algorithm scale across different magnitudes of simultaneous fact modifications, and what are the implications for practical deployment of neural model editing?
+
+\textit{Hypothesis 2:} MEMIT performance will degrade as the number of simultaneous edits increases from single facts to massive scales (10,000 edits), with optimal performance occurring at intermediate scales (100-1,000 edits) where batch processing benefits outweigh interference effects.
+
+\textbf{Research Question 3:} How do architectural differences between Llama-3.1-8B-Instruct and DeepSeek-R1-Distill-Llama-8B affect neural model editing effectiveness, particularly for DeepSeek's first evaluation in the model editing context?
+
+\textit{Hypothesis 3:} The distillation process in DeepSeek-R1-Distill-Llama-8B will result in distinct optimal layer configurations compared to Llama-3.1-8B-Instruct, requiring adapted layer selection strategies despite shared architectural foundations.
+
+\section{Model Selection and Rationale}
+
+\subsection{Primary Model Architectures}
+
+Two transformer architectures were selected for comprehensive evaluation based on their shared architectural foundation and distinct training paradigms:
+
+\textbf{Llama-3.1-8B-Instruct} serves as the primary experimental model due to its:
+\begin{itemize}
+    \item Established performance in neural model editing literature
+    \item Balanced parameter count (8B) enabling comprehensive experimentation
+    \item Instruction-tuned capabilities facilitating robust downstream evaluation
+    \item Well-documented architectural specifications for causal analysis
+\end{itemize}
+
+\textbf{DeepSeek-R1-Distill-Llama-8B} was selected as the comparative architecture to:
+\begin{itemize}
+    \item Provide the first systematic evaluation of DeepSeek models in neural editing context
+    \item Assess the impact of knowledge distillation on editing effectiveness
+    \item Evaluate cross-architectural generalization despite shared Llama foundations
+    \item Maintain parameter count consistency for controlled comparison
+\end{itemize}
+
+The selection of these architectures enables investigation of how different training paradigms (instruction tuning vs. distillation) affect the localization and editability of factual knowledge within transformer models.
+
+\subsection{Experimental Sequence}
+
+The experimental design follows a systematic progression:
+\begin{enumerate}
+    \item \textbf{Primary Analysis}: Comprehensive evaluation on Llama-3.1-8B-Instruct across all layer selection methods and editing scales
+    \item \textbf{Comparative Analysis}: Application of optimal methodologies to DeepSeek-R1-Distill-Llama-8B
+    \item \textbf{Cross-Model Validation}: Assessment of layer selection strategy transferability between architectures
+\end{enumerate}
+
+\section{Layer Selection Methodologies}
+
+The research employs four distinct layer selection approaches to identify optimal editing targets, each representing different theoretical foundations for factual knowledge localization in transformer models.
+
+\subsection{Method 1: Causal Tracing with Frozen MLP Components}
+
+This novel approach extends traditional causal tracing by selectively freezing MLP components during intervention analysis. The methodology isolates attention mechanism contributions to factual knowledge processing:
+
+\textbf{Protocol:}
+\begin{enumerate}
+    \item Freeze all MLP modules across target layers: $\text{FFN}^{(l)}(\mathbf{h}) = \text{FFN}_{\text{frozen}}^{(l)}(\mathbf{h})$
+    \item Apply noise corruption exclusively to attention mechanisms
+    \item Compute layer-wise causal effects with isolated attention contribution:
+    \begin{equation}
+    \mathcal{E}_{\text{frozen-MLP}}^{(l)} = \mathbb{E}_{x \sim \mathcal{D}} \left[ \| \mathbf{h}_{\text{clean}}^{(l)}(x) - \mathbf{h}_{\text{corrupted-attn}}^{(l)}(x) \|_2 \right]
+    \end{equation}
+\end{enumerate}
+
+\textbf{Layer Selection Criteria:}
+Layer selection employs a gap-based threshold approach:
+\begin{itemize}
+    \item Identify peak causal effect layer: $l_{\text{peak}} = \text{argmax}_l \mathcal{E}_{\text{frozen-MLP}}^{(l)}$
+    \item Calculate gap threshold: $\tau = 0.8 \times \max_l \mathcal{E}_{\text{frozen-MLP}}^{(l)}$
+    \item Select layers where: $\mathcal{E}_{\text{frozen-MLP}}^{(l)} \geq \tau$
+\end{itemize}
+
+\textbf{Results:} Application of this methodology yielded:
+\begin{itemize}
+    \item \textbf{Llama-3.1-8B-Instruct}: Layers 1-6 (6 layers)
+    \item \textbf{DeepSeek-R1-Distill-Llama-8B}: Layers 1-5 (5 layers)
+\end{itemize}
+
+\subsection{Method 2: Top-5 Standard Causal Tracing}
+
+Traditional causal tracing identifies layers with highest factual knowledge sensitivity through standard intervention analysis:
+
+\textbf{Causal Effect Computation:}
+\begin{equation}
+\mathcal{E}^{(l)} = \mathbb{E}_{x \sim \mathcal{D}} \left[ \| \mathbf{h}_{\text{clean}}^{(l)}(x) - \mathbf{h}_{\text{corrupted}}^{(l)}(x) \|_2 \right]
+\end{equation}
+
+\textbf{Layer Selection:}
+Select the top 5 layers by causal effect magnitude:
+\begin{equation}
+\mathcal{L}_{\text{top-5}} = \{\text{top-5 layers by } \mathcal{E}^{(l)}\}
+\end{equation}
+
+\textbf{Results:}
+\begin{itemize}
+    \item \textbf{Llama-3.1-8B-Instruct}: Layers 3-7
+    \item \textbf{DeepSeek-R1-Distill-Llama-8B}: Layers 2-6
+\end{itemize}
+
+\subsection{Method 3: Llama-2 EasyEdit Literature Layers}
+
+This approach leverages established layer selections from the neural model editing literature, specifically the EasyEdit framework's optimized layers for Llama-2 architectures:
+
+\textbf{Rationale:} The EasyEdit library has empirically determined optimal editing layers for Llama-2 through extensive experimentation. Given the architectural similarities between Llama-2 and the target models, these layers provide a literature-validated baseline.
+
+\textbf{Layer Configuration:}
+\begin{itemize}
+    \item \textbf{Both Models}: Layers 4-8 (5 consecutive layers)
+    \item \textbf{Theoretical Basis}: Mid-layer positioning balances feature representation and output generation phases
+\end{itemize}
+
+\subsection{Method 4: GPT2-XL MEMIT Paper Layers}
+
+This methodology applies the original MEMIT paper's layer selection for GPT2-XL, providing insight into cross-architectural transferability:
+
+\textbf{Historical Context:} The original MEMIT algorithm was validated on GPT2-XL using layers 13-17, representing the model's output generation layers where factual knowledge is transformed into linguistic output.
+
+\textbf{Layer Mapping:} Direct application without architectural scaling:
+\begin{itemize}
+    \item \textbf{Both Models}: Layers 13-17 (5 consecutive layers)
+    \item \textbf{Architectural Position}: Late-layer editing targeting output generation mechanisms
+\end{itemize}
+
+\section{MEMIT Algorithm Implementation}
+
+\subsection{Core MEMIT Methodology}
+
+MEMIT enables simultaneous modification of multiple facts through matrix-based parameter updates. The algorithm computes optimal weight modifications by solving:
+
+\begin{equation}
+\mathbf{W}^{(l)}_{\text{new}} = \mathbf{W}^{(l)} + \mathbf{U} \mathbf{V}^T
+\end{equation}
+
+where the update matrices are derived through:
+
+\textbf{Key Vector Extraction:}
+For each fact $i$ to be edited, extract the key representation:
+\begin{equation}
+\mathbf{k}_i = \text{MLP}^{(l)}(\mathbf{h}_i^{(l-1)})
+\end{equation}
+
+\textbf{Covariance Matrix Computation:}
+\begin{equation}
+\mathbf{C} = \frac{1}{N} \sum_{i=1}^{N} \mathbf{k}_i \mathbf{k}_i^T + \lambda \mathbf{I}
+\end{equation}
+
+where $\lambda$ provides numerical stabilization and $N$ represents the number of facts being edited simultaneously.
+
+\textbf{Update Matrix Derivation:}
+\begin{equation}
+\mathbf{U} = \mathbf{C}^{-1} \mathbf{K}, \quad \mathbf{V} = \Delta \mathbf{V}_{\text{target}}
+\end{equation}
+
+where $\mathbf{K} = [\mathbf{k}_1, \mathbf{k}_2, \ldots, \mathbf{k}_N]$ contains all key vectors and $\Delta \mathbf{V}_{\text{target}}$ represents the desired output changes.
+
+\subsection{Multi-Scale Editing Framework}
+
+The research evaluates MEMIT performance across five orders of magnitude to assess scalability:
+
+\begin{itemize}
+    \item \textbf{Single Edit (N=1):} Individual fact modification precision
+    \item \textbf{Small Batch (N=10):} Limited interference assessment  
+    \item \textbf{Medium Scale (N=100):} Practical editing scenario evaluation
+    \item \textbf{Large Scale (N=1000):} High-volume editing capability
+    \item \textbf{Massive Scale (N=10000):} Algorithm limitation exploration
+\end{itemize}
+
+For each scale $N$, the success rate is quantified as:
+\begin{equation}
+\text{Success Rate}(N) = \frac{\sum_{i=1}^{N} \mathbb{1}[\text{edit}_i \text{ successful}]}{N}
+\end{equation}
+
+\subsection{Hyperparameter Configuration}
+
+MEMIT parameters were optimized through preliminary experiments and maintained consistently across all conditions:
+
+\begin{itemize}
+    \item Learning rate: $v\_lr = 5 \times 10^{-1}$
+    \item Gradient steps: $v\_num\_grad\_steps = 25$
+    \item KL divergence factor: $kl\_factor = 0.0625$
+    \item Momentum adjustment: $mom2\_adjustment = \text{True}$
+    \item Weight decay: $v\_weight\_decay = 1 \times 10^{-3}$
+    \item Context template: $[5, 10]$ and $[10, 10]$ tokens
+    \item Momentum samples: $mom2\_n\_samples = 1000$
+\end{itemize}
+
+\section{Datasets and Evaluation Framework}
+
+\subsection{Primary Evaluation Datasets}
+
+\textbf{CounterFact Dataset (MCF)} serves as the primary factual editing benchmark:
+\begin{itemize}
+    \item 21,919 factual statements with counterfactual alternatives
+    \item Structured format: (subject, relation, old\_object, new\_object)
+    \item Example: ("Eiffel Tower", "located in", "Paris", "Rome")
+    \item Comprehensive entity relationship coverage
+\end{itemize}
+
+\textbf{Zero-shot Relation Extraction Dataset (zsRE)} provides complementary assessment:
+\begin{itemize}
+    \item 24,543 relation extraction instances
+    \item Template-based evaluation for consistency
+    \item Assessment of generalization beyond direct fact memorization
+    \item Focus on reasoning capability preservation
+\end{itemize}
+
+\subsection{Dataset-Specific Evaluation Metrics}
+
+The evaluation framework employs dataset-specific metrics to capture different aspects of editing quality:
+
+\subsubsection{zsRE Dataset Metrics}
+
+\textbf{Rewrite Accuracy ($\text{Acc}_{\text{rewrite}}$):}
+\begin{equation}
+\text{Acc}_{\text{rewrite}} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{1}[\text{model}(s_i, r_i) = o_i^{\text{new}}]
+\end{equation}
+
+\textbf{Paraphrase Accuracy ($\text{Acc}_{\text{para}}$):}
+\begin{equation}
+\text{Acc}_{\text{para}} = \frac{1}{M} \sum_{j=1}^{M} \mathbb{1}[\text{model}(p_j) = o^{\text{new}}]
+\end{equation}
+
+\textbf{Neighborhood Accuracy ($\text{Acc}_{\text{neighbor}}$):}
+\begin{equation}
+\text{Acc}_{\text{neighbor}} = \frac{1}{K} \sum_{k=1}^{K} \mathbb{1}[\text{model}_{\text{edit}}(n_k) = \text{model}_{\text{orig}}(n_k)]
+\end{equation}
+
+\subsubsection{CounterFact Dataset Metrics}
+
+The CounterFact evaluation extends zsRE metrics with success rate variants based on next word negative log-likelihood (NLL) comparison:
+
+\textbf{Rewrite Success ($\text{Success}_{\text{rewrite}}$):}
+Binary indicator where success occurs when the new target word achieves lower NLL than the original word:
+\begin{equation}
+\text{Success}_{\text{rewrite}} = \mathbb{1}[\text{NLL}(w_{\text{new}}) < \text{NLL}(w_{\text{original}})]
+\end{equation}
+
+\textbf{Paraphrase Success ($\text{Success}_{\text{para}}$):}
+Binary indicator of successful NLL-based performance across paraphrase variants:
+\begin{equation}
+\text{Success}_{\text{para}} = \mathbb{1}[\text{NLL}_{\text{para}}(w_{\text{new}}) < \text{NLL}_{\text{para}}(w_{\text{original}})]
+\end{equation}
+
+\textbf{Neighborhood Success ($\text{Success}_{\text{neighbor}}$):}
+Binary indicator ensuring neighborhood facts maintain lower NLL for their original answers:
+\begin{equation}
+\text{Success}_{\text{neighbor}} = \mathbb{1}[\text{NLL}_{\text{neighbor}}(w_{\text{correct}}) < \text{NLL}_{\text{neighbor}}(w_{\text{incorrect}})]
+\end{equation}
+
+These NLL-based success metrics provide probabilistic assessment of editing effectiveness, where lower negative log-likelihood indicates higher model confidence in the target responses.
+
+\section{Post-Editing Fine-Tuning Analysis}
+
+\subsection{Rationale and Scope}
+
+Post-editing fine-tuning analysis investigates whether parameter-efficient adaptation can recover or enhance model capabilities following neural editing. This analysis focuses exclusively on Method 1 (frozen MLP causal tracing) layers, which demonstrated optimal theoretical grounding and empirical performance.
+
+\subsection{Fine-Tuning Methodologies}
+
+\textbf{LoRA (Low-Rank Adaptation):}
+\begin{equation}
+\mathbf{W}_{\text{new}} = \mathbf{W}_{\text{edited}} + \mathbf{B}\mathbf{A}
+\end{equation}
+where $\mathbf{A} \in \mathbb{R}^{r \times d}$ and $\mathbf{B} \in \mathbb{R}^{d \times r}$ with rank $r = 16$.
+
+\textbf{DoRA (Weight-Decomposed Low-Rank Adaptation):}
+\begin{equation}
+\mathbf{W}_{\text{new}} = \frac{\mathbf{m}}{\|\mathbf{W}_{\text{edited}} + \mathbf{B}\mathbf{A}\|_F} (\mathbf{W}_{\text{edited}} + \mathbf{B}\mathbf{A})
+\end{equation}
+where $\mathbf{m}$ represents magnitude scaling factors applied to the normalized adapted weights.
+
+\subsection{Fine-Tuning Protocol}
+
+\textbf{Editing Scale Selection:} Fine-tuning analysis targets intermediate scales (10, 100, 1000 edits) where practical applications are most relevant, excluding single edits (insufficient for generalization assessment) and massive scales (computational constraints).
+
+\textbf{Training Configuration:}
+\begin{itemize}
+    \item Dataset: Commonsense 170k for general capability preservation
+    \item Training epochs: 3 with early stopping based on validation loss
+    \item Learning rate: $2 \times 10^{-4}$ with cosine scheduling
+    \item Batch size: 16 with gradient accumulation steps of 2
+    \item Adapter rank: $r = 16$ for both LoRA and DoRA
+\end{itemize}
+
+\textbf{Evaluation Hypothesis:} Metric scores are expected to decrease following fine-tuning as the adaptation process may interfere with precise editing modifications, representing a trade-off between general capability recovery and editing preservation.
+
+\section{Experimental Design and Controls}
+
+\subsection{Factorial Design Structure}
+
+The study employs a systematic factorial design with the following independent variables:
+
+\begin{itemize}
+    \item \textbf{Layer Selection Method}: 4 levels (Methods 1-4)
+    \item \textbf{Model Architecture}: 2 levels (Llama-3.1, DeepSeek-R1)
+    \item \textbf{Edit Scale}: 5 levels (1, 10, 100, 1000, 10000)
+    \item \textbf{Dataset Type}: 2 levels (CounterFact MCF, zsRE)
+    \item \textbf{Fine-Tuning Method}: 3 levels (None, LoRA, DoRA) - Method 1 only
+\end{itemize}
+
+\subsection{Experimental Controls}
+
+\textbf{Randomization Control:}
+\begin{itemize}
+    \item Fixed random seeds across all experimental conditions
+    \item Stratified sampling for fact selection maintaining domain balance
+    \item Consistent ordering of operations within experimental runs
+\end{itemize}
+
+\textbf{Hardware Standardization:}
+\begin{itemize}
+    \item Identical CUDA-enabled GPU allocation (NVIDIA A100 40GB)
+    \item Consistent memory management and gradient checkpointing
+    \item Standardized precision settings (mixed precision training)
+\end{itemize}
+
+\textbf{Implementation Consistency:}
+\begin{itemize}
+    \item Identical hyperparameter configurations across model architectures
+    \item Standardized evaluation protocols and metric computation
+    \item Version-controlled codebase ensuring implementation stability
+\end{itemize}
+
+\section{Evaluation Protocols and Statistical Analysis}
+
+\subsection{Comprehensive Evaluation Pipeline}
+
+The evaluation protocol follows a systematic sequence:
+
+\begin{enumerate}
+    \item \textbf{Baseline Establishment}: Pre-editing performance measurement across all metrics
+    \item \textbf{Causal Tracing Analysis}: Layer selection using frozen component methodology
+    \item \textbf{MEMIT Application}: Systematic editing across all layer methods and scales
+    \item \textbf{Immediate Assessment}: Direct evaluation of editing quality metrics
+    \item \textbf{Fine-Tuning Analysis}: LoRA/DoRA adaptation for Method 1 configurations
+    \item \textbf{Post-Fine-Tuning Evaluation}: Assessment of metric preservation following adaptation
+\end{enumerate}
+
+\subsection{Statistical Analysis Framework}
+
+\textbf{Descriptive Statistics:} All metrics reported with mean ($M$), standard deviation ($SD$), and 95\% confidence intervals.
+
+\textbf{Comparative Analysis:}
+\begin{itemize}
+    \item ANOVA for multi-condition comparisons across layer selection methods
+    \item Paired t-tests for algorithm and model architecture comparisons  
+    \item Effect size reporting using Cohen's $d$ for practical significance assessment
+    \item Bonferroni correction for multiple comparison control
+\end{itemize}
+
+\textbf{Performance Degradation Quantification:}
+\begin{equation}
+\Delta_{\text{metric}} = \frac{\text{Score}_{\text{post}} - \text{Score}_{\text{pre}}}{\text{Score}_{\text{pre}}} \times 100\%
+\end{equation}
+
+\section{Reproducibility and Implementation}
+
+\subsection{Computational Environment}
+
+\textbf{Hardware Specifications:}
+\begin{itemize}
+    \item GPU: NVIDIA A100 with 40GB memory
+    \item Memory Management: Gradient checkpointing and mixed precision
+    \item CUDA: Version 11.7 with cuDNN 8.5
+\end{itemize}
+
+\textbf{Software Environment:}
+\begin{itemize}
+    \item PyTorch 1.13+ with Transformers 4.21+
+    \item Python 3.9 with standardized dependency versions
+    \item HuggingFace Hub integration for model access
+\end{itemize}
+
+\subsection{Code Organization}
+
+\textbf{Execution Scripts:}
+\begin{itemize}
+    \item \texttt{run\_edit.py}: Primary MEMIT editing pipeline
+    \item \texttt{run\_finetune\_peft.py}: LoRA/DoRA fine-tuning execution
+    \item \texttt{experiments/causal\_trace\_*.py}: Layer selection analysis
+\end{itemize}
+
+\textbf{Results Management:}
+\begin{itemize}
+    \item \texttt{results/MEMIT/}: Organized by model, dataset, scale, and layer configuration
+    \item \texttt{summarize\_final/}: Comprehensive evaluation summaries with systematic naming
+    \item \texttt{hparams/}: JSON hyperparameter configurations ensuring consistency
+\end{itemize}
+
+\subsection{Data Management and Naming Conventions}
+
+Results are systematically organized using standardized naming conventions:
+\begin{itemize}
+    \item Model identifiers: \texttt{ds} (DeepSeek), \texttt{lm} (Llama-3.1)
+    \item Algorithm: \texttt{mm} (MEMIT)
+    \item Dataset: \texttt{mcf} (CounterFact), \texttt{zsre} (Zero-shot RE)
+    \item Scale: \texttt{1}, \texttt{10}, \texttt{100}, \texttt{1000}, \texttt{10000}
+    \item Layers: \texttt{1-5}, \texttt{2-6}, \texttt{3-7}, \texttt{4-8}, \texttt{13-17}
+\end{itemize}
+
+Example: \texttt{ds\_mm\_mcf\_100\_2-6.txt} represents DeepSeek + MEMIT + CounterFact + 100 edits + layers 2-6.
+
+\section{Ethical Considerations}
+
+\subsection{Responsible Editing Practices}
+
+\textbf{Counterfactual Safety:} All fact modifications employ obviously false counterfactuals to prevent misinformation propagation. The CounterFact dataset specifically uses statements that are clearly incorrect to human evaluators.
+
+\textbf{Capability Preservation:} Extensive evaluation ensures that editing procedures do not degrade general model capabilities or introduce harmful biases through comprehensive downstream task assessment.
+
+\subsection{Potential Risk Mitigation}
+
+The research acknowledges potential misuse vectors and implements mitigation strategies:
+\begin{itemize}
+    \item \textbf{Transparency}: Complete methodological disclosure enables community verification
+    \item \textbf{Evaluation Rigor}: Comprehensive assessment frameworks detect unintended modifications
+    \item \textbf{Best Practice Development}: Establishment of guidelines for responsible editing applications
+\end{itemize}
+
+\section{Chapter Summary}
+
+This methodology chapter has presented a comprehensive experimental framework for investigating neural model editing using MEMIT across multiple layer selection strategies and model architectures. The approach introduces novel causal tracing methodologies with frozen components, systematic multi-scale evaluation, and post-editing fine-tuning analysis. Through rigorous experimental controls, standardized evaluation protocols, and comprehensive statistical analysis, this framework enables robust investigation of layer selection strategies while maintaining reproducibility and ethical research practices.
+
+The methodology's key innovations include the frozen MLP causal tracing approach for layer selection, the first systematic evaluation of DeepSeek models in neural editing contexts, and comprehensive assessment of editing-fine-tuning interactions. The following chapter will present the results obtained through application of this methodology, including layer selection findings, editing performance across scales, and fine-tuning impact analysis.

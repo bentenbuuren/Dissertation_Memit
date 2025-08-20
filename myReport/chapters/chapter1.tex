@@ -1,0 +1,55 @@
+\chapter{Introduction}
+
+Large language models have achieved remarkable capabilities in natural language understanding and generation, yet they face a fundamental challenge: the factual knowledge encoded within their parameters becomes outdated over time and may contain inaccuracies from their training data. When a model incorrectly states that ``Barack Obama was born in Hawaii in 1962'' or fails to recognize recent world events, the consequences extend beyond mere technical limitations to real-world applications in healthcare, education, and critical decision-making systems \cite{brown_2020_language}. 
+
+Traditional approaches of retraining entire models to correct such factual errors are computationally prohibitive and impractical for deployment scenarios requiring rapid knowledge updates.
+
+The distributed nature of knowledge representation in neural networks complicates selective updates. Unlike databases where factual information can be precisely located and modified, neural knowledge exists as distributed patterns across millions of parameters within transformer feed-forward networks \cite{geva_2021_transformer, meng_2022_locating}. 
+
+Standard fine-tuning approaches suffer from catastrophic forgetting, where learning new information degrades previously acquired knowledge \cite{mccloskey_1989_catastrophic}. The temporal mismatch between model development cycles and the rapid pace of factual changes creates a persistent knowledge gap that traditional methods cannot efficiently address.
+
+Neural model editing represents a paradigm shift toward precise, localized modifications of model behavior through direct parameter manipulation. Unlike fine-tuning approaches that rely on gradient-based optimization over multiple training iterations, model editing techniques aim to identify and modify the specific parameters responsible for storing target factual associations \cite{mitchell_2022_mend}. 
+
+This approach enables single-step interventions that can change model outputs for specific inputs while minimizing unintended consequences on unrelated knowledge.
+
+Recent advances in model editing have produced two prominent algorithmic approaches: the Rank-One Model Editing (ROME) algorithm, which enables precise individual fact modifications through rank-one weight updates \cite{mitchell_2022_rome}, and the Mass-Editing Memory in a Transformer (MEMIT) algorithm, which facilitates simultaneous editing of multiple facts through batch processing \cite{meng_2022_memit}. 
+
+Both methods leverage causal tracing analysis to identify critical layers where factual information is stored and retrieved, enabling targeted interventions in transformer feed-forward networks.
+
+Despite these advances, significant gaps remain in understanding optimal layer selection strategies and scaling behavior across different editing volumes. Current approaches rely on heuristic layer selection methods that may not generalize across transformer architectures. 
+
+Furthermore, the comparative advantages of MEMIT versus ROME under varying conditions remain insufficiently characterized, particularly regarding their effectiveness across different scales of simultaneous edits and their impact on downstream task performance.
+
+This dissertation investigates neural model editing techniques that enable precise, efficient modification of factual associations while preserving model capabilities. Through systematic comparison of MEMIT and ROME algorithms across multiple transformer architectures and editing scales, this research advances the theoretical understanding and practical deployment of knowledge modification systems for large language models.
+
+\section{Aim and Objective}
+\label{sec:aim_objective}
+
+The primary aim of this research is to advance neural model editing methodologies through comprehensive evaluation of layer selection optimization, scaling behavior characterization, and edit persistence analysis. This investigation seeks to establish principled foundations for precise, efficient knowledge modification in large language models while understanding their interaction with parameter-efficient fine-tuning approaches.
+
+\textbf{Importantly, this research represents the first comprehensive investigation of neural model editing on DeepSeek-R1-Distill-Llama-8B—a state-of-the-art architecture that has never been studied in the context of knowledge editing.} This pioneering exploration establishes foundational knowledge for editing advanced model architectures and contributes novel empirical insights to the field.
+
+The research addresses three specific objectives:
+
+\textbf{Objective 1: Layer Selection Optimization.} Establish and validate optimal layer selection methodologies for neural model editing through systematic comparison of causal tracing approaches. This includes developing frozen component analysis techniques to isolate MLP and attention contributions, implementing gap-based selection strategies, and validating effectiveness across Llama-3.1-8B-Instruct and DeepSeek-R1-Distill-Llama-8B architectures to identify MLP-dominant layers most suitable for MEMIT editing.
+
+\textbf{Objective 2: Scaling Behavior Characterization.} Investigate MEMIT's effectiveness and limitations across five orders of magnitude of simultaneous edits, from single fact modifications to mass editing of 10,000 factual associations. This analysis will identify critical scaling thresholds, characterize performance degradation patterns, and establish optimal operating regimes for different deployment scenarios, providing empirical boundaries for practical model editing applications.
+
+\textbf{Objective 3: Edit Persistence Under Fine-tuning.} Determine whether model-edited factual knowledge persists after subsequent parameter-efficient fine-tuning operations, specifically examining the interaction between MEMIT modifications and LoRA/DoRA fine-tuning approaches. This investigation will evaluate edit retention rates, identify potential interference patterns, and establish protocols for combining knowledge editing with fine-tuning methodologies in practical deployment pipelines.
+
+These objectives collectively address the fundamental research question: How can neural model editing be optimized to achieve reliable layer selection, scalable knowledge modification, and persistent edit retention in the context of modern parameter-efficient fine-tuning workflows?
+
+\section{Overview of the Report}
+\label{sec:report_overview}
+
+This dissertation is structured to provide systematic investigation of neural model editing methodologies through six interconnected chapters that progress from theoretical foundations to practical applications.
+
+\textbf{Chapter 2: Literature Review} examines the theoretical foundations of transformer knowledge storage mechanisms and surveys existing model editing approaches. This chapter positions the current research within the broader context of neural knowledge modification techniques and identifies key methodological gaps that motivate the experimental design.
+
+\textbf{Chapter 3: Methodology} details the experimental framework including causal tracing protocols, frozen component analysis procedures, and evaluation metrics. This chapter establishes the rigorous experimental design that enables systematic comparison of editing algorithms across multiple conditions and architectures.
+
+\textbf{Chapter 4: Results} presents comprehensive evaluation of MEMIT across different scales, layer selections, and model architectures. This chapter characterizes layer selection optimization findings, scaling behavior patterns, and provides empirical analysis of performance boundaries across five orders of magnitude of simultaneous edits.
+
+\textbf{Chapter 5: Discussion} integrates experimental findings to address the three research objectives, analyzing layer selection methodologies, scaling behavior implications, and edit persistence under fine-tuning. This chapter synthesizes results to establish principled guidelines for neural model editing deployment and identifies the interaction patterns between knowledge editing and parameter-efficient fine-tuning approaches.
+
+The dissertation concludes with implications for neural model editing deployment and directions for future research in knowledge modification systems. Each chapter builds systematically toward comprehensive understanding of optimal editing strategies for maintaining factual accuracy in large language models.

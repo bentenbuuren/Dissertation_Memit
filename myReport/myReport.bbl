@@ -1,0 +1,63 @@
+\begin{thebibliography}{10}
+
+\bibitem{brown_2020_language}
+T.~B. Brown, B.~Mann, N.~Ryder, M.~Subbiah, J.~Kaplan, P.~Dhariwal, A.~Neelakantan, P.~Shyam, G.~Sastry, A.~Askell, {\em et~al.}, ``Language models are few-shot learners,'' {\em arXiv preprint arXiv:2005.14165}, 2020.
+
+\bibitem{geva_2021_transformer}
+M.~Geva, R.~Schuster, J.~Berant, and O.~Levy, ``Transformer feed-forward layers are key-value memories,'' {\em Transactions of the Association for Computational Linguistics}, vol.~9, pp.~652--669, 2021.
+
+\bibitem{meng_2022_locating}
+K.~Meng, D.~Bau, A.~Andonian, and Y.~Belinkov, ``Locating and editing factual associations in gpt,'' in {\em Advances in Neural Information Processing Systems}, vol.~35, pp.~17359--17372, 2022.
+
+\bibitem{mccloskey_1989_catastrophic}
+M.~McCloskey and N.~J. Cohen, ``Catastrophic interference in connectionist networks: The sequential learning problem,'' {\em Psychology of Learning and Motivation}, vol.~24, pp.~109--165, 1989.
+
+\bibitem{mitchell_2022_mend}
+E.~Mitchell, C.~Lin, A.~Bosselut, C.~Finn, and C.~D. Manning, ``Fast model editing at scale,'' in {\em International Conference on Learning Representations}, 2022.
+
+\bibitem{mitchell_2022_rome}
+K.~Meng, D.~Bau, A.~Andonian, and Y.~Belinkov, ``Locating and editing factual associations in gpt,'' in {\em Advances in Neural Information Processing Systems}, vol.~35, pp.~17359--17372, 2022.
+
+\bibitem{meng_2022_memit}
+K.~Meng, A.~S. Sharma, A.~Andonian, Y.~Belinkov, and D.~Bau, ``Mass-editing memory in a transformer,'' in {\em International Conference on Learning Representations}, 2023.
+
+\bibitem{touvron_2023_llama}
+H.~Touvron, T.~Lavril, G.~Izacard, X.~Martinet, M.-A. Lachaux, T.~Lacroix, B.~Rozi{\`e}re, N.~Goyal, E.~Hambro, F.~Azhar, {\em et~al.}, ``Llama: Open and efficient foundation language models,'' {\em arXiv preprint arXiv:2302.13971}, 2023.
+
+\bibitem{vaswani_2017_attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~Kaiser, and I.~Polosukhin, ``Attention is all you need,'' in {\em Advances in Neural Information Processing Systems}, vol.~30, pp.~5998--6008, 2017.
+
+\bibitem{petroni_2019_language}
+F.~Petroni, T.~Rockt{\"a}schel, S.~Riedel, P.~Lewis, A.~Bakhtin, Y.~Wu, and A.~Miller, ``Language models as knowledge bases?,'' {\em Transactions of the Association for Computational Linguistics}, vol.~7, pp.~61--76, 2019.
+
+\bibitem{jiang_2020_how}
+Z.~Jiang, F.~F. Xu, J.~Araki, and G.~Neubig, ``How can we know what language models know?,'' {\em Transactions of the Association for Computational Linguistics}, vol.~8, pp.~422--438, 2020.
+
+\bibitem{kirkpatrick_2017_overcoming}
+J.~Kirkpatrick, R.~Pascanu, N.~Rabinowitz, J.~Veness, G.~Desjardins, A.~A. Rusu, K.~Milan, J.~Quan, T.~Ramalho, A.~Grabska-Barwinska, {\em et~al.}, ``Overcoming catastrophic forgetting in neural networks,'' {\em Proceedings of the National Academy of Sciences}, vol.~114, no.~13, pp.~3521--3526, 2017.
+
+\bibitem{sinitsin_2020_editable_neural}
+A.~Sinitsin, V.~Plokhotnyuk, D.~Pyrkin, S.~Popov, and A.~Babenko, ``Editable neural networks,'' in {\em International Conference on Machine Learning}, pp.~8946--8956, 2020.
+
+\bibitem{cao_2021_editing_factual_knowledge}
+N.~D. Cao, W.~Aziz, and I.~Titov, ``Editing factual knowledge in language models,'' in {\em Conference on Empirical Methods in Natural Language Processing}, pp.~6491--6506, 2021.
+
+\bibitem{houlsby_2019_adapters}
+N.~Houlsby, A.~Giurgiu, S.~Jastrzebski, B.~Morrone, Q.~de~Laroussilhe, A.~Gesmundo, M.~Attariyan, and S.~Gelly, ``Parameter-efficient transfer learning for nlp,'' in {\em International Conference on Machine Learning}, pp.~2790--2799, 2019.
+
+\bibitem{li_2021_prefix_tuning}
+X.~L. Li and P.~Liang, ``Prefix-tuning: Optimizing continuous prompts for generation,'' {\em Annual Meeting of the Association for Computational Linguistics}, 2021.
+
+\bibitem{lester_2021_prompt_tuning}
+B.~Lester, R.~Al-Rfou, and N.~Constant, ``The power of scale for parameter-efficient prompt tuning,'' {\em Empirical Methods in Natural Language Processing}, 2021.
+
+\bibitem{hu_2022_lora}
+E.~J. Hu, Y.~Shen, P.~Wallis, Z.~Allen-Zhu, Y.~Li, S.~Wang, L.~Wang, and W.~Chen, ``Lora: Low-rank adaptation of large language models,'' in {\em International Conference on Learning Representations}, 2022.
+
+\bibitem{liu_2024_dora}
+S.-Y. Liu, C.-Y. Wang, H.~Yin, P.~Molchanov, Y.-C.~F. Wang, K.-T. Cheng, and M.-H. Chen, ``Dora: Weight-decomposed low-rank adaptation,'' in {\em International Conference on Machine Learning}, 2024.
+
+\bibitem{wang_2023_ripple_effects}
+P.~Wang, N.~Ding, X.~Lyu, and C.~Miao, ``Evaluating the ripple effects of knowledge editing in language models,'' {\em Transactions of the Association for Computational Linguistics}, 2023.
+
+\end{thebibliography}

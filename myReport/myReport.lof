@@ -1,0 +1,15 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces MEMIT overview: (a) Language models store factual associations as (subject, relation, object) tuples, (b) MEMIT modifies these associations through targeted weight updates, and (c) performance comparison showing MEMIT's superior scaling capabilities, maintaining effectiveness up to 10,000 simultaneous edits compared to ROME and MEND methods.}}{6}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces MEMIT technical implementation showing the identification of critical MLP layers ($\mathcal {R}$) and the information flow during factual recall. The algorithm processes key-value pairs through multiple layers, with attention mechanisms (orange paths) and MLP modules (green paths) working together to store and retrieve factual associations.}}{7}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces LoRA architecture showing the decomposition of weight updates into low-rank matrices. The original pre-trained weights $\mathbf {W}_0$ remain frozen while trainable low-rank matrices $\mathbf {A}$ and $\mathbf {B}$ capture the adaptation-specific changes.}}{10}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces DoRA architecture showing the decomposition of pretrained weights into magnitude and direction components. The magnitude becomes independently trainable while the direction is updated using LoRA-style low-rank adaptation, providing more flexible parameter updates than standard LoRA.}}{11}{}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Performance Comparison Between CounterFact and zsRE Datasets}}{30}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces MEMIT Performance Scaling Curves}}{32}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Layer Selection Performance Analysis}}{34}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Optimal MEMIT Configuration Summary}}{36}{}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
