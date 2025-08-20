@@ -25,7 +25,6 @@ downstream_tasks
 archived
 output
 results
-summarize/summarize_ds_zsre_15k
 
 # Pre-trained hypernetworks
 baselines/*/weights
@@ -183,5 +182,4 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-!**/average_frozen_causal_trace.pdf
 *.npz
