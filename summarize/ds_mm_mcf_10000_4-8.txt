@@ -1,0 +1,18 @@
+/users/acq24bt/.conda/envs/memit/lib/python3.9/site-packages/numpy/core/_methods.py:173: RuntimeWarning: invalid value encountered in subtract
+  x = asanyarray(arr - arrmean)
+{'num_cases': 10000,
+ 'post_essence_score': (inf, nan),
+ 'post_neighborhood_acc': (0.17, 1.52),
+ 'post_neighborhood_diff': (0.0, 0.7),
+ 'post_neighborhood_success': (48.98, 32.73),
+ 'post_ngram_entropy': (281.86, 62.65),
+ 'post_paraphrase_acc': (0.41, 4.56),
+ 'post_paraphrase_diff': (0.1, 1.53),
+ 'post_paraphrase_success': (56.66, 40.74),
+ 'post_reference_score': (4.55, 3.47),
+ 'post_rewrite_acc': (1.98, 13.93),
+ 'post_rewrite_diff': (0.56, 5.44),
+ 'post_rewrite_success': (65.98, 47.38),
+ 'post_score': (56.367943263104166, nan),
+ 'run_dir': 'results/MEMIT/run_209',
+ 'time': (9479.50515961647, 0.0)}
